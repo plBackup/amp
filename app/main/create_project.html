@@ -12,6 +12,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../static/css/common.css">
     <!--扩展 css-->
     <link rel="stylesheet" href="../static/css/main/main.css">
@@ -51,7 +52,7 @@
 
                             <div class="input-group">
                                 <label>开业时间</label>
-                                <input type="text" placeholder=" " value="">
+                                <input type="text" placeholder=" " value="" class="datepicker" id="open-date" readonly>
                             </div>
 
                             <div class="input-group">
@@ -95,10 +96,24 @@
 <script src="../static/dist/js/bootstrap.min.js"></script>
 <!--<script src="static/dist/js/echarts-all.js"></script>-->
 <script src="../static/dist/js/plugins.js"></script>
+<script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <script>
     $(document).ready(function(){
         $('#preloader').delay(350).fadeOut(function(){
             //start
+        });
+
+        $("#open-date").datetimepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left",
+            startView:3,
+            minView:2,
+            maxView:4,
+            language:"zh-CN"
+
         });
     });
 </script>
