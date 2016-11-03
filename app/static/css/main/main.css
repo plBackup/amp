@@ -2,8 +2,8 @@ html,body{padding:0;min-width: 100%;min-height:100%;height:100%;}
 
 .ys-amp{position:relative;min-height: 100vh;padding-bottom: 60px;}
 
-.ys-amp .ys-footer{position: absolute;bottom:0;width:100%;height:60px;  overflow: hidden;}
-.ys-amp .ys-footer span{display: block;text-align: center;line-height: 50px;font-size: 14px;color:#757575;}
+.ys-amp .ys-footer, .ys-amp .footerpanel{position: absolute;bottom:0;width:100%;height:60px;  overflow: hidden;}
+.ys-amp .ys-footer span, .ys-amp .footerpanel span{display: block;text-align: center;line-height: 50px;font-size: 14px;color:#757575;}
 
 /* #ys-amp-main */
 #ys-amp-main{}
