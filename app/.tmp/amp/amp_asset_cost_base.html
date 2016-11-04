@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>资产管理</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg.css" rel="stylesheet">
+
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page">
+
+    <!-- 主面板 -->
+    <main class="ys-main-panel">
+
+        <div class="ys-content-panel clearfix">
+            <div class="ys-content-header clearfix">
+                    <ol class="breadcrumb">
+                        <li class="ys-breadcrumb-outstanding-none"><a href="mainPage.html"><h2>首页</h2></a></li>
+                        <li class="bread-nav"><a href="javascript:void(0)">某项目</a></li>
+                    </ol>
+
+
+                    <ul class="pull-left acg-summary">
+                        <!--<li><a class="popup-pie-dialog-btn link-enable"><em>31,391</em><span>m²</span></a></li>-->
+                        <!--<li><a class="popup-floor-area-dialog-btn link-enable"><em>5</em><span>层</span></a></li>-->
+                        <!--<li><a><em>218</em><span>铺位</span></a></li>-->
+                        <!--<li><a><em>178</em><span>个车位</span></a></li>-->
+                        <li style="position:relative;">
+                            <a class="ys-datetime-btn link-enable"><em name="year">2016</em><span>年</span><em name="month">04</em>月</a>
+                            <div class="input-group date form_date ys-datetimepicker pull-left" style="position:absolute;width:140px;left: 0;top: 30px;opacity: 0;z-index: -1;" data-date-format="yyyy-mm-dd">
+                                <input class="form-control" size="16" type="text" value="2016-04" readonly=""/>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="ys-dist-links">
+                        <a class="ys-export"><em></em>导出完整报表</a>
+                    </div>
+
+                    <!--<div class="ys-dist-links">-->
+                        <!--<a class="ys-dist-add"><em></em>新增</a>-->
+                        <!--<a class="ys-bag"><em></em>商务账号维护</a>-->
+                        <!--<a class="ys-export"><em></em>导出</a>-->
+                    <!--</div>-->
+            </div>
+
+            <div class="ys-content container" style="padding:20px 40px">
+
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title"><span>摘要</span><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block">
+                        <div class="ys-summary clearfix">
+                            <div class="ys-summary-left pull-left">
+                                <div class="ys-table-block" style="display:block;">
+                                    <div class="ys-table-block-title">项目基本信息</div>
+                                    <table class="table-new">
+                                        <thead>
+                                            <tr>
+                                                <td></td>
+                                                <td>总面积</td>
+                                                <td>套内</td>
+                                                <td>持有面积</td>
+                                                <td>铺位</td>
+                                                <td>开业率</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-right">总面积</td>
+                                                <td>31,291.00</td>
+                                                <td>18,774.60</td>
+                                                <td>5,632.38</td>
+                                                <td>287</td>
+                                                <td>46%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">F4</td>
+                                                <td>6,524.00</td>
+                                                <td>3914.4</td>
+                                                <td>1,174.32</td>
+                                                <td>22</td>
+                                                <td>55%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">F3</td>
+                                                <td>6,253.00</td>
+                                                <td>3,751.8</td>
+                                                <td>1,125.54</td>
+                                                <td>29</td>
+                                                <td>66%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">F2</td>
+                                                <td>6,719.00</td>
+                                                <td>4,031.4</td>
+                                                <td>1,209.42</td>
+                                                <td>66</td>
+                                                <td>35%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">F1</td>
+                                                <td>6,763.00</td>
+                                                <td>4,057.8</td>
+                                                <td>1,217.34</td>
+                                                <td>102</td>
+                                                <td>29%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">B1</td>
+                                                <td>5,032.00</td>
+                                                <td>3,019.2</td>
+                                                <td>905.76</td>
+                                                <td>68</td>
+                                                <td>47%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="ys-table-block" style="display:block;">
+                                    <div style="height:1px;background-color:#707070;"></div>
+                                    <table class="table-new">
+                                        <thead>
+                                            <tr>
+                                                <td></td>
+                                                <td>本月</td>
+                                                <td>同比</td>
+                                                <td>环比</td>
+                                                <td>完成率</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-right">销售</td>
+                                                <td>13,107,065</td>
+                                                <td>-</td>
+                                                <td>15.76%</td>
+                                                <td>89.89%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">平效</td>
+                                                <td>516.44</td>
+                                                <td>-</td>
+                                                <td>15.76%</td>
+                                                <td>89.89%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">客流</td>
+                                                <td>748,312</td>
+                                                <td>-</td>
+                                                <td>13.23%</td>
+                                                <td>103.60%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">会员</td>
+                                                <td>1,078</td>
+                                                <td>-</td>
+                                                <td>8%</td>
+                                                <td>110%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="ys-summary-right pull-left">
+                                <div class="ys-table-block" style="display:block;">
+                                    <div class="ys-table-block-title">资产收益率</div>
+                                    <table class="table-new">
+                                        <thead>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td colspan="4" class="top-title"><div>预测</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>本月实际</td>
+                                                <td>累计实际</td>
+                                                <td>全年预估</td>
+                                                <td>第2年</td>
+                                                <td>第3年</td>
+                                                <td>第4年</td>
+                                                <td>第5年</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-right">营业利润(万元)</td>
+                                                <td>200</td>
+                                                <td>822</td>
+                                                <td>2,396</td>
+                                                <td>3,096</td>
+                                                <td>3,396</td>
+                                                <td>3,696</td>
+                                                <td>4,096</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">收益率<br/>(营业利润/投资成本)</td>
+                                                <td>0.78%</td>
+                                                <td>1.59%</td>
+                                                <td>9.26%</td>
+                                                <td>9.50%</td>
+                                                <td>9.74%</td>
+                                                <td>9.98%</td>
+                                                <td>10.22%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="align-right">收益率<br/>(营业利润/资产估值)</td>
+                                                <td>0.60%</td>
+                                                <td>1.22%</td>
+                                                <td>7.53%</td>
+                                                <td>7.88%</td>
+                                                <td>8.23%</td>
+                                                <td>8.58%</td>
+                                                <td>8.93%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="ys-table-block" style="display:block;">
+
+                                    <div style="height:18px;"></div>
+
+                                    <div style="height:32px;line-height:32px;color:#8333a3;font-weight: bold;">截止 2016.4.30</div>
+                                    <div style="height:1px;background-color:#707070;"></div>
+                                    <table class="table-new">
+                                        <thead>
+                                        <tr>
+                                            <td></td>
+                                            <td>本月实际</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="align-right">投资成本</td><td>869,122,961</td><td></td><td></td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">资产估值</td><td>1,134,500,000</td><td></td><td></td><td></td>
+                                        </tr>
+                                       <!--  <tr>
+                                            <td class="align-right">贷款</td><td>240,797,900</td><td>到期日</td><td>2023-09-30</td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">年贷款利息</td><td>7.7%</td><td></td><td></td><td></td>
+                                        </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div><!-- ys-summary-right -->
+                        </div>
+
+
+                    </div>
+                </div><!-- ys-collapse-panel -->
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title"><span>财务</span><a class="ys-plus-btn"></a><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block">
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active btn-disable"></a><a class="list-btn btn-disable"></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body">
+                                <div class="ys-chart-body-label">利润汇总</div>
+                                <ul class="clearfix">
+                                    <li style="width:30%">
+                                        <div class="ladder-shape-chart" style="margin-left:60px;margin-top:40px;">
+
+                                            <div class="yAxis-label">
+                                                <div style="top:-24px;">(万元)</div>
+                                                <div name="index-1">收入总计</div>
+                                                <div name="index-2" style="top: 56px;">经营成本</div>
+                                                <div name="index-3" style="top: 96px;">财务费用</div>
+                                                <div name="index-4" style="top: 136px;">企业所得税</div>
+                                                <div name="index-5" style="top: 176px;">资本性指出</div>
+                                                <div name="index-6" style="top: 216px;">增值税</div>
+                                            </div>
+
+                                            <div class="full-income">
+                                                <span class="bar-value">503</span>
+                                            </div>
+
+                                            <div  name="index-2" class="item-bar" style="right:0;height:80px;width:72px">
+                                                <em></em>
+                                                <span class="bar-value">120</span>
+                                            </div>
+
+                                            <div name="index-3" class="item-bar" style="right:72px;height:120px;width:54px">
+                                                <em></em>
+                                                <span class="bar-value">92</span>
+                                            </div>
+
+                                            <div name="index-4" class="item-bar" style="right:126px;height:160px;width:36px">
+                                                <em></em>
+                                                <span class="bar-value">63</span>
+                                            </div>
+
+                                            <div name="index-5" class="item-bar" style="right:162px;height:200px;width:30px">
+                                                <em></em>
+                                                <span class="bar-value">51</span>
+                                            </div>
+
+                                            <div name="index-6" class="item-bar" style="right:192px;height:240px;width:36px">
+                                                <em></em>
+                                                <span class="bar-value">59</span>
+                                            </div>
+                                        </div><!--ladder-shape-chart-->
+
+                                        <div style="text-align: center;padding-top:40px;padding-bottom:10px;" class="ys-font-size-16">经营成本占费用最高</div>
+
+                                    </li>
+                                    <li style="width:40%;margin-left:0">
+                                        <div id="rent-income-pie" style="width: 100%;height:280px;margin-left:-20px;"></div>
+                                        <div style="margin-left:-20px;text-align: center;padding-top:40px;padding-bottom:10px;" class="ys-font-size-16">租金收入最高</div>
+                                    </li>
+                                    <li style="width:30%;">
+                                        <div id="cash-flow-line" style="width: 90%;height:280px;"></div>
+                                        <div style="text-align: center;padding-top:20px;padding-bottom:10px;" class="ys-font-size-16">现金流连续三月增加</div>
+                                    </li>
+                                </ul>
+
+
+
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+
+
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active"></a><a class="list-btn "></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body">
+                                <div class="ys-chart-body-label">收入明细</div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <div name="horizontal-bar-budget-1" class="horizontal-bar-budget" style="margin-left:100px;">
+                                            <div class="bar-legend">(万元)</div>
+                                            <div class="bar-item " style="top:0;">
+                                                <div class="bar-label">租金收入</div>
+                                                <div class="real-bar" style="background-color:#0a3f84;"></div>
+                                                <div class="budget-bar" ></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:46px;">
+                                                <div class="bar-label">回收租户</div>
+                                                <div class="real-bar" style="background-color:#0a3f84;"></div>
+                                                <div class="budget-bar" style=""></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:92px;">
+                                                <div class="bar-label">停车场收入</div>
+                                                <div class="real-bar" style="background-color:#0a3f84;"></div>
+                                                <div class="budget-bar" style=""></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:138px;">
+                                                <div class="bar-label">其他</div>
+                                                <div class="real-bar" style="background-color:#0a3f84;"></div>
+                                                <div class="budget-bar" style=""></div>
+                                            </div>
+
+                                            <div class="bar-item "  style="top:184px;">
+                                                <div class="bar-label">广告与推广</div>
+                                                <div class="real-bar" style="background-color:#0a3f84;"></div>
+                                                <div class="budget-bar" style=""></div>
+                                            </div>
+
+
+                                        </div><!-- horizontal-bar-budget -->
+                                        <div style="text-align: center;padding-top:40px;" class="ys-font-size-16">租金收入超预算</div>
+                                    </li>
+                                    <li>
+                                        <div id="forecast-income-decreasing-bar" style="width: 100%;height:260px;">
+                                            <!--<div class="legend-text">预测</div>-->
+                                        </div>
+                                        <div style="text-align: center;padding-top:30px;" class="ys-font-size-16">预测下月收入下滑</div>
+                                    </li>
+                                    <li>
+                                        <div id="rent-income-percent-pie" style="width: 100%;height:280px;"></div>
+                                        <div style="text-align: center;padding-top:10px;" class="ys-font-size-16">主力租户租金占比最高</div>
+                                    </li>
+                                </ul>
+
+                                <div class="ys-table-block">
+                                    <div class="ys-table-block-title">
+                                        收入明细
+                                    </div>
+                                    <table class="table-new">
+                                        <thead>
+                                        <tr>
+                                            <td rowspan="2">&nbsp;</td>
+                                            <td colspan="2" class="top-title"><div>上月</div></td>
+                                            <td colspan="2" class="top-title"><div>本月</div></td>
+                                            <td colspan="2" class="top-title"><div>差异</div></td>
+                                            <td colspan="3" class="top-title"><div>累计</div></td>
+                                            <td colspan="2" class="top-title"><div>差异</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>去年实际</td>
+                                            <td>实际</td>
+                                            <td>实际</td>
+                                            <td>预算</td>
+                                            <td>金额</td>
+                                            <td>偏差</td>
+                                            <td>去年实际</td>
+                                            <td>实际</td>
+                                            <td>预算</td>
+                                            <td>金额</td>
+                                            <td>偏差</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+
+
+                                        <tr>
+                                            <td class="align-right">租金收入小计</td>
+                                            <td>-</td>
+                                            <td>2,791,800</td>
+                                            <td>2,899,800</td>
+                                            <td>3,222,00</td>
+                                            <td>322,200</td>
+                                            <td>10.00%</td>
+                                            <td>-</td>
+                                            <td>23,760,000</td>
+                                            <td>26,400,000</td>
+                                            <td>2,640,000</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">广告与推广</td>
+                                            <td>-</td>
+                                            <td>58,986</td>
+                                            <td>33,064</td>
+                                            <td>32,000</td>
+                                            <td>1,064</td>
+                                            <td>3.33%</td>
+                                            <td>-</td>
+                                            <td>380,694</td>
+                                            <td>380,000</td>
+                                            <td>694</td>
+
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">停车场收入</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>50,838</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">回收租户</td>
+                                            <td>-</td>
+                                            <td>1,557,000</td>
+                                            <td>1,566,000</td>
+                                            <td>1,740,000</td>
+                                            <td>1744,000</td>
+                                            <td>10.00%</td>
+                                            <td>-</td>
+                                            <td>17,033,940</td>
+                                            <td>18,926,600</td>
+                                            <td>1,892,660</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">其他收入</td>
+                                            <td>-</td>
+                                            <td>180,000</td>
+                                            <td>533,230</td>
+                                            <td>592,478</td>
+                                            <td>59,248</td>
+                                            <td>10.00%</td>
+                                            <td>-</td>
+                                            <td>2,582,890</td>
+                                            <td>2,869,878</td>
+                                            <td>286,988</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-right">收入总计</td>
+                                            <td class="font-weight-bolder">-</td>
+                                            <td class="font-weight-bolder">4,587,786</td>
+                                            <td class="font-weight-bolder">5,082,932</td>
+                                            <td class="font-weight-bolder">5,586,478</td>
+                                            <td class="font-weight-bolder">2,126,512</td>
+                                            <td class="font-weight-bolder">-</td>
+                                            <td class="font-weight-bolder">-</td>
+                                            <td class="font-weight-bolder">43,757,524</td>
+                                            <td class="font-weight-bolder">48,576,478</td>
+                                            <td class="font-weight-bolder">4,820,342</td>
+                                            <td class="font-weight-bolder">-</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- ys-table-block -->
+
+                                <!--<div class="ys-table-block">-->
+                                    <!--<table class="table-default">-->
+                                        <!--<thead>-->
+                                            <!--<tr>-->
+                                                <!--<td rowspan="2">&nbsp;</td>-->
+                                                <!--<td colspan="2">上月</td>-->
+                                                <!--<td colspan="2">本月</td>-->
+                                                <!--<td colspan="2">差异</td>-->
+                                                <!--<td colspan="3">累计</td>-->
+                                                <!--<td colspan="2">差异</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>去年实际</td>-->
+                                                <!--<td>实际</td>-->
+                                                <!--<td>实际</td>-->
+                                                <!--<td>预算</td>-->
+                                                <!--<td>金额</td>-->
+                                                <!--<td>偏差</td>-->
+                                                <!--<td>去年实际</td>-->
+                                                <!--<td>实际</td>-->
+                                                <!--<td>预算</td>-->
+                                                <!--<td>金额</td>-->
+                                                <!--<td>偏差</td>-->
+                                            <!--</tr>-->
+                                        <!--</thead>-->
+                                        <!--<tbody>-->
+                                            <!--<tr>-->
+                                                <!--<th>保底租金收入</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>联营净收入</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>物业管理费</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>提成租金</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>减租</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>租金收入小计</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>广告与推广</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>停车场收入</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>回收租户</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>其他收入</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<th>收入总计</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>-->
+                                            <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active btn-disable"></a><a class="list-btn btn-disable"></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body">
+                                <div class="ys-chart-body-label">费用明细</div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <div name="horizontal-bar-budget-2" class="horizontal-bar-budget" style="margin-left:100px;margin-top:30px;">
+                                            <div class="bar-legend">(万元)</div>
+                                            <div class="bar-item " style="top:0;">
+                                                <div class="bar-label">经营成本</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:46px;">
+                                                <div class="bar-label">财务费用</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:92px;">
+                                                <div class="bar-label">企业所得税</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:138px;">
+                                                <div class="bar-label">增值税</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item "  style="top:184px;">
+                                                <div class="bar-label">资本性支出</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+
+                                        </div><!-- horizontal-bar-budget -->
+                                        <div style="padding-left:80px;padding-top:13px;" class="ys-font-size-16">企业所得税低于预算</div>
+                                    </li>
+                                    <li>
+                                        <div id="income-percent-bar" style="width: 100%;height:260px;"></div>
+                                        <div style="text-align: center;padding-top:30px;" class="ys-font-size-16">预测下月费用降低</div>
+                                    </li>
+                                    <li>
+                                        <!--<div id="cash-flow-pie" style="width: 100%;height:280px;"></div>-->
+                                        <!--<div style="text-align: center;padding-top:10px;" class="ys-font-size-16">现金流</div>-->
+                                    </li>
+                                </ul>
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active btn-disable"></a><a class="list-btn btn-disable"></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body">
+                                <div class="ys-chart-body-label" style="padding-top:10px;">资本性支出</div>
+                                <ul class="clearfix">
+                                    <li style="width:45%;">
+                                        <div name="horizontal-bar-budget-3" class="horizontal-bar-budget" style="margin-left:100px;margin-top:20px;">
+                                            <div class="bar-legend">(万元)</div>
+                                            <div class="bar-item " style="top:0;">
+                                                <div class="bar-label">结构改造</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:46px;">
+                                                <div class="bar-label">工程改建支出</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:92px;">
+                                                <div class="bar-label">机电改造</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:138px;">
+                                                <div class="bar-label">固定资产</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+                                            <div class="bar-item "  style="top:184px;">
+                                                <div class="bar-label">租户装修补贴</div>
+                                                <div class="real-bar" style="background-color:#c3c3c3;"></div>
+                                                <div class="budget-bar"></div>
+                                            </div>
+
+
+                                        </div><!-- horizontal-bar-budget -->
+                                        <div style="padding-left: 140px;padding-top:20px;" class="ys-font-size-16">收入预算差异</div>
+                                    </li>
+                                    <li style="width:10%;">&nbsp;</li>
+                                    <li style="width:45%;">
+                                        <div id="capital-expenditure-pie" style="width: 100%;height:280px;"></div>
+                                        <div style="text-align: center;padding-top:10px;" class="ys-font-size-16">机电改造占比最高</div>
+                                    </li>
+                                </ul>
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active btn-disable"></a><a class="list-btn btn-disable"></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body" style="border-bottom:0;">
+                                <div class="ys-chart-body-label" style="padding-top:40px;">欠费</div>
+                                <ul class="clearfix">
+                                    <li >
+                                        <div id="arrears-shop-number-bar" style="width: 100%;margin-left:50px;height:260px;"></div>
+                                        <div style="width:400px;padding-left:130px;padding-top:45px;padding-bottom:10px;" class="ys-font-size-16">欠费小于30的商家数量最多</div>
+                                    </li>
+                                    <li style="width:55%;float:right">
+                                        <div style="width:250px;height:250px;float:left" id="double-left-bar"></div>
+                                        <div style="width:300px;height:250px;float:left" id="double-right-bar"></div>
+                                        <div style="clear:both;"></div>
+                                        <div style="text-align: center;padding-top:55px;" class="ys-font-size-16">欠费超过120天的租金已超过保证金</div>
+                                    </li>
+                                </ul>
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+
+
+
+                    </div><!-- ys-collapse-panel-block -->
+                </div><!-- ys-collapse-panel -->
+
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title"><span>租赁</span><a class="ys-plus-btn"></a><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block">
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active btn-disable"></a><a class="list-btn btn-disable"></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body" style="border-bottom:0;">
+                                <div class="ys-chart-body-label">租赁明细</div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <div name="processChart" class="process-chart" style="margin-left:100px;margin-top:40px;">
+
+                                            <div class="bar-item " style="top:10px">
+                                                <div class="bar-label">B1</div>
+                                                <div class="value-label"></div>
+                                                <div class="process-bar">
+                                                    <div class="finished-bar"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:66px">
+                                                <div class="bar-label">1F</div>
+                                                <div class="value-label"></div>
+                                                <div class="process-bar">
+                                                    <div class="finished-bar"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:122px;">
+                                                <div class="bar-label">2F</div>
+                                                <div class="value-label"></div>
+                                                <div class="process-bar">
+                                                    <div class="finished-bar"></div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="bar-item " style="top:178px;">
+                                                <div class="bar-label">3F</div>
+                                                <div class="value-label"></div>
+                                                <div class="process-bar">
+                                                    <div class="finished-bar"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bar-item " style="top:234px;">
+                                                <div class="bar-label">4F</div>
+                                                <div class="value-label"></div>
+                                                <div class="process-bar">
+                                                    <div class="finished-bar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="text-align: center;padding-top:40px;" class="ys-font-size-16">1F 空铺率最高</div>
+
+                                    </li>
+                                    <li>
+                                        <div id="commercial-type-percent-pie" style="width: 100%;height:280px;margin-top:20px;"></div>
+                                        <div style="text-align: center;padding-top:40px;" class="ys-font-size-16">服装占比最高</div>
+                                    </li>
+                                    <li>
+                                        <!--arrears-shop-number-bar-->
+                                        <div id="rent-contract-expire-bar" style="width: 350px;margin-left:50px;height:220px;margin-top:58px;">
+                                            <!--<div class="labelText">-->
+                                                <!--<div><3个月</div>-->
+                                                <!--<div>3-6个月</div>-->
+                                                <!--<div><6-9个月</div>-->
+                                                <!--<div>9-12个月</div>-->
+                                                <!--<div><12个月</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                        <div style="width:400px;text-align: center;padding-top:60px;" class="ys-font-size-16">租约到期</div>
+                                    </li>
+                                </ul>
+
+
+                                <div style="height:40px;"></div>
+
+                                <ul class="clearfix">
+                                    <li>
+                                        <!--arrears-shop-number-bar-->
+                                        <div id="flat-bar" style="width: 350px;margin-left:50px;height:260px;"></div>
+                                        <div style="width:400px;padding-left:120px;padding-top:60px;padding-bottom:10px;" class="ys-font-size-16">大部分商家平效在400~500之间</div>
+
+                                    </li>
+                                    <li>
+                                        <div id="commercial-type-percent-pie-2" style="width: 100%;height:280px;"></div>
+                                        <div style="width:400px;padding-left:160px;padding-top:40px;" class="ys-font-size-16">服装占比最高</div>
+                                    </li>
+                                    <li>
+
+                                    </li>
+                                </ul>
+
+
+
+
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title"><span>经营报告</span><a class="ys-plus-btn"></a><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block">
+                        <div class="ys-chart-block">
+                            <div class="ys-chart-header clearfix">
+                                <div class="pull-right list-logo-btn-group">
+                                    <a class="logo-btn active  "></a><a class="list-btn  "></a>
+                                </div>
+                            </div>
+                            <div class="ys-chart-body" style="border-bottom:0;">
+                                <div class="ys-chart-body-label" style="padding-top:30px;">销售额</div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <div id="sale-line" style="width: 90%;height:280px;"></div>
+                                        <div style="text-align: center;padding-top:55px;padding-bottom:10px;" class="ys-font-size-16">今年四月销售额大幅度提升</div>
+                                    </li>
+                                    <li>
+                                        <!--commercial-type-percent-pie-->
+                                        <div id="commercial-type-percent-pie-3" style="width: 100%;height:280px;margin-top:28px;"></div>
+                                        <div style="text-align: center;padding-top:45px;" class="ys-font-size-16">餐饮销售额占比最高</div>
+                                    </li>
+                                    <li style="padding:0 40px 0 30px;">
+
+                                        <div class="ys-table-block" style="display:block;">
+
+                                            <div style="height:1px;background-color:#707070;"></div>
+                                            <div style="height:32px;line-height:32px;color:#8333a3;font-weight: bold;">前3名</div>
+                                            <div style="height:1px;background-color:#707070;"></div>
+                                            <table class="table-new">
+                                                <thead>
+                                                    <tr>
+                                                        <td>排名</td>
+                                                        <td>商家</td>
+                                                        <td>销售额(元)</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>屈臣氏</td>
+                                                        <td>2,671,198</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>塔哈尔</td>
+                                                        <td>490,086</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>星巴克</td>
+                                                        <td>309,383</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="ys-table-block" style="display:block;">
+                                            <div style="height:1px;background-color:#707070;"></div>
+                                            <div style="height:32px;line-height:32px;color:#8333a3;font-weight: bold;">后3名</div>
+                                            <div style="height:1px;background-color:#707070;"></div>
+                                            <table class="table-new">
+                                                <thead>
+                                                <tr>
+                                                    <td>排名</td>
+                                                    <td>商家</td>
+                                                    <td>销售额(元)</td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>美食广场</td>
+                                                    <td>85,600</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>木槿生活</td>
+                                                    <td>32,300</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Marc Ecko</td>
+                                                    <td>27,128</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--<table class="sale-table">-->
+                                            <!--<tbody>-->
+                                                <!--<tr>-->
+                                                    <!--<td></td>-->
+                                                    <!--<td>排名</td>-->
+                                                    <!--<td>商家</td>-->
+                                                    <!--<td>销售额(元)</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td rowspan="3">前</td><td>1</td><td>屈臣氏</td><td>2,671,198 </td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>2</td><td>塔哈尔</td><td>490,086</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>3</td><td>星巴克</td><td>309,383</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td rowspan="3">后</td><td>1</td><td>美食广场</td><td>85,600</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>2</td><td>木槿生活</td><td>32,300</td>-->
+                                                <!--</tr>-->
+                                                <!--<tr>-->
+                                                    <!--<td>3</td><td>Marc Ecko</td><td>27,128</td>-->
+                                                <!--</tr>-->
+                                            <!--</tbody>-->
+                                        <!--</table>-->
+                                        <div style="text-align: center;padding-bottom:10px;" class="ys-font-size-16">销售额排行榜</div>
+                                    </li>
+                                </ul>
+
+                                <div class="ys-table-block table-wrapper-main " style="margin-top: 0; display: none;" id="opt-chart-wrapper">
+                                    <h3 class="yj-table-title">营运销售统计</h3>
+                                    <table class="table table-hover table-striped ys-table" id="opt-table">
+                                        <colgroup>
+                                            <col width="100px"/>
+                                        </colgroup>
+                                        <thead>
+                                        <tr class="main-title">
+                                            <th> </th>
+                                            <th colspan="3">2016-08（万元）</th>
+                                            <th colspan="3">全年累计（万元）</th>
+                                        </tr>
+                                        <tr class="sub-title">
+                                            <th>销售统计</th>
+                                            <th class="num-cell">销售额（万元）</th>
+                                            <th class="num-cell">月均平效</th>
+                                            <th class="num-cell">售租比（月均）</th>
+                                            <th class="num-cell">销售额（万元）</th>
+                                            <th class="num-cell">月均平效</th>
+                                            <th class="num-cell">售租比（月均）</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>服装</th>
+                                            <td class="num-cell">89.96</td>
+                                            <td class="num-cell">965.85</td>
+                                            <td class="num-cell">9.69%</td>
+                                            <td class="num-cell">643.67</td>
+                                            <td class="num-cell">863.25</td>
+                                            <td class="num-cell">9.59%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>餐饮</th>
+                                            <td class="num-cell">365.21</td>
+                                            <td class="num-cell">849.19</td>
+                                            <td class="num-cell">8.32%</td>
+                                            <td class="num-cell">2,997.72</td>
+                                            <td class="num-cell">966.31</td>
+                                            <td class="num-cell">8.24%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>配套</th>
+                                            <td class="num-cell">85.33</td>
+                                            <td class="num-cell">1,215.36</td>
+                                            <td class="num-cell">6.96%</td>
+                                            <td class="num-cell">727.71</td>
+                                            <td class="num-cell">1,156.39</td>
+                                            <td class="num-cell">9.33%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>娱乐</th>
+                                            <td class="num-cell">201.21</td>
+                                            <td class="num-cell">894.68</td>
+                                            <td class="num-cell">8.77%</td>
+                                            <td class="num-cell">1,778.12</td>
+                                            <td class="num-cell">743.34</td>
+                                            <td class="num-cell">8.01%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>儿童</th>
+                                            <td class="num-cell">3.36</td>
+                                            <td class="num-cell">126.36</td>
+                                            <td class="num-cell">8.69%</td>
+                                            <td class="num-cell">251.35</td>
+                                            <td class="num-cell">236.35</td>
+                                            <td class="num-cell">9.12%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>影院</th>
+                                            <td class="num-cell">181.25</td>
+                                            <td class="num-cell">236.96</td>
+                                            <td class="num-cell">6.26%</td>
+                                            <td class="num-cell">1,522.25</td>
+                                            <td class="num-cell">366.48</td>
+                                            <td class="num-cell">7.29%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>超市</th>
+                                            <td class="num-cell">321.68</td>
+                                            <td class="num-cell">312.69</td>
+                                            <td class="num-cell">8.25%</td>
+                                            <td class="num-cell">2,677.78</td>
+                                            <td class="num-cell">359.68</td>
+                                            <td class="num-cell">7.38%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>其他</th>
+                                            <td class="num-cell">34.55</td>
+                                            <td class="num-cell">659.36</td>
+                                            <td class="num-cell">14.45%</td>
+                                            <td class="num-cell">283.31</td>
+                                            <td class="num-cell">783.22</td>
+                                            <td class="num-cell">17.55%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>合计</th>
+                                            <td class="num-cell">1,312.55</td>
+                                            <td class="num-cell">680.69</td>
+                                            <td class="num-cell">8.54%</td>
+                                            <td class="num-cell">10,881.91</td>
+                                            <td class="num-cell">712.69</td>
+                                            <td class="num-cell">9.59%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>主力店</th>
+                                            <td class="num-cell">705.14</td>
+                                            <td class="num-cell">312.69</td>
+                                            <td class="num-cell">7.85%</td>
+                                            <td class="num-cell">5,978.15</td>
+                                            <td class="num-cell">469.68</td>
+                                            <td class="num-cell">8.38%</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>非主力店</th>
+                                            <td class="num-cell">607.41</td>
+                                            <td class="num-cell">659.36</td>
+                                            <td class="num-cell">10.45%</td>
+                                            <td class="num-cell">4,903.78</td>
+                                            <td class="num-cell">783.22</td>
+                                            <td class="num-cell">11.55%</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div><!--table-wrapper-main-->
+
+
+
+                            </div><!-- ys-chart-body -->
+                        </div><!-- ys-chart-block -->
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title" style="background-color:#ccc;"><span>物业管理情况汇总 [demo不提供]</span><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block" style="background-color:#f3f3f3;padding:10px;color:#757575;line-height: 30px;">
+                        <div class="ys-cursor-pointer" title="demo不提供">商场主要事件报告</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">工程合同</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">外包合同</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">日常维保程序</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">商场进驻时间进度表(新增加商户)</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">施工现场图片</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">设备设施交接遗留问题</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">月工作总结及计划</div>
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title" style="background-color:#ccc;"><span>市场推广 [demo不提供]</span><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block" style="background-color:#f3f3f3;padding:10px;color:#757575;line-height: 30px;">
+                        <div class="ys-cursor-pointer" title="demo不提供">年度市场预算执行情况</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">年累计市场推广部门有效分析</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">市场推广活动报告</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">市场推广活动照片</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">市场推广活动分析</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">促销及推广区收入</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">广告区收入</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">创收区收入</div>
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title" style="background-color:#ccc;"><span>法律事务 [demo不提供]</span><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block" style="background-color:#f3f3f3;padding:10px;color:#757575;line-height: 30px;">
+                        <div class="ys-cursor-pointer" title="demo不提供">公共责任事故</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">诉讼中时间报告</div>
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+                <div class="ys-collapse-panel">
+                    <div class="ys-collapse-panel-title" style="background-color:#ccc;"><span>附录 [demo不提供]</span><a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a></div>
+                    <div class="ys-collapse-panel-block" style="background-color:#f3f3f3;padding:10px;color:#757575;line-height: 30px;">
+                        <div class="ys-cursor-pointer" title="demo不提供">项目指标</div>
+                        <div class="ys-cursor-pointer" title="demo不提供">各项指标</div>
+                    </div><!--ys-collapse-panel-block-->
+                </div><!-- ys-collapse-panel -->
+
+            </div><!-- ys-content -->
+
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <!-- 树状弹出框 -->
+    <div class="ys-tree-dialog ys-dialog modal fade in" tabindex="-1" role="dialog" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header clearfix">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title">目录</h3>
+                </div>
+                <div class="modal-body" style="padding:0;overflow: auto;height:450px;">
+                    <div class="directory-container">
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>营业总额</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                            <ul>
+                                <li><em class="ys-checkbox"></em>总经理总结</li>
+                                <li><em class="ys-checkbox"></em>财务</li>
+                                <li><em class="ys-checkbox"></em>资产收益率</li>
+                                <li><em class="ys-checkbox"></em>租赁情况</li>
+                                <li><em class="ys-checkbox"></em>续租 & 空置</li>
+                                <li><em class="ys-checkbox"></em>债务人</li>
+                                <li><em class="ys-checkbox"></em>营业额</li>
+                                <li><em class="ys-checkbox"></em>租金占比</li>
+                                <li><em class="ys-checkbox"></em>客流量</li>
+                                <li><em class="ys-checkbox"></em>员工数</li>
+                            </ul>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>财务&综合部</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>租赁</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>经营报告</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>物业管理情况汇总</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>市场推广</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+                        <div class="directory-item">
+                            <div class="directory-title">
+                                <em class="ys-checkbox"></em>
+                                <span>法律事务</span>
+                                <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="ys-dialog-btn-close" data-dismiss="modal">取消</button>
+                    <button type="button" class="ys-dialog-btn-ok">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 饼状图弹出框 -->
+    <!--<div class="ys-popup-pie-dialog ys-dialog modal fade in" tabindex="-1" role="dialog" >-->
+        <!--<div class="modal-dialog" role="document">-->
+            <!--<div class="modal-content">-->
+
+                <!--<div class="modal-body" style="padding:30px 0 0 0;overflow: auto;height:350px;">-->
+                    <!--<div id="popup-pie" style="width: 80%;height:280px;margin:auto;"></div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <!-- 楼层面积弹出框 -->
+    <!--<div class="ys-floor-area-dialog ys-dialog modal fade in" tabindex="-1" role="dialog" >-->
+        <!--<div class="modal-dialog" role="document">-->
+            <!--<div class="modal-content">-->
+
+                <!--<div class="modal-body" style="padding:30px 0 0 0;overflow: auto;height:350px;">-->
+                    <!--<div style="font-size: 18px;padding-left: 115px;padding-bottom: 30px;">楼层面积</div>-->
+                    <!--<div class="process-chart" style="width: 220px;margin: auto;;">-->
+
+                        <!--<div class="bar-item " style="top:10px">-->
+                            <!--<div class="bar-label" style="top:-10px;">㎡</div>-->
+                            <!--<div class="value-label">B1</div>-->
+                            <!--<div class="process-bar" style="background-color:#0a3f84;">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="bar-item " style="top:66px">-->
+                            <!--<div class="value-label">1F</div>-->
+                            <!--<div class="process-bar" style="background-color:#0a3f84;">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="bar-item " style="top:122px;">-->
+                            <!--<div class="value-label">2F</div>-->
+                            <!--<div class="process-bar" style="background-color:#0a3f84;">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+
+                        <!--<div class="bar-item " style="top:178px;">-->
+                            <!--<div class="value-label" >3F</div>-->
+                            <!--<div class="process-bar" style="background-color:#0a3f84;">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div><!-- ys-page -->
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+<script src="../static/js/ladder_shape_chart.js"></script>
+<script src="../static/js/acg.js"></script>
+</body>
+</html>

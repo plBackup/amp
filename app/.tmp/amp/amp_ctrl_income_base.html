@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>悦商商业资产管理系统</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg_project.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page ys-amp">
+<!-- 主面板 -->
+<main class="ys-main-panel">
+
+<div class="ys-content-panel clearfix">
+
+<div class="ys-content" style="padding:20px 40px">
+<div class="ys-block">
+<div class="ys-block-section ys-contract-section  ys-separate-block">
+<h3>租赁 <a href="#collapse-rent" class="ys-section-collapse-btn" data-toggle="collapse" ><em class="glyphicon glyphicon-menu-down"></em></a></h3>
+<div id="collapse-rent" class="in">
+<div class="ys-chart-wrapper clearfix " >
+    <div class="col-xs-4">
+        <div class="ys-chart-section ">
+            <div class="ys-chart-content" id="chart-income-wrapper" >
+                <canvas id="chart-income" width="220" height="220" data-label='["时装", "餐饮", "配套", "娱乐","儿童", "影院", "超市", "其他"]' data-chart="[8,28,5,16,4,10,24,5]">
+
+                </canvas>
+                <div class="ys-chart-info">
+                    <h3>业态占比</h3>
+                    <h5>(租金收入)</h5>
+                </div>
+            </div>
+            <div class="legend clearfix">
+                <span><em class="color-label" style="background-color: #0488da;"></em>时装<i>8%</i></span>
+                <span><em class="color-label" style="background-color: #00b0f0;"></em>餐饮<i>28%</i></span>
+                <span><em class="color-label" style="background-color: #2bd9dd;"></em>配套<i>5%</i></span>
+                <span><em class="color-label" style="background-color: #a6ec66;"></em>娱乐<i>16%</i></span>
+
+                <span><em class="color-label" style="background-color: #dcf79f;"></em>儿童<i>4%</i></span>
+                <span><em class="color-label" style="background-color: #aeb9ca;"></em>影院<i>10%</i></span>
+                <span><em class="color-label" style="background-color: #637b9b;"></em>超市<i>24%</i></span>
+                <span><em class="color-label" style="background-color: #45546b;"></em>其他<i>5%</i></span>
+            </div><!--legend-->
+        </div><!--ys-chart-section-->
+    </div>
+
+    <div class="col-xs-4">
+        <div class="ys-chart-section">
+            <div class="ys-chart-content" id="retail-area-wrapper" >
+                <canvas id="retail-area" width="220" height="220" data-label='["时装", "餐饮", "配套", "娱乐","儿童", "影院", "超市", "其他"]' data-chart="[3,15,2,8,9,26,35,2]">
+                </canvas>
+                <div class="ys-chart-info">
+                    <h3>业态占比</h3>
+                    <h5>(计租面积)</h5>
+                </div>
+            </div>
+            <div class="legend clearfix">
+                <span><em class="color-label" style="background-color: #0488da;"></em>时装<i>3%</i></span>
+                <span><em class="color-label" style="background-color: #00b0f0;"></em>餐饮<i>15%</i></span>
+                <span><em class="color-label" style="background-color: #2bd9dd;"></em>配套<i>2%</i></span>
+                <span><em class="color-label" style="background-color: #a6ec66;"></em>娱乐<i>8%</i></span>
+                <span><em class="color-label" style="background-color: #dcf79f;"></em>儿童<i>9%</i></span>
+                <span><em class="color-label" style="background-color: #aeb9ca;"></em>影院<i>26%</i></span>
+                <span><em class="color-label" style="background-color: #637b9b;"></em>超市<i>35%</i></span>
+                <span><em class="color-label" style="background-color: #45546b;"></em>其他<i>2%</i></span>
+            </div><!--legend-->
+        </div><!--ys-chart-section-->
+    </div>
+
+
+    <div class="col-xs-4">
+        <div class="ys-chart-section">
+            <div class="ys-chart-header">
+                <h3 class="col-xs-4">租约到期</h3>
+            </div>
+            <div class="ys-chart-content" id="ld-rent-expire">
+                <div>
+                    <ul class="rent-expired-chart clearfix">
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width: 72px;"><i>650</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 75px;"><i>668</i></em>
+                            <h5>2016</h5>
+                        </li><!--li-->
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width: 84px;"><i>801</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 86px;"><i>806</i></em>
+                            <h5>2017</h5>
+                        </li><!--li-->
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width: 100px;"><i>1003</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 92px;"><i>910</i></em>
+                            <h5>2018</h5>
+                        </li><!--li-->
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width:123px;"><i>1284</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 107px;"><i>1083</i></em>
+                            <h5>2019</h5>
+                        </li><!--li-->
+
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width: 159px;"><i>1738</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 125px;"><i>1314</i></em>
+                            <h5>2020</h5>
+                        </li><!--li-->
+                        <li>
+                            <em class="rent-bar rent" style="border-bottom-width: 183px;"><i>2036</i></em>
+                            <em class="rent-bar area" style="border-bottom-width: 135px;"><i>1442</i></em>
+                            <h5>2020后</h5>
+                        </li><!--li-->
+                    </ul>
+                    <div class="legend clearfix">
+                        <span><em class="color-label" style="background-color: #42a4c9;"></em> 租金</span>
+                        <span><em class="color-label" style="background-color: #61dbce;"></em> 面积</span>
+                    </div><!--legend-->
+                </div>
+            </div>
+        </div><!--ys-chart-section-->
+    </div>
+</div><!--ys-chart-wrapper-->
+
+<div class="clearfix">
+    <div class="table-wrapper-main col-xs-8" style="margin-top: 0;">
+        <table class="table table-hover ys-table" id="rent-summary-table">
+            <colgroup>
+                <col width="20%">
+                <col width="20%">
+                <col width="20%">
+                <col width="12%">
+                <col width="12%">
+                <col width="26%">
+            </colgroup>
+            <thead>
+            <tr class="main-title">
+                <th></th>
+                <th>总出租面积（m²）</th>
+                <th>已出租面积（m²）</th>
+                <th>出租率</th>
+                <th>租约数</th>
+                <th class="num-cell">租金单价（元／m²／月）</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>主力店</th>
+                <td>7,880</td>
+                <td>7,880</td>
+                <td>100%</td>
+                <td>3</td>
+                <td class="num-cell">147.37</td>
+            </tr>
+            <tr>
+                <th>非主力店</th>
+                <td>34,488</td>
+                <td>31,729</td>
+                <td>92%	</td>
+                <td>92</td>
+                <td class="num-cell">169.35</td>
+            </tr>
+            <tr>
+                <th>合计</th>
+                <td>42,368</td>
+                <td>39,609</td>
+                <td>94%</td>
+                <td>95</td>
+                <td class="num-cell">162.38</td>
+            </tr>
+            </tbody>
+        </table>
+    </div><!--table-wrapper-main-->
+    <div class="summary-list col-xs-4 clearfix">
+        <h3>租约到期（12个月）</h3>
+        <div class="col-p-50">
+            <ul>
+                <li class="clearfix"><em class="pull-left">面积（m²）</em><em class="pull-right text-right">5,687</em></li>
+                <li class="clearfix"><em class="pull-left">面积总占比</em><em class="pull-right text-right">15%</em></li>
+            </ul>
+        </div>
+        <div class="col-p-50">
+            <ul>
+                <li class="clearfix"><em class="pull-left">到期租约数</em><em class="pull-right text-right">25</em></li>
+                <li class="clearfix"><em class="pull-left">收入总占比</i></em><em class="pull-right text-right">12%</em></li>
+            </ul>
+        </div>
+    </div><!--summay-list-->
+</div><!--div clearfix-->
+<div class="table-wrapper-main">
+    <table class="table table-hover ys-table" id="rent-detail-table">
+
+        <thead>
+        <tr class="main-title">
+            <th></th>
+            <th colspan="3">2016-07(万元)</th>
+            <th colspan="3">全年累计(万元)</th>
+            <th colspan="3">全年(万元)</th>
+            <th>全年达成率</th>
+        </tr>
+        <tr class="sub-title">
+            <th></th>
+            <th class="num-cell">实际</th>
+            <th class="num-cell">预算</th>
+            <th class="num-cell">差异</th>
+            <th class="num-cell">实际</th>
+            <th class="num-cell">预算</th>
+            <th class="num-cell">差异</th>
+            <th class="num-cell">预测</th>
+            <th class="num-cell">预算</th>
+            <th class="num-cell">差异</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>主力店</th>
+            <td class="num-cell">33.30</td>
+            <td class="num-cell">33.30</td>
+            <td class="num-cell">0.00</td>
+            <td class="num-cell">266.40</td>
+            <td class="num-cell">289.64</td>
+            <td class="num-cell">-23.24</td>
+            <td class="num-cell">399.60</td>
+            <td class="num-cell">-12.70</td>
+            <td class="num-cell">412.3</td>
+            <td class="num-cell">96.92%</td>
+        </tr>
+        <tr>
+            <th>非主力店</th>
+            <td class="num-cell">318.24</td>
+            <td class="num-cell">365.42</td>
+            <td class="num-cell">-47.18</td>
+            <td class="num-cell">2,545.92</td>
+            <td class="num-cell">2,923.36</td>
+            <td class="num-cell">-377.44</td>
+            <td class="num-cell">3,818.88</td>
+            <td class="num-cell">-306.47</td>
+            <td class="num-cell">4,125.35</td>
+            <td class="num-cell">92.57%</td>
+        </tr>
+        <tr>
+            <th>合计</th>
+            <td class="num-cell">351.54</td>
+            <td class="num-cell">398.42</td>
+            <td class="num-cell">-47.18</td>
+            <td class="num-cell">2,812.32</td>
+            <td class="num-cell">3213.00</td>
+            <td class="num-cell">-400.68</td>
+            <td class="num-cell">4,218.48</td>
+            <td class="num-cell">-319.19</td>
+            <td class="num-cell">4,537.65</td>
+            <td class="num-cell">92.97%</td>
+        </tr>
+        </tbody>
+    </table>
+</div><!--table-wrapper-main-->
+</div>
+
+
+
+</div>
+</div><!-- ys-content -->
+</div><!-- ys-content -->
+
+
+
+</div>
+</main>
+
+
+
+
+
+
+
+
+<!-- 树状弹出框 -->
+<div class="ys-tree-dialog ys-dialog modal fade in" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title">目录</h3>
+            </div>
+            <div class="modal-body" style="padding:0;overflow: auto;height:450px;">
+                <div class="directory-container">
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>营业总额</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                        <ul>
+                            <li><em class="ys-checkbox"></em>总经理总结</li>
+                            <li><em class="ys-checkbox"></em>财务</li>
+                            <li><em class="ys-checkbox"></em>资产收益率</li>
+                            <li><em class="ys-checkbox"></em>租赁情况</li>
+                            <li><em class="ys-checkbox"></em>续租 & 空置</li>
+                            <li><em class="ys-checkbox"></em>债务人</li>
+                            <li><em class="ys-checkbox"></em>营业额</li>
+                            <li><em class="ys-checkbox"></em>租金占比</li>
+                            <li><em class="ys-checkbox"></em>客流量</li>
+                            <li><em class="ys-checkbox"></em>员工数</li>
+                        </ul>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>财务&综合部</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>租赁</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>经营报告</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>物业管理情况汇总</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>市场推广</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>法律事务</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="ys-dialog-btn-close" data-dismiss="modal">取消</button>
+                <button type="button" class="ys-dialog-btn-ok">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div><!-- ys-page -->
+
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+
+
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/Chart.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+<script src="../static/js/ladder_shape_chart.js"></script>
+<script src="static/js/acg_project.js"></script>
+<script>
+    $(document).ready(function(){
+        acg_project.init();
+    });
+</script>
+</body>
+</html>

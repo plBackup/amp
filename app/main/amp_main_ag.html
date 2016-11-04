@@ -15,10 +15,6 @@
     <link href="../static/css/common/common.css" rel="stylesheet">
     <!-- 自有CSS -->
     <link href="../static/css/main/amp_main.css" rel="stylesheet">
-    <!--css-->
-    <style>
-
-    </style>
 </head>
 <body>
 
@@ -30,8 +26,8 @@
 <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
 </div>
+<main class="page page-main ys-amp" id="page-main" role="main" ng-app="amp" >
 
-<main class="page page-main ys-amp" id="page-main" role="main">
     <div class="leftpanel">
         <div class="logopanel">
             <!--<h1>悦商<span>AMP</span>系统</h1>-->
@@ -40,53 +36,37 @@
             <h5 class="sidebartitle">
                 <a href="#" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
             </h5>
+            <div class="amp-side-toolbar">
+
+            </div><!--amp-side-toolbar-->
             <ul class="nav nav-pills nav-stacked nav-bracket">
 
             </ul>
-            <div class="system-toggle">
-                <ul>
-                    <li class="active"><a href="http://www.yueworld.cn/amp/" class="system-item"><em class="ys-icon-spirit ys-icon-systoggle"></em>商业系统</a></li>
-                    <li ><a href="http://www.yueworld.cn/amp_sys/" class="system-item"><em class="ys-icon-spirit ys-icon-systoggle"></em>AMP资管平台</a></li>
-                </ul>
-            </div>
         </div><!-- leftpanelinner -->
     </div><!-- leftpanel -->
-
-
-    <div class="mainpanel">
-        <div class="headerpanel">
-            <div class="headerbar">
-                <div class="head-main-menu">
-                    <!-- Nav tabs -->
-                </div>
-                <div class="header-right">
-                    <span class="ys-figure ys-useer-figure"></span>
-                </div>
-            </div><!-- Headerbar -->
-            <div class="pageheader clearfix">
-
+    <div class="headerpanel">
+        <div class="headerbar">
+            <div class="head-main-menu">
+                <!-- Nav tabs -->
             </div>
-        </div>
-
-        <div class="amp-content-panel">
+           <!-- <div class="header-right">
+                <span class="ys-figure ys-useer-figure"></span>
+            </div> &lt;!&ndash;h-->eader-right-->
+        </div><!-- headerbar -->
+    </div>
+    <div class="mainpanel">
+        <div class="contentpanel">
             <div class="amp-content-header clearfix">
                 <!-- Breadcrumb / Summary info-->
 
             </div><!--amp-content-header-->
             <div class="ys-block">
+                <div ng-view>
 
-
+                </div>
             </div><!--ys-block-->
-
-        </div><!-- amp-content-panel -->
-
-        <div class="footerpanel">
-            <div class="container">
-                <span>Copyright © 2016 YUESHANG 上海悦商信息科技有限公司 <em>沪ICP备15034598号</em> 沪网文[2016]0005-005号</span>
-            </div>
-        </div>
+        </div><!-- contentpanel -->
     </div><!-- mainpanel -->
-
 
     <!-- rightpanel -->
     <div class="rightpanel">
@@ -101,29 +81,52 @@
     <!--backdrop loading-->
     <div class="backdrop"></div>
     <!--end backdrop loading-->
-
 </main>
 <script src="../static/dist/js/angular.min.js"></script>
+<script src="../static/dist/js/angular-route.js"></script>
+<script src="../static/dist/js/angular-resource.js"></script>
 <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
 <script src="../static/dist/js/bootstrap.min.js"></script>
 
 <script src="../static/js/main/menu_list.js"></script>
 <script src="../static/js/main/amp_main.js"></script>
+<script src="../static/js/main/amp_ag.js"></script>
+<script src="../static/js/main/controllers.js"></script>
+<script src="../static/js/main/filters.js"></script>
+<script src="../static/js/main/services.js"></script>
+
 <script>
     $(window).load(function() {
         amp_main.placeholder_init();
     });
+    var i=0;
     $(document).ready(function(){
+        $(".ys-amp").on("relocate",function(e,id,href){
+            console.log(e);
+            console.log(id);
+            console.log(href);
+            i+=1;
+            if(i>=2){
+                window.location.href=href;
+            }
+
+        });
         amp_main.init();
         setTimeout(function(){
             $("body").addClass("open open-panel");
         },3000);
+
+
 
         $(".rightpanel").on("click",".closebtn",function(e){
             e.preventDefault();
             $("body").removeClass("open open-panel");
         })
     });
+</script>
+
+<script>
+
 </script>
 </body>
 </html>

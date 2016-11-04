@@ -36,8 +36,10 @@ a,button,.btn{ -moz-user-select: none; -webkit-user-select: none; -ms-user-selec
 .login-wrapper .form-wrapper .input-group{position:relative;margin-bottom:26px;}
 .login-wrapper .form-wrapper .input-group:before{position: absolute;top:50%;margin-top:-11px;left:3px;display: block;content:" ";width:20px;height:20px;background-image:url(../../images/icon.png);background-repeat: no-repeat;}
 .login-wrapper .form-wrapper .user-wrapper:before{background-position: -389px -132px;}
-.login-wrapper .form-wrapper .password-wrapper:before{background-position:-431px -132px ;}
-.login-wrapper .form-wrapper .password-wrapper{margin-bottom:40px;}
+.login-wrapper .form-wrapper .password-wrapper:before,
+.login-wrapper .form-wrapper .input-group-veri:before{background-position:-431px -132px ;}
+.login-wrapper .form-wrapper .password-wrapper,
+.login-wrapper .form-wrapper .input-group-veri{margin-bottom:40px;}
 .login-wrapper .form-wrapper .input-group:nth-last-child(1){margin-bottom: 0;}
 .login-wrapper .form-wrapper input{padding-left:42px;padding-right:10px;width:100%;height:50px;border:0;-webkit-apperance:none;border-radius:0;border:0;border-bottom:solid 1px #fff; background:none;color:#fff;outline:0;font-size: 15px;}
 
@@ -59,8 +61,8 @@ a,button,.btn{ -moz-user-select: none; -webkit-user-select: none; -ms-user-selec
     transition: background-color 0.3s;}
 
 .login-wrapper .form-wrapper a.ys-btn:hover,.login-wrapper .form-wrapper a.ys-btn:focus,.login-wrapper .form-wrapper a.ys-btn:active{background-color: rgba(0, 191, 112, 0.9);color:#fff;text-decoration: none;}
-.input-group-veri{padding-right:150px;position: relative;}
-.login-wrapper .form-wrapper .input-group-veri  a.ys-btn{position: absolute;width:140px;top:0;right:0;}
+.input-group-veri{/*padding-right:150px;*/position: relative;}
+.login-wrapper .form-wrapper .input-group-veri  a.ys-btn{position: absolute;height:32px;line-height:32px;width:140px;top:7px;right:0;font-weight:normal;font-size:15px;}
 
 
 /* btn effect */
@@ -74,4 +76,9 @@ a,button,.btn{ -moz-user-select: none; -webkit-user-select: none; -ms-user-selec
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-
+*{-webkit-appearance: none;}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgba(250, 255, 189,0);
+    background-image: none;
+    color: rgb(0, 0, 0);
+}

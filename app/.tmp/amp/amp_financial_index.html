@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>营业额录入</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/common.css">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+    <link rel="stylesheet" href="static/css/search_panel.css">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <style type="text/css">
+        /* Good CSS */
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+
+
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-financial-fee ys-page ys-amp" id="amp-finacial-main" role="main">
+
+    <!-- 主面板 -->
+    <div class="ys-main-panel">
+
+        <div class="ys-content-panel clearfix">
+
+            <div class="ys-content">
+
+                <div class="ys-fee-title clearfix">
+                    <!-- Single button -->
+                    <div class="pull-left btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            所有商业公司<span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                        </ul>
+
+                    </div><!--end col-md-3 btn-group-->
+                    <div class="col-xs-2 pull-left" style="padding:0;">
+                        <div class="input-group date ys-datepicker" id="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-pre"  data-date="pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+                            </span>
+                            <input class="form-control" size="16" type="text" value="" data-provide="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-next"  data-date="next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+                            </span>
+                            <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+                        </div>
+                    </div>
+
+                </div><!--end row-->
+
+
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="table-title">
+                        <h3><em class="project-count">5</em>XXX商业公司6月NOI</h3>
+                    </div>
+                    <div class="row">
+                        <table class="table table-hover amp-table" id="amp-table-noi-projects">
+                            <colgroup>
+                                <col width="10%"/>
+                                <col width="18%"/>
+                                <col width="18%"/>
+                                <col width="18%"/>
+                                <col width="18%"/>
+                                <col width="18%"/>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>项目</th>
+                                   <!-- <th>合计</th>-->
+                                    <th class="text-right">实际收入(万元)</th>
+                                    <th class="text-right">成本(万元)</th>
+                                    <th class="text-right">NOI</th>
+                                    <th class="text-right">估值折算率</th>
+                                    <th class="text-right">资产估值(万元)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr data-link="#">
+                                     <th>1号项目</th>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">462.01</span>
+                                         <span class="span-cur-year">5,432.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">435.88</span>
+                                         <span class="span-cur-year">5,276.00</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">26.13</span>
+                                         <span class="span-cur-year">156.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">7%</span>
+                                         <span class="span-cur-year">7.5%</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">45.21</span>
+                                         <span class="span-cur-year">544.37</span>
+                                     </td>
+                                 </tr>
+                                 <tr data-link="#">
+                                     <th>2号项目</th>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">462.01</span>
+                                         <span class="span-cur-year">5,432.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">435.88</span>
+                                         <span class="span-cur-year">5,276.00</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">26.13</span>
+                                         <span class="span-cur-year">156.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">7%</span>
+                                         <span class="span-cur-year">7.5%</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">45.21</span>
+                                         <span class="span-cur-year">544.37</span>
+                                     </td>
+                                 </tr>
+                                 <tr data-link="#">
+                                     <th>3号项目</th>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">462.01</span>
+                                         <span class="span-cur-year">5,432.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">435.88</span>
+                                         <span class="span-cur-year">5,276.00</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">26.13</span>
+                                         <span class="span-cur-year">156.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">7%</span>
+                                         <span class="span-cur-year">7.5%</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">45.21</span>
+                                         <span class="span-cur-year">544.37</span>
+                                     </td>
+                                 </tr>
+                                 <tr data-link="#">
+                                     <th>4号项目</th>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">462.01</span>
+                                         <span class="span-cur-year">5,432.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">435.88</span>
+                                         <span class="span-cur-year">5,276.00</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">26.13</span>
+                                         <span class="span-cur-year">156.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">7%</span>
+                                         <span class="span-cur-year">7.5%</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">45.21</span>
+                                         <span class="span-cur-year">544.37</span>
+                                     </td>
+                                 </tr>
+                                 <tr data-link="#">
+                                     <th>5号项目</th>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">462.01</span>
+                                         <span class="span-cur-year">5,432.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">435.88</span>
+                                         <span class="span-cur-year">5,276.00</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">26.13</span>
+                                         <span class="span-cur-year">156.37</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">7%</span>
+                                         <span class="span-cur-year">7.5%</span>
+                                     </td>
+                                     <td class="text-right">
+                                         <span class="span-cur-month">45.21</span>
+                                         <span class="span-cur-year">544.37</span>
+                                     </td>
+                                 </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>合计</th>
+                                    <td class="text-right">
+                                        <span class="span-cur-month">462.01</span>
+                                        <span class="span-cur-year">5,432.37</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="span-cur-month">462.01</span>
+                                        <span class="span-cur-year">5,432.37</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="span-cur-month">462.01</span>
+                                        <span class="span-cur-year">5,432.37</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="span-cur-month">462.01</span>
+                                        <span class="span-cur-year">5,432.37</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="span-cur-month">462.01</span>
+                                        <span class="span-cur-year">5,432.37</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div><!--end row-->
+
+                </div><!--end col-md-8-->
+            </div><!--end row ys-content-->
+        </div><!--end content-panel-->
+
+
+
+    </div><!--end main-panel-->
+
+    <!-- 遮罩 -->
+    <div class="ys-shadow"></div>
+</div><!--end main panel-->
+</main><!--end main-->
+
+<div class="loading">
+    <span class="spin"><img src="./static/images/ajax-loader.gif"/></span>
+</div>
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.zh-CN.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/standalone/selectize.js"></script>
+<script src="static/js/reform.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/search_panel.js"></script>
+
+<script src="static/js/finacial_turnover_edit.js"></script>
+<script>
+$(document).ready(function(){
+    turnover.init();
+
+    $("")
+   });
+</script>
+</body>
+</html>

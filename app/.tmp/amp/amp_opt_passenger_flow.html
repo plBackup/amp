@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>分控分析-车流监控</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg_project.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page ys-amp">
+<!-- 主面板 -->
+<main class="ys-main-panel">
+
+    <div class="ys-content-panel clearfix">
+
+        <div class="ys-content">
+            <div class="ys-fee-title clearfix">
+                <!-- Single button -->
+                <div class="pull-left btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        所有商业公司<span class="glyphicon glyphicon-menu-down"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"> 泉州商业公司</a></li>
+                        <li><a href="#"> 泉州商业公司</a></li>
+                        <li><a href="#"> 泉州商业公司</a></li>
+                        <li><a href="#"> 泉州商业公司</a></li>
+                    </ul>
+
+                </div><!--end col-md-3 btn-group-->
+                <div class="col-xs-2 pull-left" style="padding:0;margin-left:12px;">
+                    <div class="input-group date ys-datepicker" id="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-pre"  data-date="pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+                            </span>
+                        <input class="form-control" size="16" type="text" value="2015" data-provide="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-next"  data-date="next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+                            </span>
+                        <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+                    </div>
+                </div>
+             </div>
+            <div class="ys-block" style="margin-top:20px;" >
+                <div class="amp-block-title ">
+                    <h3 class="col-xs-4">车流监控</h3>
+
+                </div>
+                <div class="ys-block-section">
+
+                    <table class="table amp-table amp-table-meitype table-right-bordered">
+                        <thead>
+                        <tr>
+                            <th>面积(m<sup>2</sup>)</th>
+                            <th>面积占总比</th>
+                            <th>到期租约数</th>
+                            <th>收入占总比</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>5,687</td>
+                            <td>15%</td>
+                            <td>25</td>
+                            <td>12%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+
+            </div><!-- ys-content -->
+            <div class="ys-block" style="margin-top:50px;">
+                <div id="chart-flow" style="height:380px"></div>
+
+
+
+            </div><!-- ys-content -->
+        </div><!-- ys-content -->
+
+
+
+    </div>
+</main>
+
+
+
+
+
+</div><!-- ys-page -->
+
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+
+
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/Chart.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+
+<script>
+    var option = {
+        grid: {
+            top:"10px",
+            left: '20',
+            right: '20px;',
+            bottom: '0',
+            containLabel: true
+        },
+        title : {
+            text: '车流监控',
+            subtext: '2015',
+            show:false
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['车流'],
+            show:false,
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        color:["#83ddf7","#83ddf7"],
+        calculable :false,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'客流',
+                type:'line',
+               // smooth:true,
+                symbolSize:8,
+                markPoint:{
+                  normal:{
+                      color:"#83ddf7"
+                  }
+                },
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default',
+                            color:'#83ddf7'
+                        },
+                        lineStyle:{
+                            color:"#83ddf7"
+                        }
+                    }
+                },
+
+                data:[10, 12, 21, 54, 260, 830, 710,260, 830, 710]
+            },
+
+        ]
+    };
+
+    var myChart=echarts.init(document.getElementById("chart-flow"));
+
+    myChart.setOption(option );
+
+</script>
+</body>
+</html>

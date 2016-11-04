@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>分控分析-租约到期</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg_project.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page ys-amp">
+<!-- 主面板 -->
+<main class="ys-main-panel">
+
+<div class="ys-content-panel clearfix">
+
+<div class="ys-content">
+    <div class="ys-block">
+        <div class="amp-block-title ">
+            <h3 class="col-xs-4">租约到期(12个月)</h3>
+
+        </div>
+        <div class="ys-block-section">
+
+            <table class="table amp-table amp-table-meitype table-right-bordered">
+                <thead>
+                    <tr>
+                        <th>面积(m<sup>2</sup>)</th>
+                        <th>面积占总比</th>
+                        <th>到期租约数</th>
+                        <th>收入占总比</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>5,687</td>
+                    <td>15%</td>
+                    <td>25</td>
+                    <td>12%</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+
+    </div><!-- ys-content -->
+    <div class="ys-block" style="margin-top:65px;">
+    <div class="amp-block-title ">
+        <h3 class="col-xs-4">租约到期</h3>
+
+    </div>
+    <div class="ys-block-section">
+    <div class="ys-chart-wrapper clearfix " >
+
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="ys-chart-section">
+
+                <div class="ys-chart-content" id="ld-rent-expire">
+                    <div>
+                        <ul class="rent-expired-chart clearfix">
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width: 72px;"><i>650</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 75px;"><i>668</i></em>
+                                <h5>2016</h5>
+                            </li><!--li-->
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width: 84px;"><i>801</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 86px;"><i>806</i></em>
+                                <h5>2017</h5>
+                            </li><!--li-->
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width: 100px;"><i>1003</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 92px;"><i>910</i></em>
+                                <h5>2018</h5>
+                            </li><!--li-->
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width:123px;"><i>1284</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 107px;"><i>1083</i></em>
+                                <h5>2019</h5>
+                            </li><!--li-->
+
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width: 159px;"><i>1738</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 125px;"><i>1314</i></em>
+                                <h5>2020</h5>
+                            </li><!--li-->
+                            <li>
+                                <em class="rent-bar rent" style="border-bottom-width: 183px;"><i>2036</i></em>
+                                <em class="rent-bar area" style="border-bottom-width: 135px;"><i>1442</i></em>
+                                <h5>2020后</h5>
+                            </li><!--li-->
+                        </ul>
+                        <div class="legend clearfix">
+                            <span><em class="color-label" style="background-color: #42a4c9;"></em> 租金</span>
+                            <span><em class="color-label" style="background-color: #61dbce;"></em> 面积</span>
+                        </div><!--legend-->
+                    </div>
+                </div>
+            </div><!--ys-chart-section-->
+        </div>
+
+    </div><!--ys-chart-wrapper-->
+
+    </div>
+
+
+
+
+    </div><!-- ys-content -->
+    </div><!-- ys-content -->
+
+
+
+</div>
+</main>
+
+
+</div><!-- ys-page -->
+
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+
+
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/Chart.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+<script src="../static/js/ladder_shape_chart.js"></script>
+<script src="static/js/acg_project.js"></script>
+<script>
+    $(document).ready(function(){
+        acg_project.init();
+    });
+</script>
+</body>
+</html>

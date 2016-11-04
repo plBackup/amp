@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>分控分析-租赁欠费</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg_project.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page ys-amp">
+<!-- 主面板 -->
+<main class="ys-main-panel">
+
+    <div class="ys-content-panel clearfix">
+
+        <div class="ys-content">
+            <div class="ys-fee-title clearfix">
+                <!-- Single button -->
+                <div class="pull-left btn-group">
+                    <button type="button" class="btn btn-default ">平效</button>
+                    <button type="button" class="btn btn-default ">欠费</button>
+                    <button type="button" class="btn btn-default ">销售数据</button>
+                </div><!--end col-md-3 btn-group-->
+                <div class="col-xs-2 pull-left" style="padding:0;margin-left:12px;">
+                    <div class="input-group date ys-datepicker" id="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-pre"  data-date="pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+                            </span>
+                        <input class="form-control" size="16" type="text" value="2015" data-provide="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-next"  data-date="next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+                            </span>
+                        <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+                    </div>
+                </div>
+             </div>
+
+            <div class="ys-block" style="margin-top:50px;">
+                <div id="chart-flow" style="height:380px ;width:50%;" ></div>
+
+
+
+            </div><!-- ys-content -->
+        </div><!-- ys-content -->
+
+
+
+    </div>
+</main>
+
+
+
+
+
+</div><!-- ys-page -->
+
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+
+
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/Chart.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+
+<script>
+    option = {
+        title : {
+            text: '欠费',
+            subtext: '2015',
+            show:false
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['欠费','保证金','商家数量'],
+            position:"left"
+        },
+        color:['#5ab46e','#5cd3f5','#4b5368'],
+        toolbox: {
+            show : false,
+            feature : {
+                dataView : {show: true, readOnly: false},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : false,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['<30','30-60','60-90','90-120','>120'],
+                label:"欠费周期",
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                label:'万元'
+            }
+        ],
+        series : [
+            {
+                name:'欠费',
+                type:'bar',
+                data:[66, 79, 47, 65, 110],
+
+            },
+            {
+                name:'保证金',
+                type:'bar',
+                data:[99, 50, 81, 110, 82,],
+
+            },
+            {
+                name:'商家数量',
+                        type:'bar',
+                    data:[62, 35, 25, 55, 37,],
+
+            }
+        ]
+    };
+
+
+    var myChart=echarts.init(document.getElementById("chart-flow"));
+
+    myChart.setOption(option );
+
+</script>
+</body>
+</html>

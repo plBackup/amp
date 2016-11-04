@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>资产包综合报表-成本</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/amp_horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+
+
+    <style>
+        #acg .ys-chart-block .ys-chart-body{border-bottom: 0;}
+        #acg .ys-chart-block .ys-chart-body ul{width:80%;margin:0 auto;}
+        #acg .ys-chart-block .ys-chart-body ul li{width:50%;}
+        em.axis-y-note{
+            display: block;
+            position:absolute;
+            left:0;
+            top:0;
+            font-size:12px;
+            color:#757575;
+            z-index: 99;
+        }
+    </style>
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page">
+
+    <!-- 主面板 -->
+    <main class="bs-masthead ys-sys ys-page ys-amp" id="amp-asset-noi" role="main">
+
+        <div class="ys-content-panel clearfix">
+
+
+            <div class="ys-content ">
+                <div class="ys-fee-title clearfix">
+                    <!-- Single button -->
+                    <div class="pull-right">
+                        <a href="amp_asset_cost.html" class="btn btn-default pull-right active">成本</a>
+                        <a href="amp_asset_merchant.html" class="btn btn-default pull-right ">招商</a>
+                        <a href="stock_analysis_noi.html" class="btn btn-default pull-right">运营</a>
+                        <a href="amp_asset_noi.html" class="btn btn-default pull-right ">财务</a>
+
+                    </div>
+                </div><!--end row-->
+                <div class="ys-chart-block" style="margin-top:20px;">
+                    <div class="amp-block-title ">
+                        <h3 class="col-xs-4">成本</h3>
+                    </div>
+                    <div class="ys-chart-body">
+
+                        <ul class="clearfix">
+                            <li>
+                                <div name="horizontal-bar-budget-2" class="horizontal-bar-budget" style="margin-left:100px;margin-top:30px;">
+                                    <div class="bar-legend">(万元)</div>
+                                    <div class="bar-item " style="top:0;">
+                                        <div class="bar-label">经营成本</div>
+                                        <div class="real-bar" style="background-color:#54b98f;"></div>
+                                        <div class="budget-bar"></div>
+                                    </div>
+
+                                    <div class="bar-item " style="top:46px;">
+                                        <div class="bar-label">财务费用</div>
+                                        <div class="real-bar" style="background-color:#54b98f;"></div>
+                                        <div class="budget-bar"></div>
+                                    </div>
+
+                                    <div class="bar-item " style="top:92px;">
+                                        <div class="bar-label">企业所得税</div>
+                                        <div class="real-bar" style="background-color:#54b98f;"></div>
+                                        <div class="budget-bar"></div>
+                                    </div>
+
+                                    <div class="bar-item " style="top:138px;">
+                                        <div class="bar-label">增值税</div>
+                                        <div class="real-bar" style="background-color:#54b98f;"></div>
+                                        <div class="budget-bar"></div>
+                                    </div>
+
+                                    <div class="bar-item "  style="top:184px;">
+                                        <div class="bar-label">资本性支出</div>
+                                        <div class="real-bar" style="background-color:#54b98f;"></div>
+                                        <div class="budget-bar"></div>
+                                    </div>
+
+
+                                </div><!-- horizontal-bar-budget -->
+                                <div style="padding-left:80px;padding-top:13px;" class="ys-font-size-16">企业所得税低于预算</div>
+                            </li>
+                            <li style="position: relative;">
+                                <em class="axis-y-note">万元</em>
+                                <div id="income-percent-bar" style="width: 100%;height:260px;"></div>
+                                <div style="text-align: center;padding-top:30px;" class="ys-font-size-16">预测下月费用降低</div>
+                            </li>
+
+                        </ul>
+                    </div><!-- ys-chart-body -->
+                </div><!-- ys-chart-block -->
+            </div><!-- ys-content -->
+
+        </div>
+    </main>
+
+</div><!-- ys-page -->
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+<script src="../static/js/ladder_shape_chart.js"></script>
+<script src="../static/js/amp_asset_cost.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>amp_base</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/common.css">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+    <link rel="stylesheet" href="static/css/search_panel.css">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+
+
+    <style type="text/css">
+        /* Good CSS */
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+
+
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-financial-fee ys-page ys-amp" id="ys-financial-turnover" role="main">
+
+    <!-- 主面板 -->
+    <div class="ys-main-panel">
+
+        <div class="ys-content-panel clearfix">
+
+            <div class="container ys-content">
+
+                <div class="ys-fee-title clearfix">
+                    <!-- Single button -->
+                    <div class="pull-left btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            所有商业公司<span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                        </ul>
+
+                    </div><!--end col-md-3 btn-group-->
+                    <div class="col-xs-2 pull-left" style="padding:0;">
+                        <div class="input-group date ys-datepicker" id="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-pre"  data-date="pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+                            </span>
+                            <input class="form-control" size="16" type="text" value="" data-provide="datepicker">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="ys-date-next"  data-date="next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+                            </span>
+                            <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+                        </div>
+                    </div>
+                    <div class="col-xs-3 amp-date-wrapper">
+                        <label>开业时间</label>
+                        <div class="input-group date form_date pull-left" data-date="" data-date-format="yyyy-mm-dd" >
+
+                            <input class="form-control" size="16" type="text" value="2015-10" readonly="">
+                            <span class="input-group-addon"><em class="ys-em-icon ys-icon-calendar"></em></span>
+                        </div>
+                    </div>
+
+
+                    <div class="ys-search-wrapper pull-left" >
+                        <div class="input-group  pull-left " style="width:282px;">
+                            <!--      <input type="text" class="form-control" placeholder="输入项目名称">-->
+                            <input type="text" class="form-control" id="search-form" placeholder="租户\铺位号">
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-search btn-search"></em></button>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" id="ys-adv-search-btn">高级搜索</button>
+                </div><!--end row-->
+                <div class="adv-search-wrapper" style="display: none;">
+                    <div class="ys-adv-search-title clearfix">
+                        <h3 class="col-xs-6 adv-search-title pull-left">高级搜索</h3>
+                        <div class="adv-search-ctrl pull-right">
+                            <button class="btn btn-default ys-btn-active" id="btn-search-submit" type="submit">搜索</button>
+                            <button class="btn btn-default " id="btn-search-clear">清空</button>
+                            <button class="btn btn-default" id="adv-search-cancel">收起</button>
+                        </div>
+                    </div>
+
+                    <form class="form-horizontal clearfix" id="adv-search-form" name="adv-search-form">
+                        <div class="col-md-10 col-md-offset-1 ">
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-title" class="col-sm-4 control-label">标题</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="ys-adv-search-title" placeholder="\">
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-number" class="col-sm-4 control-label">查询号</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="ys-adv-search-number" placeholder="\">
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-commenter" class="col-sm-4 control-label">审批人</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="ys-adv-search-commenter" placeholder="\">
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-creator" class="col-sm-4 control-label">发起人</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="ys-adv-search-creator" placeholder="\">
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-category" class="col-sm-4 control-label">表单分类</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="ys-adv-search-category" placeholder="\">
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="ys-adv-search-status" class="col-sm-4 control-label">审核状态</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ys-adv-search-status">
+                                        <option value="" name="" selected>请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+                    <!--
+                     <button type="button" class="close">
+                         <span>×</span>
+                     </button>
+                     -->
+                </div><!--adv-search-->
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="row">
+
+                    </div><!--end row-->
+                    <div class="clearfix">
+                        <div class="btn-wrapper pull-right">
+                            <span style="margin-right:10px;"><em id="page-index-bottom">共<i>122</i>条记录，当前第<i>1</i>/<i>7</i>页</em></span>
+                            <div class="btn-group" role="group" aria-label="">
+                                <button type="button" class="btn btn-default btn-disable" id="btn-pre-bottom">&lt;</button>
+                                <button type="button" class="btn btn-default" id="btn-next-bottom">&gt;</button>
+                                <input type="text" value="1" class="ys-page-num-input"/>
+                            </div>
+
+                            <button type="button" class="btn btn-default btn-ys-default amp-btn-green" id="btn-save">确定</button>
+                        </div>
+                    </div><!--end div clearfix-->
+
+
+                </div><!--end col-md-8-->
+            </div><!--end row ys-content-->
+        </div><!--end content-panel-->
+
+
+
+    </div><!--end main-panel-->
+
+    <!-- 遮罩 -->
+    <div class="ys-shadow"></div>
+</div><!--end main panel-->
+</main><!--end main-->
+
+<div class="loading">
+    <span class="spin"><img src="./static/images/ajax-loader.gif"/></span>
+</div>
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.zh-CN.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/standalone/selectize.js"></script>
+<script src="static/js/reform.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/search_panel.js"></script>
+
+<script src="static/js/finacial_turnover_edit.js"></script>
+<script>
+$(document).ready(function(){
+    turnover.init();
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+h1,h2,h3,h4,h5,h6{margin:0;}
+.ys-amp { min-height: 100%; position: relative; padding-bottom: 0; }
+.ys-amp .ys-datepicker .btn{min-width:32px;}
+.ys-amp .btn .glyphicon-menu-down{margin-left:6px;top:2px;color:#666;}
+.ys-amp .ys-content{padding:20px 15px;}
+
+.ys-amp table.amp-table{table-layout: fixed;}
+.ys-amp table.amp-table thead{background-color:#f3f4f8;color:#8592a3;}
+
+.ys-datepicker{max-width: 210px;}
+.ys-datepicker input{text-align: center;}
+
+.amp-date-wrapper{position: relative;padding-left:80px;}
+.amp-date-wrapper>label{position: absolute;height:34px;line-height: 34px;color:#757575;top:0;left:10px;}
+.amp-date-wrapper .form_date{max-width: 206px;}
+.amp-date-wrapper .form_date input{background-color: #fff;}
+.amp-date-wrapper .input-group-addon{border-radius: 0;background-color: #f5f5f5;}
+
+#amp-finacial-main{}
+#amp-finacial-main .table-title{position:relative;margin-top:20px;margin-bottom:10px;padding-left:30px;height:44px;line-height: 44px;font-size:22px;}
+em.project-count{position: absolute;left:0;top:50%;margin-top:-12px;color:#fff;width:22px;height:22px;border-radius:22px;background-color:#5cb36f;font-size: 15px;line-height: 24px;text-align: center;}
+#amp-finacial-main .table-title h3{line-height: 44px;}
+#amp-finacial-main table>thead>tr>th{padding-left:20px;padding-right:20px;}
+#amp-finacial-main table>tbody>tr>th,#amp-finacial-main table>tbody>tr>td,
+#amp-finacial-main table>tfoot>tr>th,#amp-finacial-main table>tfoot>tr>td{padding:20px;}
+#amp-finacial-main table>tfoot>tr>th{font-style: italic;}
+#amp-finacial-main table>tbody>tr:hover,#amp-finacial-main table>tfoot>tr:hover{cursor:pointer;background-color: #f3f4f8;}
+#amp-finacial-main table>tbody span,#amp-finacial-main table>tfoot span{display: block;color:#333;font-size:13px;height:22px;line-height: 22px;}
+
+#amp-finacial-main table>tbody span.span-cur-year,#amp-finacial-main table>tfoot span.span-cur-year{font-size:14px;color:#8592a3;}
+#amp-finacial-main table>tfoot>tr>th,#amp-finacial-main table>tfoot span.span-cur-month{font-weight: bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,551 @@
+ <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>管理工具--设定</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/common.css">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+    <link rel="stylesheet" href="static/css/search_panel.css">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <style type="text/css">
+        /* Good CSS */
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+
+
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-financial-fee ys-page ys-amp" id="ys-financial-turnover" role="main">
+
+    <!-- 主面板 -->
+    <div class="ys-main-panel">
+
+        <div class="ys-content-panel clearfix">
+
+            <div class="ys-content">
+
+                <div class="ys-fee-title clearfix">
+                    <!-- Single button -->
+                    <div class="pull-left btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            所有商业公司<span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                            <li><a href="#"> 泉州商业公司</a></li>
+                        </ul>
+
+                    </div><!--end col-md-3 btn-group-->
+
+                    <div class="col-xs-3 amp-date-wrapper">
+                        <label>开业时间</label>
+                        <div class="input-group date form_date pull-left" data-date="" data-date-format="yyyy-mm-dd" >
+
+                            <input class="form-control" size="16" type="text" value="2015-10" readonly="">
+                            <span class="input-group-addon"><em class="ys-em-icon ys-icon-calendar"></em></span>
+                        </div>
+                    </div>
+
+
+
+                </div><!--end row-->
+
+
+
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="amp-block-title clearfix">
+                        <h3 class="col-xs-4">参考租金计算</h3>
+                        <span class="col-xs-8 pull-right text-right"> 注：参考租金为参考项目MALL 1F主通道两侧面积100-150平米左右服装零售店铺的租金 </span>
+                    </div>
+                    <div class="table-input">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="2" rowspan="2">分析因素</td>
+                                    <td rowspan="2">因素权重</td>
+                                    <td colspan="2">项目A:购物广场</td>
+                                    <td colspan="2">项目B:购物广场</td>
+                                    <td colspan="2">项目C:购物广场</td>
+                                </tr>
+                                <tr>
+                                    <td>比较</td>
+                                    <td>比较本案的描述</td>
+                                    <td>比较</td>
+                                    <td>比较本案的描述</td>
+                                    <td>比较</td>
+                                    <td>比较本案的描述</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td rowspan="4">地段条件</td>
+                                <td>区域属性</td>
+                                <td>
+                                    <div class="td-input-wrapper">
+                                        <input type="text" placeholder="/"  data-date="" value=""/>
+                                        <span class="number-format"></span>
+                                     </div>
+                                </td>
+                                <td>
+                                    <div class="td-input-wrapper">
+                                        <input type="text" placeholder="/"  data-date="" value=""/>
+                                        <span class="number-format"></span>
+                                    </div>
+                                </td>
+                                <td><input type="text" placeholder="/"  data-date="" value=""/></td>
+                                <td>
+                                    <div class="td-input-wrapper">
+                                        <input type="text" placeholder="/"  data-date="" value=""/>
+                                        <span class="number-format"></span>
+                                    </div>
+                                </td>
+                                <td><input type="text" placeholder="/"  data-date="" value=""/></td>
+                                <td>
+                                    <div class="td-input-wrapper">
+                                        <input type="text" placeholder="/"  data-date="" value=""/>
+                                        <span class="number-format"></span>
+                                    </div>
+                                </td>
+                                <td><input type="text" placeholder="/"  data-date="" value=""/></td>
+                            </tr>
+                            <tr>
+                                <td>交通通达性</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>配套完善度</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>人口条件</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">产品条件</td>
+                                <td>店型优势</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>动线规划</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>硬件档次</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>停车位数量</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">其他条件</td>
+                                <td>租户品质</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>企业品牌度</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>免租期</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">因素权重打分小计</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">参考租金（元/平米/月，GLA）</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">加权租金（元/平米/月，GLA）</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">参考权重（近似的比重高）</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn-wrapper">
+                            <a href="#" id="btn-" class="btn btn-default amp-btn-green">生成租金包</a>
+                        </div>
+                    </div><!--end row-->
+                </div><!--end ys-block-->
+
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="amp-block-title clearfix">
+                        <h3 class="col-xs-4">首年租金折扣</h3>
+                    </div>
+                    <div class="table-input">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>首年租金折扣</th>
+                                    <td>100%</td>
+                                    <th>首年租金折扣</th>
+                                    <td>￥110.56</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end row-->
+                </div><!--end ys-block-->
+
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="amp-block-title clearfix">
+                        <h3 class="col-xs-4">租金递增率</h3>
+                    </div>
+                    <div class="table-input">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>开业年份数</th>
+                                    <th>2016</th>
+                                    <th>2017</th>
+                                    <th>2018</th>
+                                    <th>2019</th>
+                                    <th>2020</th>
+                                    <th>2021</th>
+                                    <th>2022</th>
+                                    <th>2023</th>
+                                    <th>2024</th>
+                                    <th>2025</th>
+                                    <th>2026</th>
+                                    <th>2027</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>主力店</th>
+                                <td></td>
+                                <td>0.0%</td>
+                                <td>5.0%</td>
+                                <td>0.0%</td>
+                                <td>5.0%</td>
+                                <td>0.0%</td>
+                                <td>5.0%</td>
+                                <td>0.0%</td>
+                                <td>5.0%</td>
+                                <td>0.0%</td>
+                                <td>5.0%</td>
+                                <td>0.0%</td>
+                            </tr>
+                            <tr>
+                               <th>餐饮</th>
+                                <td></td>
+                                <td>0.0%</td>
+                                <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>30.0%</td>
+                              	 <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>30.0%</td>
+                                <td>8.0%</td>
+                            </tr>
+                            <tr>
+                                <th>非餐饮</th>
+                                <td></td>
+                                <td>0.0%</td>
+                                <td>8.0%</td>
+                                <td>30.0%</td>
+                               <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>30.0%</td>
+                              	 <td>8.0%</td>
+                                <td>8.0%</td>
+                                <td>30.0%</td>
+                              	 <td>8.0%</td>
+                                <td>8.0%</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end row-->
+                </div><!--end ys-block-->
+
+                <div class="ys-block" style="margin-top:20px;">
+                    <div class="amp-block-title clearfix">
+                        <h3 class="col-xs-4">影响系数</h3>
+
+                    </div>
+                    <div class="table-input">
+                        <h5 class="amp-sub-title">面积分解系数</h5>
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th>面积范围</th>
+                                <td>0-20</td>
+                                <td>20-40</td>
+                                <td>40-80</td>
+                                <td>80-150</td>
+                                <td>150-250</td>
+                                <td>250-400</td>
+                                <td>400-500</td>
+                                <td>500-600</td>
+                                <td>600-800</td>
+                            </tr>
+                            <tr>
+                                <th>面积系数</th>
+                                <td>1.70</td>
+                                <td>1.50</td>
+                                <td>1.30</td>
+                                <td>1.00</td>
+                                <td>0.90</td>
+                                <td>0.85</td>
+                                <td>0.80</td>
+                                <td>0.75</td>
+                                <td>0.70</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end row-->
+                    <div class="clearfix">
+                        <div class="col-xs-6 table-input">
+                            <h5 class="amp-sub-title">面积分解系数</h5>
+                            <table class="table table-hover">
+                               <thaed>
+                                   <tr>
+                                       <th>楼层</th>
+                                       <th>楼层系数</th>
+                                   </tr>
+                               </thaed>
+                               <tbody>
+                                   <tr>
+                                       <th>B2</th>
+                                       <td></td>
+                                   </tr>
+                                   <tr>
+                                       <th>B1</th>
+                                       <td>0.7</td>
+                                   </tr>
+                                   <tr>
+                                       <th>LG</th>
+                                       <td></td>
+                                   </tr>
+                                   <tr>
+                                       <th>1F</th>
+                                       <td>1</td>
+                                   </tr>
+                                   <tr>
+                                       <th>2F</th>
+                                       <td>0.7</td>
+                                   </tr>
+                                   <tr>
+                                       <th>3F</th>
+                                       <td>0.6</td>
+                                   </tr>
+                                   <tr>
+                                       <th>4F</th>
+                                       <td>0.6</td>
+                                   </tr>
+                                   <tr>
+                                       <th>5F</th>
+                                       <td></td>
+                                   </tr>0.5
+                               </tbody>
+                            </table>
+                        </div><!--end row-->
+
+                        <div class="col-xs-6 table-input">
+                            <h5 class="amp-sub-title">位置系数</h5>
+                            <table class="table table-hover">
+                                <thaed>
+                                    <tr>
+                                        <th>位置</th>
+                                        <th>位置系数</th>
+                                    </tr>
+                                </thaed>
+                                <tbody>
+                                <tr>
+                                    <th>主入口</th>
+                                    <td>1.4</td>
+                                </tr>
+                                <tr>
+                                    <th>主里面外墙</th>
+                                    <td>1.2</td>
+                                </tr>
+                                <tr>
+                                    <th>次入口</th>
+                                    <td>1.2</td>
+                                </tr>
+                                <tr>
+                                    <th>主通道</th>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <th>侧面面街</th>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <th>后街</th>
+                                    <td>0.9</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div><!--end row-->
+                     </div>
+                </div><!--end ys-block-->
+
+
+                <div class="btn-wrapper">
+                    <a href="amp_tookit_details_swiper.html" id="btn-submit" class="btn btn-default amp-btn-green">生成租金包</a>
+                </div>
+            </div><!--end row ys-content-->
+        </div><!--end content-panel-->
+
+
+
+    </div><!--end main-panel-->
+
+    <!-- 遮罩 -->
+    <div class="ys-shadow"></div>
+</div><!--end main panel-->
+</main><!--end main-->
+
+<div class="loading">
+    <span class="spin"><img src="./static/images/ajax-loader.gif"/></span>
+</div>
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.zh-CN.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/standalone/selectize.js"></script>
+<script src="static/js/reform.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/search_panel.js"></script>
+
+<script src="static/js/finacial_turnover_edit.js"></script>
+<script>
+$(document).ready(function(){
+    turnover.init();
+    $("#btn-submit").on("click",function(){
+        e.preventDefault();
+        location.href=$(this).attr("href");
+    })
+   });
+</script>
+</body>
+</html>

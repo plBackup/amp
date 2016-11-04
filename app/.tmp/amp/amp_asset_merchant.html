@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>资产包综合报表-招商</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/dist/css/swiper.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/common.css">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/search_panel.css">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <style type="text/css">
+        /* Good CSS */
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            font-size: 14px;
+            width: auto;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        table{width:2000px;}
+
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+    <script src="static/dist/js/jquery-1.11.3.min.js"></script>
+
+    <script src="static/js/common.js"></script>
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-page ys-amp" id="amp-asset-noi" role="main">
+
+<!-- 主面板 -->
+<div class="ys-main-panel">
+<div class="ys-content-panel clearfix">
+<div class="ys-content">
+<div class="ys-fee-title clearfix">
+
+    <!-- Single button -->
+    <div class="pull-right">
+        <a href="amp_asset_cost.html" class="btn btn-default pull-right">成本</a>
+        <a href="amp_asset_merchant.html" class="btn btn-default pull-right active">招商</a>
+        <a href="stock_analysis_noi.html" class="btn btn-default pull-right">运营</a>
+        <a href="amp_asset_noi.html" class="btn btn-default pull-right ">财务</a>
+
+
+    </div>
+</div><!--end row-->
+
+<div class="ys-block" style="margin-top:20px;">
+<div class="amp-block-title ">
+    <h3 class="col-xs-4">招商</h3>
+    <span class="col-xs-8 pull-right text-right" style="color:#333;">开业率:67% </span>
+</div>
+
+
+<div class="amp-table-wrapper">
+    <table class="table amp-table">
+       <thead>
+            <tr>
+                <th>姓名</th>
+                <th>蓄水(m<sup>2</sup>)</th>
+                <th>商务(m<sup>2</sup>)</th>
+                <th>合同(m<sup>2</sup>)</th>
+            </tr>
+       </thead>
+       <tbody>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th>姓名A</th>
+            <td>351</td>
+            <td>961</td>
+            <td>0</td>
+        </tr>
+       </tbody>
+    </table>
+</div>
+</div><!--end ys-block-->
+
+    <div class="clearfix">
+        <div class="btn-wrapper pull-right">
+            <span style="margin-right:10px;"><em id="page-index-bottom">共<i>122</i>条记录，当前第<i>1</i>/<i>7</i>页</em></span>
+            <div class="btn-group" role="group" aria-label="">
+                <button type="button" class="btn btn-default btn-disable" id="btn-pre-bottom">&lt;</button>
+                <button type="button" class="btn btn-default" id="btn-next-bottom">&gt;</button>
+                <input type="text" value="1" class="ys-page-num-input"/>
+            </div>
+
+            <button type="button" class="btn btn-default btn-ys-default amp-btn-green" id="btn-save">确定</button>
+        </div>
+    </div><!--end div clearfix-->
+</div><!--end row ys-content-->
+
+</div><!--end content-panel-->
+</div><!--end main-panel-->
+
+</main><!--end main-->
+
+<!-- Modal -->
+<!--end modal-->
+
+
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+
+<script src="static/js/search_panel.js"></script>
+<script>
+    $(document).ready(function(){
+
+    });
+</script>
+</body>
+</html>

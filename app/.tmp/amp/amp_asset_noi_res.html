@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>资产包综合报表-NOI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/dist/css/swiper.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/common.css">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/search_panel.css">
+    <link rel="stylesheet" href="static/css/financial.css">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <style type="text/css">
+        /* Good CSS */
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            font-size: 14px;
+            width: auto;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        table{width:2000px;}
+
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+    <script src="static/dist/js/jquery-1.11.3.min.js"></script>
+
+    <script src="static/js/common.js"></script>
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-page ys-amp" id="amp-asset-noi" role="main">
+
+    <!-- 主面板 -->
+    <div class="ys-main-panel">
+        <div class="ys-content-panel clearfix">
+            <div class="ys-content">
+            <div class="ys-fee-title clearfix">
+
+                <!-- Single button -->
+               <div class="pull-right">
+                   <a hreef="#" class="btn btn-default pull-right">成本</a>
+                   <a hreef="#" class="btn btn-default pull-right">招商</a>
+                   <a hreef="#" class="btn btn-default pull-right">运营</a>
+                   <a hreef="#" class="btn btn-default amp-btn-grey pull-right active">财务</a>
+               </div>
+            </div><!--end row-->
+
+                <div class="ys-block" style="margin-top:20px;">
+                <div class="amp-block-title ">
+                        <h3 class="col-xs-4">财务</h3>
+                </div>
+                    <div class="amp-table-wrapper">
+                        <table class="table table-right-bordered">
+                            <thead>
+                                <tr>
+                                    <th>资产收入NOI(万元)</th>
+                                    <th>总投资成本(万元)</th>
+                                    <th>估值(万元)</th>
+                                    <th>贷款(万元)</th>
+                                    <th>资产收益年预测(万元)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr-info-main">
+                                    <td>
+                                        <h3>2652.32</h3>
+                                        <span>全年预测</span>
+                                        <h5>216.57</h5>
+                                        <span>单月实际</span>
+                                    </td>
+                                    <td>
+                                        <h3>7.29%</h3>
+                                        <span>预测回报率</span>
+                                        <h5>37521</h5>
+                                        <span>总成本</span>
+
+                                    </td>
+                                    <td>
+                                        <h3>45569</h3>
+                                        <span>估值</span>
+                                        <h5>2016-02-14</h5>
+                                        <span>估值日期</span>
+                                    </td>
+                                    <td>
+                                        <h3>24079.79</h3>
+                                        <span>本金</span>
+                                        <h5>2023-09-30</h5>
+                                        <span>到期日</span>
+                                        <h5>1805.98</h5>
+                                        <span>年贷款利息</span>
+                                    </td>
+                                    <td>
+                                        <h3>8.1%</h3>
+                                        <span>预测收益率</span>
+                                        <h5>25900.14</h5>
+                                        <span>当前收益</span>
+                                        <h5>49979.93</h5>
+                                        <span>预测税前现金流</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--end ys-finacial-income-table-->
+
+                    <div class="amp-table-wrapper">
+                        <table class="table table-no-bordered amp-table">
+                            <thead>
+                                <tr style="border-bottom:solid 8px #fff;">
+                                    <th></th>
+                                    <th colspan="4" ><em><</em>2016-08(万元)</th>
+                                    <th colspan="4" >全年累计(万元)</th>
+                                    <th colspan="4" >全年(万元)</th>
+                                    <th>达成率</th>
+                                </tr>
+                                <tr class="thead-tr-sub" >
+                                    <th></th>
+                                    <th>实际</th>
+                                    <th>预算</th>
+                                    <th>差异额</th>
+                                    <th class="t-split">差异率</th>
+
+                                    <th>实际</th>
+                                    <th>预算</th>
+                                    <th>差异额</th>
+                                    <th class="t-split">差异率</th>
+
+                                    <th>实际</th>
+                                    <th>预算</th>
+                                    <th>差异额</th>
+                                    <th class="t-split">差异率</th>
+
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr-main">
+                                    <th>收入<em class="glyphicon glyphicon-menu-down"></em></th>
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td rowspan="4">70.90%</td>
+                                </tr>
+                                <tr class="tr-sub">
+                                    <th>租金</th>
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                </tr>
+                                <tr class="tr-sub">
+                                    <th>物业管理费</th>
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+
+                                    <td>506.8</td>
+                                    <td>476.53</td>
+                                    <td>30.27</td>
+                                    <td class="t-split">6.35%</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>NOI</th>
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>63.35%</td>
+                                </tr>
+                                <tr>
+                                    <th>利润率</th>
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>216.57</td>
+                                    <td>227.84</td>
+                                    <td>-11.27</td>
+                                    <td class="t-split">-4.95%</td>
+
+                                    <td>-</td>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+                    </div>
+
+                <div class="amp-table-wrapper">
+                    <table class="table table-no-bordered amp-table">
+                        <thead>
+                        <tr >
+                            <th></th>
+                            <th>总额</th>
+                            <th>小于30天</th>
+                            <th>31-60天</th>
+                            <th>61-90天</th>
+                            <th>大于90天</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="tr-main">
+                            <th>欠费<em class="glyphicon glyphicon-menu-down"></em></th>
+                            <td>948.76</td>
+                            <td>45.69</td>
+                            <td>84.64</td>
+                            <td>0</td>
+                            <td>818.43</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <th>租金</th>
+                            <td>948.76</td>
+                            <td>45.69</td>
+                            <td>84.64</td>
+                            <td>0</td>
+                            <td>818.43</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <th>物业管理费</th>
+                            <td>948.76</td>
+                            <td>45.69</td>
+                            <td>84.64</td>
+                            <td>0</td>
+                            <td>818.43</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <th>其他收入</th>
+                            <td>948.76</td>
+                            <td>45.69</td>
+                            <td>84.64</td>
+                            <td>0</td>
+                            <td>818.43</td>
+                        </tr>
+                        </tbody>
+
+
+                    </table>
+                </div>
+                </div><!--end ys-block-->
+
+
+            </div><!--end row ys-content-->
+
+        </div><!--end content-panel-->
+    </div><!--end main-panel-->
+
+</main><!--end main-->
+
+<!-- Modal -->
+<!--end modal-->
+
+
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+
+<script src="static/js/search_panel.js"></script>
+<script>
+$(document).ready(function(){
+    $("#ys-arrearage-table").on("click","tbody>tr",function(e){
+       var targetLink=$(this).attr("data-link");
+        window.location.href=targetLink;
+    });
+
+    var swiper = new Swiper('.swiper-container', {
+        scrollbar: '.swiper-scrollbar',
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        scrollbarHide:false
+    });
+
+    /* ============================== ys-search ============================== */
+    $(".tr-main").on("click",function(e){
+        e.preventDefault();
+        console.log(this);
+        $(this).nextUntil(".tr-main","tr").toggle();
+        $(this).toggleClass("collapsed");
+    })
+   });
+</script>
+</body>
+</html>
