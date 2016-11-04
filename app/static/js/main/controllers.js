@@ -20,3 +20,10 @@ ampControllers.controller('ampDetailCtrl', ['$scope', '$routeParams', 'Phone',
       $scope.mainImageUrl = imageUrl;
     };
   }]);
+
+ampControllers.controller('NOICtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    console.log("...");
+
+
+  }]);

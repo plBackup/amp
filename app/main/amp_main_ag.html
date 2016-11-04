@@ -12,9 +12,13 @@
     <!-- 导入CSS -->
     <link href="../static/dist/css/animate.css" rel="stylesheet">
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
+
     <link href="../static/css/common/common.css" rel="stylesheet">
+    <link href="../static/css/common/static_table.css" rel="stylesheet">
     <!-- 自有CSS -->
     <link href="../static/css/main/amp_main.css" rel="stylesheet">
+    <link href="../static/css/views/noi.css" rel="stylesheet">
 </head>
 <body>
 
@@ -87,6 +91,8 @@
 <script src="../static/dist/js/angular-resource.js"></script>
 <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
 <script src="../static/dist/js/bootstrap.min.js"></script>
+<script src="../static/dist/js/swiper.jquery.min.js"></script>
+
 
 <script src="../static/js/main/menu_list.js"></script>
 <script src="../static/js/main/amp_main.js"></script>
@@ -112,16 +118,7 @@
 
         });
         amp_main.init();
-        setTimeout(function(){
-            $("body").addClass("open open-panel");
-        },3000);
 
-
-
-        $(".rightpanel").on("click",".closebtn",function(e){
-            e.preventDefault();
-            $("body").removeClass("open open-panel");
-        })
     });
 </script>
 

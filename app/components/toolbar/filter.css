@@ -1,0 +1,17 @@
+.amp-side-toolbar{display: none;padding-top:20px;padding-bottom:20px;}
+
+.amp-side-toolbar.active{display: block;}
+.leftpanel-collapsed .amp-side-toolbar{display: none;}
+
+.amp-side-toolbar .toolbar-block{padding-left:12px;padding-right:12px;}
+.amp-side-toolbar .toolbar-item{margin-bottom:3px;}
+.amp-side-toolbar .toolbar-item label{display: block;margin-bottom:3px;height:18px;line-height: 18px;color:#8592a3;font-size: 12px;}
+
+/*input group month_selector */
+.amp-side-toolbar .toolbar-item .input-group{width:100%;height:26px;line-height: 26px;background-color:#3a4153;color:#fff;overflow: hidden; }
+.amp-side-toolbar .toolbar-item .input-group .btn{border-radius:0;border:0;background: none;}
+.amp-side-toolbar .toolbar-item .input-group .btn:hover{background-color: #59b46f; color:#fff;}
+.toolbar-item .input-group input{background:none;border:0;color:#fff;text-align: center;}
+.toolbar-item .glyphicon{color:#4b5366;}
+.toolbar-item .btn:hover .glyphicon{color:#fff;cursor:pointer;}
+

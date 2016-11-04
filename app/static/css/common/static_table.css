@@ -1,0 +1,94 @@
+/*amp table*/
+
+.amp-table-wrapper .table tr>th, .amp-table-wrapper .table tr>td {
+    height: 40px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.amp-table-wrapper .table-no-bordered tr>th, .amp-table-wrapper .table-no-bordered tr>td {
+    border: 0;
+}
+.amp-table-wrapper .table-no-bordered tr>th.t-split, .amp-table-wrapper .table-no-bordered tr>td.t-split {
+    border-right: solid 1px #ddd;
+}
+
+
+/* table static */
+.amp-table-wrapper-swiper {
+    position: relative;
+    /*padding-left: 160px;*/
+   /* padding-right: 220px;*/
+}
+.ys-table-fixed-top{ position: relative;  padding-left: 160px;}
+
+.ys-table-main{ position: relative;  padding-left: 160px;}
+
+.amp-table-wrapper-swiper .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.amp-table-wrapper-swiper .swiper-slide {
+    font-size: 14px;
+    width: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+.amp-table-wrapper-swiper .ys-table-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.amp-table-wrapper-swiper .table {
+    table-layout: fixed;
+}
+
+.ys-amp table.amp-table thead {
+    background-color: #f3f4f8;
+    color: #8592a3;
+}
+
+.table>thead>tr>th, #amp-tookit-setup .table>tbody>tr>th {
+    color: #757575;
+    font-size: 13px;
+    text-align: center;
+}
+.amp-table-wrapper-swiper .swiper-container{width:100%;}
+.amp-table-wrapper-swiper .swiper-slide {
+    font-size: 14px;
+    width: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+<div class="col-xs-2 pull-left" style="padding:0;">
+    <div class="input-group date ys-datepicker" id="datepicker">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="ys-date-pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+        </span>
+        <input class="form-control" size="16" type="text" value="" data-provide="datepicker">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="ys-date-next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+        </span>
+        <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        //这里有公共方法，确定业务后 单独放到一个文件
+        $(".ys-datepicker input").datetimepicker({
+            format:"yyyy-mm",
+            todayBtn:"linked",
+            startView:3,
+            minView:3
+        });
+
+        $("#datepicker button").on("click",function(e){
+            var curButton=$(this).attr("id");
+            var plus=1;
+            if(curButton=="ys-date-pre"){
+                plus=-1;
+            }
+            e.preventDefault();
+            var dateStr=$("#datepicker input").val();
+            if(dateStr==""){
+                var today=new Date();
+
+                var newDate=DateAdd("m",plus,today);
+
+                $("#datepicker input").val(newDate);
+
+            }else{
+                var curDateStr= dateStr.split("-");
+                var curDate=gd(parseInt(curDateStr[0]),parseInt(curDateStr[1])-1,15);
+                console.log(curDate);
+                var newDate=DateAdd("m",plus,curDate);
+                console.log(newDate);
+                $("#datepicker input").val(newDate);
+            }
+        });
+
+
+        var curDate=new Date();
+        var start_date1=curDate.getFullYear()+"-"+(curDate.getMonth()+1);
+        function gd(year, month, day) {
+            return new Date(year, month, day).getTime();
+        }
+
+        function DateAdd(interval,number,dateStr)
+        {
+
+            // DateAdd(interval,number,date)
+            var date = new Date(dateStr);
+            var d="";
+            switch(interval)
+            {
+                case   "y"   :   {
+                    date.setFullYear(date.getFullYear()+number);
+                    break;
+                }
+                case   "q"   :   {
+                    date.setMonth(date.getMonth()+number*3);
+                    break;
+                }
+                case   "m"   :   {
+                    date.setMonth(date.getMonth()+number);
+                    console.log("m");
+                    d=  date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1));
+                    console.log(d);
+                    break;
+                }
+                case   "w"   :   {
+                    date.setDate(date.getDate()+number*7);
+                    d =date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1))+"-"+(date.getDate()<9?("0"+date.getDate()):date.getDate());
+                    break;
+                }
+                case   "d"   :   {
+                    date.setDate(date.getDate()+number);
+                    break;
+                }
+                case   "h"   :   {
+                    date.setHours(date.getHours()+number);
+                    break;
+
+                }
+                case   "mi"   :   {
+                    date.setMinutes(date.getMinutes()+number);
+                    break;
+                }
+                case   "s"   :   {
+                    date.setSeconds(date.getSeconds()+number);
+                    break;
+                }
+                default   :   {
+                    date.setDate(date.getDate()+number);
+                    break;
+                }
+
+            }//end switch
+            if(d!=""){
+                return d;
+            }else{
+                return date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1))+"-"+(date.getDate()<9?("0"+date.getDate()):date.getDate());
+            }
+        }
+
+    });
+</script>

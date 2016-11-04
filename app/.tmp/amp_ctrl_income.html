@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>风控分析-收入占比</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="static/images/favicon-20151019091835834.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="static/dist/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/reform/red.css">
+
+    <!-- 自有CSS -->
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/ys-header.css" rel="stylesheet">
+    <link href="static/css/zt-header.css" rel="stylesheet">
+    <link href="static/css/ys_ui.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/ladder_shape_chart.css">
+    <link rel="stylesheet" href="../static/css/horizontal-bar-budget.css">
+    <link rel="stylesheet" href="../static/css/process_chart.css">
+
+    <link href="../static/css/acg_project.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/amp_finacial.css">
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<div id="acg" class="ys-page ys-amp">
+<!-- 主面板 -->
+<main class="ys-main-panel">
+
+<div class="ys-content-panel clearfix">
+
+<div class="ys-content">
+    <div class="ys-block">
+    <div class="amp-block-title ">
+        <h3 class="col-xs-4">收入占比</h3>
+
+    </div>
+    <div class="ys-block-section">
+    <div class="ys-chart-wrapper clearfix " >
+        <div class="col-xs-4 col-xs-offset-2">
+            <div class="ys-chart-section ">
+                <div class="ys-chart-content" id="chart-income-wrapper" >
+                    <canvas id="chart-income" width="220" height="220" data-label='["时装", "餐饮", "配套", "娱乐","儿童", "影院", "超市", "其他"]' data-chart="[8,28,5,16,4,10,24,5]">
+
+                    </canvas>
+                    <div class="ys-chart-info">
+                        <h3>业态占比</h3>
+                        <h5>(租金收入)</h5>
+                    </div>
+                </div>
+                <div class="legend clearfix">
+                    <span><em class="color-label" style="background-color: #0488da;"></em>时装<i>8%</i></span>
+                    <span><em class="color-label" style="background-color: #00b0f0;"></em>餐饮<i>28%</i></span>
+                    <span><em class="color-label" style="background-color: #2bd9dd;"></em>配套<i>5%</i></span>
+                    <span><em class="color-label" style="background-color: #a6ec66;"></em>娱乐<i>16%</i></span>
+
+                    <span><em class="color-label" style="background-color: #dcf79f;"></em>儿童<i>4%</i></span>
+                    <span><em class="color-label" style="background-color: #aeb9ca;"></em>影院<i>10%</i></span>
+                    <span><em class="color-label" style="background-color: #637b9b;"></em>超市<i>24%</i></span>
+                    <span><em class="color-label" style="background-color: #45546b;"></em>其他<i>5%</i></span>
+                </div><!--legend-->
+            </div><!--ys-chart-section-->
+        </div>
+
+        <div class="col-xs-4">
+            <div class="ys-chart-section">
+                <div class="ys-chart-content" id="retail-area-wrapper" >
+                    <canvas id="retail-area" width="220" height="220" data-label='["时装", "餐饮", "配套", "娱乐","儿童", "影院", "超市", "其他"]' data-chart="[3,15,2,8,9,26,35,2]">
+                    </canvas>
+                    <div class="ys-chart-info">
+                        <h3>业态占比</h3>
+                        <h5>(计租面积)</h5>
+                    </div>
+                </div>
+                <div class="legend clearfix">
+                    <span><em class="color-label" style="background-color: #0488da;"></em>时装<i>3%</i></span>
+                    <span><em class="color-label" style="background-color: #00b0f0;"></em>餐饮<i>15%</i></span>
+                    <span><em class="color-label" style="background-color: #2bd9dd;"></em>配套<i>2%</i></span>
+                    <span><em class="color-label" style="background-color: #a6ec66;"></em>娱乐<i>8%</i></span>
+                    <span><em class="color-label" style="background-color: #dcf79f;"></em>儿童<i>9%</i></span>
+                    <span><em class="color-label" style="background-color: #aeb9ca;"></em>影院<i>26%</i></span>
+                    <span><em class="color-label" style="background-color: #637b9b;"></em>超市<i>35%</i></span>
+                    <span><em class="color-label" style="background-color: #45546b;"></em>其他<i>2%</i></span>
+                </div><!--legend-->
+            </div><!--ys-chart-section-->
+        </div>
+
+    </div><!--ys-chart-wrapper-->
+
+
+
+    </div>
+
+
+
+
+    </div><!-- ys-content -->
+    </div><!-- ys-content -->
+
+
+
+</div>
+</main>
+
+
+
+
+
+
+
+
+<!-- 树状弹出框 -->
+<div class="ys-tree-dialog ys-dialog modal fade in" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title">目录</h3>
+            </div>
+            <div class="modal-body" style="padding:0;overflow: auto;height:450px;">
+                <div class="directory-container">
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>营业总额</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                        <ul>
+                            <li><em class="ys-checkbox"></em>总经理总结</li>
+                            <li><em class="ys-checkbox"></em>财务</li>
+                            <li><em class="ys-checkbox"></em>资产收益率</li>
+                            <li><em class="ys-checkbox"></em>租赁情况</li>
+                            <li><em class="ys-checkbox"></em>续租 & 空置</li>
+                            <li><em class="ys-checkbox"></em>债务人</li>
+                            <li><em class="ys-checkbox"></em>营业额</li>
+                            <li><em class="ys-checkbox"></em>租金占比</li>
+                            <li><em class="ys-checkbox"></em>客流量</li>
+                            <li><em class="ys-checkbox"></em>员工数</li>
+                        </ul>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>财务&综合部</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>租赁</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>经营报告</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>物业管理情况汇总</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>市场推广</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+                    <div class="directory-item">
+                        <div class="directory-title">
+                            <em class="ys-checkbox"></em>
+                            <span>法律事务</span>
+                            <a class="collapse-btn"><em class="glyphicon glyphicon-menu-down"></em></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="ys-dialog-btn-close" data-dismiss="modal">取消</button>
+                <button type="button" class="ys-dialog-btn-ok">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div><!-- ys-page -->
+
+<!-- 自定义 tooltip -->
+<div class="ys-tooltip"></div>
+
+
+<!-- 第三方js -->
+<script src="static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/dist/js/bootstrap-datetimepicker.js"></script>
+<script src="static/dist/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+<script src="static/js/Chart.min.js"></script>
+<script src="static/js/reform.js"></script>
+
+<!-- 自有plugins -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/ys_ui.js"></script>
+<script src="static/js/common.js"></script>
+<script src="../static/js/ladder_shape_chart.js"></script>
+<script src="static/js/acg_project.js"></script>
+<script>
+    $(document).ready(function(){
+        acg_project.init();
+    });
+</script>
+</body>
+</html>

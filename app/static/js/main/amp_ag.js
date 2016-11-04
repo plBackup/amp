@@ -9,12 +9,17 @@ var ampApp = angular.module('amp', [
     'ngRoute',
     'ampControllers',
     'ampFilters',
-    'ampServices'
+    'ampServices',
+     'ng-swipe',
 ]);
 
 ampApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
+        when('/noi', {
+            templateUrl: '../views/noi_analyse/noi.html',
+            //controller: 'ampNOICtrl'
+        }).
         when('/list', {
             templateUrl: '../views/noi_analyse/phone-list.html',
             controller: 'ampListCtrl'
@@ -24,6 +29,6 @@ ampApp.config(['$routeProvider',
             controller: 'ampDetailCtrl'
         }).
         otherwise({
-            redirectTo: '/list'
+            //redirectTo: '/noi'
         });
     }]);

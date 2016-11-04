@@ -281,6 +281,23 @@ var amp_main=(function($,menu,am){
 
     };
 
+    /*right panel 调用*/
+    amp_main.rightPanel_open=function(){
+
+        $("body").addClass("open open-panel");
+        $(".ys-amp").trigger("right_panel_open");
+    };
+
+    amp_main.rightPanel_close=function(){
+        $("body").removeClass("open open-panel");
+        $(".ys-amp").trigger("right_panel_close");
+    };
+    amp_main.rightPanel_init=function(){
+        $(".rightpanel").on("click",".closebtn",function(e){
+            e.preventDefault();
+            amp_main.rightPanel_close();
+        })
+    };
 
     amp_main.placeholder_init=function(){
         // Page Preloader
@@ -298,6 +315,7 @@ var amp_main=(function($,menu,am){
         amp_main.sideNav_init();
         amp_main.sideNav_nav();
         amp_main.subNav_init();
+        amp_main.rightPanel_init();
         $("#main-0").trigger("click");
 
         /*$(".head-main-menu").on("click","a",function(e){
