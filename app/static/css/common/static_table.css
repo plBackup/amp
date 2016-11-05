@@ -64,7 +64,7 @@
     /*padding-left: 160px;*/
    /* padding-right: 220px;*/
 }
-.ys-table-fixed-top{ position: relative;  padding-left: 160px;width:100%;}
+.ys-table-fixed-top{ position: relative;  padding-left: 160px;width:100%;z-index:99;}
 
 .ys-table-main{ position: relative;  padding-left: 160px;width:100%;}
 

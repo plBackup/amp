@@ -1,4 +1,8 @@
 #noi{}
+.isStuck{margin-top:43px;border-bottom:solid 1px #eee;
+    -webkit-box-shadow:  0 2px 3px rgba(33,33,33,0.1);
+    -moz-box-shadow:  0 2px 3px rgba(33,33,33,0.1);
+    box-shadow:  0 2px 3px rgba(33,33,33,0.1);}
 #noi #noi-summary{padding:40px 10px;}
 #noi #noi-summary .amp-table thead{background-color:#fff;}
 #noi #noi-summary .amp-table thead>tr>th{padding:0 30px; padding-right:15px;font-size: 13px;text-align: left; vertical-align: top; border-right:solid 1px #ddd;}

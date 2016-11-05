@@ -29,6 +29,7 @@
     <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
+    <script src="../static/dist/js/stickUp.js"></script>
 
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
@@ -73,7 +74,18 @@
 
 
         });
+        jQuery(function($) {
+            $(document).ready(function(){
+                $('#noi-main-table-wrapper>.ys-table-fixed-top').stickUp({
+                    topMargin: '45px'
+                });
+            })
+        });
+
     </script>
+    <style>
+
+    </style>
 </head>
 <body>
 
@@ -136,6 +148,7 @@
     </div>
     <div class="mainpanel">
         <div class="amp-content-panel noi-view" id="noi">
+
         <div class="amp-block">
             <div class="amp-table-wrapper" id="noi-summary">
                 <table class="table table-right-bordered amp-table" >
@@ -193,6 +206,7 @@
             </div><!--end ys-finacial-income-table-->
 
             <div class="amp-table-wrapper-swiper" id="noi-main-table-wrapper">
+
                 <div class="ys-table-fixed-top" style="padding-left:160px;">
                     <div class="ys-table-static ys-table-static-left" style="width:160px;">
                         <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:100%;">
