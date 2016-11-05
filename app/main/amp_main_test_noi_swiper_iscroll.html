@@ -29,6 +29,7 @@
     <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
+    <script src="../static/dist/js/stickUp.js"></script>
 
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
@@ -55,7 +56,7 @@
                 //scrollbar: '.swiper-scrollbar',
                 direction: 'horizontal',
                 slidesPerView: 'auto',
-                mousewheelControl: true,
+                //mousewheelControl: true,
                 freeMode: true,
                 scrollbarHide:true
             });
@@ -63,17 +64,59 @@
                 scrollbar: '.swiper-scrollbar',
                 direction: 'horizontal',
                 slidesPerView: 'auto',
-                mousewheelControl: true,
+                //mousewheelControl: true,
                 freeMode: true,
                 scrollbarHide:false
             });
             noi_head_swiper.params.control = noi_main_swiper;
             noi_main_swiper.params.control = noi_head_swiper;
 
+            $(".ys-table-main").on("mouseenter","tr",function(e){
+                console.log("....")
+                var index=$(this).index();
 
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).addClass("hover");
+                });
+            });
+
+            $(".ys-table-main").on("mouseleave","tr",function(e){
+                console.log("----")
+                var index=$(this).index();
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).removeClass("hover");
+                });
+
+            });
+
+            $(".ys-table-main").on("click","tr",function(e){
+                console.log("....")
+
+                if($(this).hasClass("tr-main")){
+                    var index=$(this).index();
+                    $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                        $(this).find("tr").eq(index).nextUntil(".tr-main").toggle();
+                    });
+                }
+
+
+            });
 
         });
+        jQuery(function($) {
+            $(document).ready(function(){
+                $('#noi-main-table-wrapper>.ys-table-fixed-top').stickUp({
+                    topMargin: '45px'
+                });
+            })
+        });
+
+
+
     </script>
+    <style>
+
+    </style>
 </head>
 <body>
 
@@ -136,6 +179,7 @@
     </div>
     <div class="mainpanel">
         <div class="amp-content-panel noi-view" id="noi">
+
         <div class="amp-block">
             <div class="amp-table-wrapper" id="noi-summary">
                 <table class="table table-right-bordered amp-table" >
@@ -193,6 +237,7 @@
             </div><!--end ys-finacial-income-table-->
 
             <div class="amp-table-wrapper-swiper" id="noi-main-table-wrapper">
+
                 <div class="ys-table-fixed-top" style="padding-left:160px;">
                     <div class="ys-table-static ys-table-static-left" style="width:160px;">
                         <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:100%;">

@@ -71,7 +71,36 @@
             noi_head_swiper.params.control = noi_main_swiper;
             noi_main_swiper.params.control = noi_head_swiper;
 
+            $(".ys-table-main").on("mouseenter","tr",function(e){
+                console.log("....")
+                var index=$(this).index();
 
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).addClass("hover");
+                });
+            });
+
+            $(".ys-table-main").on("mouseleave","tr",function(e){
+                console.log("----")
+                var index=$(this).index();
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).removeClass("hover");
+                });
+
+            });
+
+            $(".ys-table-main").on("click","tr",function(e){
+                console.log("....")
+
+                if($(this).hasClass("tr-main")){
+                    var index=$(this).index();
+                    $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                        $(this).find("tr").eq(index).nextUntil(".tr-main").toggle();
+                    });
+                }
+
+
+            });
 
         });
         jQuery(function($) {
@@ -81,6 +110,8 @@
                 });
             })
         });
+
+
 
     </script>
     <style>
