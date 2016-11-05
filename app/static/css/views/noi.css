@@ -1,3 +1,10 @@
 #noi{}
-#noi #noi-main-table{}
-#noi #noi-main-table .ys-table-static-left{width:158px;}
+#noi #noi-summary{padding:40px 10px;}
+#noi #noi-summary .amp-table thead{background-color:#fff;}
+#noi #noi-summary .amp-table thead>tr>th{padding:0 30px; padding-right:15px;font-size: 13px;text-align: left; vertical-align: top; border-right:solid 1px #ddd;}
+#noi #noi-summary .amp-table tbody>tr>td{padding-left:30px;padding-right:15px;text-align:left;vertical-align: top;border-top:0; border-right:solid 1px #ddd; }
+#noi #noi-summary .amp-table thead>tr>th:first-child,#noi #noi-summary .amp-table tbody>tr>td:first-child{padding-left:15px;}
+#noi #noi-summary .amp-table thead>tr>th:nth-last-child(1),#noi #noi-summary .amp-table tbody>tr>td:nth-last-child(1){border-right:0;}
+/*swiper table*/
+#noi #noi-main-table-wrapper{}
+#noi #noi-main-table-wrapper .ys-table-static-left{}
