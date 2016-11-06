@@ -31,9 +31,11 @@
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
     <script src="../static/dist/js/jquery.pin.js"></script>
+    <script src="../static/dist/js/echarts.common.min.js"></script>
 
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
+
     <script>
         $(window).load(function() {
             amp_main.placeholder_init();
@@ -144,6 +146,7 @@
 
         });
     </script>
+    <script src="../static/js/views/noi_analyse/noi.js"></script>
 </head>
 <body>
 
@@ -904,7 +907,7 @@
                 <h3 class="col-xs-4">NOI实际与方案(一、二、三)对比</h3>
             </div>
             <div class="col-xs-12">
-                <div id="chart-noi" style="height:380px"></div>
+                <div id="noi-chart" style="height:380px;"></div>
             </div>
 
         </div>
