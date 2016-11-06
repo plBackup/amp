@@ -65,7 +65,9 @@ html,body{padding:0;min-width: 100%;min-height:100%;height:100%;}
 #ys-amp-create .input-group>label{display: block;margin-bottom:3px;color: #8592a3;font-size:13px;}
 #ys-amp-create .input-group>input{padding-left:12px;padding-right:12px;height:40px;width:100%;background-color:#3a4153;border:0;border-radius:0;font-size:13px;color:#f3f4f8;}
 
-
+#ys-amp-create .input-group>input#open-date{padding-right:40px;}
+#ys-amp-create .input-group#open-date-wrapper:after{display: block;position: absolute;content:" ";width:16px;height:16px;
+    background-position:-170px -243px;z-index:99;bottom:12px;right:12px;background-image: url(../../images/icon.png);background-repeat: no-repeat;}
 
 .datetimepicker{min-width: 220px;}
 .datetimepicker table{width:100%;}

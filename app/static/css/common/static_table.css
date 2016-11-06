@@ -28,14 +28,14 @@
     padding-left:15px;padding-right:15px;
     height:28px;
     color: #8592a3;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     vertical-align: middle;
     border-bottom:0;
     font-weight:normal;
 
 }
-
+.amp-table>thead>tr.thead-tr-sub>th{font-size: 12px;}
 .amp-table>thead>tr>th.fake-th:before{display: block;content:"/";opacity: 0;color:#fff;}
 
 .amp-table>tbody>tr>th,.amp-table>tbody>tr>td,
@@ -99,11 +99,12 @@
     -moz-box-shadow:  0 1px 3px rgba(33,33,33,0.1);
     box-shadow:  0 1px 3px rgba(33,33,33,0.1);}
 
+/*em element,notify element*/
+.ys-amp .amp-table em{display: inline-block;margin-left:5px;margin-right:5px;}
+.amp-table>tbody>tr>th.notify,.amp-table>tbody>tr>td.notify,
+.amp-table>tfoot>tr>th.notify,.amp-table>tfoot>tr>td.notify{color:#ff0000;}
 
-
-
-
-
-
+.amp-table>tbody>tr.tr-main{}
+.amp-table>tbody>tr.tr-main.tr-collapse{}
 
 
