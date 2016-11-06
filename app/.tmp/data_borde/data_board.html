@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>动态数据展示</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    <!--扩展 css-->
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/wk.css">
+    <link rel="stylesheet" href="static/css/wk_data.css">
+    <style type="text/css">
+        /* Good CSS */
+    </style>
+    <!-- JavaScript -->
+    <!-- 第三方js -->
+    <script src="static/dist/js/jquery-1.11.3.min.js"></script>
+    <script src="static/js/common_data.js"></script>
+    <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="chromeframe">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+
+<!-- Add your site or application content here -->
+<main class="bs-masthead ys-sys ys-data" id="wk-data-board" role="main">
+    <!-- 主面板 -->
+    <div class="ys-main-panel">
+
+        <div class="ys-content-panel clearfix">
+
+            <div class="ys-content ys-main-content">
+                <div class="wk-block clearfix">
+                        <div class="col-xs-8 wk-section wk-section-left">
+                            <div class="section-content-wrapper" style="border-right:dashed 1px #4f5660;">
+                                <h5 class="section-title">当日营业额(万元)</h5>
+                                <div class="clearfix">
+                                    <div class="col-xs-8">
+                                        <div class="wk-chart-wrapper" style="height:350px;width:100%;" id="wk-sales-count"  data-label='["10","11", "12", "13", "14", "15","16","17", "18", "19", "20", "21","22","23","24"]'
+                                             data-chart-today="[11,12,13,14,15,16,17,18,19,20,12,13,13,15,22]" data-chart-yestoday="[12,13,14,15,16,17,18,19,20,12,13,13,15,22,12]">
+
+                                        </div>
+                                    </div>
+                                    <div class="wk-section col-xs-4">
+                                        <div class="section-top">
+                                            <ul class="section-ul">
+                                                <li><em>当前营业额</em><i id="wk_sales_count">21,134.03</i></li>
+                                                <li><em>同比</em><i id="wk_sales_yoy_percent">+8.15%</i><em class="glyphicon glyphicon-arrow-up" id="wk_sales_yoy_icon"></em></li>
+                                            </ul>
+                                        </div>
+                                        <div class="section-bottom">
+                                            <ul id="today-sales-legend">
+                                                <li>
+                                                    <em class="color-label" style="background-color:#18b0e2;"></em>今日
+                                                </li>
+                                                <li>
+                                                    <em class="color-label" style="background-color:#ea7444;"></em>昨日
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-4 wk-section wk-section-right">
+                            <h5 class="section-title">营业额统计(元)</h5>
+                            <div class="section-top clearfix">
+                               <table class="table table-no-bordered" id="table-sales-sum">
+
+                                   <tbody>
+                                        <tr id="wk_sum_yesterday">
+                                           <td><span><em>昨日</em><i class="count">85,866.77</i></span></td>
+                                            <td><span><em>同比</em><i class="yoy_percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></span></td>
+                                        </tr>
+                                        <tr id="wk_sum_week">
+                                            <td><span><em>本周</em><i class="count">627,999.54</i></span></td>
+                                            <td><span><em>同比</em><i class="yoy_percent">-4.04%</i><em class="yoy_icon glyphicon glyphicon-arrow-down"></em></span></td>
+                                        </tr>
+                                        <tr id="wk_sum_month">
+                                            <td><span><em>本月</em><i class="count">1,627,999.54</i></span></td>
+                                            <td><span><em>同比</em><i class="yoy_percent">+10.92%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></span></td>
+                                        </tr>
+                                   </tbody>
+                               </table>
+                            </div>
+                            <div class="section-bottom section-part" id="sales-infos">
+                                <ul id="wk_sum_infos">
+                                    <li><em>当前交易笔数</em><i class="num">256</i>条</li>
+                                    <li><em>同比</em><i class="yoy_percent">-1.15%</i><em class="yoy_icon glyphicon glyphicon-arrow-down"></em></li>
+                                    <li><em>增加营业额</em><i class="increasing">7,856.24</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div><!--wk-block-->
+                <div class="wk-block wk-block-separate wk-block-separate-top clearfix">
+                    <div class="col-xs-8 wk-section clearfix">
+
+                        <div class="col-xs-5 wk-section wk-section-left">
+                            <div class="section-content-wrapper" style="border-right:dashed 1px #4f5660;">
+                                <h5 class="section-title">业态营业额(万元)</h5>
+                                <div class="wk-chart-wrapper" style="height:350px;width:100%;" id="wk-sales-retailing-form" data-label='["餐饮","服装", "鞋/包", "珠宝/眼镜/钟表", "数码", "时尚生活","亲子","美容美体", "教育培训", "娱乐", "其他",]'
+                                     data-chart="[24584.30,22991.55,1669.82,1284.19,1820.39,4458.79,5355.03,2603.48,4258.56,9261.24,2061.24,]" >
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-7 wk-section wk-section-right" style="padding-left:45px;">
+                            <table id="wk-retail-sales-legend">
+                                <colgroup>
+                                    <col width="35%">
+                                    <col width="25%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody id="wk_form_sales">
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">餐饮</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#18d1e2;"></em><i class="name">服装</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#f6d36b;"></em><i class="name">鞋/包</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#ffa45b;"></em><i class="name">珠宝/眼镜/钟表</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#e49d41;"></em><i class="name">数码</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#e85546;"></em><i class="name">时尚生活</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-down"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#ea7444;"></em><i class="name">亲子</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-down"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#a65c3e;"></em><i class="name">美容美体</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#1bbc9c;"></em><i class="name">教育培训</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#478856;"></em><i class="name">娱乐</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                    <tr>
+                                        <th><em class="color-label" style="background-color:#61cb7a;"></em><i class="name">其他</i></th>
+                                        <td><i class="count">24.584.30</i></td>
+                                        <td>同比<i class="yoy-percent">+2.13%</i><em class="yoy_icon glyphicon glyphicon-arrow-up"></em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 wk-section">
+                        <h5 class="section-title">交易记录(元)</h5>
+                        <div class="clearfix">
+                            <ul class="wk-sales-recode" id="wk-sales-recode">
+                                <li class="done">
+                                    <dl>
+                                        <dt><i class="name">美味火锅</i></dt>
+                                        <dd><span>于<em class="datetime">10-19 10:25:33</em>销售一笔金额为<i class="price">345.01</i>的订单</span></dd>
+                                    </dl>
+                                </li>
+
+                                <li class="done">
+                                    <dl>
+                                    <dt><i class="name">美味火锅</i></dt>
+                                    <dd><span>于<em class="datetime">10-19 10:25:33</em>销售一笔金额为<i class="price">345.01</i>的订单</span></dd>
+                                    </dl>
+                                </li>
+
+                                <li class="done">
+                                    <dl>
+                                    <dt><i class="name">美味火锅</i></dt>
+                                    <dd><span>于<em class="datetime">10-19 10:25:33</em>销售一笔金额为<i class="price">345.01</i>的订单</span></dd>
+                                    </dl>
+                                 </li>
+
+                                <li class="done">
+                                    <dl>
+                                        <dt><i class="name">美味火锅</i></dt>
+                                        <dd><span>于<em class="datetime">10-19 10:25:33</em>销售一笔金额为<i class="price">345.01</i>的订单</span></dd>
+                                    </dl>
+                                </li>
+
+                                <li class="done">
+                                    <dl>
+                                        <dt><i class="name">美味火锅</i></dt>
+                                        <dd><span>于<em class="datetime">10-19 10:25:33</em>销售一笔金额为<i class="price">345.01</i>的订单</span></dd>
+                                    </dl>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--wk-block-->
+
+            </div><!--end row ys-content-->
+        </div><!--end content-panel-->
+
+
+
+    </div><!--end main-panel-->
+    <!-- 遮罩 -->
+    <div class="ys-shadow"></div>
+</main><!--end main-->
+<!-- Modal -->
+<!--end modal-->
+
+<!-- Script 导入部分 -->
+<script src="static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="static/dist/js/bootstrap.min.js"></script>
+<script src="static/js/vendor/date-time/bootstrap-datetimepicker.js"></script>
+<script src="static/js/vendor/date-time/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="static/js/echarts.common.min.js"></script>
+<!--<script src="static/dist/js/echarts-all.js"></script>-->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/search_panel.js"></script>
+<script src="static/js/wk_data.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 html,body{/*position:relative;*/width:100%;height:inherit;overflow: auto;min-height:620px;}
 .page-main{padding-left:200px;/*overflow: hidden;*/}
-
+.page-sub{padding-left:0;}
 .ys-icon{display: block;background-size: contain;background-position: center center;background-repeat: no-repeat;}
 .ys-icon-spirit{display: block;background-image: url(../../images/main/menu_icon.png);content: " ";}
 .ys-icon-togglebar{position:absolute;top:50%;left:50%;margin-left:-10px;margin-top:-9px;width:20px;height:18px;background-position: -26px -20px;}

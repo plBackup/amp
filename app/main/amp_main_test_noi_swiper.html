@@ -71,6 +71,35 @@
             noi_main_swiper.params.control = noi_head_swiper;
 
 
+            $(".ys-table-main").on("mouseenter","tr",function(e){
+                console.log("....")
+                var index=$(this).index();
+
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).addClass("hover");
+                });
+            });
+
+            $(".ys-table-main").on("mouseleave","tr",function(e){
+                console.log("----")
+                var index=$(this).index();
+                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                    $(this).find("tr").eq(index).removeClass("hover");
+                });
+
+            });
+
+            $(".ys-table-main").on("click","tr",function(e){
+                console.log("....")
+
+                if($(this).hasClass("tr-main")){
+                    var index=$(this).index();
+                    $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                        $(this).find("tr").eq(index).nextUntil(".tr-main").toggle();
+                    });
+                }
+            });
+
 
         });
     </script>
@@ -141,7 +170,7 @@
                 <table class="table table-right-bordered amp-table" >
                     <thead>
                     <tr>
-                        <th>净运营收入NOI(万元)</th>
+                        <th>净营运收入NOI(万元)</th>
                         <th>总投资成本(万元)</th>
                         <th>估值(万元)</th>
                         <th>贷款(万元)</th>

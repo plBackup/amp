@@ -1,3 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>悦商AMP</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="../../static/dist/css/animate.css" rel="stylesheet">
+    <link href="../../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/dist/css/bootstrap-datetimepicker.min.css">
+
+    <link href="../../static/css/common/common.css" rel="stylesheet">
+    <link href="../../static/css/common/static_table.css" rel="stylesheet">
+    <link href="../../static/css/views/noi.css" rel="stylesheet">
+
+    <!-- 自有CSS -->
+    <link href="../../static/css/main/amp_main.css" rel="stylesheet">
+    <link href="../../components/toolbar/filter.css" rel="stylesheet">
+
+    <script src="../../static/dist/js/angular.min.js"></script>
+    <script src="../../static/dist/js/jquery-1.11.3.min.js"></script>
+    <script src="../../static/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/dist/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../../static/dist/js/swiper.jquery.js"></script>
+
+    <script src="../../static/js/main/menu_list.js"></script>
+    <script src="../../static/js/main/amp_main.js"></script>
+    <script>
+        $(window).load(function() {
+            amp_main.placeholder_init();
+        });
+        $(document).ready(function(){
+            $(".ys-amp").on("relocate",function(e,id,href){
+                console.log(e);
+                console.log(id);
+                console.log(href);
+            });
+            amp_main.init();
+
+            /* setTimeout(function(){
+             amp_main.rightPanel_open();
+             },2000);
+             $(".ys-amp").on("right_panel_open",function(e){
+             alert("right_panel_open")
+             });*/
+
+            var noi_head_swiper = new Swiper('#noi-main-table-head', {
+                //scrollbar: '.swiper-scrollbar',
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                scrollbarHide:true
+            });
+            var noi_main_swiper = new Swiper('#noi-main-table', {
+                scrollbar: '.swiper-scrollbar',
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                scrollbarHide:false
+            });
+            noi_head_swiper.params.control = noi_main_swiper;
+            noi_main_swiper.params.control = noi_head_swiper;
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+<!--[if lt IE 9]>
+<p class="updateBrowser">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+<main class="page page-sub ys-amp" id="page-noi" role="main">
 <div class="amp-content-panel noi-view" id="noi">
     <div class="amp-block">
         <div class="amp-table-wrapper" id="noi-summary">
@@ -180,10 +268,10 @@
                         <!-- end -->
                         </tbody>
                         <tfoot>
-                        <tr class="tr-main">
+                        <tr>
                             <th>NOI</th>
                         </tr>
-                        <tr class="tr-sub">
+                        <tr>
                             <th>利润率</th>
                         </tr>
                         </tfoot>
@@ -517,7 +605,7 @@
                                 <!-- end -->
                                 </tbody>
                                 <tfoot>
-                                <tr class="tr-main">
+                                <tr>
                                     <td>216.57</td>
                                     <td>227.84</td>
                                     <td>-11.27</td>
@@ -535,7 +623,7 @@
 
                                     <td>63.35%</td>
                                 </tr>
-                                <tr class="tr-sub">
+                                <tr>
                                     <td>216.57</td>
                                     <td>227.84</td>
                                     <td>-11.27</td>
@@ -565,8 +653,8 @@
             </div>
         </div>
 
-        <div class="amp-table-wrapper" id="noi-arrearage">
-            <table class="table table-no-bordered table-hover amp-table">
+        <div class="amp-table-wrapper">
+            <table class="table table-no-bordered amp-table">
                 <thead>
                 <tr >
                     <th></th>
@@ -629,3 +717,8 @@
 
 
 </div><!-- amp-content-panel -->
+</main>
+
+
+</body>
+</html>

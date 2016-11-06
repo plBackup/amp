@@ -17,10 +17,11 @@
 
     <link href="../static/css/common/common.css" rel="stylesheet">
     <link href="../static/css/common/static_table.css" rel="stylesheet">
-    <link href="../static/css/views/noi.css" rel="stylesheet">
+
 
     <!-- 自有CSS -->
     <link href="../static/css/main/amp_main.css" rel="stylesheet">
+    <link href="../static/css/views/noi.css" rel="stylesheet">
     <link href="../components/toolbar/filter.css" rel="stylesheet">
 
     <script src="../static/dist/js/angular.min.js"></script>
@@ -29,7 +30,7 @@
     <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
-    <script src="../static/dist/js/jquery.pin.min.js"></script>
+    <script src="../static/dist/js/jquery.pin.js"></script>
 
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
@@ -74,7 +75,65 @@
             $(".ys-table-fixed-top").pin({
                 containerSelector: "#noi-main-table-wrapper",
                 padding: {top: 44, bottom: 50}
-            })
+            });
+
+
+            $(".ys-table-main").on("mouseenter","tr",function(e){
+                console.log("....")
+                var index=$(this).index();
+                var parentTagName=$(this).parent().get(0).tagName;
+                $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                    $(this).find("tr").eq(index).addClass("hover");
+                });
+            });
+
+            $(".ys-table-main").on("mouseleave","tr",function(e){
+                console.log("----")
+                var index=$(this).index();
+                var parentTagName=$(this).parent().get(0).tagName;
+                $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                    $(this).find("tr").eq(index).removeClass("hover");
+                });
+
+            });
+
+            $(".ys-table-main").on("click","tbody>tr",function(e){
+                if($(this).hasClass("tr-main")){
+                    var index=$(this).index();
+                    $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                        $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-main").toggle();
+                    });
+                }
+            });
+
+            $("#noi-arrearage").on("click","tr.tr-main",function(e){
+                console.log("....");
+                $(this).toggleClass("tr-collapse").nextAll("tr.tr-sub").toggle();
+            });
+            var defer=null;
+
+            $(window).resize(function(){
+                if(!defer){
+
+                    defer=setTimeout(function(){
+                        swiperUpdate();
+                        defer=null;
+                    },200);
+                }else{
+                    clearTimeout(defer);
+                    defer=setTimeout(function(){
+                        swiperUpdate();
+                        defer=null;
+                        console.log("update");
+                    },200);
+                }
+
+            });
+
+            var swiperUpdate=function(){
+                noi_head_swiper.update();
+                noi_main_swiper.update();
+            }
 
         });
     </script>
@@ -145,7 +204,7 @@
                 <table class="table table-right-bordered amp-table" >
                     <thead>
                     <tr>
-                        <th>净运营收入NOI(万元)</th>
+                        <th>净营运收入NOI(万元)</th>
                         <th>总投资成本(万元)</th>
                         <th>估值(万元)</th>
                         <th>贷款(万元)</th>
@@ -214,7 +273,7 @@
                     <div class="swiper-container" style="width:100%;" id="noi-main-table-head">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:1800px;" >
+                                <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:1500px;" >
                                     <thead>
                                     <tr style="border-bottom:solid 8px #fff;">
                                         <th colspan="4" ><em><</em>2016-08(万元)</th>
@@ -321,10 +380,10 @@
                             <!-- end -->
                             </tbody>
                             <tfoot>
-                            <tr>
+                            <tr class="tr-main">
                                 <th>NOI</th>
                             </tr>
-                            <tr>
+                            <tr class="tr-sub">
                                 <th>利润率</th>
                             </tr>
                             </tfoot>
@@ -334,7 +393,7 @@
                     <div class="swiper-container" style="width:100%;" id="noi-main-table">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <table class="table table-no-bordered amp-table table-hover"  style="width:1800px;">
+                                <table class="table table-no-bordered amp-table table-hover"  style="width:1500px;">
                                     <tbody>
                                     <tr class="tr-main">
                                         <td>506.8</td>
@@ -658,7 +717,7 @@
                                     <!-- end -->
                                     </tbody>
                                     <tfoot>
-                                    <tr>
+                                    <tr class="tr-main">
                                         <td>216.57</td>
                                         <td>227.84</td>
                                         <td>-11.27</td>
@@ -676,7 +735,7 @@
 
                                         <td>63.35%</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="tr-sub">
                                         <td>216.57</td>
                                         <td>227.84</td>
                                         <td>-11.27</td>
@@ -706,8 +765,16 @@
                 </div>
             </div>
 
-            <div class="amp-table-wrapper">
-                <table class="table table-no-bordered amp-table">
+            <div class="amp-table-wrapper" id="noi-arrearage">
+                <table class="table table-no-bordered table-hover amp-table">
+                    <colgroup>
+                        <col width="15%">
+                        <col width="17%">
+                        <col width="17%">
+                        <col width="17%">
+                        <col width="17%">
+                        <col width="17%">
+                    </colgroup>
                     <thead>
                     <tr >
                         <th></th>
