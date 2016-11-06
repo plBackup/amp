@@ -104,6 +104,13 @@
                         $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-main").toggle();
                     });
                 }
+
+                if($(this).hasClass("tr-sub-main")){
+                    var index=$(this).index();
+                    $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
+                        $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-sub").toggle();
+                    });
+                }
             });
 
             $("#noi-arrearage").on("click","tr.tr-main",function(e){
@@ -342,8 +349,18 @@
                                 <th>地租</th>
                             </tr>
 
-                            <tr class="tr-sub">
-                                <th>公用事业费</th>
+                            <tr class="tr-sub tr-sub-main">
+                                <th>能耗费用<em class="ys-icon icon-menu-down"></em></th>
+                            </tr>
+
+                            <tr class="tr-tri">
+                                <th>水费</th>
+                            </tr>
+                            <tr class="tr-tri">
+                                <th>电费</th>
+                            </tr>
+                            <tr class="tr-tri">
+                                <th>煤气费</th>
                             </tr>
 
                             <tr class="tr-sub">
@@ -546,7 +563,7 @@
 
                                     </tr>
 
-                                    <tr class="tr-sub">
+                                    <tr class="tr-sub tr-sub-main">
                                         <td>9.39</td>
                                         <td>10.44</td>
                                         <td>-1.05</td>
@@ -564,6 +581,63 @@
 
                                         <td></td>
                                     </tr>
+
+                                    <tr class="tr-tri">
+                                        <td>3.39</td>
+                                        <td>10.44</td>
+                                        <td>-1.05</td>
+                                        <td class="t-split">-10.06%</td>
+
+                                        <td>255.5</td>
+                                        <td>283.89</td>
+                                        <td>-28.39</td>
+                                        <td class="t-split">-10.00%</td>
+
+                                        <td>5.55</td>
+                                        <td>10.44</td>
+                                        <td>-4.89</td>
+                                        <td class="t-split">-46.84%</td>
+
+                                        <td></td>
+                                    </tr>
+                                    <tr class="tr-tri">
+                                        <td>3.00</td>
+                                        <td>10.44</td>
+                                        <td>-1.05</td>
+                                        <td class="t-split">-10.06%</td>
+
+                                        <td>255.5</td>
+                                        <td>283.89</td>
+                                        <td>-28.39</td>
+                                        <td class="t-split">-10.00%</td>
+
+                                        <td>5.55</td>
+                                        <td>10.44</td>
+                                        <td>-4.89</td>
+                                        <td class="t-split">-46.84%</td>
+
+                                        <td></td>
+                                    </tr>
+                                    <tr class="tr-tri">
+                                        <td>3.00</td>
+                                        <td>10.44</td>
+                                        <td>-1.05</td>
+                                        <td class="t-split">-10.06%</td>
+
+                                        <td>255.5</td>
+                                        <td>283.89</td>
+                                        <td>-28.39</td>
+                                        <td class="t-split">-10.00%</td>
+
+                                        <td>5.55</td>
+                                        <td>10.44</td>
+                                        <td>-4.89</td>
+                                        <td class="t-split">-46.84%</td>
+
+                                        <td></td>
+                                    </tr>
+
+
 
                                     <tr class="tr-sub">
                                         <td>25.01</td>

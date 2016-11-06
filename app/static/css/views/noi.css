@@ -19,13 +19,16 @@
 #noi .amp-table>thead>tr.thead-tr-sub>th{text-align:right;}
 #noi .amp-table>tbody>tr.tr-main>td,
 #noi .amp-table>tbody>tr.tr-sub>td,
+#noi .amp-table>tbody>tr.tr-tri>td,
 #noi .amp-table>tfoot>tr>td{text-align:right;font-size: 14px;}
 
 #noi .amp-table>tbody>tr.tr-main>th,
 #noi .amp-table>tbody>tr.tr-sub>th,
+#noi .amp-table>tbody>tr.tr-tri>th,
 #noi .amp-table>tfoot>tr>th{text-align: left;padding-left:30px;}
 
 #noi .amp-table>tbody>tr.tr-sub>th{padding-left:42px;}
+#noi .amp-table>tbody>tr.tr-tri>th{padding-left:54px;}
 #noi .amp-table>tbody>tr.tr-main>th,
 #noi .amp-table>tbody>tr.tr-main>td,
 #noi .amp-table>tfoot>tr.tr-main>th,

@@ -40,7 +40,7 @@
 
 .amp-table>tbody>tr>th,.amp-table>tbody>tr>td,
 .amp-table>tfoot>tr>th,.amp-table>tfoot>tr>td{
-    padding:8px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;}
+    padding:7px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;}
 
 .amp-table-wrapper .table-no-bordered tr>th.t-split, .amp-table-wrapper .table-no-bordered tr>td.t-split,
 .amp-table-wrapper-swiper .table-no-bordered tr>th.t-split, .amp-table-wrapper-swiper .table-no-bordered tr>td.t-split{
