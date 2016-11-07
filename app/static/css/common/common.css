@@ -81,15 +81,15 @@ a:hover, a:focus, a:active{color:#2da8cc;}
 
 .amp-btn{padding:0 12px;min-width: 120px;height:40px;line-height:40px;text-align: center;color:#fff;border:0;border-radius:3px;
         background-color:#33d393;font-size:15px;position: relative;z-index:99;}
-.amp-btn:hover, .amp-btn:focus, .amp-btn:active{/*background-color: #31be83;*/color:#fff;}
+.amp-btn:hover, .amp-btn:focus, .amp-btn:active,.amp-btn:active:focus, .amp-btn:active:hover{background-color: #31be83;color:#fff;}
 .amp-btn-lg{width:252px;}
 
-.amp-btn:before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; background: #31be83;border-radius:3px;
+.amp-btn-lg:before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; background: #31be83;border-radius:3px;
     -webkit-transform: scale(0); transform: scale(0); -webkit-transition-property: transform; transition-property: transform;
     -webkit-transition-duration: 0.3s; transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-out;  transition-timing-function: ease-out;
 }
-.amp-btn:hover:before/*.amp-btn:focus:before, .amp-btn:active:before*/ {
+.amp-btn-lg:hover:before/*.amp-btn:focus:before, .amp-btn:active:before*/ {
     -webkit-transform: scale(1);
     transform: scale(1);
 }

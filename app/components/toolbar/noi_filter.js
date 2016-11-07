@@ -26,9 +26,7 @@ var filters=(function($,fl){
             }
             case   "m"   :   {
                 date.setMonth(date.getMonth()+number);
-                console.log("m");
                 d=  date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1));
-                console.log(d);
                 break;
             }
             case   "w"   :   {
@@ -66,6 +64,7 @@ var filters=(function($,fl){
         }
     }
 
+    //month Selector
     filters.monthSelector=function(){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1);
@@ -102,6 +101,92 @@ var filters=(function($,fl){
         $("#monthpicker input").val(start_date);
     };
 
+    //date Selector
+    filters.dateSelector=function(){
+        var curDate=new Date();
+        var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+
+        $("#datepicker input").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        });
+
+        $("#datepicker input").val(start_date);
+    };
+
+    //daterange Selector
+    filters.daterangeSelector=function(){
+        var curDate=new Date();
+        var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+        var startDate,endDate;
+        var dateStart=$("#daterange input#date-range-filter-start").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        }).on("changeDate",function(e){
+            var curDateStr= DateAdd("d",0,e.date);
+            startDate=e.timeStamp;
+            if(endDate){
+                if(startDate>endDate){
+                    endDate=null;
+                    $("#daterange input#date-range-filter-end").val("");
+                }
+            }
+            $("#daterange input#date-range-filter-end").datetimepicker('setStartDate',curDateStr);
+        });
+        var dateEnd=$("#daterange input#date-range-filter-end").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN",
+        }).on("changeDate",function(e){
+            endDate=e.timeStamp;
+        });
+        $("#daterange input#date-range-filter-start").val(start_date);
+    };
+
+    //item-select-filter
+    filters.dropdownSelector=function(){
+        var curVal=$(".item-select-filter #select-id").val().trim();
+        if(curVal!=""){
+            $(".item-select-filter button.dropdown-toggle>em").text(curVal);
+            $(".item-select-filter").find(".dropdown-menu a").each(function(i,e){
+                 if($(this).text().trim()==curVal){
+                    $(this).closest("li").addClass("active");
+                 }
+            });
+        }
+        $(".item-select-filter").on("click",".dropdown-menu a",function(e){
+           e.preventDefault();
+            var curSelect=$(this).text().trim();
+            $(this).closest("ul.dropdown-menu").find("li").removeClass("active");
+            $(this).parent("li").addClass("active");
+
+            $(".item-select-filter button.dropdown-toggle>em").text(curSelect);
+            $(".item-select-filter #select-id").val(curSelect);
+        });
+    };
+    filters.dropdownSelector.getValue=function(){
+        return $(".item-select-filter #select-id").val();
+    };
+
+    filters.init=function(){
+        $("input").on("focus",function(){
+            $(this).closest(".input-group").addClass("out-ring");
+        });
+        $("input").on("blur",function(){
+            $(this).closest(".input-group").removeClass("out-ring");
+        })
+    };
 
     return filters;
 })(jQuery,filters||{});
@@ -109,4 +194,8 @@ var filters=(function($,fl){
 $(document).ready(function(){
     //这里有公共方法，确定业务后 单独放到一个文件
     filters.monthSelector();
+    filters.dateSelector();
+    filters.daterangeSelector();
+    filters.dropdownSelector();
+    filters.init();
 });
