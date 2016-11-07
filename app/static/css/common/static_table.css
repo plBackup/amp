@@ -106,5 +106,4 @@
 
 .amp-table>tbody>tr.tr-main{}
 .amp-table>tbody>tr.tr-main.tr-collapse{}
-
-
+.amp-table>tbody>tr.tr-collapsed{display: none;}

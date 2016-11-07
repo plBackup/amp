@@ -161,3 +161,22 @@ tr.tr-collapse .icon-menu-down {
     color: #333;
 }
 
+/*noi-chart-wrapper*/
+.chart-wrapper{position: relative;padding-top:20px;}
+.chart-wrapper em.chart-axis-info{position: absolute;display: block;top:0;left:0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

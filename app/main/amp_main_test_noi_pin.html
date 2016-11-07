@@ -81,7 +81,6 @@
 
 
             $(".ys-table-main").on("mouseenter","tr",function(e){
-                console.log("....")
                 var index=$(this).index();
                 var parentTagName=$(this).parent().get(0).tagName;
                 $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
@@ -90,7 +89,6 @@
             });
 
             $(".ys-table-main").on("mouseleave","tr",function(e){
-                console.log("----")
                 var index=$(this).index();
                 var parentTagName=$(this).parent().get(0).tagName;
                 $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
@@ -103,20 +101,38 @@
                 if($(this).hasClass("tr-main")){
                     var index=$(this).index();
                     $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
-                        $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-main").toggle();
+                        var $trMain=$(this).find("tr").eq(index);
+                        $trMain.toggleClass("tr-collapse");
+                        if($trMain.hasClass("tr-collapse")){
+                            $trMain.nextUntil(".tr-main","tr").addClass("tr-collapsed");
+
+                        }else{
+                            //展开时，要判断 tr-sub-main的状态，来更改tr-tri的折叠状态
+                            $trMain.nextUntil(".tr-main","tr.tr-sub").removeClass("tr-collapsed");
+                            var sub_main_collapse= false;
+                            $trMain.nextUntil(".tr-main","tr.tr-tri").each(function(i,e){
+                                if(i==0){
+
+                                    sub_main_collapse=$(this).prev(".tr-sub-main").hasClass("tr-collapse");
+                                }
+
+                                if(!sub_main_collapse){
+                                    $(this).removeClass("tr-collapsed");
+                                }
+                            });
+                        }
                     });
                 }
 
                 if($(this).hasClass("tr-sub-main")){
                     var index=$(this).index();
                     $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
-                        $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-sub").toggle();
+                        $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-sub").toggleClass("tr-collapsed");
                     });
                 }
             });
 
             $("#noi-arrearage").on("click","tr.tr-main",function(e){
-                console.log("....");
                 $(this).toggleClass("tr-collapse").nextAll("tr.tr-sub").toggle();
             });
             var defer=null;
@@ -133,7 +149,6 @@
                     defer=setTimeout(function(){
                         swiperUpdate();
                         defer=null;
-                        console.log("update");
                     },200);
                 }
 
@@ -906,10 +921,11 @@
             <div class="amp-block-title">
                 <h3 class="col-xs-4">NOI实际与方案(一、二、三)对比</h3>
             </div>
-            <div class="col-xs-12">
-                <div id="noi-chart" style="height:380px;"></div>
+            <div class="col-xs-12 chart-wrapper" id="noi-chart-wrapper" >
+                <em class="chart-axis-info chart-axis-y-info">万元</em>
+                <div id="noi-chart" style="height:310px;"></div>
+                <div class="chart-legend"></div>
             </div>
-
         </div>
 
 

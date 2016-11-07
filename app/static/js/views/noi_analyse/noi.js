@@ -103,11 +103,11 @@ var noi=(function($,noi){
                     fontSize:14
                 },
                 nameGap:25,*/
-                boundaryGap:false,
+                boundaryGap:true,
                 axisLine:{
                     show:true,
                     lineStyle:{
-                        color:"#535861",
+                        color:"#ececec",
                         width:1,
                         type:"solid"
                     }
@@ -126,8 +126,9 @@ var noi=(function($,noi){
                     show:true,
                    //formatter:null,
                     formatter:'{value}年',
+                    margin:12,
                     textStyle:{
-                        color:"#acadb0",
+                        color:"#666",
                         fontStyle:"normal",
                         fontSize:12
                     }
@@ -135,7 +136,7 @@ var noi=(function($,noi){
                 splitLine:{
                     show:false,
                     lineStyle:{
-                        color:"#535861",
+                        color:"#ececec",
                         width:1,
                         type:"solid"
                     }
@@ -143,7 +144,7 @@ var noi=(function($,noi){
                 data:["2015","2016", "2017", "2018", "2019", "2020"],
             },
             yAxis:{
-                /*name:"销售额(万元)",
+                /*name:"万元",
                  nameLocation:"end",
                  nameGap:15,
                  nameTextStyle:{
@@ -155,7 +156,7 @@ var noi=(function($,noi){
                 max:"auto",
                 //splitNumber:7,
                 axisLine:{
-                    show:true,
+                    show:false,
                     lineStyle:{
                         color:"#535861",
                         width:1,
@@ -163,7 +164,7 @@ var noi=(function($,noi){
                     }
                 },
                 axisTick:{
-                    show:true,
+                    show:false,
                     inside:false,
                     length:6,
                     linStyle:{
@@ -174,9 +175,10 @@ var noi=(function($,noi){
                 },
                 axisLabel:{
                     show:true,
-                    formatter:'{value}万',
+                    formatter:'{value}',
+                    margin:15,
                     textStyle:{
-                        color:"#acadb0",
+                        color:"#666",
                         fontStyle:"normal",
                         fontSize:12
                     }
@@ -184,14 +186,14 @@ var noi=(function($,noi){
                 splitLine:{
                     show:true,
                     lineStyle:{
-                        color:"#535861",
+                        color:"#ececec",
                         width:1,
                         type:"solid"
                     }
                 },
 
             },
-            color:['#18b0e2','#ea7444', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+            color:['#61cd78','#60bbf4', '#fc7270', '#feb739', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
             backgroundColor:"transparent",
             tooltip:{
                 show:true,
