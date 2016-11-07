@@ -238,9 +238,8 @@ var noi=(function($,noi){
         }
 
         var option=chart_opt[chartType+"Opt"];
-        console.log(option);
+
         var myChart = echarts.init(document.getElementById(id));
-        console.log(myChart);
 
         myChart.setOption(option);
         return myChart;

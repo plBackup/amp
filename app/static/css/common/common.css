@@ -125,7 +125,7 @@ tr.tr-collapse .icon-menu-down {
     transform: rotate(180deg);
     }
 /**/
-.amp-block{padding:0;}
+.amp-block{padding:0;margin-bottom:25px;}
 .amp-block-pd{padding-left:28px;padding-right:28px;}
 .ys-amp .amp-block-title {
     position: relative;
@@ -162,13 +162,20 @@ tr.tr-collapse .icon-menu-down {
 }
 
 /*noi-chart-wrapper*/
-.chart-wrapper{position: relative;padding-top:20px;}
-.chart-wrapper em.chart-axis-info{position: absolute;display: block;top:0;left:0;}
+.chart-wrapper{position: relative;padding-top:20px;padding-bottom:38px;}
+.chart-wrapper em.chart-axis-info{position: absolute;display: block;top:0;left:35px;font-size: 15px;}
 
-
-
-
-
+.chart-wrapper .chart-legend{text-align: center;padding:0px 35px;}
+.chart-wrapper .chart-legend>span{display: inline-block;height:30px;line-height: 30px;margin-right:15px;margin-left:15px;font-size: 14px;color:#8992a3;}
+.chart-wrapper em.color-label {
+    display: inline-block;
+    position: relative;
+    top:1px;
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: #e5e5e5;
+}
 
 
 
