@@ -20,6 +20,7 @@
 
 .amp-side-toolbar .toolbar-block{padding-left:12px;padding-right:12px;}
 .amp-side-toolbar .toolbar-item{margin-bottom:16px;}
+.amp-side-toolbar .toolbar-item:nth-last-child(1){margin-bottom: 0;}
 .amp-side-toolbar .toolbar-item label{display: block;margin-bottom:3px;height:18px;line-height: 18px;color:#8592a3;font-size: 12px;}
 
 .datetimepicker{padding:5px 3px;width:200px;}

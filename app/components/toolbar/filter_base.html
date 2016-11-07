@@ -5,7 +5,7 @@
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button" id="ys-date-pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
             </span>
-                <input size="16" type="text" value="" data-provide="datepicker" id="month-filter" name="month-filter" ng-model="month-filter" readonly>
+            <input size="16" type="text" value="" data-provide="datepicker" id="month-filter" name="month-filter" ng-model="month-filter" readonly>
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button" id="ys-date-next"><em class="glyphicon glyphicon-arrow-right"></em></button>
             </span>
@@ -22,7 +22,7 @@
     </div><!--div toolbar-item-->
 
     <div class="toolbar-item item-daterange-filter" style="padding:0;">
-        <label for="date-range-filter-start">日期范围</label>
+        <label for="date-range-filter-start">日期</label>
         <div class="input-group date ys-datepicker" id="daterange">
             <input size="16" type="text" placeholder="开始" value="" data-provide="datepicker" id="date-range-filter-start" name="date-range-filter-start" ng-model="date-range-filter-start" readonly>
             <span class="input-group-addon input-sm">~</span>
@@ -47,17 +47,16 @@
 
     <div class="toolbar-item item-select-filter" style="padding:0;">
         <label for="search-id">选择</label>
-        <input type="text" placeholder="" id="select-id" name="select-id" hidden>
+        <input type="text" placeholder="" id="select-id" name="select-id" hidden value="">
         <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">
-                Dropdown
-                <span class="ys-icon ys-icon-dropdown"></span>
+                <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司A</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司B</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司C</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司D</a></li>
             </ul>
         </div>
     </div><!--div toolbar-item-->
@@ -67,7 +66,7 @@
         <div class="input-group">
             <input type="text" placeholder="" id="search-id" name="search-id">
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><em class="glyphicon glyphicon-search"></em></button>
+                <button class="btn btn-default" type="button"><em class="ys-icon ys-icon-search"></em></button>
             </span>
         </div>
     </div><!--div toolbar-item-->
@@ -80,9 +79,3 @@
         <a href="javascript:void(0)" class="btn btn-default amp-btn" id="toolbar-create">录入</a>
     </div><!--div toolbar-item-->
 </div>
-<script src="noi_filter.js"></script>
-<script>
-    $(document).ready(function(){
-        filters.monthSelector();
-    })
-</script>

@@ -191,6 +191,7 @@ var filters=(function($,fl){
     return filters;
 })(jQuery,filters||{});
 
+/*
 $(document).ready(function(){
     //这里有公共方法，确定业务后 单独放到一个文件
     filters.monthSelector();
@@ -198,4 +199,4 @@ $(document).ready(function(){
     filters.daterangeSelector();
     filters.dropdownSelector();
     filters.init();
-});
+});*/
