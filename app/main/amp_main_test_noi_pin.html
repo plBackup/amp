@@ -74,7 +74,7 @@
             noi_head_swiper.params.control = noi_main_swiper;
             noi_main_swiper.params.control = noi_head_swiper;
 
-            $(".ys-table-fixed-top").pin({
+            var pin=$(".ys-table-fixed-top").pin({
                 containerSelector: "#noi-main-table-wrapper",
                 padding: {top: 44, bottom: 50}
             });
@@ -122,6 +122,7 @@
                             });
                         }
                     });
+                    pin.refresh();
                 }
 
                 if($(this).hasClass("tr-sub-main")){
@@ -157,8 +158,10 @@
             var swiperUpdate=function(){
                 noi_head_swiper.update();
                 noi_main_swiper.update();
-            }
+            };
 
+            //初始化折叠项目
+            $(".tr-init-collapse").trigger("click");
         });
     </script>
     <script src="../static/js/views/noi_analyse/noi.js"></script>
@@ -352,7 +355,7 @@
                                 <th>其他收入</th>
                             </tr>
 
-                            <tr class="tr-main">
+                            <tr class="tr-main tr-init-collapse">
                                 <th>费用<em class="ys-icon icon-menu-down"></em></th>
                             </tr>
                             <tr class="tr-sub">

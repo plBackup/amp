@@ -110,19 +110,19 @@ a:hover, a:focus, a:active{color:#2da8cc;}
     -ms-transition: transform 0.3s;
     -o-transition: transform 0.3s;
     transition: transform 0.3s;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);}
-.icon-menu-down:hover{background-position:-250px -244px;}
-
-tr.tr-collapse .icon-menu-down {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    transform: rotate(180deg);
+    transform: rotate(180deg);}
+.icon-menu-down:hover{background-position:-250px -244px;}
+
+tr.tr-collapse .icon-menu-down {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
     }
 /**/
 .amp-block{padding:0;margin-bottom:25px;}
