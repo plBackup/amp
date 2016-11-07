@@ -104,14 +104,13 @@
         });
 
         $window.scroll(onScroll);
-        $window.resize(function () { recalculateLimits(); console.log("recalculateLimits()")});
+        $window.resize(function () { recalculateLimits();});
         recalculateLimits();
 
         $window.load(update);
 
         this.refresh=function(){
             this.each(function () {
-                console.log("pin-refresh");
                 recalculateLimits();
             });
 

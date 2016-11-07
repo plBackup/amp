@@ -4,7 +4,7 @@
 var menu_list={
     amp_menu:[
         {
-            name:"资产包综合报表",
+            name:"存量分析",
             index:"main-0",
             icon:"ys-icon-asset",
             links:"../sys/amp_asset_noi.html",
@@ -13,23 +13,17 @@ var menu_list={
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
-                    name:"存量分析",
+                    name:"实际",
                     index:"sub-0",
                     links:"../sys/amp_asset_noi.html",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
                 },
-                {
-                    name:"开发分析",
-                    index:"sub-0",
-                    links:"../amp/amp_asset_irr_swiper-finacial.html",
-                    target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-                },
+
             ]
         },
         {
-            name:"财务分析",
+            name:"投资分析",
             index:"main-1",
             icon:"ys-icon-finacial",
             links:"../amp/amp_financial_index.html",
@@ -38,7 +32,7 @@ var menu_list={
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
-                    name:"收益表",
+                    name:"模拟测算",
                     index:"sub-1",
                     links:"../amp/amp_financial_index.html",
                     target:"#page-frame",
@@ -55,7 +49,7 @@ var menu_list={
             ]
         },
         {
-            name:"风控分析",
+            name:"管理分析",
             index:"main-2",
             icon:"ys-icon-risk",
             links:"../sys/amp_ctrl_rent_warn.html",
@@ -63,6 +57,21 @@ var menu_list={
             show_sub_menu:false,
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
+                {
+                    name:"收入分析",
+                    index:"sub-2",
+                    links:"../sys/amp_ctrl_rent_warn.html",
+                    target:"#page-frame",
+                    re_locate:true,//点击一级目录直接跳转
+
+                },
+                {
+                    name:"支出分析",
+                    index:"sub-2",
+                    links:"../amp/amp_opt_passenger_flow.html",
+                    target:"#page-frame",
+                    re_locate:true,//点击一级目录直接跳转
+                },
                 {
                     name:"租赁分析",
                     index:"sub-2",
@@ -81,7 +90,7 @@ var menu_list={
             ]
         },
         {
-            name:"管理工具",
+            name:"风控分析",
             index:"main-3",
             icon:"ys-icon-tool",
             links:"../sys/amp_tookit_rentlist.html",
@@ -89,8 +98,8 @@ var menu_list={
             show_sub_menu:false,
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
-                {
-                    name:"租金包管理",
+             /*   {
+                    name:"租赁分析",
                     index:"sub-3",
                     links:"../sys/amp_tookit_rentlist.html",
                     target:"#page-frame",
@@ -98,20 +107,13 @@ var menu_list={
 
                 },
                 {
-                    name:"影子模型",
+                    name:"运营分析",
                     index:"sub-3",
-                    links:"../sys/amp_floor_fake.html",
+                    links:"../sys/amp_tookit_rentlist.html",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
 
-                },
-                {
-                    name:"回报计划",
-                    index:"sub-3",
-                    links:"../sys/amp_tookit_sim_swiper.html",
-                    target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-                }
+                },*/
             ]
         },
         {
@@ -124,14 +126,22 @@ var menu_list={
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
-                    name:"基础数据",
+                    name:"租金包",
                     index:"sub-4",
                     links:"#",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
                 },
                 {
-                    name:"经营数据",
+                    name:"影子模型",
+                    index:"sub-4",
+                    links:"#",
+                    target:"#page-frame",
+                    re_locate:true,//点击一级目录直接跳转
+
+                },
+                {
+                    name:"回报计划",
                     index:"sub-4",
                     links:"#",
                     target:"#page-frame",
