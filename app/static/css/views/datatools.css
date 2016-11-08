@@ -3,4 +3,29 @@
 #rent-package .amp-table>thead>tr>th{text-align: left;}
 #rent-package .amp-table>tbody>tr:hover{cursor: pointer;}
 
-#rent-package-rpanel {}
+#rent-package-rpanel .right-content{padding:20px;padding-top:0;padding-right:0;}
+#rent-package-rpanel .table-input-typeA{table-layout: fixed;}
+#rent-package-rpanel .table-input-typeA>tbody>tr>td{padding:0;padding-top:12px;padding-right:20px;height:78px;overflow: visible;}
+.table-input-typeA .input-wrapper label{display: block;margin-bottom:0;height:32px;line-height: 32px;
+    color: #8592a3;font-size: 14px;}
+.table-input-typeA .input-wrapper input{width:100%;padding:6px 10px;line-height:20px;height:34px;border:solid 1px #dae1e7;background-color:#f3f4f8;}
+
+.table-input-typeA .input-wrapper .dropdown-toggle{padding:6px 12px;width:100%;border:solid 1px #dae1e7;background-color:#f3f4f8;color:#8592a3;border-radius: 0;text-align: left;}
+.table-input-typeA .input-wrapper span.ys-icon-dropdown {
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 8px;
+    top: 50%;
+    right: 8px;
+    margin-top: -4px;
+    background-position: -170px -261px;
+}
+#rent-package-rpanel .block{padding-left:20px;padding-right:20px;}
+
+#rent-package-rpanel .btn-wrapper .amp-btn{float:right;margin-left:20px;}
+
+
+
+
+

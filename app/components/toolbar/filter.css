@@ -13,9 +13,11 @@
 }
 
 
-.amp-side-toolbar{display: none;padding-top:20px;padding-bottom:20px;}
+.amp-side-toolbar{display: none;padding-top:0;padding-bottom:0;}
 
 .amp-side-toolbar.active{display: block;}
+.amp-side-toolbar .toolbar-block{padding-top:20px;padding-bottom:20px;}
+.amp-side-toolbar .toolbar-blank{padding-top:0;padding-bottom:0;display: none;}
 .leftpanel-collapsed .amp-side-toolbar{display: none;}
 
 .amp-side-toolbar .toolbar-block{padding-left:12px;padding-right:12px;}

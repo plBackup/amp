@@ -25,6 +25,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 'content': {
                     templateUrl: '../views/noi_analyse/noi.html',
                 },
+                "right":{
+                    templateUrl: '../views/blank_right.html',
+                }
             },
         }, //state
         {
@@ -39,6 +42,51 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 },
                 "right":{
                     templateUrl: '../views/datatools/datatool_rent_package_rpanel.html',
+                }
+            },
+        }, //state
+        {
+            name: 'irrplan',
+            url: '/irrplan',
+            views:{
+                'toolbar': {
+                    templateUrl: '../components/toolbar/blank_filter.html',
+                },
+                'content': {
+                    templateUrl: '../views/datatools/datatool_irr_plan.html',
+                },
+                "right":{
+                    templateUrl: '../views/blank_right.html',
+                }
+            },
+        }, //state
+        {
+            name: 'datasim',
+            url: '/datasim',
+            views:{
+                'toolbar': {
+                    templateUrl: '../components/toolbar/blank_filter.html',
+                },
+                'content': {
+                    templateUrl: '../views/datatools/datatool_sim.html',
+                },
+                "right":{
+                    templateUrl: '../views/blank_right.html',
+                }
+            },
+        }, //state
+        {
+            name: 'rpgset',
+            url: '/rpgset',
+            views:{
+                'toolbar': {
+                    templateUrl: '../components/toolbar/blank_filter.html',
+                },
+                'content': {
+                    templateUrl: '../views/datatools/datatool_rpg_set_index.html',
+                },
+                "right":{
+                    templateUrl: '../views/blank_right.html',
                 }
             },
         }, //state
