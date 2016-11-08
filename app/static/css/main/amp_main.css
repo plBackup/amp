@@ -178,7 +178,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
     border: 0;
     border-radius: 0;
     color:#666;}
-.head-main-menu .nav-tabs > li.active > a,.head-main-menu .nav-tabs > li.active > a:hover,.head-main-menu .nav-tabs > li.active > a:focus{border:0;background-color:#f3f4f8;color:#333;}
+.head-main-menu .nav-tabs > li.active > a,.head-main-menu .nav-tabs > li.active > a:hover,.head-main-menu .nav-tabs > li.active > a:focus{border:0;background-color:#f3f4f8;color:#373c42;}
 
 .pageheader .tab-content{display: none;}
 .pageheader .tab-content.active{display: block;}
@@ -187,8 +187,8 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 .pageheader ul.header-nav-sub>li{float:left;padding-left:20px;padding-right:20px;overflow: visible;}
 
 .pageheader ul.header-nav-sub>li a.header-subnav-item{display: inline-block;padding-left:5px;padding-right:5px;height:44px;line-height: 41px;border-bottom:solid 3px transparent;color:#999;text-decoration: none;}
-.pageheader ul.header-nav-sub>li a.header-subnav-item.active{border-bottom: solid 3px  #5ab46e;color:#333;}
-.pageheader ul.header-nav-sub>li a.header-subnav-item:hover{border-bottom: solid 3px #5fbb73;color:#333;}
+.pageheader ul.header-nav-sub>li a.header-subnav-item.active{border-bottom: solid 3px  #5ab46e;color:#373c42;}
+.pageheader ul.header-nav-sub>li a.header-subnav-item:hover{border-bottom: solid 3px #5fbb73;color:#373c42;}
 
 #page-frame{width:100%;height:100%;border:0;overflow: auto;}
 
@@ -196,7 +196,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 .ys-figure{display: block;position: absolute;top:0;left:0;width:32px;height:32px;border-radius:32px;background-image: url(../../images/main/figure.jpg);background-position: center center;background-repeat: no-repeat;background-size: contain;}
 
 /*right panel*/
-.backdrop{display: none;position: fixed;top:0;left:0;right:0;bottom:0;background-color:#333;opacity:0;z-index:999;
+.backdrop{display: none;position: fixed;top:0;left:0;right:0;bottom:0;background-color:#373c42;opacity:0;z-index:999;
     -webkit-transition: opactiy 0.3s;
     -moz-transition: opactiy 0.3s;
     -ms-transition: opactiy 0.3s;
@@ -205,7 +205,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 
 .open .backdrop, .open-tool .backdrop, .open-panel .backdrop{display: block;  opacity:0.56;}
 
-.rightpanel{ height: 100%; width:0; position: fixed; top: 0; right: 0; background-color: #fff; overflow-x: hidden; padding-top: 60px;  z-index:1999;
+.rightpanel{ height: 100%; width:0; position: fixed; top: 0; right: 0; background-color: #fff; overflow-x: hidden; padding-top: 0;  z-index:1999;
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
     -ms-transition: width 0.3s;
@@ -213,9 +213,13 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
     transition: width 0.3s;}
 .open-tool .rightpanel{width:300px;}
 .open-panel .rightpanel{width:60%;}
-.rightpanel .closebtn { position: absolute; top:25px; left: 25px; width:36px;height:36px;font-size: 36px !important; margin-left: 0px; color:#333;cursor:pointer;text-decoration: none;}
+.rightpanel .closebtn { position: absolute; top:4px; left: 10px; width:36px;height:36px;font-size: 36px !important;color:#373c42;cursor:pointer;text-decoration: none;line-height:30px;}
 .rightpanel .closebtn:hover{color:#757575;}
 
+.rightpanel .right-content-wrapper{position: relative;padding-top:44px;}
+.rightpanel .right-content-wrapper>.right-panel-header{position: absolute;top:0;left:0;height:44px;width:100%;background-color:#dae1e7;text-align: center;}
+.rightpanel .right-content-wrapper>.right-panel-header h3{line-height:44px;font-size:15px; color:#373c42;}
+.rightpanel .right-content{padding:20px;}
 /*@media screen and (max-height: 450px) {
     .rightpanel {padding-top: 15px;}
     .rightpanel a {font-size: 18px;}
@@ -223,4 +227,27 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 
 .amp-side-opts{display: none;width:100%;min-height:200px;padding:15px;}
 .amp-side-opts.active{display: block;}
+
+
+/*amp-content-header*/
+.amp-content-header{position: relative;margin-bottom:16px;height:44px;width:100%;background-color:#f3f4f8;overflow: hidden;}
+.amp-content-header ul.header-nav-sub{list-style: none;padding:0;margin:0;}
+.amp-content-header ul.header-nav-sub>li{display: block;float:left;height:44px;margin-left:20px;margin-right:10px;padding-top:4px;line-height:40px;position: relative;}
+.amp-content-header ul.header-nav-sub>li a{display:block;width:100%;height:40px;padding-left:2px;padding-right:2px;border-bottom:solid 2px transparent;text-decoration: none;line-height:38px;color:#8992a3;font-size:14px;}
+.amp-content-header ul.header-nav-sub>li.active a,
+.amp-content-header ul.header-nav-sub>li a.active{border-bottom: solid 2px #59b46e;color:#373c42;}
+.amp-content-header ul.header-nav-sub>li a:hover{color:#373c42;}
+/*amp-pagination*/
+.amp-pagination{margin-top:-20px;padding:20px;padding-right:0;height:72px;overflow: hidden;}
+.amp-pagination .btn-wrapper>span{line-height: 32px;height:32px;font-size:14px;color:#8992a3;display: block;float:left;}
+.amp-pagination .btn-wrapper .btn-group>.btn{padding:0;border-radius:0;border:solid 1px #dce1e5;height:32px;width:48px;line-height: 30px;
+    color: #dce1e5;}
+.amp-pagination .btn:hover, .amp-pagination .btn:focus, .amp-pagination .btn:active,
+.amp-pagination .btn:active:focus, .amp-pagination .btn:active:hover {  background-color: #f3f4f8;  color: #8592a3 }
+.amp-pagination .page-num-input{width:49px;border:solid 1px #dce1e5;border-radius: 0;border-left:0;height:32px;line-height: 30px;font-size:14px;text-align: center;color:#373c42;}
+.amp-pagination .amp-btn{float:right;margin-left:10px;width:68px;height:32px;text-align: center;padding:0 10px;line-height: 32px; border-radius:0;color:#fff;min-width: inherit;font-size: 14px;}
+.amp-pagination .amp-btn:hover, .amp-pagination .amp-btn:focus,
+.amp-pagination .amp-btn:active,.amp-pagination .amp-btn:active:focus,
+.amp-pagination .amp-btn:active:hover{background-color: #55a865;color:#fff;}
+
 

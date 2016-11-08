@@ -1,0 +1,6 @@
+#rent-package{}
+#rent-package .amp-table{}
+#rent-package .amp-table>thead>tr>th{text-align: left;}
+#rent-package .amp-table>tbody>tr:hover{cursor: pointer;}
+
+#rent-package-rpanel {}

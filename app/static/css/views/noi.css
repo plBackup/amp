@@ -4,7 +4,7 @@
 #noi #noi-summary .amp-table{margin-bottom: 0;}
 #noi #noi-summary .amp-table thead{background-color:#fff;}
 #noi #noi-summary .amp-table thead>tr>th{padding:0 30px; padding-right:15px;font-size: 14px;text-align: left; vertical-align: top; border-right:solid 1px #ddd;}
-#noi #noi-summary .amp-table tbody>tr>td{padding-left:30px;padding-right:15px;padding-bottom:0;text-align:left;vertical-align: top;border-top:0; border-right:solid 1px #ddd; }
+#noi #noi-summary .amp-table tbody>tr>td{padding-left:30px;padding-right:15px;padding-bottom:0;text-align:left;vertical-align: top;border-top:0; border-right:solid 1px #ddd;border-bottom:0; }
 #noi #noi-summary .amp-table thead>tr>th:first-child,#noi #noi-summary .amp-table tbody>tr>td:first-child{padding-left:15px;}
 #noi #noi-summary .amp-table thead>tr>th:nth-last-child(1),#noi #noi-summary .amp-table tbody>tr>td:nth-last-child(1){border-right:0;}
 

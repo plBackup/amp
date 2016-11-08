@@ -19,16 +19,14 @@
     overflow: hidden;
     vertical-align: middle;
 }
-.amp-table-wrapper .table-no-bordered tr>th, .amp-table-wrapper .table-no-bordered tr>td,
-.amp-table-wrapper-swiper .table-no-bordered tr>th, .amp-table-wrapper-swiper .table-no-bordered tr>td {
-    border: 0;
-}
+
 
 .amp-table>thead>tr>th{
+    padding:0;
     padding-left:15px;padding-right:15px;
     height:28px;
     color: #8592a3;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     vertical-align: middle;
     border-bottom:0;
@@ -40,7 +38,12 @@
 
 .amp-table>tbody>tr>th,.amp-table>tbody>tr>td,
 .amp-table>tfoot>tr>th,.amp-table>tfoot>tr>td{
-    padding:7px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;}
+    padding:7px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;border-bottom:solid 1px #f4f3f8;}
+
+.amp-table-wrapper .table-no-bordered tr>th, .amp-table-wrapper .table-no-bordered tr>td,
+.amp-table-wrapper-swiper .table-no-bordered tr>th, .amp-table-wrapper-swiper .table-no-bordered tr>td {
+    border: 0;
+}
 
 .amp-table-wrapper .table-no-bordered tr>th.t-split, .amp-table-wrapper .table-no-bordered tr>td.t-split,
 .amp-table-wrapper-swiper .table-no-bordered tr>th.t-split, .amp-table-wrapper-swiper .table-no-bordered tr>td.t-split{
@@ -65,9 +68,10 @@
     /*padding-left: 160px;*/
    /* padding-right: 220px;*/
 }
-.ys-table-fixed-top{ position: relative;  padding-left: 160px;width:100%;z-index:99;}
-
-.ys-table-main{ position: relative;  padding-left: 160px;width:100%;}
+.amp-table-wrapper-swiper .ys-table-fixed-top{ position: relative;  padding-left: 160px;width:100%;z-index:99;}
+.amp-table-wrapper .ys-table-fixed-top{padding-left:0;}
+.amp-table-wrapper-swiper  .ys-table-main{ position: relative;  padding-left: 160px;width:100%;}
+.amp-table-wrapper .ys-table-main{padding-left:0;}
 .ys-table-main.scroll-wrapper{padding-left:0;}
 .ys-table-main.scroll-wrapper .scroll{padding-left:160px;position: relative;width:100%;}
 .amp-table-wrapper-swiper .swiper-container {
