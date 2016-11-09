@@ -177,9 +177,8 @@ var amp_inputs=(function($,fl){
             $this.parent("li").addClass("active");
 
             $select.find("button.dropdown-toggle>em").text(curSelect);
-            console.log($select.find("button.dropdown-toggle>em"))
             $select.find("input").val(curSelect);
-            console.log(curSelect);
+
         });
     };
 
