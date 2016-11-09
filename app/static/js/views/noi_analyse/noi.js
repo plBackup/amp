@@ -56,6 +56,13 @@ var noi=(function($,noi){
     };
 
     noi.table_init=function(){
+        $(".ys-table-main").on("mouseenter","tr",function(e){
+            var index=$(this).index();
+            var parentTagName=$(this).parent().get(0).tagName;
+            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                $(this).find("tr").eq(index).addClass("hover");
+            });
+        });
 
         $(".ys-table-main").on("mouseleave","tr",function(e){
             var index=$(this).index();

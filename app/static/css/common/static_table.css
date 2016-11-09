@@ -1,4 +1,5 @@
 /*amp table*/
+.amp-table-wrapper-swiper{overflow: hidden;position: relative;}
 .ys-amp .table, .amp-table-wrapper .table, .amp-table-wrapper-swiper .table {
     table-layout: fixed;
     margin-bottom:0;
