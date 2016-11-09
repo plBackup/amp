@@ -57,7 +57,7 @@ var datasim=(function($,datasim){
         var scrollUpdate=function(){
             var h=parseInt($(window).height());
             $(".leftpanelinner").css({
-                height:(h-160)+"px",
+                height:(h-100)+"px",
                 "overflow":"hidden"
             });
 

@@ -221,6 +221,15 @@
 #rgp-set #rent-affect-table-wrapper .amp-table tr>th{color:#8592a3;font-size: 13px;}
 #rgp-set #rent-affect-table-wrapper .ys-table-static-left .amp-table tr>th{padding-left:0;}
 
+/*inputs*/
+.td-input-wrapper{position: relative;}
+.td-input-wrapper:after{display: none;width:16px;height:16px;position: absolute;top:50%;right:12px;margin-top:-8px;background-image: url(../../images/icon.png);
+    background-repeat:no-repeat;content:" ";}
+.td-input-wrapper.date-input input{padding-right:25px;}
+.td-input-wrapper.date-input:after{display: block;position:absolute;width:16px;height:16px;background-position:-480px -198px; }
 
+.td-input-wrapper.select-input .dropdown-menu{margin-top: 0;background-color:#fff;border:solid 1px #dae1e7;color:#373c42;font-size:14px;    border-radius: 0;
+ }
 
-
+.td-input-wrapper.select-input  .dropdown-menu>li>a{line-height: 24px;}
+.td-input-wrapper .dropdown-menu>li>a:focus,.td-input-wrapper .dropdown-menu>li>a:hover,.td-input-wrapper .dropdown-menu>li.active>a{background-color:#dae1e7;color:#373c32;}
