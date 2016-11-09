@@ -7,15 +7,15 @@ var menu_list={
             name:"存量分析",
             index:"main-0",
             icon:"ys-icon-asset",
-            links:"../sys/amp_asset_noi.html",
+            links:"noi",
             target:"#",
             show_sub_menu:false,
-            re_locate:true,//点击一级目录直接跳转
+            re_locate:false,//点击一级目录直接跳转
             sub_menu:[
                 {
                     name:"实际",
                     index:"sub-0",
-                    links:"../sys/amp_asset_noi.html",
+                    links:"noi",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
                 },
@@ -120,22 +120,22 @@ var menu_list={
             name:"数据工具",
             index:"main-4",
             icon:"ys-icon-data",
-            links:"#",
+            links:"rpgindex",
             target:"#page-frame",
             show_sub_menu:false,
-            re_locate:true,//点击一级目录直接跳转
+            re_locate:false,//点击一级目录直接跳转
             sub_menu:[
                 {
                     name:"租金包",
                     index:"sub-4",
-                    links:"#",
+                    links:"rpgindex",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
                 },
                 {
                     name:"影子模型",
                     index:"sub-4",
-                    links:"#",
+                    links:"datasim",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
 
@@ -143,7 +143,7 @@ var menu_list={
                 {
                     name:"回报计划",
                     index:"sub-4",
-                    links:"#",
+                    links:"irrplan",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
 

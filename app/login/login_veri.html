@@ -111,7 +111,8 @@
             },
             login:function(url){
                 // window.location.href=url
-                $("form#veriform").submit();
+                //$("form#veriform").submit();
+                window.location.href=url
             },
             init:function(){
                 this.getVeriCodeInit();
@@ -119,7 +120,7 @@
                     var verified=verify.code_verify();
                     console.log(verified);
                     if(verified){
-                        verify.login();
+                        verify.login("../main/main.html");
                     }else{
                         return false;
                     }

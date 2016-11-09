@@ -31,7 +31,8 @@ var amp_main=(function($,menu,am){
                 if(boolean_show_sub==false){
                    var li_item=[
                        '<li>',
-                       '<a href="'+main_nav_links,
+                       '<a ui-sref="'+main_nav_links,
+                       '" href="#/'+main_nav_links,
                         '" class="ys-menu-link"',
                        ' id="'+main_index+'"',
                        ' data-show-header="'+boolean_show_header+'"',
@@ -49,7 +50,7 @@ var amp_main=(function($,menu,am){
                             var sub_id=i
                             var sub_li=[
                                 '<li>',
-                                    '<a href="'+ e.links+'" target="'+ e.target+'" data-show-header="'+e.show_page_header+'" data-relocate="'+ e.re_locate+'" id="sub-'+ main_id+'-'+sub_id+'">'+ e.name+'</a>',
+                                    '<a ui-sref="'+ e.links+'" target="'+ e.target+'" data-show-header="'+e.show_page_header+'" data-relocate="'+ e.re_locate+'" id="sub-'+ main_id+'-'+sub_id+'">'+ e.name+'</a>',
                                 '</li>'
                             ].join("");
                             sub_ul.push(sub_li);
@@ -58,7 +59,7 @@ var amp_main=(function($,menu,am){
 
                     var li_item=[
                         '<li class="nav-parent">',
-                        '<a href="#header-tabs-'+i+'" class="ys-menu-link" id="'+main_index+'">',
+                        '<a ui-sref="#header-tabs-'+i+'" class="ys-menu-link" id="'+main_index+'">',
                          '<em class="ys-icon-spirit '+icon+'"></em>',
                          '<span>'+main_nav_name+'</span>',
                         '</a>',
@@ -91,7 +92,7 @@ var amp_main=(function($,menu,am){
                var sub_index=i;
                var li_item=[
                    '<li role="presentation" id="nav-tabs-item-'+main_index+'-'+sub_index+'">',
-                   '<a href="#pane-sub-'+main_index+'-'+sub_index+'" role="tab" data-toggle="tab-temp" data-show-header="'+e.show_page_header+'" data-href="'+ e.links+'" data-relocate="'+ e.re_locate+'" id="nav-'+main_index+'-'+sub_index+'">'+ e.name+'</a>',
+                   '<a ui-sref="'+e.links+'" href="#/'+e.links+'" role="tab" data-toggle="tab-temp" data-show-header="'+e.show_page_header+'" data-href="'+ e.links+'" data-relocate="'+ e.re_locate+'" id="nav-'+main_index+'-'+sub_index+'">'+ e.name+'</a>',
                    '</li>',
                ];
                 sub_li.push(li_item.join(""));
@@ -198,7 +199,7 @@ var amp_main=(function($,menu,am){
 
     amp_main.sideNav_nav=function(){
         $('.nav-bracket  a').click(function(e){
-            e.preventDefault();
+           // e.preventDefault();
             if($(this).hasClass("ys-menu-link")){
                 //一级目录
                 var $parent=$(this).parent("li");
@@ -249,7 +250,7 @@ var amp_main=(function($,menu,am){
 
     amp_main.subNav_init=function(){
         $(".head-main-menu").on("click","a",function(e){
-            e.preventDefault();
+            //e.preventDefault();
             $this=$(this);
             if(!$this.parent("li").hasClass("active")){
                 $this.closest("ul").find("li").removeClass("active");

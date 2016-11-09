@@ -96,10 +96,10 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
     states.forEach(function(state) {
         $stateProvider.state(state);
     });
-    $urlRouterProvider.when('', '/rpgindex');
-    $urlRouterProvider.when('datatool', '/');
+    $urlRouterProvider.when('', '/noi');
+
     $urlRouterProvider.otherwise(
         function($injector, $location) {
-            $location.path('/');
+            $location.path('/noi');
         });
 });
