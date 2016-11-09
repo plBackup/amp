@@ -1,45 +1,42 @@
 /**
+ * Created by limeiting on 16/11/9.
+ */
+/**
  * Created by limeiting on 16/11/6.
  */
-var noi=(function($,noi){
-    var noi=noi;
+var datasim=(function($,datasim){
+    var datasim=datasim;
     var myLineChart;
     var pin;
-    noi.swiper_init=function(){
-        var noi_head_swiper = new Swiper('#noi-main-table-head', {
+    datasim.swiper_init=function(){
+        var datasim_floor_swiper = new Swiper('#datatool-sim-floor-table', {
             //scrollbar: '.swiper-scrollbar',
-            direction: 'horizontal',
+            direction: 'vertical',
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
             scrollbarHide:true
         });
-        var noi_main_swiper = new Swiper('#noi-main-table', {
+        var datasim_main_swiper = new Swiper('#datatool-sim-main-table', {
             scrollbar: '.swiper-scrollbar',
-            direction: 'horizontal',
+            direction: 'vertical',
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
             scrollbarHide:false
         });
-        noi_head_swiper.params.control = noi_main_swiper;
-        noi_main_swiper.params.control = noi_head_swiper;
 
-         pin=$(".ys-table-fixed-top").pin({
-            containerSelector: "#noi-main-table-wrapper",
-            padding: {top: 44, bottom: 50}
-        });
+
 
         var defer=null;
         var swiperUpdate=function(){
-            noi_head_swiper.update();
-            noi_main_swiper.update();
-            pin.refresh();
+            datasim_floor_swiper.update();
+            datasim_main_swiper.update();
+
         };
 
         $(window).resize(function(){
             if(!defer){
-
                 defer=setTimeout(function(){
                     swiperUpdate();
                     defer=null;
@@ -55,60 +52,6 @@ var noi=(function($,noi){
         });
     };
 
-    noi.table_init=function(){
-
-        $(".ys-table-main").on("mouseleave","tr",function(e){
-            var index=$(this).index();
-            var parentTagName=$(this).parent().get(0).tagName;
-            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
-                $(this).find("tr").eq(index).removeClass("hover");
-            });
-
-        });
-
-        $(".ys-table-main").on("click","tbody>tr",function(e){
-            if($(this).hasClass("tr-main")){
-                var index=$(this).index();
-                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
-                    var $trMain=$(this).find("tr").eq(index);
-                    $trMain.toggleClass("tr-collapse");
-                    if($trMain.hasClass("tr-collapse")){
-                        $trMain.nextUntil(".tr-main","tr").addClass("tr-collapsed");
-
-                    }else{
-                        //展开时，要判断 tr-sub-main的状态，来更改tr-tri的折叠状态
-                        $trMain.nextUntil(".tr-main","tr.tr-sub").removeClass("tr-collapsed");
-                        var sub_main_collapse= false;
-                        $trMain.nextUntil(".tr-main","tr.tr-tri").each(function(i,e){
-                            if(i==0){
-
-                                sub_main_collapse=$(this).prev(".tr-sub-main").hasClass("tr-collapse");
-                            }
-
-                            if(!sub_main_collapse){
-                                $(this).removeClass("tr-collapsed");
-                            }
-                        });
-                    }
-                });
-                pin.refresh();
-            }
-
-            if($(this).hasClass("tr-sub-main")){
-                var index=$(this).index();
-                $(this).closest(".ys-table-main").find(".amp-table").each(function(i,e){
-                    $(this).find("tr").eq(index).toggleClass("tr-collapse").nextUntil(".tr-sub").toggleClass("tr-collapsed");
-                });
-            }
-        });
-
-        $("#noi-arrearage").on("click","tr.tr-main",function(e){
-            $(this).toggleClass("tr-collapse").nextAll("tr.tr-sub").toggle();
-        });
-
-        //初始化折叠项目
-        $(".tr-init-collapse").trigger("click");
-    };
 
     var chart_data_init={
         lineData:{
@@ -116,7 +59,7 @@ var noi=(function($,noi){
             datasets: [
                 {
                     type:"line",
-                    name:"NOI实际",
+                    name:"应收",
                     xAxisIndex:0,
                     yAxisIndex:0,
                     symbol:'emptyCircle',
@@ -124,29 +67,14 @@ var noi=(function($,noi){
                     showSymbol:true,
                     lineStyle:{
                         show:true,
-                        color:"#62cc7a",
+                        color:"#18b0e2",
                         width:2,
                         type:"solid",
                     },
                     data:[20,12,2,2,2,2],
                 },{
-                type:"line",
-                name:"方案1",
-                xAxisIndex:0,
-                yAxisIndex:0,
-                symbol:'emptyCircle',
-                symbolSize:6,
-                showSymbol:true,
-                lineStyle:{
-                    show:true,
-                    color:"#ffb73a",
-                    width:2,
-                    type:"solid",
-                },
-                data:[11,12,13,14,15,16],
-            },{
                     type:"line",
-                    name:"方案2",
+                    name:"实收",
                     xAxisIndex:0,
                     yAxisIndex:0,
                     symbol:'emptyCircle',
@@ -154,28 +82,28 @@ var noi=(function($,noi){
                     showSymbol:true,
                     lineStyle:{
                         show:true,
-                        color:"#fe7171",
+                        color:"#ea7444",
+                        width:2,
+                        type:"solid",
+                    },
+                    data:[11,12,13,14,15,16],
+                },{
+                    type:"line",
+                    name:"租金包",
+                    xAxisIndex:0,
+                    yAxisIndex:0,
+                    symbol:'emptyCircle',
+                    symbolSize:6,
+                    showSymbol:true,
+                    lineStyle:{
+                        show:true,
+                        color:"#1abd9d",
                         width:2,
                         type:"solid",
                     },
                     data:[12,13,14,15,16,17],
-                },{
-                    type:"line",
-                    name:"方案3",
-                    xAxisIndex:0,
-                    yAxisIndex:0,
-                    symbol:'emptyCircle',
-                    symbolSize:6,
-                    showSymbol:true,
-                    lineStyle:{
-                        show:true,
-                        color:"#5fbaf4",
-                        width:2,
-                        type:"solid",
-                    },
-                    data:[18,19,20,12,13,13],
-                },
-                ]
+                }
+            ]
         },//linedata
 
     };
@@ -199,14 +127,14 @@ var noi=(function($,noi){
             xAxis:{
                 position:"bottom",
                 type:"category",
-               /* name:"年",
-                nameLocation:"middle",
-                nameTextStyle:{
-                    color:"#acadb0",
-                    fontStyle:"normal",
-                    fontSize:14
-                },
-                nameGap:25,*/
+                /* name:"年",
+                 nameLocation:"middle",
+                 nameTextStyle:{
+                 color:"#acadb0",
+                 fontStyle:"normal",
+                 fontSize:14
+                 },
+                 nameGap:25,*/
                 boundaryGap:true,
                 axisLine:{
                     show:true,
@@ -228,7 +156,7 @@ var noi=(function($,noi){
                 },
                 axisLabel:{
                     show:true,
-                   //formatter:null,
+                    //formatter:null,
                     formatter:'{value}年',
                     margin:12,
                     textStyle:{
@@ -297,7 +225,7 @@ var noi=(function($,noi){
                 },
 
             },
-            color:['#61cd78','#60bbf4', '#fc7270', '#feb739', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+            color:['#18b0e2','#ea7444', '#1abd9d', '#feb739', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
             backgroundColor:"transparent",
             tooltip:{
                 show:true,
@@ -331,12 +259,12 @@ var noi=(function($,noi){
     };
 
     function chartRender(id,data,label,chartType){
-        if(id=="noi-chart"){
+        if(id=="chart-rpg"){
             //lineChart
-         /*   chart_data_init[chartType+"Data"].datasets[0].data=data[0];
-            chart_data_init[chartType+"Data"].datasets[1].data=data[1];
-            chart_data_init[chartType+"Data"].labels=label;
-            console.log(typeof label);*/
+            /*   chart_data_init[chartType+"Data"].datasets[0].data=data[0];
+             chart_data_init[chartType+"Data"].datasets[1].data=data[1];
+             chart_data_init[chartType+"Data"].labels=label;
+             console.log(typeof label);*/
             chart_opt[chartType+"Opt"].xAxis.data=label;
             chart_opt[chartType+"Opt"].series=chart_data_init[chartType+"Data"].datasets;
         }
@@ -349,18 +277,18 @@ var noi=(function($,noi){
         return myChart;
     }
 
-    noi.chart_init=function(){
+    datasim.chart_init=function(){
         var lineData=[];
         //ajax lineData- lineLabel- NOI实际 方案1 方案2 方案3
 
-       // myLineChart = chartRender("noi-chart",lineData,lineLabel,"line");
+        // myLineChart = chartRender("datasim-chart",lineData,lineLabel,"line");
         var lineData=chart_data_init.lineData.datasets;
         var lineLabel=chart_data_init.lineData.labels;
 
-        myLineChart = chartRender("noi-chart",lineData,lineLabel,"line");
+        myLineChart = chartRender("chart-rpg",lineData,lineLabel,"line");
     };
 
-    noi.updateChart=function(data,chartType,label){
+    datasim.updateChart=function(data,chartType,label){
         if(chartType=="line"){
             var myChart=myLineChart;
             chart_data_init[chartType+"Data"].datasets[0].data=data[0];//NOI实际数据
@@ -371,32 +299,13 @@ var noi=(function($,noi){
         }
     };
 
-    $.fn.extend({
-        animateCss: function (animationName) {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            this.addClass('animated ' + animationName).one(animationEnd, function() {
-                $(this).removeClass('animated ' + animationName).addClass("done");
-            });
-        }
-    });
-
-    $.fn.extend({
-        animateRemove: function (animationName) {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            this.addClass('animated ' + animationName).one(animationEnd, function() {
-                //$(this).removeClass('animated ' + animationName);
-                $(this).remove();
-            });
-        }
-    });
-
-    noi.dataUpdate=function(dataObj){
+    datasim.dataUpdate=function(dataObj){
         var dataObj=dataObj;
         dataObj={
             chart_update:{ //NOI实际数据
                 chartLabel:["2015","2016", "2017", "2018", "2019", "2020"],
                 chartData:[
-                    [15,16,17,null,null,null],//NOI实际数据
+                    [15,16,17,null,null,null],//实际数据
                 ]
             },
 
@@ -410,9 +319,9 @@ var noi=(function($,noi){
                     var data=v["chartData"];
                     if(typeof data!=="undefined" && data.length!==0){
                         if(!label){
-                            noi.updateChart(data,"line");
+                            datasim.updateChart(data,"line");
                         }else{
-                            noi.updateChart(data,"line",label);
+                            datasim.updateChart(data,"line",label);
                         }
                     }
                     break;
@@ -422,31 +331,39 @@ var noi=(function($,noi){
             }
         })
     };
-    noi.init=function(){
-        noi.chart_init();
-        noi.swiper_init();
-        noi.table_init();
+    datasim.add_svg=function(){
+        $.get("floors.svg",function(data,status){
+            $("#ys-svg").html(data);
+        });
+    };
+    datasim.init=function(){
+        var left_height=$(".leftpanel").css("height");
+
+        $(".swiper-container").css({
+            "overflow-y":"hidden",
+            "height":left_height
+        });
+
+        datasim.add_svg();
+        datasim.chart_init();
+        datasim.swiper_init();
+        //datasim.table_init();
         $('#preloader').delay(350).fadeOut(function(){
             //start
         });
         setInterval(function(){
-            noi.dataUpdate();
+            datasim.dataUpdate();
         },2000)
     };
 
-    return noi;
-})(jQuery,noi||{});
+    return datasim;
+})(jQuery,datasim||{});
 
 
 jQuery(document).ready(function(){
     alert("...");
-    noi.init();
+    datasim.init();
 });
-
-
-
-
-
 
 
 

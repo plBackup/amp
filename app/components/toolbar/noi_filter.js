@@ -156,7 +156,8 @@ var filters=(function($,fl){
 
     //item-select-filter
     filters.dropdownSelector=function(){
-        var curVal=$(".item-select-filter #select-id").val().trim();
+        //var curVal=$(".item-select-filter #select-id").val().trim();
+        var curVal=$(".item-select-filter #select-id").val()
         if(curVal!=""){
             $(".item-select-filter button.dropdown-toggle>em").text(curVal);
             $(".item-select-filter").find(".dropdown-menu a").each(function(i,e){
