@@ -9,7 +9,32 @@ var datasim=(function($,datasim){
     var myLineChart;
     var pin;
     datasim.swiper_init=function(){
-        var datasim_floor_swiper = new Swiper('#datatool-sim-floor-table', {
+        var h=parseInt($(window).height());
+        $(".leftpanelinner").css({
+            height:(h-100)+"px",
+           "overflow":"hidden"
+        });
+
+        $(".col-xs-6").css({
+            "overflow-y":"hidden",
+            "height":(h-160)+"px"
+        });
+
+        var left_panel_scroll = new IScroll('.leftpanelinner', {
+            mouseWheel: true,
+            scrollbars: false
+        });
+        var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
+            //mouseWheel: true,
+            scrollbars: true
+        });
+        var datasim_main_scroll= new IScroll('#datatool-sim-main-table', {
+            //mouseWheel: true,
+            scrollbars: true
+        });
+
+
+        /*var datasim_floor_swiper = new Swiper('#datatool-sim-floor-table', {
             //scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
             slidesPerView: 'auto',
@@ -24,32 +49,44 @@ var datasim=(function($,datasim){
             //mousewheelControl: true,
             freeMode: true,
             scrollbarHide:false
-        });
+        });*/
 
 
 
         var defer=null;
-        var swiperUpdate=function(){
-            datasim_floor_swiper.update();
-            datasim_main_swiper.update();
+        var scrollUpdate=function(){
+            var h=parseInt($(window).height());
+            $(".leftpanelinner").css({
+                height:(h-160)+"px",
+                "overflow":"hidden"
+            });
 
+            $(".col-xs-6").css({
+                "overflow-y":"hidden",
+                "height":(h-160)+"px"
+            });
+            left_panel_scroll.refresh();
+            datasim_floor_scroll.refresh();
+            datasim_main_scroll.refresh();
         };
 
         $(window).resize(function(){
             if(!defer){
                 defer=setTimeout(function(){
-                    swiperUpdate();
+                    scrollUpdate();
                     defer=null;
                 },200);
             }else{
                 clearTimeout(defer);
                 defer=setTimeout(function(){
-                    swiperUpdate();
+                    scrollUpdate();
                     defer=null;
                 },200);
             }
 
         });
+        setTimeout(scrollUpdate,300);
+
     };
 
 
@@ -338,13 +375,8 @@ var datasim=(function($,datasim){
         });
     };
     datasim.init=function(){
-      /*  var left_height=$(".leftpanel").css("height");
 
-        $(".swiper-container").css({
-            "overflow-y":"hidden",
-            "height":left_height
-        });
-*/
+
         datasim.add_svg();
         datasim.chart_init();
         datasim.swiper_init();
