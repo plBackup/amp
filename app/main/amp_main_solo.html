@@ -9,13 +9,33 @@
     <title>悦商AMP</title>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
+
     <!-- 导入CSS -->
     <link href="../static/dist/css/animate.css" rel="stylesheet">
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
+
     <link href="../static/css/common/common.css" rel="stylesheet">
+    <link href="../static/css/common/static_table.css" rel="stylesheet">
+
     <!-- 自有CSS -->
     <link href="../static/css/main/amp_main.css" rel="stylesheet">
-    <link href="../static/css/main/amp_main.css" rel="stylesheet">
+    <link href="../components/toolbar/filter.css" rel="stylesheet">
+    <link href="../static/css/views/noi.css" rel="stylesheet">
+    <link href="../static/css/views/datatools.css" rel="stylesheet">
+
+    <script src="../static/dist/js/angular.js"></script>
+    <script src="../static/dist/js/angular-ui-router.js"></script>
+    <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
+    <script src="../static/dist/js/bootstrap.min.js"></script>
+    <script src="../static/dist/js/swiper.jquery.min.js"></script>
+    <script src="../static/js/main/controllers.js"></script>
+    <script src="../static/js/main/filters.js"></script>
+    <script src="../static/js/main/services.js"></script>
+
+
+    <script src="../static/js/main/amp_ag_solo.js"></script>
 </head>
 <body>
 
@@ -27,7 +47,7 @@
 <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
 </div>
-<main class="page page-main ys-amp ys-amp-solo" id="page-solo" role="main">
+<main class="page page-main ys-amp ys-amp-solo" id="page-solo" role="main" ng-app="ampsolo" >
 
     <div class="headerpanel">
         <div class="headerbar">
@@ -47,22 +67,13 @@
     </div>
     <div class="mainpanel">
         <div class="amp-content-panel">
-            <div class="amp-content-header clearfix">
-                <!-- Breadcrumb / Summary info-->
-
-            </div><!--amp-content-header-->
-            <div class="ys-block">
-
-            </div><!--ys-block-->
+            <ui-view name="content"></ui-view>
         </div><!-- contentpanel -->
     </div><!-- mainpanel -->
 
     <!-- rightpanel -->
     <div class="rightpanel">
-        <a href="javascript:void(0)" class="closebtn">&times;</a>
-        <div class="right-content">
-
-        </div>
+        <ui-view name="right"></ui-view>
     </div>
     <!--modal parts-->
 
@@ -71,11 +82,7 @@
     <div class="backdrop"></div>
     <!--end backdrop loading-->
 </main>
-<script src="../static/dist/js/angular.min.js"></script>
-<script src="../static/dist/js/jquery-1.11.3.min.js"></script>
-<script src="../static/dist/js/bootstrap.min.js"></script>
 
-<script src="../static/js/main/amp_solo.js"></script>
 <script>
    /* $(window).load(function() {
         amp_solo.placeholder_init();
@@ -91,6 +98,11 @@
             $("body").removeClass("open open-panel");
         })
     });*/
+    $(document).ready(function(){
+        $('#preloader').delay(350).fadeOut(function(){
+            // $('body').delay(350).css({'overflow':'visible'});
+        });
+    });
 </script>
 </body>
 </html>

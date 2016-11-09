@@ -134,6 +134,7 @@ tr.tr-collapse .icon-menu-down {
     line-height: 44px;
     overflow: hidden;
 }
+.ys-amp .amp-block-title span.amp-block-title-notify{font-size: 13px;color:#8592a3;text-align: right;}
 .ys-amp .amp-block-title:before, .ys-amp .amp-block-title:after {
     display: block;
     border-top: solid 3px #5ab46e;

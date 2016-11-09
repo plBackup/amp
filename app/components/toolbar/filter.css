@@ -111,8 +111,10 @@
     background-position:-358px -198px;}
 .item-search-filter em.ys-icon-search:hover,.item-search-filter .btn:hover em.ys-icon-search{background-position:-358px -243px; }
 .out-ring{
-    outline: 5px auto -webkit-focus-ring-color;
+    /*outline: 5px auto -webkit-focus-ring-color;*/
+    outline:solid 4px #8ec1f6;
     outline-offset: -2px;
+
 }
 
 
