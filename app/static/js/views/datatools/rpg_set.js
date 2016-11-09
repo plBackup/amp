@@ -30,7 +30,7 @@ var swiper_table=(function($,swiper_table){
 
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#rpg-set-table-wrapper",
-            padding: {top: 44, bottom: 50}
+            padding: {top: 88, bottom: 50}
         });
 
         var defer=null;

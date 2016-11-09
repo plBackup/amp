@@ -211,7 +211,7 @@
 #datatool-sim .btn-wrapper .amp-btn.amp-btn-reverse{background-color:#fff;color: #5ab46e;}
 
 /*rgp-set*/
-#rgp-set{padding-bottom:92px;}
+
 #rgp-set .amp-content-header{height:120px;margin-bottom:0;}
 #rgp-set .amp-content-header>.amp-header-breadcrumb{position:relative;padding-left:55px;padding-right:25px;height:44px;overflow: hidden;line-height: 44px;}
 
@@ -221,7 +221,13 @@
 #rgp-set .amp-content-header  .amp-date-wrapper>div{float:left;width:160px;}
 
 
+#rgp-set{padding-bottom:92px;padding-top:44px;}
+#rgp-set .amp-content-header{height:76px;}
+#rgp-set .amp-content-header>.amp-header-breadcrumb{position: fixed;top:44px;z-index:1999;width: 100%;background-color:#f3f4f8;}
+
+
 #rgp-set .amp-block-pd{margin-bottom:40px;}
+#rgp-set .bottom-block{margin-bottom:0;padding-bottom:40px;border-top:0;background-color:#f3f4f8;}
 #rgp-set .amp-table-wrapper-swiper{padding-bottom:0;}
 #rgp-set .amp-table{margin-bottom:0;}
 #rgp-set .amp-table-wrapper .table tr>th,
