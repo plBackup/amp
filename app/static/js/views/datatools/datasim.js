@@ -333,17 +333,18 @@ var datasim=(function($,datasim){
     };
     datasim.add_svg=function(){
         $.get("floors.svg",function(data,status){
-            $("#ys-svg").html(data);
+            var importedSVGRootElement = document.importNode(data.documentElement,true);
+            $("#ys-svg").append(importedSVGRootElement);
         });
     };
     datasim.init=function(){
-        var left_height=$(".leftpanel").css("height");
+      /*  var left_height=$(".leftpanel").css("height");
 
         $(".swiper-container").css({
             "overflow-y":"hidden",
             "height":left_height
         });
-
+*/
         datasim.add_svg();
         datasim.chart_init();
         datasim.swiper_init();
