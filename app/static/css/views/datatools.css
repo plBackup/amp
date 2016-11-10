@@ -133,7 +133,7 @@
 }
 #irr-plan  .table .td-input-wrapper span{padding: 3px 6px; height: 28px; line-height: 22px;}
 #irr-plan  .table .td-input-wrapper.padding-r-15 .number-format{padding:3px 6px;overflow: hidden;
-    text-overflow: ellipsis;white-space: nowrap;background-color: transparent;height:30px;line-height: 22px;}
+    text-overflow: ellipsis;white-space: nowrap;background-color: transparent;height:28px;line-height: 22px;}
 
 /*block btn-wrapper*/
 #irr-plan .bottom-block{position: absolute;padding-right:30px; bottom: 0; width: 100%; left: 0;background-color:#f3f4f8;border-top:0;}
@@ -256,7 +256,8 @@
 #rgp-set .amp-table-wrapper-swiper .table tr>td>span{display: block;width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-weight:normal;font-size: 13px;color:#8592a3;
     text-align: center;}
 #rgp-set .amp-table-wrapper-swiper .table tr>th>span{text-align: center;}
-#rgp-set .amp-table-wrapper-swiper .swiper-container{margin-left:-1px;padding-bottom:15px;}
+#rgp-set .amp-table-wrapper-swiper .swiper-container{margin-left:-1px;}
+#rgp-set .ys-table-main .swiper-container{padding-bottom:15px;}
 #rgp-set #rpg-set-table-wrapper .amp-table{margin-bottom:0;border:solid 1px #dfe5e9;}
 #rgp-set .amp-table-wrapper-swiper .ys-table-static{border-right:0;}
 #rgp-set #rpg-set-table-wrapper .amp-table tr>th.th-fake,#rgp-set #rpg-set-table-wrapper .amp-table tr>th.td-fake{width:0px;}
