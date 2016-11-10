@@ -62,15 +62,28 @@
                         </div>
                     </div><!--col-xs-6-->
                     <div class="col-xs-6">
-                        <div class="input-wrapper pull-left">
-                            <div class="input-group">
+                        <div class="input-wrapper pull-left ">
+                            <div class="input-group input-select">
                                 <label>面积</label>
-                                <input type="text" placeholder=" " value="">
+                                <input type="text" placeholder=" " value="" hidden>
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" >
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">套内面积</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">建筑面积</a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="input-group">
                                 <label>负责人</label>
-                                <input type="text" placeholder=" " value="">
+                                <input type="text" placeholder="" value="">
+                            </div>
+                            <div class="input-group">
+                                <label>位置</label>
+                                <input type="text" placeholder="" value="">
                             </div>
                         </div>
                     </div><!--col-xs-6-->
@@ -90,8 +103,6 @@
         </div>
     </div><!--ys-footer-->
 </main><!--end main-->
-<i class="glyphicon glyphicon-arrow-left"></i>
-<i class="glyphicon glyphicon-arrow-right"></i>
 <!-- Script 导入部分 -->
 <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
 <script src="../static/dist/js/bootstrap.min.js"></script>
@@ -116,6 +127,31 @@
             language:"zh-CN"
 
         });
+        $(".input-select").each(function(i,e){
+            var curVal=$(this).find("input").val();
+            if(curVal!=""){
+                $(this).find("button.dropdown-toggle>em").text(curVal);
+                $(this).find(".dropdown-menu a").each(function(i,e){
+                    if($(this).text().trim()==curVal){
+                        $(this).closest("li").addClass("active");
+                    }
+                });
+            }
+        });
+
+        $(".input-select").on("click",".dropdown-menu a",function(e){
+            var $select=$(this).closest(".input-select");
+            var $this=$(this);
+            e.preventDefault();
+            var curSelect=$this.text().trim();
+            $this.closest("ul.dropdown-menu").find("li").removeClass("active");
+            $this.parent("li").addClass("active");
+
+            $select.find("button.dropdown-toggle>em").text(curSelect);
+            $select.find("input").val(curSelect);
+
+        });
+
     });
 </script>
 </body>

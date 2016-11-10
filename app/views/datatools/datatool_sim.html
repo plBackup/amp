@@ -11,7 +11,7 @@
                 <div  style="width:100%;">
                             <div class="ys-mainpanel-inner">
                                 <!--svg here-->
-                                <svg version="1.1" id="ys-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="1180px" viewBox="0 0 500 1180" preserveAspectRetio="xMidYMid meet">
+                                <svg version="1.1" id="ys-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="1180px" viewBox="0 0 600 1180" preserveAspectRetio="xMidYMin meet">
 
                                 </svg>
                                 <!--svg here-->
@@ -170,7 +170,7 @@
                                     <tr>
                                         <th><span>商家</span></th>
                                         <td colspan="2">
-                                            <div class="td-input-wrapper padding-r-15 text-input" style="padding-right:20%;">
+                                            <div class="td-input-wrapper padding-r-15 text-input" style="">
                                                 <input type="text" placeholder="" value="">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
@@ -313,11 +313,15 @@
     </div>
 </div><!-- contentpanel -->
 <script src="../static/js/views/datatools/datasim.js"></script>
+<script src="../static/js/views/datatools/inputs.js"></script>
+<script src="../static/js/views/datatools/irr_table_input.js"></script>
 <script>
     jQuery(document).ready(function(){
         console.log(".....")
         datasim.init();
         amp_main.leftPanel_update();
+        table_input.init();
+
     });
 </script>
 
