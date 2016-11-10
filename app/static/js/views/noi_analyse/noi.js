@@ -5,8 +5,9 @@ var noi=(function($,noi){
     var noi=noi;
     var myLineChart;
     var pin;
+    var noi_head_swiper,noi_main_swiper;
     noi.swiper_init=function(){
-        var noi_head_swiper = new Swiper('#noi-main-table-head', {
+        noi_head_swiper = new Swiper('#noi-main-table-head', {
             //scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -14,7 +15,7 @@ var noi=(function($,noi){
             freeMode: true,
             scrollbarHide:true
         });
-        var noi_main_swiper = new Swiper('#noi-main-table', {
+        noi_main_swiper = new Swiper('#noi-main-table', {
             scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -30,17 +31,17 @@ var noi=(function($,noi){
             padding: {top: 44, bottom: 50}
         });
 
-        var defer=null;
+       /* var defer=null;
         var swiperUpdate=function(){
             noi_head_swiper.update();
             noi_main_swiper.update();
             pin.refresh();
         };
-
         $(window).resize(function(){
             if(!defer){
 
                 defer=setTimeout(function(){
+                    console.log("..........up");
                     swiperUpdate();
                     defer=null;
                 },200);
@@ -52,7 +53,7 @@ var noi=(function($,noi){
                 },200);
             }
 
-        });
+        });*/
     };
 
     noi.table_init=function(){
@@ -429,6 +430,10 @@ var noi=(function($,noi){
             }
         })
     };
+    noi.destroy=function(){
+        noi_head_swiper.destroy();
+        noi_main_swiper.destroy();
+    }
     noi.init=function(){
         noi.chart_init();
         noi.swiper_init();
@@ -436,7 +441,7 @@ var noi=(function($,noi){
         $('#preloader').delay(350).fadeOut(function(){
             //start
         });
-        setInterval(function(){
+        setTimeout(function(){
             noi.dataUpdate();
         },2000)
     };

@@ -8,8 +8,9 @@
 var irr_plan=(function($,irr_plan){
     var irr_plan=irr_plan;
     var pin;
+    var irr_plan_head_swiper,irr_plan_main_swiper;
     irr_plan.swiper_init=function(){
-        var irr_plan_head_swiper = new Swiper('#irr-plan-table-head', {
+        irr_plan_head_swiper = new Swiper('#irr-plan-table-head', {
             //scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -17,7 +18,7 @@ var irr_plan=(function($,irr_plan){
             freeMode: true,
             scrollbarHide:true
         });
-        var irr_plan_main_swiper = new Swiper('#irr-plan-main-table', {
+        irr_plan_main_swiper = new Swiper('#irr-plan-main-table', {
             scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -35,8 +36,8 @@ var irr_plan=(function($,irr_plan){
 
         var defer=null;
         function _swiperUpdate(){
-            irr_plan_head_swiper.update();
-            irr_plan_main_swiper.update();
+           /* irr_plan_head_swiper.update();
+            irr_plan_main_swiper.update();*/
             pin.refresh();
         };
         $(window).resize(function(){
@@ -77,7 +78,10 @@ var irr_plan=(function($,irr_plan){
 
     };
 
-  
+    irr_plan.destory=function(){
+        irr_plan_head_swiper.destory();
+        irr_plan_main_swiper.destory();
+    };
     irr_plan.init=function(){
         
         irr_plan.swiper_init();

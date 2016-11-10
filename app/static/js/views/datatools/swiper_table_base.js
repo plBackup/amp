@@ -8,8 +8,9 @@
 var swiper_table=(function($,swiper_table){
     var swiper_table=swiper_table;
     var pin;
+    var swiper_table_head_swiper,swiper_table_main_swiper;
     swiper_table.swiper_init=function(){
-        var swiper_table_head_swiper = new Swiper('#rpg-set-main-table-head', {
+        swiper_table_head_swiper = new Swiper('#rpg-set-main-table-head', {
             //scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -17,7 +18,7 @@ var swiper_table=(function($,swiper_table){
             freeMode: true,
             scrollbarHide:true
         });
-        var swiper_table_main_swiper = new Swiper('#rpg-set-main-table', {
+        swiper_table_main_swiper = new Swiper('#rpg-set-main-table', {
             scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
@@ -77,7 +78,10 @@ var swiper_table=(function($,swiper_table){
 
     };
 
-  
+    swiper_table.destory=function(){
+        swiper_table_head_swiper.destory();
+        swiper_table_main_swiper.destory();
+    };
     swiper_table.init=function(){
         
         swiper_table.swiper_init();

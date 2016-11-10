@@ -366,7 +366,7 @@ var amp_main=(function($,menu,am){
         amp_main.subNav_init();
         amp_main.leftPanel_init();
         amp_main.rightPanel_init();
-        $("#main-0").trigger("click");
+       // $("#main-0").trigger("click");
 
         /*$(".head-main-menu").on("click","a",function(e){
             e.preventDefault();

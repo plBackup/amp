@@ -156,8 +156,33 @@ var filters=(function($,fl){
 
     //item-select-filter
     filters.dropdownSelector=function(){
+        $(".item-select-filter").each(function(i,e){
+            var curVal=$(this).find("input").val();
+            if(curVal!=""){
+                $(this).find("button.dropdown-toggle>em").text(curVal);
+                $(this).find(".dropdown-menu a").each(function(i,e){
+                    if($(this).text().trim()==curVal){
+                        $(this).closest("li").addClass("active");
+                    }
+                });
+            }
+        });
+
+        $(".item-select-filter").on("click",".dropdown-menu a",function(e){
+            var $select=$(this).closest(".item-select-filter");
+            var $this=$(this);
+            e.preventDefault();
+            var curSelect=$this.text().trim();
+            $this.closest("ul.dropdown-menu").find("li").removeClass("active");
+            $this.parent("li").addClass("active");
+
+            $select.find("button.dropdown-toggle>em").text(curSelect);
+            $select.find("input").val(curSelect);
+
+        });
+
         //var curVal=$(".item-select-filter #select-id").val().trim();
-        var curVal=$(".item-select-filter #select-id").val()
+      /*  var curVal=$(".item-select-filter #select-id").val();
         if(curVal!=""){
             $(".item-select-filter button.dropdown-toggle>em").text(curVal);
             $(".item-select-filter").find(".dropdown-menu a").each(function(i,e){
@@ -174,7 +199,7 @@ var filters=(function($,fl){
 
             $(".item-select-filter button.dropdown-toggle>em").text(curSelect);
             $(".item-select-filter #select-id").val(curSelect);
-        });
+        });*/
     };
     filters.dropdownSelector.getValue=function(){
         return $(".item-select-filter #select-id").val();

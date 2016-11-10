@@ -96,10 +96,10 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
     states.forEach(function(state) {
         $stateProvider.state(state);
     });
-    $urlRouterProvider.when('', '/noi');
+    $urlRouterProvider.when('', '/datasim');
 
     $urlRouterProvider.otherwise(
         function($injector, $location) {
-            $location.path('/noi');
+            $location.path('/datasim');
         });
 });
