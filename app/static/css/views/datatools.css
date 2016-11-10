@@ -362,7 +362,7 @@ span.number-format{text-align: right;}
 tr>td span.number-format{display: block;width:100%;}
 .rightpanel .amp-table .dropdown-menu{width:100%;border-radius:0;}
 
-.rightpanel .item-select-filter .dropdown-menu>li>a:focus,.rightpanel .dropdown-menu>li>a:hover, .dropdown-menu>li.active>a {
+.rightpanel .item-select-filter .dropdown-menu>li>a:focus,.rightpanel .dropdown-menu>li>a:hover,.rightpanel .dropdown-menu>li.active>a {
     color: #373c32;
     text-decoration: none;
     background-color: #f3f4f8;
