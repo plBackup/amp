@@ -53,12 +53,15 @@ var table_input=(function($,ti){
                 if(checkNum(val)){
                     if(table_input.numberFormat(val)!=oldVal){
                         $(this).closest("td").removeClass("error").addClass("change");
-                        $(this).next("span").text(table_input.numberFormat(val));
+                        var addOn=$(this).next("span").find(".unit-addon").get(0);
+                        $(this).next("span").html(table_input.numberFormat(val)).append(addOn);
                     }
                 }else{
                     console.log("false");
                     $(this).closest("td").addClass("error");
-                    $(this).next("span").text(val);
+                    var addOn=$(this).next("span").find(".unit-addon").get(0);
+                    console.log(addOn);
+                    $(this).next("span").text(val).append(addOn);
                 }
             }else{
                 if(table_input.numberFormat(val)!=oldVal){

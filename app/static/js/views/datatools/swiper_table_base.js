@@ -34,10 +34,12 @@ var swiper_table=(function($,swiper_table){
             padding: {top: 44, bottom: 50}
         });
 
+
+
         var defer=null;
         function _swiperUpdate(){
-            swiper_table_head_swiper.update();
-            swiper_table_main_swiper.update();
+            /*swiper_table_head_swiper.update();
+            swiper_table_main_swiper.update();*/
             pin.refresh();
         };
         $(window).resize(function(){

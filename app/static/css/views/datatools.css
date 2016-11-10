@@ -61,7 +61,7 @@
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>th,
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>td{padding:3px 10px;padding-left:25px;height:32px;line-height: 20px;background-color: #f3f4f8;}
 
-#irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;line-height: 16px;}
+#irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;line-height: 22px;}
 #irr-plan .ys-table-static .table  tbody>tr>td{text-align:left;}
 #irr-plan .table td input {
     display: none;
@@ -128,12 +128,12 @@
 #irr-plan .table .td-input-wrapper {
     position: relative;
     width: 100%;
-    height: 30px;
+    height: 28px;
     background-color:#f3f4f8;
 }
-#irr-plan  .table .td-input-wrapper span{padding-right:5px;}
-#irr-plan  .table .td-input-wrapper.padding-r-15 .number-format{padding-right:3px;overflow: hidden;
-    text-overflow: ellipsis;white-space: nowrap;background-color: transparent;height:30px;line-height: 28px;}
+#irr-plan  .table .td-input-wrapper span{padding: 3px 6px; height: 28px; line-height: 22px;}
+#irr-plan  .table .td-input-wrapper.padding-r-15 .number-format{padding:3px 6px;overflow: hidden;
+    text-overflow: ellipsis;white-space: nowrap;background-color: transparent;height:30px;line-height: 22px;}
 
 /*block btn-wrapper*/
 #irr-plan .bottom-block{position: absolute;padding-right:30px; bottom: 0; width: 100%; left: 0;background-color:#f3f4f8;border-top:0;}
@@ -256,7 +256,7 @@
 #rgp-set .amp-table-wrapper-swiper .table tr>td>span{display: block;width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-weight:normal;font-size: 13px;color:#8592a3;
     text-align: center;}
 #rgp-set .amp-table-wrapper-swiper .table tr>th>span{text-align: center;}
-#rgp-set .amp-table-wrapper-swiper .swiper-container{margin-left:-1px;}
+#rgp-set .amp-table-wrapper-swiper .swiper-container{margin-left:-1px;padding-bottom:15px;}
 #rgp-set #rpg-set-table-wrapper .amp-table{margin-bottom:0;border:solid 1px #dfe5e9;}
 #rgp-set .amp-table-wrapper-swiper .ys-table-static{border-right:0;}
 #rgp-set #rpg-set-table-wrapper .amp-table tr>th.th-fake,#rgp-set #rpg-set-table-wrapper .amp-table tr>th.td-fake{width:0px;}
@@ -267,7 +267,7 @@
 #rpg-set-table-wrapper .td-input-wrapper input{height:100%;border:0;padding:6px;line-height: 24px;width:100%;color:#3a4153;background-color:transparent;}
 #rpg-set-table-wrapper .td-input-wrapper input:focus{outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #rgp-set #rent-update-table-wrapper .ys-table-static{border-right:solid 1px #dfe5e9;margin-bottom: 0;}
-#rgp-set #rent-update-table-wrapper .ys-table-static tr>th{color:#8592a3;font-size: 13px;padding-left:0;}
+#rgp-set #rent-update-table-wrapper .ys-table-static tr>th{padding-left:12px;color:#8592a3;font-size: 13px;}
 #rgp-set #rent-update-table-wrapper thead{background-color:transparent}
 
 #rgp-set #rent-first-year-set{}
@@ -279,7 +279,21 @@
 
 #rgp-set #rent-affect-table-wrapper .amp-table tr>th{color:#8592a3;font-size: 13px;}
 #rgp-set #rent-affect-table-wrapper .ys-table-static-left .amp-table tr>th{padding-left:0;}
+/*rpg-set update*/
+#rgp-set #rent-first-year-set tr>td{position: relative;}
+#rgp-set #rent-first-year-set tr>td .td-input-wrapper{position: absolute;top:0;left:0;width:100%;height:100%;background-color:transparent;border:0;}
+#rgp-set #rent-first-year-set tr>td .td-input-wrapper input{border:0;background-color: #fff;height:38px;}
 
+#rent-update-main-table tr>td{position: relative}
+#rgp-set #rent-update-main-table tr>td .td-input-wrapper{position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
+#rgp-set #rent-update-main-table tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;}
+
+#rent-affect-table-wrapper tr>td{position: relative}
+#rent-affect-table-wrapper tr>td .td-input-wrapper{position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
+#rent-affect-table-wrapper tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;}
+#rent-affect-table-wrapper #rent-affect-floors tr>td .td-input-wrapper{left:inherit;right:0px;width:120px;text-align: right;}
+#rent-affect-floors tr>td .td-input-wrapper input{text-align: right;}
+    /*end rpg-set update*/
 #rent-package-result {
     padding-bottom: 38px;
     padding-top: 44px;
