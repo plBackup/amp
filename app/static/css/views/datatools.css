@@ -50,17 +50,18 @@
     padding: 3px 10px;
     text-align: right;
     cursor: pointer;
-    height: 42px;
-    line-height: 34px;
+    height: 38px;
+    line-height: 28px;
     font-size:13px;
     color:#373c42;
     overflow: hidden;
 }
+#irr-plan .table tbody>tr>td
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head{background-color:#f3f4f8;height:28px;}
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>th,
-#irr-plan .amp-table>tbody>tr.tr-main.tr-head>td{padding:3px 10px;height:28px;line-height: 20px;}
+#irr-plan .amp-table>tbody>tr.tr-main.tr-head>td{padding:3px 10px;padding-left:25px;height:32px;line-height: 20px;background-color: #f3f4f8;}
 
-#irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;}
+#irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;line-height: 16px;}
 #irr-plan .ys-table-static .table  tbody>tr>td{text-align:left;}
 #irr-plan .table td input {
     display: none;
@@ -68,12 +69,12 @@
     padding: 0;
     border: 0;
     text-align: right;
-    height: 34px;
-    line-height: 34px;
+    height: 28px;
+    line-height: 20px;
     font-size: 14px;
 }
 #irr-plan .table td.active{background-color:#eaeaea; }
-#irr-plan .table td.active input{display: block;border-bottom: solid 2px #ccc; padding-right: 5px;background-color: #fff;border:solid 1px #dfe5e9;}
+#irr-plan .table td.active input{display: block; padding-right: 5px;background-color: #fff;border:solid 1px #dfe5e9;}
 #irr-plan .table td.active span.number-format,.ys-amp .table td.active span.td-format{display: none;border:solid 1px #dfe5e9;background-color:#f3f4f8;}
 .ys-amp .table td.active i.unit-addon{display:none;}
 /*table td status*/
@@ -91,17 +92,20 @@
 #irr-plan .table td.active span.number-format,.ys-amp .table td.active span.td-format{display: none;}
 */
 
-#irr-plan  .ys-table-static .table tr.tr-main>th{padding-left:25px;color:#373c42;font-size:13px;}
-#irr-plan  .ys-table-static .table tr>th,
-#irr-plan  .ys-table-static .table tr>td{padding-left:25px}
+#irr-plan  .ys-table-static .table tr.tr-main>th{padding-left:25px;color:#373c42;font-size:14px;font-weight:bold;}
+#irr-plan  .ys-table-static .table tr.tr-main>td{font-size: 14px;color:#373c42;font-size:14px;font-weight:bold;}
+#irr-plan  .ys-table-static .table tr.tr-note>th,#irr-plan  .ys-table-static .table tr.tr-note>td{font-size: 14px;color:#8592a3;}
+
+#irr-plan .table>tbody>tr>th, #irr-plan .table>tbody>tr>td{padding:3px 10px;padding-left:25px;
+    height:38px;line-height:28px;overflow:hidden;}/*这里修改改变整体表格单元高度*/
 
 #irr-plan  .ys-table-static .table tr.tr-sub>th{color:#8592a3;font-size:13px;}
-#irr-plan  .ys-table-static .table tr.tr-sub>th span{display:block;font-size:12px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#irr-plan  .ys-table-static .table tr.tr-sub>th span{display:block;font-size:13px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 #irr-plan  .ys-table-static .table tr.tr-sub>th.th-note span{color:#373c32;font-weight:bold;}
 #irr-plan  .ys-table-static .table tr.tr-sub>th.th-note span:nth-last-child(1){color:#8592a3;}
 #irr-plan .amp-table-wrapper{position: relative;padding-left:375px;}
 #irr-plan .amp-table-wrapper .ys-table-static{position: absolute;top:0;left:0;}
-#irr-plan .ys-table-static .table>thead>tr>th{text-align: left;}
+#irr-plan .ys-table-static .table>thead>tr>th{text-align: left;padding-left:25px;}
 
 #irr-plan .amp-table-wrapper .amp-table tr>th,#amp-tookit-sim .amp-table-wrapper .amp-table tr>td{height:44px;overflow: hidden;}
 #irr-plan .amp-table-wrapper .table-scroll>thead>tr>th{text-align: right;}
@@ -113,6 +117,8 @@
 #irr-plan .amp-table tr.tr-split-top>th,#irr-plan .amp-table tr.tr-split-top>td{padding-top:18px;height:58px;}
 #irr-plan .amp-table tr.tr-split-bottom{height:58px;/*padding-bottom:16px;*/border-bottom:solid 1px #dfe5e9; }
 #irr-plan .amp-table tr.tr-split-bottom>th,#irr-plan .amp-table tr.tr-split-bottom>td{padding-bottom:18px;height:58px;}
+#irr-plan .amp-table tr.tr-split-bottom>th{}
+
 #irr-plan .amp-table tr.tr-split-bottom+tr.tr-split{border-top:0;}
 #irr-plan .amp-table tr.tr-split+tr{border-top:0;}
 
@@ -120,11 +126,12 @@
 #irr-plan .table .td-input-wrapper {
     position: relative;
     width: 100%;
-    /*height: 30px;*/
+    height: 30px;
     background-color:#f3f4f8;
 }
 #irr-plan  .table .td-input-wrapper span{padding-right:5px;}
-#irr-plan  .table .td-input-wrapper.padding-r-15 .number-format{padding-right:3px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;background-color: transparent;}
+#irr-plan  .table .td-input-wrapper.padding-r-15 .number-format{padding-right:3px;overflow: hidden;
+    text-overflow: ellipsis;white-space: nowrap;background-color: transparent;height:30px;line-height: 28px;}
 
 /*block btn-wrapper*/
 #irr-plan .bottom-block{position: absolute;padding-right:30px; bottom: 0; width: 100%; left: 0;background-color:#f3f4f8;border-top:0;}
