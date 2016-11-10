@@ -8,22 +8,14 @@ var datasim=(function($,datasim){
     var datasim=datasim;
     var myLineChart;
     var pin;
-    datasim.swiper_init=function(){
+    datasim.iscroll_init=function(){
         var h=parseInt($(window).height());
-       /* $(".leftpanelinner").css({
-            height:(h-100)+"px",
-           "overflow":"hidden"
-        });
-*/
+
         $(".col-xs-6").css({
             "overflow-y":"hidden",
             "height":(h-160)+"px"
         });
 
- /*       var left_panel_scroll = new IScroll('.leftpanelinner', {
-            mouseWheel: true,
-            scrollbars: false
-        });*/
         var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
             //mouseWheel: true,
             scrollbars: true
@@ -34,38 +26,15 @@ var datasim=(function($,datasim){
         });
 
 
-        /*var datasim_floor_swiper = new Swiper('#datatool-sim-floor-table', {
-            //scrollbar: '.swiper-scrollbar',
-            direction: 'vertical',
-            slidesPerView: 'auto',
-            //mousewheelControl: true,
-            freeMode: true,
-            scrollbarHide:true
-        });
-        var datasim_main_swiper = new Swiper('#datatool-sim-main-table', {
-            scrollbar: '.swiper-scrollbar',
-            direction: 'vertical',
-            slidesPerView: 'auto',
-            //mousewheelControl: true,
-            freeMode: true,
-            scrollbarHide:false
-        });*/
-
-
-
         var defer=null;
         var scrollUpdate=function(){
             var h=parseInt($(window).height());
-            /*$(".leftpanelinner").css({
-                height:(h-100)+"px",
-                "overflow":"hidden"
-            });*/
 
             $(".col-xs-6").css({
                 "overflow-y":"hidden",
                 "height":(h-160)+"px"
             });
-            //eft_panel_scroll.refresh();
+
             datasim_floor_scroll.refresh();
             datasim_main_scroll.refresh();
         };
@@ -379,7 +348,7 @@ var datasim=(function($,datasim){
 
         datasim.add_svg();
         datasim.chart_init();
-        datasim.swiper_init();
+        datasim.iscroll_init();
         //datasim.table_init();
         $('#preloader').delay(350).fadeOut(function(){
             //start
