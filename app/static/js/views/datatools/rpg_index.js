@@ -44,6 +44,7 @@ var rpgIndex_table=(function($,rpgIndex_table){
     }
     rpgIndex_table.init=function(){
         rpgIndex_table.swiper_init();
+        rpgIndex_table.show_right();
         $('#preloader').delay(350).fadeOut(function(){
             //start
         });
