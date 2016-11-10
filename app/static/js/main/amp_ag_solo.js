@@ -29,6 +29,19 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                 }
             },
         }, //state
+        {
+            name: 'rpgresult',
+            url: '/rpgresult',
+            views:{
+
+                'content': {
+                    templateUrl: '../views/datatools/datatool_rent_package_result.html',
+                },
+                "right":{
+                    templateUrl: '../views/blank_right.html',
+                }
+            },
+        }, //state
     ];
 
     // Loop over the state definitions and register them

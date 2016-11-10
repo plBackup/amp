@@ -266,7 +266,8 @@ var amp_main=(function($,menu,am){
     };
     amp_main.collapse_init=function(){
         // Menu Toggle
-        $('.menutoggle').click(function(){
+        $('.menutoggle').click(function(e){
+            e.preventDefault();
             var $body = $('body');
             var bodypos = $body.css('position');
 
@@ -366,7 +367,7 @@ var amp_main=(function($,menu,am){
         amp_main.subNav_init();
         amp_main.leftPanel_init();
         amp_main.rightPanel_init();
-       // $("#main-0").trigger("click");
+        $("#main-0").trigger("click");
 
         /*$(".head-main-menu").on("click","a",function(e){
             e.preventDefault();

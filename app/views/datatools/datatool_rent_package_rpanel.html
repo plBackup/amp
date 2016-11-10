@@ -14,7 +14,12 @@
                             <input type="text" value=""/>
                         </div>
                     </td>
-
+                    <td>
+                        <div class="input-wrapper">
+                            <label>楼层</label>
+                            <input type="text" value=""/>
+                        </div>
+                    </td>
                     <td>
                         <div class="input-wrapper input-wrapper-select">
                             <label>位置</label>
@@ -24,34 +29,39 @@
                                     <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">位置A</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">位置B</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">位置C</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">位置D</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">主入口</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">主立面外墙</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">次入口</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">主通道</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">侧面面街</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">后街</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-wrapper input-wrapper-select">
+                            <label>物业类型</label>
+                            <input type="text" value="" hidden/>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">MALL</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1">商业街</a></li>
                                 </ul>
                             </div>
                         </div>
                     </td>
 
-                    <td>
-                        <div class="input-wrapper">
-                            <label>楼层</label>
-                            <input type="text" value=""/>
-                        </div>
-                    </td>
 
-                    <td>
-                        <div class="input-wrapper">
-                            <label>建筑面积</label>
-                            <input type="text" value=""/>
-                        </div>
-                    </td>
                 </tr><!--tr-->
 
                 <tr>
                     <td>
                         <div class="input-wrapper">
-                            <label>建筑编号</label>
+                            <label>建筑面积</label>
                             <input type="text" value=""/>
                         </div>
                     </td>
@@ -65,17 +75,17 @@
 
                     <td>
                         <div class="input-wrapper input-wrapper-select">
-                            <label>物业类型</label>
+                            <label>产权性质</label>
                             <input type="text" value="" hidden/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                     <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">物业类型A</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">物业类型B</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">物业类型C</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">物业类型D</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >自持</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >销售</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >销售返租</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -84,31 +94,72 @@
                     <td>
                         <div class="input-wrapper">
                             <label>业态</label>
-                            <input type="text" value=""/>
-                        </div>
-                    </td>
-                </tr><!--tr-->
-
-                <tr>
-                    <td>
-                        <div class="input-wrapper input-wrapper-select">
-                            <label>产权性质</label>
                             <input type="text" value="" hidden/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                                     <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">产权性质A</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">产权性质B</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">产权性质C</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">产权性质D</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >超市</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >影院</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >时装</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >餐饮</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >娱乐</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >配套</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >儿童</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" >其他</a></li>
                                 </ul>
                             </div>
                         </div>
                     </td>
+                </tr><!--tr-->
 
+            </tbody>
+        </table>
+        <table class="table table-no-bordered amp-table table-input-typeA table-input-typeYearly">
+            <thead>
+                <tr>
+                    <th colspan="5" class="table-title">租金标准<em>(元/m&sup2/月)</em></th>
                 </tr>
+                <tr>
+                    <th>第一年</th>
+                    <th>第二年</th>
+                    <th>第三年</th>
+                    <th>第四年</th>
+                    <th>第五年</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                    <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                    <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                    <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                    <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-no-bordered amp-table table-input-typeA table-input-typeYearly">
+            <thead>
+            <tr>
+                <th colspan="5" class="table-title">物业管理费标准<em>(元/m&sup2/月)</em></th>
+            </tr>
+            <tr>
+                <th>第一年</th>
+                <th>第二年</th>
+                <th>第三年</th>
+                <th>第四年</th>
+                <th>第五年</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+                <td> <div class="input-wrapper"><input type="text" value=""/></div> </td>
+            </tr>
             </tbody>
         </table>
         <div class="block clearfix">
