@@ -7,35 +7,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>悦商AMP</title>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
 
     <!-- 导入CSS -->
-    <link href="../static/dist/css/animate.css" rel="stylesheet">
-    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
+    <link href="../../static/dist/css/animate.css" rel="stylesheet">
+    <link href="../../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/dist/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/dist/css/bootstrap-datetimepicker.min.css">
 
-    <link href="../static/css/common/common.css" rel="stylesheet">
-    <link href="../static/css/common/static_table.css" rel="stylesheet">
-
+    <link href="../../static/css/common/common.css" rel="stylesheet">
+    <link href="../../static/css/common/static_table.css" rel="stylesheet">
+    <link href="../../static/css/views/noi.css" rel="stylesheet">
 
     <!-- 自有CSS -->
-    <link href="../static/css/main/amp_main.css" rel="stylesheet">
-    <link href="../static/css/views/noi.css" rel="stylesheet">
-    <link href="../components/toolbar/filter.css" rel="stylesheet">
+    <link href="../../static/css/main/amp_main.css" rel="stylesheet">
+    <link href="../../components/toolbar/filter.css" rel="stylesheet">
 
-    <script src="../static/dist/js/angular.min.js"></script>
-    <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
-    <script src="../static/dist/js/bootstrap.min.js"></script>
-    <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
-    <script src="../static/dist/js/swiper.jquery.js"></script>
-    <script src="../static/dist/js/jquery.pin.js"></script>
-    <script src="../static/dist/js/echarts.common.min.js"></script>
+    <script src="../../static/dist/js/angular.min.js"></script>
+    <script src="../../static/dist/js/jquery-1.11.3.min.js"></script>
+    <script src="../../static/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/dist/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../../static/dist/js/swiper.jquery.js"></script>
 
-    <script src="../static/js/main/menu_list.js"></script>
-    <script src="../static/js/main/amp_main.js"></script>
-
+    <script src="../../static/js/main/menu_list.js"></script>
+    <script src="../../static/js/main/amp_main.js"></script>
     <script>
         $(window).load(function() {
             amp_main.placeholder_init();
@@ -47,9 +43,37 @@
                 console.log(href);
             });
             amp_main.init();
+
+           /* setTimeout(function(){
+                amp_main.rightPanel_open();
+            },2000);
+            $(".ys-amp").on("right_panel_open",function(e){
+                alert("right_panel_open")
+            });*/
+
+            var noi_head_swiper = new Swiper('#noi-main-table-head', {
+                //scrollbar: '.swiper-scrollbar',
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                scrollbarHide:true
+            });
+            var noi_main_swiper = new Swiper('#noi-main-table', {
+                scrollbar: '.swiper-scrollbar',
+                direction: 'horizontal',
+                slidesPerView: 'auto',
+                mousewheelControl: true,
+                freeMode: true,
+                scrollbarHide:false
+            });
+            noi_head_swiper.params.control = noi_main_swiper;
+            noi_main_swiper.params.control = noi_head_swiper;
+
+
+
         });
     </script>
-    <script src="../static/js/views/noi_analyse/noi.js"></script>
 </head>
 <body>
 
@@ -77,25 +101,83 @@
                     <div class="toolbar-item item-month-filter" style="padding:0;">
                         <label for="month-filter">月选择</label>
                         <div class="input-group date ys-datepicker" id="monthpicker">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" id="ys-date-pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
-                            </span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="ys-date-pre"><em class="glyphicon glyphicon-arrow-left"></em></button>
+            </span>
                             <input size="16" type="text" value="" data-provide="datepicker" id="month-filter" name="month-filter" ng-model="month-filter" readonly>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" id="ys-date-next"><em class="glyphicon glyphicon-arrow-right"></em></button>
-                            </span>
+                <button class="btn btn-default" type="button" id="ys-date-next"><em class="glyphicon glyphicon-arrow-right"></em></button>
+            </span>
                             <!--   <span class="add-on"><i class="icon-th"></i></span>-->
                         </div>
                     </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-datetime-filter" style="padding:0;">
+                        <label for="date-filter">日期</label>
+                        <div class="input-group date ys-datepicker" id="datepicker">
+                            <input size="16" type="text" value="" data-provide="datepicker" id="date-filter" name="date-filter" ng-model="date-filter" readonly>
+                            <!--   <span class="add-on"><i class="icon-th"></i></span>-->
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-daterange-filter" style="padding:0;">
+                        <label for="date-range-filter-start">日期</label>
+                        <div class="input-group date ys-datepicker" id="daterange">
+                            <input size="16" type="text" placeholder="开始" value="" data-provide="datepicker" id="date-range-filter-start" name="date-range-filter-start" ng-model="date-range-filter-start" readonly>
+                            <span class="input-group-addon input-sm">~</span>
+                            <input size="16" type="text" placeholder="结束" value="" data-provide="datepicker" id="date-range-filter-end" name="date-range-filter-end" ng-model="date-range-filter-end" readonly>
+
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-input-filter" style="padding:0;">
+                        <label for="input-shop-id">铺位号</label>
+                        <div class="input-group">
+                            <input type="text" placeholder="请输入" id="input-shop-id" name="input-shop-id">
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-input-filter" style="padding:0;">
+                        <label for="input-id">输入</label>
+                        <div class="input-group">
+                            <input type="text" placeholder="" id="input-id" name="input-id">
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-select-filter" style="padding:0;">
+                        <label for="search-id">选择</label>
+                        <input type="text" placeholder="" id="select-id" name="select-id" hidden value="">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">
+                                <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司A</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司B</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司C</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">商业公司D</a></li>
+                            </ul>
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-search-filter" style="padding:0;">
+                        <label for="search-id">搜索</label>
+                        <div class="input-group">
+                            <input type="text" placeholder="" id="search-id" name="search-id">
+                            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><em class="ys-icon ys-icon-search"></em></button>
+            </span>
+                        </div>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-btn-wrapper" style="padding:0;">
+                        <a href="javascript:void(0)" class="btn btn-default amp-btn" id="toolbar-submit">查询</a>
+                    </div><!--div toolbar-item-->
+
+                    <div class="toolbar-item item-btn-wrapper" style="padding:0;">
+                        <a href="javascript:void(0)" class="btn btn-default amp-btn" id="toolbar-create">录入</a>
+                    </div><!--div toolbar-item-->
                 </div>
-                <script src="../components/toolbar/noi_filter.js"></script>
-                <script>
-                    $(document).ready(function(){
-                        //这里有公共方法，确定业务后 单独放到一个文件
-                        filters.monthSelector();
-                        filters.init();
-                    });
-                </script>
             </div><!--amp-side-toolbar-->
             <ul class="nav nav-pills nav-stacked nav-bracket">
 
@@ -117,7 +199,7 @@
                 <table class="table table-right-bordered amp-table" >
                     <thead>
                     <tr>
-                        <th>净营运收入NOI(万元)</th>
+                        <th>净运营收入NOI(万元)</th>
                         <th>总投资成本(万元)</th>
                         <th>估值(万元)</th>
                         <th>贷款(万元)</th>
@@ -173,7 +255,7 @@
                     <div class="ys-table-static ys-table-static-left" style="width:160px;">
                         <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:100%;">
                             <thead>
-                            <tr style="">
+                            <tr style="border-bottom:solid 8px #fff;">
                                 <th class="fake-th"></th>
                             </tr>
                             <tr class="thead-tr-sub">
@@ -186,9 +268,9 @@
                     <div class="swiper-container" style="width:100%;" id="noi-main-table-head">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:1500px;" >
+                                <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:1800px;" >
                                     <thead>
-                                    <tr style="">
+                                    <tr style="border-bottom:solid 8px #fff;">
                                         <th colspan="4" ><em><</em>2016-08(万元)</th>
                                         <th colspan="4" >全年累计(万元)</th>
                                         <th colspan="4" >全年(万元)</th>
@@ -226,7 +308,7 @@
                         <table class="table table-no-bordered amp-table table-hover" style="width:100%;">
                             <tbody>
                             <tr class="tr-main">
-                                <th>收入<em class="ys-icon icon-menu-down"></em></th>
+                                <th>收入<em class="glyphicon glyphicon-menu-down"></em></th>
                             </tr>
                             <tr class="tr-sub">
                                 <th>租金</th>
@@ -240,8 +322,8 @@
                                 <th>其他收入</th>
                             </tr>
 
-                            <tr class="tr-main tr-init-collapse">
-                                <th>费用<em class="ys-icon icon-menu-down"></em></th>
+                            <tr class="tr-main">
+                                <th>费用<em class="glyphicon glyphicon-menu-down"></em></th>
                             </tr>
                             <tr class="tr-sub">
                                 <th>增值税</th>
@@ -255,18 +337,8 @@
                                 <th>地租</th>
                             </tr>
 
-                            <tr class="tr-sub tr-sub-main">
-                                <th>能耗费用<em class="ys-icon icon-menu-down"></em></th>
-                            </tr>
-
-                            <tr class="tr-tri">
-                                <th>水费</th>
-                            </tr>
-                            <tr class="tr-tri">
-                                <th>电费</th>
-                            </tr>
-                            <tr class="tr-tri">
-                                <th>煤气费</th>
+                            <tr class="tr-sub">
+                                <th>公用事业费</th>
                             </tr>
 
                             <tr class="tr-sub">
@@ -303,10 +375,10 @@
                             <!-- end -->
                             </tbody>
                             <tfoot>
-                            <tr class="tr-main">
+                            <tr>
                                 <th>NOI</th>
                             </tr>
-                            <tr class="tr-sub">
+                            <tr>
                                 <th>利润率</th>
                             </tr>
                             </tfoot>
@@ -316,7 +388,7 @@
                     <div class="swiper-container" style="width:100%;" id="noi-main-table">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <table class="table table-no-bordered amp-table table-hover"  style="width:1500px;">
+                                <table class="table table-no-bordered amp-table table-hover"  style="width:1800px;">
                                     <tbody>
                                     <tr class="tr-main">
                                         <td>506.8</td>
@@ -469,7 +541,7 @@
 
                                     </tr>
 
-                                    <tr class="tr-sub tr-sub-main">
+                                    <tr class="tr-sub">
                                         <td>9.39</td>
                                         <td>10.44</td>
                                         <td>-1.05</td>
@@ -487,63 +559,6 @@
 
                                         <td></td>
                                     </tr>
-
-                                    <tr class="tr-tri">
-                                        <td>3.39</td>
-                                        <td>10.44</td>
-                                        <td>-1.05</td>
-                                        <td class="t-split">-10.06%</td>
-
-                                        <td>255.5</td>
-                                        <td>283.89</td>
-                                        <td>-28.39</td>
-                                        <td class="t-split">-10.00%</td>
-
-                                        <td>5.55</td>
-                                        <td>10.44</td>
-                                        <td>-4.89</td>
-                                        <td class="t-split">-46.84%</td>
-
-                                        <td></td>
-                                    </tr>
-                                    <tr class="tr-tri">
-                                        <td>3.00</td>
-                                        <td>10.44</td>
-                                        <td>-1.05</td>
-                                        <td class="t-split">-10.06%</td>
-
-                                        <td>255.5</td>
-                                        <td>283.89</td>
-                                        <td>-28.39</td>
-                                        <td class="t-split">-10.00%</td>
-
-                                        <td>5.55</td>
-                                        <td>10.44</td>
-                                        <td>-4.89</td>
-                                        <td class="t-split">-46.84%</td>
-
-                                        <td></td>
-                                    </tr>
-                                    <tr class="tr-tri">
-                                        <td>3.00</td>
-                                        <td>10.44</td>
-                                        <td>-1.05</td>
-                                        <td class="t-split">-10.06%</td>
-
-                                        <td>255.5</td>
-                                        <td>283.89</td>
-                                        <td>-28.39</td>
-                                        <td class="t-split">-10.00%</td>
-
-                                        <td>5.55</td>
-                                        <td>10.44</td>
-                                        <td>-4.89</td>
-                                        <td class="t-split">-46.84%</td>
-
-                                        <td></td>
-                                    </tr>
-
-
 
                                     <tr class="tr-sub">
                                         <td>25.01</td>
@@ -697,7 +712,7 @@
                                     <!-- end -->
                                     </tbody>
                                     <tfoot>
-                                    <tr class="tr-main">
+                                    <tr>
                                         <td>216.57</td>
                                         <td>227.84</td>
                                         <td>-11.27</td>
@@ -715,11 +730,11 @@
 
                                         <td>63.35%</td>
                                     </tr>
-                                    <tr class="tr-sub">
+                                    <tr>
                                         <td>216.57</td>
                                         <td>227.84</td>
-                                        <td class="notify">-11.27</td>
-                                        <td class="t-split notify">-4.95%</td>
+                                        <td>-11.27</td>
+                                        <td class="t-split">-4.95%</td>
 
                                         <td>216.57</td>
                                         <td>227.84</td>
@@ -745,16 +760,8 @@
                 </div>
             </div>
 
-            <div class="amp-table-wrapper" id="noi-arrearage">
-                <table class="table table-no-bordered table-hover amp-table">
-                    <colgroup>
-                        <col width="15%">
-                        <col width="17%">
-                        <col width="17%">
-                        <col width="17%">
-                        <col width="17%">
-                        <col width="17%">
-                    </colgroup>
+            <div class="amp-table-wrapper">
+                <table class="table table-no-bordered amp-table">
                     <thead>
                     <tr >
                         <th></th>
@@ -767,7 +774,7 @@
                     </thead>
                     <tbody>
                     <tr class="tr-main">
-                        <th>欠费<em class="ys-icon icon-menu-down"></em></th>
+                        <th>欠费<em class="glyphicon glyphicon-menu-down"></em></th>
                         <td>948.76</td>
                         <td>45.69</td>
                         <td>84.64</td>
@@ -805,21 +812,14 @@
             </div>
 
         </div><!--ys-block-->
-        <div class="amp-block-pd clearfix">
+        <div class="amp-block-pd">
             <div class="amp-block-title">
                 <h3 class="col-xs-4">NOI实际与方案(一、二、三)对比</h3>
             </div>
-            <div class="col-xs-12 chart-wrapper" id="noi-chart-wrapper" >
-                <em class="chart-axis-info chart-axis-y-info">万元</em>
-                <div id="noi-chart" style="height:310px;"></div>
-                <div class="chart-legend">
-
-                        <span><em class="color-label" style="background-color:#60cd7a;"></em><i class="name">NOI实际</i></span>
-                        <span><em class="color-label" style="background-color:#5dbaf7;"></em><i class="name">方案1</i></span>
-                        <span><em class="color-label" style="background-color:#fd7170;"></em><i class="name">方案2</i></span>
-                        <span><em class="color-label" style="background-color:#feb739;"></em><i class="name">方案3</i></span>
-                </div>
+            <div class="col-xs-12">
+                <div id="chart-noi" style="height:380px"></div>
             </div>
+
         </div>
 
 

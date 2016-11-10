@@ -10,20 +10,20 @@ var datasim=(function($,datasim){
     var pin;
     datasim.swiper_init=function(){
         var h=parseInt($(window).height());
-        $(".leftpanelinner").css({
+       /* $(".leftpanelinner").css({
             height:(h-100)+"px",
            "overflow":"hidden"
         });
-
+*/
         $(".col-xs-6").css({
             "overflow-y":"hidden",
             "height":(h-160)+"px"
         });
 
-        var left_panel_scroll = new IScroll('.leftpanelinner', {
+ /*       var left_panel_scroll = new IScroll('.leftpanelinner', {
             mouseWheel: true,
             scrollbars: false
-        });
+        });*/
         var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
             //mouseWheel: true,
             scrollbars: true
@@ -56,16 +56,16 @@ var datasim=(function($,datasim){
         var defer=null;
         var scrollUpdate=function(){
             var h=parseInt($(window).height());
-            $(".leftpanelinner").css({
+            /*$(".leftpanelinner").css({
                 height:(h-100)+"px",
                 "overflow":"hidden"
-            });
+            });*/
 
             $(".col-xs-6").css({
                 "overflow-y":"hidden",
                 "height":(h-160)+"px"
             });
-            left_panel_scroll.refresh();
+            //eft_panel_scroll.refresh();
             datasim_floor_scroll.refresh();
             datasim_main_scroll.refresh();
         };
@@ -393,10 +393,6 @@ var datasim=(function($,datasim){
 })(jQuery,datasim||{});
 
 
-jQuery(document).ready(function(){
-    alert("...");
-    datasim.init();
-});
 
 
 

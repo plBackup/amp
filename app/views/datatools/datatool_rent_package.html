@@ -4,7 +4,7 @@
         <!-- Breadcrumb / Summary info-->
         <ul class="header-nav-sub clearfix">
             <li><a ui-sref="rpgindex" ui-sref-active="active" href="#/rpgindex" id="tri-0-1-0" class="header-subnav-item" >铺位信息</a></li>
-            <li><a ui-sref="rpgset" ui-sref-active="active" href="#/rpgset" id="tri-0-1-1" class="header-subnav-item ">租金包设定</a></li>
+            <li><a ui-sref="rpgset" ui-sref-active="active" href="#/rpgset" id="tri-0-1-1" class="header-subnav-item">租金包设定</a></li>
         </ul>
     </div><!--amp-content-header-->
     <div class="amp-block-pd">
@@ -78,3 +78,11 @@
         </div>
     </div><!--ys-block-->
 </div><!-- contentpanel -->
+
+<script src="../static/js/views/datatools/rpg_index.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        rpgIndex_table.init();
+    });
+</script>
+

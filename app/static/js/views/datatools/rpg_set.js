@@ -79,7 +79,6 @@ var swiper_table=(function($,swiper_table){
 
   
     swiper_table.init=function(){
-        
         swiper_table.swiper_init();
         swiper_table.table_init();
         $('#preloader').delay(350).fadeOut(function(){
@@ -92,7 +91,6 @@ var swiper_table=(function($,swiper_table){
 
 
 jQuery(document).ready(function(){
-    alert("...");
     swiper_table.init();
 });
 

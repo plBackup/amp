@@ -36,7 +36,12 @@ var rpgIndex_table=(function($,rpgIndex_table){
         });
     };
 
-
+    rpgIndex_table.show_right=function(){
+        $("#rent-package").on("click",".ys-table-main tr",function(e){
+            e.preventDefault();
+            amp_main.rightPanel_open();
+        });
+    }
     rpgIndex_table.init=function(){
         rpgIndex_table.swiper_init();
         $('#preloader').delay(350).fadeOut(function(){
@@ -47,10 +52,6 @@ var rpgIndex_table=(function($,rpgIndex_table){
     return rpgIndex_table;
 })(jQuery,rpgIndex_table||{});
 
-
-jQuery(document).ready(function(){
-    rpgIndex_table.init();
-});
 
 
 

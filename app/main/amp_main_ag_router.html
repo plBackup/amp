@@ -29,14 +29,17 @@
     <link href="../components/toolbar/filter.css" rel="stylesheet">
     <link href="../static/css/views/datatools.css" rel="stylesheet">
 
-
+    <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
     <script src="../static/dist/js/angular.js"></script>
     <script src="../static/dist/js/angular-ui-router.js"></script>
-    <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
+
     <script src="../static/dist/js/bootstrap.min.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
+    <script src="../static/dist/js/iscroll.js"></script>
     <script src="../static/dist/js/jquery.pin.js"></script>
     <script src="../static/dist/js/echarts.common.min.js"></script>
+    <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
     <script src="../static/js/main/amp_ag.js"></script>
@@ -65,7 +68,7 @@
     </script>
 
 </head>
-<body class="open open-panel">
+<body class="">
 
 <!--[if lt IE 9]>
 <p class="updateBrowser">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
@@ -83,15 +86,17 @@
             <a href="main.html" target="_self"><em class="ys-icon ys-icon-amp-s"></em></a>
         </div><!-- logopanel -->
         <div class="leftpanelinner">
-            <h5 class="sidebartitle">
-                <a href="#" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
-            </h5>
-            <div class="amp-side-toolbar active">
-                <ui-view name="toolbar"></ui-view>
-            </div><!--amp-side-toolbar-->
-            <ul class="nav nav-pills nav-stacked nav-bracket">
+            <div>
+                <h5 class="sidebartitle">
+                    <a href="#" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
+                </h5>
+                <div class="amp-side-toolbar active">
+                    <ui-view name="toolbar"></ui-view>
+                </div><!--amp-side-toolbar-->
+                <ul class="nav nav-pills nav-stacked nav-bracket">
 
-            </ul>
+                </ul>
+            </div>
         </div><!-- leftpanelinner -->
     </div><!-- leftpanel -->
     <div class="headerpanel">

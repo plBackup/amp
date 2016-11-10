@@ -445,10 +445,7 @@ var noi=(function($,noi){
 })(jQuery,noi||{});
 
 
-jQuery(document).ready(function(){
-    alert("...");
-    noi.init();
-});
+
 
 
 

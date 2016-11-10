@@ -91,10 +91,6 @@ var irr_plan=(function($,irr_plan){
 })(jQuery,irr_plan||{});
 
 
-jQuery(document).ready(function(){
-    alert("...");
-    irr_plan.init();
-});
 
 
 

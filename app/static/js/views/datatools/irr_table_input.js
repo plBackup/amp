@@ -114,6 +114,3 @@ var table_input=(function($,ti){
     return table_input;
 })(jQuery,table_input||{});
 
-$(document).ready(function(){
-   table_input.init();
-});

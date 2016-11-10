@@ -6,6 +6,7 @@ var amp_main=(function($,menu,am){
     var amp_main=am;
 
     var menu_list=menu;
+    var left_panel_scroll;
     if(typeof menu_list==="undefined"){
         alert("请先配置页面功能目录");
         return false;
@@ -282,6 +283,53 @@ var amp_main=(function($,menu,am){
 
     };
 
+    amp_main.leftPanel_init=function(){
+        var h=parseInt($(window).height());
+         $(".leftpanelinner").css({
+             height:(h-100)+"px",
+             "overflow":"hidden"
+         });
+         left_panel_scroll = new IScroll('.leftpanelinner', {
+            mouseWheel: true,
+            scrollbars: false
+        });
+        console.log(left_panel_scroll);
+        var defer=null;
+        var scrollUpdate=function(){
+            var h=parseInt($(window).height());
+            $(".leftpanelinner").css({
+                height:(h-100)+"px",
+                "overflow":"hidden"
+            });
+            left_panel_scroll.refresh();
+        };
+
+        $(window).resize(function(){
+            if(!defer){
+                defer=setTimeout(function(){
+                    scrollUpdate();
+                    defer=null;
+                },200);
+            }else{
+                clearTimeout(defer);
+                defer=setTimeout(function(){
+                    scrollUpdate();
+                    defer=null;
+                },200);
+            }
+
+        });
+        setTimeout(scrollUpdate,300);
+    };
+
+    amp_main.leftPanel_update=function(){
+        var h=parseInt($(window).height());
+        $(".leftpanelinner").css({
+            height:(h-100)+"px",
+            "overflow":"hidden"
+        });
+        left_panel_scroll.refresh();
+    };
     /*right panel 调用*/
     amp_main.rightPanel_open=function(){
 
@@ -316,6 +364,7 @@ var amp_main=(function($,menu,am){
         amp_main.sideNav_init();
         amp_main.sideNav_nav();
         amp_main.subNav_init();
+        amp_main.leftPanel_init();
         amp_main.rightPanel_init();
         $("#main-0").trigger("click");
 

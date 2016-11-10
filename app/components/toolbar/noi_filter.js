@@ -186,7 +186,8 @@ var filters=(function($,fl){
         });
         $("input").on("blur",function(){
             $(this).closest(".input-group").removeClass("out-ring");
-        })
+        });
+        amp_main.leftPanel_update();
     };
 
     return filters;
