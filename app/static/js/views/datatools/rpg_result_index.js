@@ -31,7 +31,7 @@ var rpg_result_table=(function($,rpg_result_table){
 
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#rpg-result-table-wrapper",
-            padding: {top: 44, bottom: 50}
+            padding: {top: 88, bottom: 50}
         });
 
         var defer=null;

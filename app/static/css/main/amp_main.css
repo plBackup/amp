@@ -267,7 +267,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 #page-solo .headerpanel .ys-icon-amp-s{left:25px;margin-left:0;background-position: -488px -88px;}
 
 /*breadcrumb*/
-.amp-content-header>.amp-header-breadcrumb{position:relative;padding-left:55px;pading-right:25px;height:44px;overflow: hidden;line-height: 44px;}
+.amp-content-header>.amp-header-breadcrumb{position:relative;padding-left:55px;pading-right:25px;height:44px;overflow: hidden;line-height: 44px;background-color:#f3f4f8;}
 .amp-header-breadcrumb a.amp-solo-close{display: block;position: absolute;z-index:99;width:20px;height:20px;top:50%;margin-top:-10px;left:25px;
     background-image:url(../../images/icon.png);background-position:-50px -243px; }
 .amp-header-breadcrumb .breadcrumb{padding:0;}
