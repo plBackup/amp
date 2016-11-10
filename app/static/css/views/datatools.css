@@ -14,7 +14,7 @@
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead{background-color:transparent;text-align: left;font-size:14px;color:#8592a3; }
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>td input{text-align: right;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th{border-top:0;padding-left:0;text-align: left;}
-#rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th.table-title{font-size: 16px;}
+#rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th.table-title{font-size: 14px;}
 #rent-package-rpanel .table-input-type>tbody>tr>td{padding-top:0;padding-bottom:8px;height:34px;}
 .table-input-typeA .input-wrapper label{display: block;margin-bottom:0;height:32px;line-height: 32px;
     color: #8592a3;font-size: 14px;}
@@ -37,7 +37,7 @@
 
 
 /*irrplan*/
-#irr-plan{}
+#irr-plan{padding-bottom:50px;}
 #irr-plan .amp-block{}
 #irr-plan .table td.active {
     background-color: #dfe5e9;
@@ -164,9 +164,9 @@
 #rgp-set-index .btn-wrapper .amp-btn.amp-btn-reverse{background-color:#fff;color: #5ab46e;}
 
 /*datatool-sim*/
-#datatool-sim{padding-bottom:52px;}
+#datatool-sim{padding-bottom:0;}
 #datatool-sim .amp-content-header{margin-bottom:0;}
-#datatool-sim #datatool-sim-main-table{position: relative;border-left: solid 1px #dfe5e9;}
+#datatool-sim #datatool-sim-main-table{position: relative;border-left: solid 1px #dfe5e9;overflow:hidden;}
 #datatool-sim #datatool-sim-main-table .table-wrapper{padding-top:20px;padding-bottom:20px;border-bottom: solid 1px #dfe5e9;}
 #datatool-sim #datatool-sim-main-table .amp-table{margin-bottom:0;}
 /*
@@ -193,11 +193,11 @@
 #datatool-sim #datatool-sim-main-table .amp-table thead{background-color:transparent;}
 #datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{text-align: left;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th:nth-child(1),
-#datatool-sim #datatool-sim-main-table .amp-table tbody>tr>th{width:160px;}
+#datatool-sim #datatool-sim-main-table .amp-table tbody>tr>th{width:135px;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th,
-#datatool-sim #datatool-sim-main-table .amp-table tr>td{padding-left:15px;padding-right:15px;}
-#datatool-sim #datatool-sim-main-table .amp-table tr>th{padding-left:25px;font-size: 14px;color:#8592a3;}
-#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{padding-left:15px;}
+#datatool-sim #datatool-sim-main-table .amp-table tr>td{padding-left:0px;padding-right:15px;}
+#datatool-sim #datatool-sim-main-table .amp-table tr>th{padding-left:20px;font-size: 14px;color:#8592a3;}
+#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{padding-left:0;}
 
 #datatool-sim-main-table .amp-table>tbody>tr>th,
 #datatool-sim-main-table .amp-table>tbody>tr>td,
@@ -220,7 +220,7 @@
 #datatool-sim .amp-svg-opt span.opt-item>em.ys-icon-cancel{display: block;position: absolute;height:16px;width:16px;right:0;top:6px;
     background-color:#b0b0b0;color:#fff;font-size: 14px;line-height: 14px;text-align: center;}
 /*block btn-wrapper*/
-#datatool-sim .bottom-block{position: fixed; padding-right:28px;bottom: 0; width: 100%; left: 0;border-top:0;background-color:#f3f4f8;z-index:99;}
+#datatool-sim .bottom-block{/*position: fixed; */position:relative;padding-right:28px;bottom: 0; width: 100%; left: 0;border-top:0;background-color:#f3f4f8;z-index:99;}
 #datatool-sim .btn-wrapper{height:72px;overflow: hidden;padding-top:20px;padding-bottom:20px;text-align: center;}
 #datatool-sim .btn-wrapper .amp-btn{height:32px;padding:3px 15px;text-align: center;font-size:14px;line-height: 24px;float:right;margin-left:15px;
     border: solid 1px #5ab46e;min-width: 110px;border-radius: 2px;}

@@ -13,15 +13,15 @@ var datasim=(function($,datasim){
 
         $(".col-xs-6").css({
             "overflow-y":"hidden",
-            "height":(h-160)+"px"
+            "height":(h-88)+"px"
         });
 
         var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
-            //mouseWheel: true,
+            mouseWheel: true,
             scrollbars: true
         });
         var datasim_main_scroll= new IScroll('#datatool-sim-main-table', {
-            //mouseWheel: true,
+            mouseWheel: true,
             scrollbars: true
         });
 
@@ -32,7 +32,7 @@ var datasim=(function($,datasim){
 
             $(".col-xs-6").css({
                 "overflow-y":"hidden",
-                "height":(h-160)+"px"
+                "height":(h-88)+"px"
             });
 
             datasim_floor_scroll.refresh();

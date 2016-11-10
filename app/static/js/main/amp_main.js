@@ -333,12 +333,13 @@ var amp_main=(function($,menu,am){
     };
     /*right panel 调用*/
     amp_main.rightPanel_open=function(){
-
+        $("body,html").css("overflow","hidden");
         $("body").addClass("open open-panel");
         $(".ys-amp").trigger("right_panel_open");
     };
 
     amp_main.rightPanel_close=function(){
+        $("body,html").css("overflow","auto");
         $("body").removeClass("open open-panel");
         $(".ys-amp").trigger("right_panel_close");
     };
