@@ -41,7 +41,7 @@ a,button,.btn{ -moz-user-select: none; -webkit-user-select: none; -ms-user-selec
 .login-wrapper .form-wrapper .password-wrapper,
 .login-wrapper .form-wrapper .input-group-veri{margin-bottom:40px;}
 .login-wrapper .form-wrapper .input-group:nth-last-child(1){margin-bottom: 0;}
-.login-wrapper .form-wrapper input{padding-left:42px;padding-right:10px;width:100%;height:50px;border:0;-webkit-apperance:none;border-radius:0;border:0;border-bottom:solid 1px #fff; background:none;color:#fff;outline:0;font-size: 15px;}
+.login-wrapper .form-wrapper input{padding-left:42px;padding-right:10px;width:100%;height:50px;border:0;-webkit-apperance:none;border-radius:0;border:0;border-bottom:solid 1px #fff; background:none;color:#fff;outline:0;font-size: 16px;}
 
 .login-wrapper .form-wrapper .login-addon{padding-left:3px;padding-right:3px;}
 .login-wrapper .login-addon div{height:20px;line-height: 20px;color:#fff;}
@@ -83,4 +83,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-image: none;
     color: rgb(0, 0, 0);
 }
-
+::-moz-placeholder { color: #c2cdd7; }
+::-webkit-input-placeholder { color:#c2cdd7; }
+:-ms-input-placeholder { color:#c2cdd7; }

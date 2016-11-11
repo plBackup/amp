@@ -13,31 +13,29 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
     <!-- 导入CSS -->
-    <link href="../static/dist/css/animate.css" rel="stylesheet">
+
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
-
+    <link href="../static/dist/css/animate.css" rel="stylesheet">
+    <link href="../static/dist/css/ng-animation.css" rel="stylesheet">
     <link href="../static/css/common/common.css" rel="stylesheet">
     <link href="../static/css/common/static_table.css" rel="stylesheet">
 
 
-
     <!-- 自有CSS -->
     <link href="../static/css/main/amp_main.css" rel="stylesheet">
+    <!--<link href="../static/css/main/me-pageloading.css" rel="stylesheet">-->
     <link href="../static/css/views/noi.css" rel="stylesheet">
     <link href="../components/toolbar/filter.css" rel="stylesheet">
     <link href="../static/css/views/datatools.css" rel="stylesheet">
 
-    <link href="../static/css/common/amp_common.css" rel="stylesheet">
-    <link href="../static/css/common/amp_page_structure.css" rel="stylesheet">
-    <link href="../static/css/common/component.css" rel="stylesheet">
-    <link href="../static/css/common/amp_animation.css" rel="stylesheet">
-
     <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
     <script src="../static/dist/js/angular.js"></script>
+    <script src="../static/dist/js/angular-animate.min.js"></script>
     <script src="../static/dist/js/angular-ui-router.js"></script>
 
+<!--    <script src="../static/dist/js/snap.svg-min.js"></script>-->
     <script src="../static/dist/js/bootstrap.min.js"></script>
     <script src="../static/dist/js/swiper.jquery.js"></script>
     <script src="../static/dist/js/iscroll.js"></script>
@@ -45,14 +43,13 @@
     <script src="../static/dist/js/echarts.common.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<!--    <script src="../static/js/main/me-pageloading.js"></script>-->
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
-    <script src="../static/js/main/amp_ag.js"></script>
+    <script src="../static/js/main/amp_ag_res.js"></script>
     <script src="../static/js/main/controllers.js"></script>
     <script src="../static/js/main/filters.js"></script>
     <script src="../static/js/main/services.js"></script>
-
-
 
     <script>
         $(window).load(function() {
@@ -60,7 +57,7 @@
         });
         var i=0;
         $(document).ready(function(){
-            $(".ys-amp").on("relocate",function(e,id,href){
+           /* $(".ys-amp").on("relocate",function(e,id,href){
                 console.log(e);
                 console.log(id);
                 console.log(href);
@@ -68,12 +65,15 @@
                 if(i>=2){
                     window.location.href=href;
                 }
-            });
+            });*/
             amp_main.init();
 
         });
     </script>
-
+    <style>
+        .ampFade.ng-enter{transition:0.1s linearall; opacity:0;}
+        .ampFade.ng-enter-active{opacity:1;}
+    </style>
 </head>
 <body class="">
 
@@ -85,7 +85,7 @@
 <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
 </div>
-<main class="page page-main ys-amp" id="page-main" role="main" ng-app="amp" >
+<main class="page page-main ys-amp" id="page-main" role="main" ng-app="amp">
 
     <div class="leftpanel">
         <div class="logopanel">
@@ -95,7 +95,7 @@
         <div class="leftpanelinner">
             <div>
                 <h5 class="sidebartitle">
-                    <a href="#" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
+                    <a href="javascript:void(0)" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
                 </h5>
                 <div class="amp-side-toolbar active">
                     <ui-view name="toolbar"></ui-view>
@@ -111,19 +111,20 @@
             <div class="head-main-menu">
                 <!-- Nav tabs -->
             </div>
-          
+           <!-- <div class="header-right">
+                <span class="ys-figure ys-useer-figure"></span>
+            </div> &lt;!&ndash;h-->eader-right-->
         </div><!-- headerbar -->
     </div>
     <div class="mainpanel">
-       <ui-view name="content"></ui-view>
+      <!-- <ui-view name="content"></ui-view>-->
+        <div ui-view="content"></div>
     </div><!-- mainpanel -->
 
     <!-- rightpanel -->
     <div class="rightpanel">
         <ui-view name="right"></ui-view>
     </div>
-
-    <ui-view name="enrolment"></ui-view>
     <!--modal parts-->
 
     <!--end modal parts-->
@@ -131,9 +132,6 @@
     <div class="backdrop"></div>
     <!--end backdrop loading-->
 </main>
-<script src="../static/js/common/component.js"></script>
-<script>
 
-</script>
 </body>
 </html>

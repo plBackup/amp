@@ -17,8 +17,8 @@ var menu_list={
                     index:"sub-0",
                     links:"noi",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-                },
+                    re_locate:true//点击一级目录直接跳转
+                }
 
             ]
         },
@@ -26,7 +26,7 @@ var menu_list={
             name:"投资分析",
             index:"main-1",
             icon:"ys-icon-finacial",
-            links:"../amp/amp_financial_index.html",
+            links:"simulation_calculation_main",
             target:"#page-frame",
             show_sub_menu:false,
             re_locate:true,//点击一级目录直接跳转
@@ -36,56 +36,46 @@ var menu_list={
                     index:"sub-1",
                     links:"../amp/amp_financial_index.html",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-                },
-                {
-                    name:"收入分析",
-                    index:"sub-1",
-                    links:"../amp/amp_finacial_format_analysis.html",
-                    target:"#page-frame",
-                    show_sub_menu:true,
-                    re_locate:true,//点击一级目录直接跳转
-                },
+                    re_locate:true//点击一级目录直接跳转
+                }
             ]
         },
         {
             name:"管理分析",
             index:"main-2",
             icon:"ys-icon-risk",
-            links:"../sys/amp_ctrl_rent_warn.html",
+            links:"contract_main",
             target:"#page-frame",
             show_sub_menu:false,
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
                     name:"收入分析",
-                    index:"sub-2",
-                    links:"../sys/amp_ctrl_rent_warn.html",
+                    index:"sub-1",
+                    links:"contract_main",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-
+                    re_locate:true//点击一级目录直接跳转
                 },
                 {
                     name:"支出分析",
                     index:"sub-2",
-                    links:"../amp/amp_opt_passenger_flow.html",
+                    links:"cost_main",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
+                    re_locate:true//点击一级目录直接跳转
                 },
                 {
                     name:"租赁分析",
-                    index:"sub-2",
-                    links:"../sys/amp_ctrl_rent_warn.html",
+                    index:"sub-3",
+                    links:"rent_main",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
-
+                    re_locate:true//点击一级目录直接跳转
                 },
                 {
                     name:"运营分析",
-                    index:"sub-2",
-                    links:"../amp/amp_opt_passenger_flow.html",
+                    index:"sub-4",
+                    links:"passenger_flow_main",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
+                    re_locate:true//点击一级目录直接跳转
                 },
             ]
         },
@@ -130,14 +120,14 @@ var menu_list={
                     index:"sub-4",
                     links:"rpgindex",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
+                    re_locate:true//点击一级目录直接跳转
                 },
                 {
                     name:"影子模型",
                     index:"sub-4",
                     links:"datasim",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
+                    re_locate:true//点击一级目录直接跳转
 
                 },
                 {
@@ -145,10 +135,10 @@ var menu_list={
                     index:"sub-4",
                     links:"irrplan",
                     target:"#page-frame",
-                    re_locate:true,//点击一级目录直接跳转
+                    re_locate:true//点击一级目录直接跳转
 
                 }
             ]
         }
-    ],
+    ]
 };

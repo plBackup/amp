@@ -1,0 +1,34 @@
+<html ng-app="angularStates">
+<head>
+    <title>AngularJS - UI Router/ngAnimate Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-controller="MainController" ng-class="{'view-back': state.back, 'view-to-home': state.toHome}">
+<!-- Content -->
+<div class="image-content">
+    <div class="top-gradient"></div>
+    <div class="wrapper">
+        <div class="header" ng-class="{ 'slide-top': !homePageIsShown}">
+            Angular JS
+            <div class="smaller">
+                ui-router + ngAnimate
+            </div>
+        </div>
+        <div class="start-btn-wrapper" ng-class="{ 'slide-bottom': !homePageIsShown}">
+            <a href="#" ui-sref="state1">CLICK HERE</a>
+        </div>
+    </div>
+    <div class="lookup-views" ui-view="lookup-views"></div>
+</div>
+
+<div class="client-input-wrapper" ui-view="input-views">
+
+</div>
+<!-- END Content -->
+<script data-require="angular.js@1.2.10" data-semver="1.2.10" src="http://code.angularjs.org/1.2.10/angular.min.js"></script>
+<script data-require="angular-animate@1.2.11" data-semver="1.2.11" src="http://code.angularjs.org/1.2.11/angular-animate.min.js"></script>
+<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+
+</body>
+</html>
