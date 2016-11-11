@@ -350,6 +350,16 @@ var amp_main=(function($,menu,am){
         })
     };
 
+    amp_main.loading_show=function(){
+        $("body,html").css("overflow","hidden");
+        $(".amp-loading").fadeIn();
+    };
+
+    amp_main.loading_hide=function(){
+        $("body,html").css("overflow","auto");
+        $(".amp-loading").fadeOut();
+    };
+
     amp_main.placeholder_init=function(){
         // Page Preloader
         $('#preloader').delay(350).fadeOut(function(){

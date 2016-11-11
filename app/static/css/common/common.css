@@ -214,3 +214,8 @@ tr.tr-collapse .icon-menu-down {
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 }
+
+#blank-page{
+    background:url(../../images/blank-icon.png) no-repeat center center;
+    background-size:108px 74px;
+}

@@ -83,6 +83,15 @@ var rpg_result_table=(function($,rpg_result_table){
         rpg_result_table_main_rpg_result.destory();
     };
     rpg_result_table.init=function(){
+        $("#btn-rpg-save").on("click",function(e){
+            e.preventDefault();
+            amp_main.loading_show();
+            setTimeout(function(){
+                amp_main.loading_hide();
+                $location.href="/rpgresult";
+            },1000);
+
+        });
 
         rpg_result_table.rpg_result_init();
         rpg_result_table.table_init();

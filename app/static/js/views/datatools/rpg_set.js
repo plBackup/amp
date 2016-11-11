@@ -124,6 +124,16 @@ var swiper_table=(function($,swiper_table){
     };
   
     swiper_table.init=function(){
+
+        $("#btn-create").on("click",function(e){
+            e.preventDefault();
+            amp_main.loading_show();
+            setTimeout(function(){
+                amp_main.loading_hide();
+                $location.href="/rpgresult";
+            },1000);
+
+        });
         swiper_table.swiper_init();
         swiper_table.table_init();
         $('#preloader').delay(350).fadeOut(function(){

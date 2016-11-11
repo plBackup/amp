@@ -34,6 +34,7 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve();
+                        amp_main.loading_hide();
                     }, 300);
                     return defer.promise;
                 }]
@@ -58,6 +59,8 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve();
+                        console.log(amp_main);
+                        amp_main.loading_hide();
                     }, 300);
                     return defer.promise;
                 }]

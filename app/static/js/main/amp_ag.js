@@ -28,6 +28,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 "right":{
                     templateUrl: '../views/blank_right.html'
                 }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
             }
         }, //state
         {
@@ -43,6 +54,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 "right":{
                     templateUrl: '../views/datatools/datatool_rent_package_rpanel.html'
                 }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
             }
         }, //state
         {
@@ -58,6 +80,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 "right":{
                     templateUrl: '../views/blank_right.html'
                 }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
             }
         }, //state
         {
@@ -73,6 +106,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 "right":{
                     templateUrl: '../views/blank_right.html'
                 }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
             }
         }, //state
         {
@@ -88,20 +132,21 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 "right":{
                     templateUrl: '../views/blank_right.html'
                 }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
             }
         } //state
     ];
 
-    // Loop over the state definitions and register them
-    states.forEach(function(state) {
-        $stateProvider.state(state);
-    });
-    $urlRouterProvider.when('', '/noi');
-
-    $urlRouterProvider.otherwise(
-        function($injector, $location) {
-            $location.path('/noi');
-        });
 
 
     // 投资分析
@@ -115,6 +160,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "right": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -131,6 +187,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl: "../mgt_analysis/contract_main_right.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -146,6 +213,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -162,6 +240,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
 
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -178,6 +267,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl: "../mgt_analysis/business_merchant_detail_enrolment.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -194,6 +294,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
 
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -209,6 +320,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
 
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -227,6 +349,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl: "../mgt_analysis/cost_enrolment.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -243,6 +376,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
 
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -258,6 +402,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
     //管理分析-租赁分析-欠费
@@ -272,6 +427,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
     //管理分析-租赁分析-欠费明细
@@ -287,6 +453,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl: "../mgt_analysis/arrears_enrolment.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
     //管理分析-租赁分析-欠费明细-录入
@@ -301,6 +478,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
     // 管理分析-租赁分析-商户销量-业态详情	shop_sale_type_list.html
@@ -316,6 +504,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl: "../mgt_analysis/shop_sale_type_enrolment.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -331,6 +530,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -347,6 +557,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "enrolment": {
                 templateUrl:"../mgt_analysis/arrears_merchant_detail_receiving.html"
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
@@ -361,9 +582,91 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             "enrolment": {
             }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
         }
     });
 
+    $stateProvider.state("blank", {
+        url: "/blank",
+        views: {
+            "toolbar": {
+            },
+            "content": {
+                templateUrl: "../views/blank_page.html"
+            },
+            "enrolment": {
+            }
+        },
+        controller:"page",
+        resolve: {
+            data: ['$q', function($q){
+                var defer = $q.defer();
+                setTimeout(function(){
+                    defer.resolve();
+                    amp_main.loading_hide();
+                }, 300);
+                return defer.promise;
+            }]
+        }
+    });
 
+    // Loop over the state definitions and register them
+    states.forEach(function(state) {
+        $stateProvider.state(state);
+    });
+    $urlRouterProvider.when('', '/noi');
+
+    $urlRouterProvider.otherwise(
+        function($injector, $location) {
+            $location.path('/noi');
+        });
 
 });
+
+
+ampApp.controller('MainController', function($rootScope, $scope) {
+    $rootScope.homePageIsShown = true;
+    $scope.state = {};
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+
+        var prev = $rootScope.prev ? $rootScope.prev : '';
+        $scope.state.back = (toState.name === prev);
+        $scope.state.toHome = (toState.name === 'noi');
+        $scope.state.loading=false;
+        $scope.state.enter=false;
+        $scope.state.exit=true;
+        $scope.$apply();
+    });
+    $rootScope.$on('$stateChangeSuccess',
+        function(event, toState, toParams, fromState, fromParams){
+            $rootScope.prev=fromState.name;
+            $scope.state.enter=true;
+            $scope.state.exit=false;
+            $scope.state.loading=false;
+            console.log("prev:"+fromState.name);
+        });
+    $rootScope.$on('$viewContentLoading',
+        function(event, viewConfig){
+            // Access to all the view config properties.
+            // and one special property 'targetView'
+            // viewConfig.targetView
+            $scope.state.loading=true;
+        });
+
+    $scope.$on('$viewContentLoaded',
+        function(event){
+            $scope.state.loading=false;
+        });
+
+});
+

@@ -83,15 +83,15 @@ var menu_list={
             name:"风控分析",
             index:"main-3",
             icon:"ys-icon-tool",
-            links:"../sys/amp_tookit_rentlist.html",
+            links:"blank",
             target:"#page-frame",
             show_sub_menu:false,
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
-             /*   {
+                {
                     name:"租赁分析",
                     index:"sub-3",
-                    links:"../sys/amp_tookit_rentlist.html",
+                    links:"blank",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
 
@@ -99,11 +99,11 @@ var menu_list={
                 {
                     name:"运营分析",
                     index:"sub-3",
-                    links:"../sys/amp_tookit_rentlist.html",
+                    links:"blank",
                     target:"#page-frame",
                     re_locate:true,//点击一级目录直接跳转
 
-                },*/
+                },
             ]
         },
         {

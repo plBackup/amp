@@ -30,12 +30,6 @@
     <link href="../components/toolbar/filter.css" rel="stylesheet">
     <link href="../static/css/views/datatools.css" rel="stylesheet">
 
-    <link href="../static/css/common/amp_common.css" rel="stylesheet">
-    <link href="../static/css/common/amp_page_structure.css" rel="stylesheet">
-    <link href="../static/css/common/component.css" rel="stylesheet">
-    <link href="../static/css/common/amp_animation.css" rel="stylesheet">
-
-
     <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
     <script src="../static/dist/js/angular.js"></script>
     <script src="../static/dist/js/angular-animate.min.js"></script>
@@ -52,7 +46,7 @@
 <!--    <script src="../static/js/main/me-pageloading.js"></script>-->
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
-    <script src="../static/js/main/amp_ag.js"></script>
+    <script src="../static/js/main/amp_ag_res.js"></script>
     <script src="../static/js/main/controllers.js"></script>
     <script src="../static/js/main/filters.js"></script>
     <script src="../static/js/main/services.js"></script>
@@ -77,7 +71,8 @@
         });
     </script>
     <style>
-
+        .ampFade.ng-enter{transition:0.1s linearall; opacity:0;}
+        .ampFade.ng-enter-active{opacity:1;}
     </style>
 </head>
 <body class="">
@@ -144,14 +139,6 @@
     <!--backdrop loading-->
     <div class="backdrop"></div>
     <!--end backdrop loading-->
-    <div class="amp-loading">
-        <div class="loading-wrapper">
-            <div class="loading-ani">
-                <img src="../static/images/main/loading.gif">
-            </div>
-            <span>处理中...</span>
-        </div>
-    </div>
 </main>
 
 </body>

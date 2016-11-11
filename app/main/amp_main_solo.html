@@ -25,6 +25,30 @@
     <link href="../static/css/views/datatools.css" rel="stylesheet">
 
     <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
+    <script>
+        /* App Module */
+        var amp_main=(function($,amp_main){
+            var amp_main=amp_main;
+            amp_main.loading_show=function(){
+                $("body,html").css("overflow","hidden");
+                $(".amp-loading").fadeIn();
+            };
+
+            amp_main.loading_hide=function(){
+                $("body,html").css("overflow","auto");
+                $(".amp-loading").fadeOut();
+            };
+            return amp_main;
+        })(jQuery,amp_main||{});
+
+
+        var ampAppSolo = angular.module('ampsolo', [
+            'ui.router',
+            'ampControllers',
+            'ampFilters'
+        ]);
+
+    </script>
     <script src="../static/dist/js/angular.js"></script>
     <script src="../static/dist/js/angular-animate.min.js"></script>
     <script src="../static/dist/js/angular-ui-router.js"></script>
@@ -38,7 +62,10 @@
 
     <script src="../static/js/main/amp_ag_solo.js"></script>
     <script>
+
+
         jQuery(document).ready(function(){
+
             jQuery("#page-solo").on("click","a.amp-solo-close",function(e){
                 e.preventDefault();
                 window.close();
@@ -126,6 +153,15 @@
     <!--backdrop loading-->
     <div class="backdrop"></div>
     <!--end backdrop loading-->
+
+    <div class="amp-loading">
+        <div class="loading-wrapper">
+            <div class="loading-ani">
+                <img src="../static/images/main/loading.gif">
+            </div>
+            <span>处理中...</span>
+        </div>
+    </div>
 </main>
 
 <script>

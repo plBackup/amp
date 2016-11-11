@@ -13,7 +13,7 @@
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>td{padding:0;padding-top:0px;padding-right:20px;height:34px;overflow: visible;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead{background-color:transparent;text-align: left;font-size:14px;color:#8592a3; }
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>td input{text-align: right;}
-#rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th{border-top:0;padding-left:0;text-align: left;}
+#rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th{border-top:0;border-bottom:0;padding-left:0;text-align: left;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th.table-title{font-size: 14px;}
 #rent-package-rpanel .table-input-type>tbody>tr>td{padding-top:0;padding-bottom:8px;height:34px;}
 .table-input-typeA .input-wrapper label{display: block;margin-bottom:0;height:32px;line-height: 32px;
@@ -268,7 +268,7 @@
 #rpg-set-table-wrapper .td-input-wrapper input{height:100%;border:0;padding:6px;line-height: 24px;width:100%;color:#3a4153;background-color:transparent;}
 #rpg-set-table-wrapper .td-input-wrapper input:focus{outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #rgp-set #rent-update-table-wrapper .ys-table-static{border-right:solid 1px #dfe5e9;margin-bottom: 0;}
-#rgp-set #rent-update-table-wrapper .ys-table-static tr>th{padding-left:12px;color:#8592a3;font-size: 13px;}
+#rgp-set #rent-update-table-wrapper .ys-table-static tr>th{padding-left:12px;color:#8592a3;font-size: 13px;border-bottom: 0;}
 #rgp-set #rent-update-table-wrapper thead{background-color:transparent}
 
 #rgp-set #rent-first-year-set{}

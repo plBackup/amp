@@ -29,11 +29,12 @@
     padding-left:15px;padding-right:15px;
     height:28px;
     color: #8592a3;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
     vertical-align: middle;
     border-bottom:0;
     font-weight:normal;
+    border-bottom: 1px solid #d9dde0 ;
 
 }
 .amp-table>thead>tr>th.text-left{text-align: left;}
@@ -45,7 +46,7 @@
 
 .amp-table>tbody>tr>th,.amp-table>tbody>tr>td,
 .amp-table>tfoot>tr>th,.amp-table>tfoot>tr>td{
-    padding:7px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;border-bottom:solid 1px #dfe5e9;}
+    padding:7px 15px;height:40px;line-height:24px;vertical-align: middle;font-size: 14px;color:#373c42;font-weight:normal;border-bottom:solid 1px #f3f4f8;}
 
 .table-no-bordered>tbody>tr>th, .table-no-bordered>tbody>tr>td,
 .amp-table-wrapper-swiper .table-no-bordered tr>th, .amp-table-wrapper-swiper .table-no-bordered tr>td {
@@ -58,7 +59,7 @@
 
 .amp-table-wrapper .table-no-bordered tr>th.t-split, .amp-table-wrapper .table-no-bordered tr>td.t-split,
 .amp-table-wrapper-swiper .table-no-bordered tr>th.t-split, .amp-table-wrapper-swiper .table-no-bordered tr>td.t-split{
-    border-right: solid 1px #dfe5e9;
+    border-right: solid 1px #dae1e7;
 }
 
 .amp-table-wrapper-swiper table.amp-table thead>tr.thead-tr-sub{background-color:#fff;}
@@ -101,7 +102,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-right:solid 1px #d3d3d3;
+    border-right:solid 1px #dae1e7;
 }
 
 /*stick part*/
