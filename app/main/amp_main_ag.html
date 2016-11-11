@@ -99,7 +99,7 @@
                     <a href="javascript:void(0)" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
                 </h5>
                 <div class="amp-side-toolbar active">
-                    <div class="animated" ui-view="toolbar">
+                    <div class="animated" ui-view="toolbar" ng-show="state.enter" ng-hide="state.exit">
                         <!--ng-class="{'animated':true,'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"-->
                     </div>
                 </div><!--amp-side-toolbar-->

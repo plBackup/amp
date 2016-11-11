@@ -297,5 +297,5 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 /**/
 .ys-amp #beta{position: absolute;font-size:12px;height:44px;line-height: 44px;display: block;width:100%;text-align: center;
     color:#8592a3;font-weight:normal;top:0;left:0;}
-.ys-amp.ys-amp-solo #beta{position: absolute;font-size:12px;height:44px;line-height: 44px;display: block;
-    color:#8592a3;font-weight:normal;top:0;right:22px;}
+.ys-amp.ys-amp-solo #beta{position: absolute;font-size:12px;height:44px;width:inherit;line-height: 44px;display: block;
+    color:#8592a3;font-weight:normal;top:0;right:22px;left:inherit;}
