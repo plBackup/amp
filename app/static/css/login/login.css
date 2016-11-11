@@ -30,8 +30,8 @@ a,button,.btn{ -moz-user-select: none; -webkit-user-select: none; -ms-user-selec
 
 .login-wrapper{position: absolute;top:130px;left:50%;margin-left:-161px;padding:0px;width:322px;background:none;border-radius: 3px;box-shadow: none;}
 .login-wrapper h3{position:relative;margin:0;margin-bottom:45px;height:60px;line-height:20px;color:#e74f4e;text-align: left;font-size: 18px;font-weight: normal;}
-.login-wrapper h3>em.ys-icon-amp{display:block;position:absolute;top:0;left:50%;margin-left:-87px;width:174px;height:58px;
-    background-position:-190px -96px;}
+.login-wrapper h3>em.ys-icon-amp{display:block;position:absolute;top:0;left:50%;margin-left:-90px;width:190px;height:58px;
+    background-position:-510px -243px;}
 .login-wrapper .form-wrapper{padding:0;}
 .login-wrapper .form-wrapper .input-group{position:relative;margin-bottom:26px;}
 .login-wrapper .form-wrapper .input-group:before{position: absolute;top:50%;margin-top:-11px;left:3px;display: block;content:" ";width:20px;height:20px;background-image:url(../../images/icon.png);background-repeat: no-repeat;}

@@ -96,10 +96,10 @@ a:hover, a:focus, a:active{color:#2da8cc;outline: 0;}
 
 /*常用icons*/
 .ys-icon {background-image:url(../../images/icon.png);background-repeat:no-repeat;}
-.ys-icon-amp {display:block;position:absolute;top:0;left:50%;margin-left:-87px;width:174px;height:58px;
-    background-position:-190px -96px;}
-.ys-icon-amp-s {display:block;position:absolute;top:9px;left:50%;margin-left:-41px;width:82px;height:26px;
-    background-position:-386px -90px;}
+.ys-icon-amp {display:block;position:absolute;top:0;left:50%;margin-left:-87px;width:190px;height:58px;
+    background-position:-510px -243px;}
+.ys-icon-amp-s {display:block;position:absolute;top:9px;left:50%;margin-left:-48px;width:96px;height:26px;
+    background-position:-390px -243px;}
 
 .leftpanel-collapsed .ys-icon-amp-s{width:51px; height:44px; top:0;left:0;margin-left:0;background-position:-592px -88px;}
 
