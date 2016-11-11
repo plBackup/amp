@@ -7,12 +7,12 @@
 
 var ampApp = angular.module('amp', [
     'ui.router',
-    //'ngAnimate',
+    'ngAnimate',
     'ampControllers',
     'ampFilters'
 ]);
 ampApp.run(
-    [          '$rootScope', '$state', '$stateParams',
+    [ '$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
 
             // It's very handy to add references to $state and $stateParams to the $rootScope
@@ -48,7 +48,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve('page1');
-                    }, 1500);
+                    }, 300);
                     return defer.promise;
                 }]
             }
@@ -73,7 +73,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve('page1');
-                    }, 1500);
+                    }, 300);
                     return defer.promise;
                 }]
             }
@@ -98,7 +98,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve('page1');
-                    }, 1500);
+                    }, 300);
                     return defer.promise;
                 }]
             }
@@ -118,7 +118,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 }
             },
             controller:"page",
-            resolve: {
+            /*resolve: {
                 data: ['$q', function($q){
                     var defer = $q.defer();
                     //mePageLoading.show("Circle");
@@ -128,7 +128,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     }, 1500);
                     return defer.promise;
                 }]
-            }
+            }*/
         }, //state
         {
             name: 'rpgset',
@@ -150,7 +150,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     setTimeout(function(){
                         defer.resolve();
-                    }, 1500);
+                    }, 300);
                     return defer.promise;
                 }]
             }
@@ -173,34 +173,37 @@ ampApp.controller('MainController', function($rootScope, $scope) {
     $rootScope.homePageIsShown = true;
     $scope.state = {};
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
-        var prev = fromState.data ? fromState.data.prev : '';
+
+        var prev = $rootScope.prev ? $rootScope.prev : '';
         $scope.state.back = (toState.name === prev);
-        $scope.state.toHome = (toState.name === 'home');
+        $scope.state.toHome = (toState.name === 'noi');
+        $scope.state.loading=false;
+        $scope.state.enter=false;
+        $scope.state.exit=true;
         $scope.$apply();
     });
-})
-ampApp.controller('AppController', [function($scope, $rootScope, $http, $timeout) {
-    /*$scope.layoutMode = 0;
-    $scope.list = [];
-    $scope.currentAnimation;
-    $scope.isShow = true;
-    $scope.animations = ["toggle",
-        "spin-toggle",
-        "scale-fade",
-        "scale-fade-in",
-        "bouncy-scale-in",
-        "flip-in",
-        "slide-left",
-        "slide-right",
-        "slide-top",
-        "slide-down",
-        "bouncy-slide-left",
-        "bouncy-slide-right",
-        "bouncy-slide-top",
-        "bouncy-slide-down",
-        "rotate-in"];*/
+    $rootScope.$on('$stateChangeSuccess',
+        function(event, toState, toParams, fromState, fromParams){
+               $rootScope.prev=fromState.name;
+               $scope.state.enter=true;
+               $scope.state.exit=false;
+              $scope.state.loading=false;
+            console.log("prev:"+fromState.name);
+        });
+    $rootScope.$on('$viewContentLoading',
+        function(event, viewConfig){
+            // Access to all the view config properties.
+            // and one special property 'targetView'
+            // viewConfig.targetView
+            $scope.state.loading=true;
+        });
 
-}]);
+    $scope.$on('$viewContentLoaded',
+        function(event){
+            $scope.state.loading=false;
+        });
+
+});
 
 /*
 

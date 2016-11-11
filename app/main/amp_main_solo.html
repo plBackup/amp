@@ -15,6 +15,7 @@
     <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
+    <link href="../static/dist/css/animate.css" rel="stylesheet">
     <link href="../static/css/common/common.css" rel="stylesheet">
     <link href="../static/css/common/static_table.css" rel="stylesheet">
     <!-- 自有CSS -->
@@ -25,6 +26,7 @@
 
     <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
     <script src="../static/dist/js/angular.js"></script>
+    <script src="../static/dist/js/angular-animate.min.js"></script>
     <script src="../static/dist/js/angular-ui-router.js"></script>
     <script src="../static/dist/js/bootstrap.min.js"></script>
     <script src="../static/dist/js/swiper.jquery.min.js"></script>
@@ -54,7 +56,7 @@
 <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
 </div>
-<main class="page page-main ys-amp ys-amp-solo" id="page-solo" role="main" ng-app="ampsolo" >
+<main class="page page-main ys-amp ys-amp-solo" id="page-solo" role="main" ng-app="ampsolo" ng-controller="MainController">
 
     <div class="headerpanel">
         <div class="headerbar">
@@ -74,7 +76,40 @@
     </div>
     <div class="mainpanel">
         <div class="amp-content-panel">
-            <ui-view name="content"></ui-view>
+            <div class="amp-content-header">
+                <div class="amp-header-breadcrumb" ng-hide="shownav">
+                    <a href="#" class="amp-solo-close"></a>
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="rpgindex" href="#/rpgindex"  target="_parent">数据工具</a></li>
+                        <li><a ui-sref="rpgindex" href="#/rpgindex"  target="_parent">租金包</a></li>
+                        <li class="active">设定</li>
+                    </ol>
+                </div>
+
+                <div class="amp-header-breadcrumb" ng-show="shownav">
+                    <a ui-sref="rpgpin" href="#/rpgpin"   class="amp-solo-close"></a>
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="rpgindex" href="#/rpgindex"  target="_parent">数据工具</a></li>
+                        <li><a ui-sref="rpgset" href="#/rpgset"  target="_parent">租金包</a></li>
+                        <li><a ui-sref="rpgpin" href="#/rpgpin">设定</a></li>
+                        <li class="active" >推算</li>
+                    </ol>
+                </div>
+                <!--<div class="amp-header-filter clearfix">
+                    <button type="button" class="btn btn-default amp-dropdown-btn amp-btn-disabled pull-left" disabled>
+                        项目<span class="glyphicon glyphicon-menu-down"></span>
+                    </button>
+                    <div class="col-xs-3 amp-date-wrapper">
+                        <label>开业时间</label>
+                        <div class="amp-date-picker pull-left" data-date="" data-date-format="yyyy-mm-dd" >
+                            <input class="" size="16" type="text" value="2015-10" disabled>
+                        </div>
+                    </div>
+                </div>-->
+            </div><!--amp-content-header-->
+            <div ui-view="content" class="animated"
+                 ng-class="{'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"></div>
+
         </div><!-- contentpanel -->
     </div><!-- mainpanel -->
 

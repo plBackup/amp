@@ -239,7 +239,7 @@
 #rgp-set .amp-content-header  .amp-date-wrapper>div{float:left;width:160px;}
 
 
-#rgp-set{padding-bottom:92px;padding-top:44px;}
+#rgp-set{padding-bottom:92px;padding-top:0;}
 #rgp-set .amp-content-header{height:76px;}
 #rgp-set .amp-content-header>.amp-header-breadcrumb{position: fixed;top:44px;z-index:1999;width: 100%;background-color:#f3f4f8;}
 
@@ -297,7 +297,7 @@
     /*end rpg-set update*/
 #rent-package-result {
     padding-bottom: 38px;
-    padding-top: 44px;
+    padding-top: 0;
 }
 #rent-package-result .amp-content-header{margin-bottom:0;height:76px;background-color:#fff;}
 #rent-package-result .amp-content-header .amp-header-filter{padding:20px 28px;}

@@ -28,6 +28,17 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../views/blank_right.html',
                 }
             },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                    }, 300);
+                    return defer.promise;
+                }]
+            }
+
         }, //state
         {
             name: 'rpgresult',
@@ -41,6 +52,16 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../views/blank_right.html',
                 }
             },
+            controller:"page",
+            resolve: {
+                data: ['$q', function($q){
+                    var defer = $q.defer();
+                    setTimeout(function(){
+                        defer.resolve();
+                    }, 300);
+                    return defer.promise;
+                }]
+            }
         }, //state
     ];
 
@@ -54,4 +75,41 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
         function($injector, $location) {
             $location.path('/');
         });
+});
+
+ampAppSolo.controller('MainController', function($rootScope, $scope) {
+    $rootScope.homePageIsShown = true;
+    $scope.state = {};
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
+
+        var prev = $rootScope.prev ? $rootScope.prev : '';
+        $scope.state.back = (toState.name === prev);
+        $scope.state.toHome = (toState.name === 'noi');
+        $scope.state.loading=false;
+        $scope.state.enter=false;
+        $scope.state.exit=true;
+        $scope.$apply();
+    });
+    $rootScope.$on('$stateChangeSuccess',
+        function(event, toState, toParams, fromState, fromParams){
+            $rootScope.prev=fromState.name;
+            $scope.state.enter=true;
+            $scope.state.exit=false;
+            $scope.state.loading=false;
+            $rootScope.shownav=(toState.name==="rpgresult");
+            console.log("prev:"+fromState.name);
+        });
+    $rootScope.$on('$viewContentLoading',
+        function(event, viewConfig){
+            // Access to all the view config properties.
+            // and one special property 'targetView'
+            // viewConfig.targetView
+            $scope.state.loading=true;
+        });
+
+    $scope.$on('$viewContentLoaded',
+        function(event){
+            $scope.state.loading=false;
+        });
+
 });

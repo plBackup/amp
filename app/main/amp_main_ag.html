@@ -18,7 +18,7 @@
     <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/dist/css/bootstrap-datetimepicker.min.css">
     <link href="../static/dist/css/animate.css" rel="stylesheet">
-    <link href="../static/dist/css/ng-animation.css" rel="stylesheet">
+    <!--<link href="../static/dist/css/ng-animation.css" rel="stylesheet">-->
     <link href="../static/css/common/common.css" rel="stylesheet">
     <link href="../static/css/common/static_table.css" rel="stylesheet">
 
@@ -85,7 +85,8 @@
 <div id="preloader">
     <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
 </div>
-<main class="page page-main ys-amp" id="page-main" role="main" ng-app="amp">
+<main class="page page-main ys-amp animated" id="page-main" role="main" ng-app="amp" ng-controller="MainController">
+      <!--ng-class="{'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOutLeft': state.exit, 'view-enter': state.enter, 'view-loading': state.loading}"-->
 
     <div class="leftpanel">
         <div class="logopanel">
@@ -98,7 +99,9 @@
                     <a href="javascript:void(0)" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
                 </h5>
                 <div class="amp-side-toolbar active">
-                    <ui-view name="toolbar"></ui-view>
+                    <div class="animated" ui-view="toolbar">
+                        <!--ng-class="{'animated':true,'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"-->
+                    </div>
                 </div><!--amp-side-toolbar-->
                 <ul class="nav nav-pills nav-stacked nav-bracket">
 
@@ -118,7 +121,8 @@
     </div>
     <div class="mainpanel">
       <!-- <ui-view name="content"></ui-view>-->
-        <div ui-view="content"></div>
+        <div ui-view="content" class="animated"
+             ng-class="{'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"></div>
     </div><!-- mainpanel -->
 
     <!-- rightpanel -->

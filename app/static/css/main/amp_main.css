@@ -231,6 +231,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 
 /*amp-content-header*/
 .amp-content-header{position: relative;margin-bottom:16px;height:44px;width:100%;background-color:#f3f4f8;overflow: hidden;}
+.ys-amp-solo .amp-content-header{margin-bottom:0;}
 .amp-content-header ul.header-nav-sub{list-style: none;padding:0;margin:0;}
 .amp-content-header ul.header-nav-sub>li{display: block;float:left;height:44px;margin-left:20px;margin-right:10px;padding-top:4px;line-height:40px;position: relative;}
 .amp-content-header ul.header-nav-sub>li a{display:block;width:100%;height:40px;padding-left:2px;padding-right:2px;border-bottom:solid 2px transparent;text-decoration: none;line-height:38px;color:#8992a3;font-size:14px;}
