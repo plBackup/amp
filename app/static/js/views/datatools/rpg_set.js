@@ -127,10 +127,9 @@ var swiper_table=(function($,swiper_table){
 
         $("#btn-create").on("click",function(e){
             e.preventDefault();
-            amp_main.loading_show();
+                amp_main.loading_show();
             setTimeout(function(){
                 amp_main.loading_hide();
-                $location.href="/rpgresult";
             },1000);
 
         });

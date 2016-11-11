@@ -136,7 +136,7 @@ var noi=(function($,noi){
                         width:2,
                         type:"solid",
                     },
-                    data:[20,12,2,2,2,2],
+                    data:[3456.0,4656.0,null,null,null,null],
                 },{
                 type:"line",
                 name:"方案1",
@@ -151,7 +151,7 @@ var noi=(function($,noi){
                     width:2,
                     type:"solid",
                 },
-                data:[11,12,13,14,15,16],
+                data:[4568.90,5323.40,5689.70,6784.50,8657.20,9922.40],
             },{
                     type:"line",
                     name:"方案2",
@@ -166,7 +166,7 @@ var noi=(function($,noi){
                         width:2,
                         type:"solid",
                     },
-                    data:[12,13,14,15,16,17],
+                    data:[6618.92,7359.42,7865.80,8993.03,9486.32,11029.11],
                 },{
                     type:"line",
                     name:"方案3",
@@ -181,7 +181,7 @@ var noi=(function($,noi){
                         width:2,
                         type:"solid",
                     },
-                    data:[18,19,20,12,13,13],
+                    data:[6987.78,7892.78,8067.68,8862.50,9242.40,10378.98],
                 },
                 ]
         },//linedata
@@ -200,7 +200,7 @@ var noi=(function($,noi){
             },
             grid:{
                 top:30,
-                left:50,
+                left:80,
                 right:30,
                 bottom:50
             },
@@ -331,7 +331,7 @@ var noi=(function($,noi){
                         width:2,
                         type:"solid",
                     },
-                    data:[20,12,2,2,2,2],
+                    data:[3456.0,4656.0,null,null,null,null],
                 }
 
             ]
@@ -441,9 +441,9 @@ var noi=(function($,noi){
         $('#preloader').delay(350).fadeOut(function(){
             //start
         });
-        setTimeout(function(){
+       /* setTimeout(function(){
             noi.dataUpdate();
-        },2000)
+        },2000)*/
     };
 
     return noi;

@@ -61,7 +61,7 @@ var datasim=(function($,datasim){
 
     var chart_data_init={
         lineData:{
-            labels: [ "2015","2016", "2017", "2018", "2019", "2020" ],
+            labels: [ "2016", "2017", "2018" ],
             datasets: [
                 {
                     type:"line",
@@ -77,7 +77,7 @@ var datasim=(function($,datasim){
                         width:2,
                         type:"solid",
                     },
-                    data:[20,12,2,2,2,2],
+                    data:[36020,116820,80801],
                 },{
                     type:"line",
                     name:"实收",
@@ -92,7 +92,7 @@ var datasim=(function($,datasim){
                         width:2,
                         type:"solid",
                     },
-                    data:[11,12,13,14,15,16],
+                    data:[19470,null,null],
                 },{
                     type:"line",
                     name:"租金包",
@@ -107,7 +107,7 @@ var datasim=(function($,datasim){
                         width:2,
                         type:"solid",
                     },
-                    data:[12,13,14,15,16,17],
+                    data:[31152,93456,102960],
                 }
             ]
         },//linedata

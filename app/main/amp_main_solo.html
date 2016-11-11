@@ -70,6 +70,14 @@
                 e.preventDefault();
                 window.close();
             });
+            jQuery(".ys-amp-solo").on("click","#btn-rpg-save",function(e){
+                e.preventDefault();
+                amp_main.loading_show();
+                setTimeout(function(){
+                    amp_main.loading_hide();
+                    window.close();
+                },1000);
+            });
         })
     </script>
 </head>
