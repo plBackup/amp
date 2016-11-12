@@ -199,7 +199,7 @@ var amp_main=(function($,menu,am){
     }
 
     amp_main.sideNav_nav=function(){
-        $('.nav-bracket  a').click(function(e){
+        $('.nav-bracket  a').on("click touchend",function(e){
            // e.preventDefault();
             if($(this).hasClass("ys-menu-link")){
                 //一级目录
@@ -250,7 +250,7 @@ var amp_main=(function($,menu,am){
     };
 
     amp_main.subNav_init=function(){
-        $(".head-main-menu").on("click","a",function(e){
+        $(".head-main-menu").on("click touchend","a",function(e){
             //e.preventDefault();
             $this=$(this);
             if(!$this.parent("li").hasClass("active")){
@@ -266,8 +266,9 @@ var amp_main=(function($,menu,am){
     };
     amp_main.collapse_init=function(){
         // Menu Toggle
-        $('.menutoggle').click(function(e){
+        $('.menutoggle').on("click touchend",function(e){
             e.preventDefault();
+
             var $body = $('body');
             var bodypos = $body.css('position');
 
@@ -294,7 +295,7 @@ var amp_main=(function($,menu,am){
             mouseWheel: true,
             scrollbars: false
         });
-        console.log(left_panel_scroll);
+
         var defer=null;
         var scrollUpdate=function(){
             var h=parseInt($(window).height());
@@ -378,7 +379,7 @@ var amp_main=(function($,menu,am){
         amp_main.subNav_init();
         amp_main.leftPanel_init();
         amp_main.rightPanel_init();
-        $("#main-0").trigger("click");
+        $("#main-3").trigger("click");
 
         /*$(".head-main-menu").on("click","a",function(e){
             e.preventDefault();
