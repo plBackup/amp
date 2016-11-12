@@ -239,7 +239,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 .amp-content-header ul.header-nav-sub>li a.active{border-bottom: solid 2px #59b46e;color:#373c42;}
 .amp-content-header ul.header-nav-sub>li a:hover{color:#373c42;}
 /*amp-pagination*/
-.amp-pagination{margin-top:-20px;padding:20px;padding-right:0;height:72px;overflow: hidden;}
+.amp-pagination{margin-top:-20px;padding:20px;padding-right:20px;height:72px;overflow: hidden;}
 .amp-pagination .btn-wrapper>span{line-height: 32px;height:32px;font-size:14px;color:#8992a3;display: block;float:left;}
 .amp-pagination .btn-wrapper .btn-group>.btn{padding:0;border-radius:0;border:solid 1px #dce1e5;height:32px;width:48px;line-height: 30px;
     color: #dce1e5;}
@@ -305,7 +305,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
     padding-top:80px;position: absolute;top:50%;left:50%;margin-left:10px;margin-top:-100px;
     border-radius:12px;background-color:rgba(62,70,88,0.62);}
 
-.ys-amp.ys-amp-solo>.loading-wrapper{margin-left:-90px;}
+.ys-amp.ys-amp-solo .amp-loading>.loading-wrapper{margin-left:-90px;}
 .ys-amp .amp-loading>.loading-wrapper>.loading-ani{width:60px;height:60px;position: absolute;top:20px;left:50%;margin-left:-30px;}
 .ys-amp .amp-loading>.loading-wrapper>span{display: block;color:#fff;font-size:16px;text-align: center;height:44px;line-height: 44px;}
 

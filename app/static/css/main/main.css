@@ -16,7 +16,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 
 #ys-amp-main #amp-projects-table{margin-bottom:0;}
 #amp-projects-table thead{background-color:#f3f4f8; color:#8992a3;}
-#amp-projects-table thead>tr>th{font-weight:normal; font-size:12px;height:40px;vertical-align: middle;}
+#amp-projects-table thead>tr>th{font-weight:normal; font-size:12px;height:40px;vertical-align: middle;border-bottom:solid 1px #dfe5e9;}
 #amp-projects-table thead>tr>th{padding:8px 16px;padding-left:25px;}
 #amp-projects-table tbody>tr>th,#amp-projects-table tbody>tr>td{padding:16px;padding-left:25px;}
 
@@ -28,8 +28,8 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #amp-projects-table .t-opt>span.not-allowed{color:#dfe5e9;}
 #amp-projects-table .t-opt>span.not-allowed>a{display: inline-block;margin-right:5px;margin-left:5px;cursor:not-allowed;color:#dfe5e9;}
 #amp-projects-table tbody span.t-main,#amp-projects-table tbody span.t-sub{display: block; text-align: right;height:20px;line-height: 20px;}
-#amp-projects-table tbody span.t-main{font-size: 13px;color:#333;}
-#amp-projects-table tbody span.t-sub{font-size: 12px;color:#8992a3;}
+#amp-projects-table tbody span.t-main{font-size: 14px;color:#333;}
+#amp-projects-table tbody span.t-sub{font-size: 13px;color:#8992a3;}
 
 #amp-projects-table tbody td.amp-pm-td{}
 #amp-projects-table tbody td.amp-pm-td>.amp-pm{position:relative;padding-left:60px;}
@@ -44,6 +44,10 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #ys-amp-main .amp-create-project p{margin:0;line-height: 32px;color:#737e8c}
 
 #ys-amp-main .table-hover>tbody>tr:hover { background-color: #f3f4f8; }
+
+#amp-projects-table .text-note{font-weight:bold;}
+
+
 
 /* #ys-amp-create */
 
@@ -69,7 +73,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #ys-amp-create .input-group{margin-bottom:20px;width:100%;text-align: left;}
 #ys-amp-create .input-group>label{display: block;margin-bottom:3px;color: #8592a3;font-size:13px;}
 #ys-amp-create .input-group>input{padding-left:12px;padding-right:12px;height:40px;width:100%;background-color:#3a4153;border:0;border-radius:0;font-size:13px;color:#f3f4f8;}
-
+#ys-amp-create .input-group>input:focus{outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #ys-amp-create .input-group>input#open-date{padding-right:40px;}
 #ys-amp-create .input-group#open-date-wrapper:after{display: block;position: absolute;content:" ";width:16px;height:16px;
     background-position:-420px -198px;z-index:99;bottom:12px;right:12px;background-image: url(../../images/icon.png);background-repeat: no-repeat;}

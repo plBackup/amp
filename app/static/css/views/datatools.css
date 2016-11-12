@@ -3,6 +3,9 @@
 #rent-package .amp-table{}
 #rent-package .amp-table>thead>tr>th{text-align: left;}
 #rent-package .amp-table>tbody>tr:hover{cursor: pointer;}
+#rent-package .amp-table>thead>tr>th:nth-child(1),#rent-package .amp-table>tbody>tr>td:nth-child(1){padding-left:20px;}
+#rent-package .amp-table>thead>tr>th:nth-last-child(1),#rent-package .amp-table>tbody>tr>td:nth-last-child(1){padding-right:20px;}
+
 
 #rent-package-rpanel .right-content{padding:20px;padding-top:0;padding-right:0;}
 #rent-package-rpanel .table-input-typeA{table-layout: fixed;margin-bottom:20px;}
