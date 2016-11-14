@@ -13,18 +13,25 @@ var noi=(function($,noi){
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
-            scrollbarHide:true
+            scrollbarHide:true,
+            //watchSlidesProgress:true,
         });
+
+
         noi_main_swiper = new Swiper('#noi-main-table', {
             scrollbar: '.swiper-scrollbar',
             direction: 'horizontal',
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
-            scrollbarHide:false
+            scrollbarHide:false,
+            //watchSlidesProgress:true,
         });
         noi_head_swiper.params.control = noi_main_swiper;
         noi_main_swiper.params.control = noi_head_swiper;
+
+        ampApp.collector.add_swiper(noi_head_swiper);
+        ampApp.collector.add_swiper(noi_main_swiper);
 
          pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#noi-main-table-wrapper",
@@ -116,6 +123,9 @@ var noi=(function($,noi){
 
         //初始化折叠项目
         $(".tr-init-collapse").trigger("click");
+
+
+
     };
 
     var chart_data_init={

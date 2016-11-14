@@ -69,7 +69,7 @@ var filters=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1);
 
-        $("#monthpicker input").datetimepicker({
+        var mpicker=$("#monthpicker input").datetimepicker({
             format:"yyyy-mm",
             todayBtn:"linked",
             startView:3,
@@ -77,6 +77,9 @@ var filters=(function($,fl){
             autoclose: true,
             language:"zh-CN"
         });
+        ampApp.collector.add_datepicker(mpicker);
+
+
         $("#monthpicker button").on("click",function(e){
             var curButton=$(this).attr("id");
             var plus=1;
@@ -106,7 +109,7 @@ var filters=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
 
-        $("#datepicker input").datetimepicker({
+        var dpicker=$("#datepicker input").datetimepicker({
             format:"yyyy-mm-dd",
             todayBtn:"linked",
             startView:2,
@@ -116,6 +119,8 @@ var filters=(function($,fl){
         });
 
         $("#datepicker input").val(start_date);
+
+        ampApp.collector.add_datepicker(dpicker);
     };
 
     //daterange Selector

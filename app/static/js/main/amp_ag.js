@@ -645,6 +645,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
         $scope.state.loading=false;
         $scope.state.enter=false;
         $scope.state.exit=true;
+        ampApp.collector.destory();
        // $scope.$apply();
     });
     $rootScope.$on('$stateChangeSuccess',
@@ -669,4 +670,33 @@ ampApp.controller('MainController', function($rootScope, $scope) {
         });
 
 });
+
+ampApp.collector=(function($,ac){
+    var collector=ac;
+    collector.array_swipers=[];
+    collector.array_datepickers=[];
+
+    collector.add_swiper=function(s){
+        collector.array_swipers.push(s);
+        console.dir(collector.array_swipers);
+    };
+    collector.add_datepicker=function(d){
+        collector.array_datepickers.push(d);
+        console.dir(collector.array_datepickers);
+    };
+
+    collector.destory=function(){
+        $.each(collector.array_swipers,function(i,e){
+            e.destroy(true,true);
+        });
+        collector.array_swipers=[];
+        $.each(collector.array_datepickers,function(i,e){
+            $(e.selector).datetimepicker("remove");
+        });
+        collector.array_datepickers=[];
+
+    };
+
+    return collector;
+})(jQuery,ampApp.collector||{});
 

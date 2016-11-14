@@ -16,7 +16,8 @@ var swiper_table=(function($,swiper_table){
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
-            scrollbarHide:true
+            scrollbarHide:true,
+            watchSlidesProgress:true,
         });
         swiper_table_main_swiper = new Swiper('#rpg-set-main-table', {
             scrollbar: '.swiper-scrollbar',
@@ -35,7 +36,8 @@ var swiper_table=(function($,swiper_table){
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
-            scrollbarHide:false
+            scrollbarHide:false,
+            watchSlidesProgress:true,
         });
 
         var swiper_rent_update_table=new Swiper('#rent-update-main-table', {
@@ -73,6 +75,10 @@ var swiper_table=(function($,swiper_table){
 
         });
 
+        $("#rpg-set-table-wrapper input").on("blur",function(e){
+            console.log("-----------blur-------------");
+            console.log(swiper_table_main_swiper.getWrapperTranslate('x'))
+        });
 
        /* var defer=null;
         function _swiperUpdate(){
