@@ -30,9 +30,9 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -55,11 +55,10 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
-                        console.log(amp_main);
                         amp_main.loading_hide();
                     }, 300);
                     return defer.promise;
@@ -91,7 +90,7 @@ ampAppSolo.controller('MainController', function($rootScope, $scope) {
         $scope.state.loading=false;
         $scope.state.enter=false;
         $scope.state.exit=true;
-        $scope.$apply();
+        //$scope.$apply();
     });
     $rootScope.$on('$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams){
@@ -100,7 +99,7 @@ ampAppSolo.controller('MainController', function($rootScope, $scope) {
             $scope.state.exit=false;
             $scope.state.loading=false;
             $rootScope.shownav=(toState.name==="rpgresult");
-            console.log("prev:"+fromState.name);
+            //console.log("prev:"+fromState.name);
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){

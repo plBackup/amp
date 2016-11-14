@@ -31,9 +31,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -57,9 +57,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -83,9 +83,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -109,9 +109,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -135,9 +135,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-                data: ['$q', function($q){
+                data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
-                    setTimeout(function(){
+                    $timeout(function(){
                         defer.resolve();
                         amp_main.loading_hide();
                     }, 300);
@@ -163,9 +163,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -190,9 +190,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -216,9 +216,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -243,9 +243,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -270,9 +270,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -297,9 +297,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -323,9 +323,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -352,9 +352,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -379,9 +379,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -405,9 +405,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -430,9 +430,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -456,9 +456,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -481,9 +481,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -507,9 +507,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -533,9 +533,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -560,9 +560,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -585,9 +585,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -609,9 +609,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         },
         controller:"page",
         resolve: {
-            data: ['$q', function($q){
+            data: ['$q','$timeout', function($q,$timeout){
                 var defer = $q.defer();
-                setTimeout(function(){
+                $timeout(function(){
                     defer.resolve();
                     amp_main.loading_hide();
                 }, 300);
@@ -645,7 +645,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
         $scope.state.loading=false;
         $scope.state.enter=false;
         $scope.state.exit=true;
-        $scope.$apply();
+       // $scope.$apply();
     });
     $rootScope.$on('$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams){
@@ -653,7 +653,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
             $scope.state.enter=true;
             $scope.state.exit=false;
             $scope.state.loading=false;
-            console.log("prev:"+fromState.name);
+            //console.log("prev:"+fromState.name);
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
