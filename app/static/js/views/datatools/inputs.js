@@ -69,7 +69,7 @@ var amp_inputs=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1);
 
-        $("#monthpicker input").datetimepicker({
+        var mPicker=$("#monthpicker input").datetimepicker({
             format:"yyyy-mm",
             todayBtn:"linked",
             startView:3,
@@ -77,6 +77,10 @@ var amp_inputs=(function($,fl){
             autoclose: true,
             language:"zh-CN"
         });
+
+       //这里把日期实例加入全局的垃圾回收站
+       ampApp.collector.add_datepicker(mPicker);
+
         $("#monthpicker button").on("click",function(e){
             var curButton=$(this).attr("id");
             var plus=1;
@@ -106,7 +110,7 @@ var amp_inputs=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
 
-        $(".date-input input").datetimepicker({
+        var dPicker=$(".date-input input").datetimepicker({
             format:"yyyy-mm-dd",
             todayBtn:"linked",
             startView:2,
@@ -116,6 +120,9 @@ var amp_inputs=(function($,fl){
         });
 
         $(".date-input input").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dPicker);
     };
 
     //daterange Selector
@@ -152,6 +159,10 @@ var amp_inputs=(function($,fl){
             endDate=e.timeStamp;
         });
         $(".tr-date-range input#date-start").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dateStart);
+        ampApp.collector.add_datepicker(dateEnd);
     };
 
     //item-select-filter
@@ -178,7 +189,6 @@ var amp_inputs=(function($,fl){
 
             $select.find("button.dropdown-toggle>em").text(curSelect);
             $select.find("input").val(curSelect);
-
         });
     };
 
