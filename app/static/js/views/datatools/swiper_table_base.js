@@ -29,12 +29,14 @@ var swiper_table=(function($,swiper_table){
         swiper_table_head_swiper.params.control = swiper_table_main_swiper;
         swiper_table_main_swiper.params.control = swiper_table_head_swiper;
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(swiper_table_head_swiper);
+        ampApp.collector.add_swiper(swiper_table_main_swiper);
+
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#rpg-set-table-wrapper",
             padding: {top: 44, bottom: 50}
         });
-
-
 
         var defer=null;
         function _swiperUpdate(){

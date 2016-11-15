@@ -29,6 +29,10 @@ var rpg_result_table=(function($,rpg_result_table){
         rpg_result_table_head_rpg_result.params.control = rpg_result_table_main_rpg_result;
         rpg_result_table_main_rpg_result.params.control = rpg_result_table_head_rpg_result;
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(rpg_result_table_head_rpg_result);
+        ampApp.collector.add_swiper(rpg_result_table_main_rpg_result);
+
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#rpg-result-table-wrapper",
             padding: {top: 88, bottom: 50}

@@ -30,6 +30,10 @@ var swiper_table=(function($,swiper_table){
         swiper_table_head_swiper.params.control = swiper_table_main_swiper;
         swiper_table_main_swiper.params.control = swiper_table_head_swiper;
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(swiper_table_head_swiper);
+        ampApp.collector.add_swiper(swiper_table_main_swiper);
+
         var swiper_rent_affect_table=new Swiper('#rent-affect-main-table', {
             scrollbar: '.swiper-scrollbar-a',
             direction: 'horizontal',
@@ -40,6 +44,9 @@ var swiper_table=(function($,swiper_table){
             watchSlidesProgress:true,
         });
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(swiper_rent_affect_table);
+
         var swiper_rent_update_table=new Swiper('#rent-update-main-table', {
             scrollbar: '.swiper-scrollbar-b',
             direction: 'horizontal',
@@ -49,6 +56,8 @@ var swiper_table=(function($,swiper_table){
             scrollbarHide:false
         });
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(swiper_rent_update_table);
 
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#rpg-set-table-wrapper",

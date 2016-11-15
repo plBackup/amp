@@ -30,6 +30,7 @@ var noi=(function($,noi){
         noi_head_swiper.params.control = noi_main_swiper;
         noi_main_swiper.params.control = noi_head_swiper;
 
+        //这里把swiper实例加入全局的垃圾回收站
         ampApp.collector.add_swiper(noi_head_swiper);
         ampApp.collector.add_swiper(noi_main_swiper);
 
@@ -441,8 +442,7 @@ var noi=(function($,noi){
         })
     };
     noi.destroy=function(){
-        noi_head_swiper.destroy();
-        noi_main_swiper.destroy();
+
     }
     noi.init=function(){
         noi.chart_init();

@@ -29,6 +29,10 @@ var irr_plan=(function($,irr_plan){
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
         irr_plan_main_swiper.params.control = irr_plan_head_swiper;
 
+        //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(irr_plan_head_swiper);
+        ampApp.collector.add_swiper(irr_plan_main_swiper);
+
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#irr-plan-table-wrapper",
             padding: {top: 44, bottom: 50}

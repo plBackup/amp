@@ -344,12 +344,6 @@ var datasim=(function($,datasim){
         });
     };
     datasim.init=function(){
-        if(typeof noi !=="undefined"){
-            console.log(noi);
-            noi.destroy();
-            noi=undefined;
-        }
-
         datasim.add_svg();
         datasim.chart_init();
         datasim.iscroll_init();

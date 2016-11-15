@@ -678,11 +678,9 @@ ampApp.collector=(function($,ac){
 
     collector.add_swiper=function(s){
         collector.array_swipers.push(s);
-        console.dir(collector.array_swipers);
     };
     collector.add_datepicker=function(d){
         collector.array_datepickers.push(d);
-        console.dir(collector.array_datepickers);
     };
 
     collector.destory=function(){

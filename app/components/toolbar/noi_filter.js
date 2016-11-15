@@ -77,6 +77,8 @@ var filters=(function($,fl){
             autoclose: true,
             language:"zh-CN"
         });
+
+        //这里把日期实例加入全局的垃圾回收站
         ampApp.collector.add_datepicker(mpicker);
 
 
@@ -120,6 +122,7 @@ var filters=(function($,fl){
 
         $("#datepicker input").val(start_date);
 
+        //这里把日期实例加入全局的垃圾回收站
         ampApp.collector.add_datepicker(dpicker);
     };
 
@@ -157,7 +160,13 @@ var filters=(function($,fl){
             endDate=e.timeStamp;
         });
         $("#daterange input#date-range-filter-start").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dateStart);
+        ampApp.collector.add_datepicker(dateEnd);
     };
+
+
 
     //item-select-filter
     filters.dropdownSelector=function(){

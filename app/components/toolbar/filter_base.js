@@ -69,7 +69,7 @@ var filters=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1);
 
-        $("#monthpicker input").datetimepicker({
+        var mPicker=$("#monthpicker input").datetimepicker({
             format:"yyyy-mm",
             todayBtn:"linked",
             startView:3,
@@ -99,6 +99,9 @@ var filters=(function($,fl){
         });
 
         $("#monthpicker input").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(mPicker);
     };
 
     //date Selector
@@ -106,7 +109,7 @@ var filters=(function($,fl){
         var curDate=new Date();
         var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
 
-        $("#datepicker input").datetimepicker({
+        var dPicker=$("#datepicker input").datetimepicker({
             format:"yyyy-mm-dd",
             todayBtn:"linked",
             startView:2,
@@ -116,6 +119,9 @@ var filters=(function($,fl){
         });
 
         $("#datepicker input").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dPicker);
     };
 
     //daterange Selector
@@ -152,6 +158,10 @@ var filters=(function($,fl){
             endDate=e.timeStamp;
         });
         $("#daterange input#date-range-filter-start").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dateStart);
+        ampApp.collector.add_datepicker(dateEnd);
     };
 
     //item-select-filter
