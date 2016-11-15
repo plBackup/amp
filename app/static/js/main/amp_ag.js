@@ -700,6 +700,7 @@ ampApp.nav_list={
     }
 };
 
+//手动设置当前菜单的激活状态 navhash为当前route的state值 配置于ampApp.nav_list
 ampApp.setNav=function(navhash){
     var navSets=ampApp.nav_list[navhash];
     if(typeof navSets!=="undefined"){
@@ -711,6 +712,7 @@ ampApp.setNav=function(navhash){
     }
 };
 
+//swiper 和 datetimepicker的回收器
 ampApp.collector=(function($,ac){
     var collector=ac;
     collector.array_swipers=[];
