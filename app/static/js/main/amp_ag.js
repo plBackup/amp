@@ -671,6 +671,46 @@ ampApp.controller('MainController', function($rootScope, $scope) {
 
 });
 
+ampApp.nav_list={
+
+    "noi":{
+        sideNav:"#main-0",
+        headerBar:"#header-tabs-0",
+        headerItem:"#nav-tabs-item-0-0"
+    },
+    "rpgindex":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-0"
+    },
+    "rpgset":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-0"
+    },
+    "datasim":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-1"
+    },
+    "irrplan":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-2"
+    }
+};
+
+ampApp.setNav=function(navhash){
+    var navSets=ampApp.nav_list[navhash];
+    if(typeof navSets!=="undefined"){
+        $(".leftpanelinner ul.nav-bracket").find("li").removeClass("active");
+        $(navSets.sideNav).closest("li").addClass("active");
+
+        $(".head-main-menu").children(".nav-tabs").removeClass("active");
+        $(navSets.headerBar).addClass("active").find("li").removeClass("active").end().find(navSets.headerItem).addClass("active");
+    }
+};
+
 ampApp.collector=(function($,ac){
     var collector=ac;
     collector.array_swipers=[];

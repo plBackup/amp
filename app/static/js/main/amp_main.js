@@ -367,6 +367,8 @@ var amp_main=(function($,menu,am){
            // $('body').delay(350).css({'overflow':'visible'});
         });
     };
+
+
     amp_main.init=function(sys){
         if(!sys){
             sys="amp_menu";
