@@ -650,6 +650,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
     });
     $rootScope.$on('$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams){
+            $rootScope.curState=toState.name;
             $rootScope.prev=fromState.name;
             $scope.state.enter=true;
             $scope.state.exit=false;

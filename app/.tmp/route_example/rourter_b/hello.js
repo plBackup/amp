@@ -22,14 +22,17 @@ myApp.config(function($stateProvider) {
       url: '/{personId}', 
       component: 'person',
       resolve: {
-        person: function(people, $stateParams) {
+        /* person: function(people, $stateParams) {
           return people.find(function(person) { 
             return person.id === $stateParams.personId;
-          });
+          });*/ //这里为从数据里去数据逻辑，现在因为数据保存至$rootScope,所以现在传pId
+
+        pId: function(people, $stateParams) {
+          return $stateParams.projectId;
         }
       }
     }
-  ]
+  ];
   
   // Loop over the state definitions and register them
   states.forEach(function(state) {

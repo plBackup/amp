@@ -5,7 +5,7 @@ angular.module('main').service('ProjectService', function($http) {
     var service = {
         getAllProject: function() {
             return $http.get('../data/projectList.json', { cache: true }).then(function(res) {
-                return res.data;
+                return res.data['projects'];
             });
         },
 
@@ -17,8 +17,8 @@ angular.module('main').service('ProjectService', function($http) {
             return service.getAllProject().then(function (project) {
                 return project.find(projectMatchesParam)
             });
-        }
-    }
+        },
+    };
 
     return service;
 });

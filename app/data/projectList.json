@@ -2,6 +2,7 @@
   "projects":[{
     "name":"一号项目",
     "proportion":"50,462.01",
+    "proportionType":"套内面积",
     "openRate":"89.12%",
     "income":435.88,
     "irr":"6.12%",
@@ -21,7 +22,8 @@
       "teamNum":12,
       "contact":"email",
       "resume":"/"
-    }
+    },
+    "position":"上海七宝"
   }
   ]
 }

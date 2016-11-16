@@ -8,7 +8,7 @@ var mainApp = angular.module('main', [
 ]);
 
 
-mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
+mainApp.config('$stateProvide','$urlRouteProvide',function($stateProvider,$urlRouterProvider) {
     // An array of state definitions
     var states = [
         {
@@ -18,7 +18,6 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
                 'content': {
                     templateUrl: '../main/main_ag.html',
                     controller:'pjListController',
-                    controllerAs: 'listCtrl'
                 },
             },
 
@@ -40,13 +39,12 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
             url: '/create',
             views:{
                 'content': {
-                    templateUrl: '../main/create_project.html',
-                    controller:"pjCreateController",
-                    controllerAs: 'ctrl',
+                    templateUrl: '../main/create_project.html'
                 },
             },
-
+            controller:"pjCreateController",
             resolve: {
+                project:{},
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
@@ -58,31 +56,21 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
         },//state,
         {
             name: 'update',
-            url: '/update/{projectId}',
+            url: '/update/:projectId',
             views:{
                 'content': {
-                    templateUrl: '../main/create_project.html',
-                    controller:"pjUpdateController",
-                    controllerAs: 'ctrl',
+                    templateUrl: '../main/create_project.html'
                 },
             },
-
+            controller:"pjCreateController",
             resolve: {
-              /*  project:["projects","$stateParams",function(projects,$stateParams){
-                    //这里的逻辑是把数据做在 list-> ui-view( create )里的方法
+                project:function(projects,$stateParams){
                     var pId=$stateParams.projectId;
-                    console.log(projects);
-                    console.log(pId);
                     return projects[pId];
-                    /!* return projects.find(function (project) {
+                    /* return projects.find(function (project) {
                      return project.id==pId;
-                     })*!/
-                }],*/
-                pid:["$stateParams",function($stateParams){
-                    //这里的逻辑是把数据做在 list-> ui-view( create )里的方法
-                    var pId=$stateParams.projectId;
-                    return pId;
-                }],
+                     })*/
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
@@ -104,9 +92,9 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
         function($injector, $location) {
             $location.path('/main');
         });
-}]);
+});
 
-/*mainApp.service('ProjectService', function($http) {
+mainApp.service('ProjectService', function($http) {
     var service = {
         getAllProject: function() {
             return $http.get('../data/projectList.json', { cache: true }).then(function(res) {
@@ -126,7 +114,7 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
     };
 
     return service;
-});*/
+});
 
 
 mainApp.controller('MainController', function($rootScope, $scope) {
@@ -150,6 +138,7 @@ mainApp.controller('MainController', function($rootScope, $scope) {
             $scope.state.enter=true;
             $scope.state.exit=false;
             $scope.state.loading=false;
+            //console.log("prev:"+fromState.name);
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
@@ -168,65 +157,14 @@ mainApp.controller('MainController', function($rootScope, $scope) {
 
 mainApp.controller("pjListController",["$rootScope","$scope","projects",function($rootScope,$scope,projects){
     var self=this;
-    if(!$rootScope.projects){
-        $rootScope.projects=projects;
-    }
-    self.projects=$rootScope.projects;
+    $rootScope.projects=projects["projects"];
 }]);
-mainApp.controller("testCtrl",function($rootScope,$scope){
-    $scope.name="txt";
-});
 
-mainApp.controller("pjCreateController",["$rootScope","$scope","$location",function($rootScope,$scope,$location){
+mainApp.controller("pjCreateController",["$rootScope","$scope","project",function($rootScope,$scope,project){
     //$scope.project=project;
     var self=this;
-    self.project={
-            "name":"",
-            "proportion":"",
-            "proportionType":"",
-            "openRate":"%",
-            "income":0,
-            "irr":"%",
-            "complete":"%",
-            "noi":{
-                "monthly":0,
-                "yearly":"0"
-            },
-            "asset":{
-                "value":"",
-                "rate":"%"
-            },
-            "pm":{
-                "name":"",
-                "title":"",
-                "figure":"",
-                "teamNum":0,
-                "contact":"email",
-                "resume":"/"
-            },
-            "position":""
-    };
-    self.curState=$rootScope.curState;
-    self.index=$rootScope.projects.length;
-
-    self.submit=function(){
-        $rootScope.projects.push(self.project);
-        $location.path("/main");
-    };
-
-}]);
-mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid",function($rootScope,$scope,$location,pid){
-    //$scope.project=project;
-    var self=this;
-    self.pid=pid;
-    self.curState=$rootScope.curState;
-    self.index="update";
-    self.project=$rootScope.projects[pid];
-
-    self.submit=function(){
-        //$rootScope.projects.push(self.project);
-        $location.path("/main");
-    };
+    self.project=project;
+    //self.curState=$rootScope.curState;
 }]);
 
 mainApp.run(function($http) {
