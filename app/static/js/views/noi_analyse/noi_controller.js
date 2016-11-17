@@ -6,11 +6,25 @@
 
 /* Controllers */
 
-var noiControllers = angular.module('noiControllers', []);
+var noi = angular.module('noi', [
+]);
 
-noiControllers.controller('noiController', ['$rootScope', '$scope',
-    function($rootScope, $scope) {
+noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
+    function($rootScope, $scope,noiAllData) {
+        var self=this;
+        self.allData=noiAllData;
+        console.log(noiAllData);
 
+        self.noiData=noiAllData.noi[0].values;
+        self.incomeData=noiAllData.income;
+        self.feeData=noiAllData.fee;
+        self.arrearageData=noiAllData.arrearage;
+        self.chartData=noiAllData.chart;
+
+        self.isSplit=function(index){
+            return (index+1)%4==0;
+        }
+        console.log(self.incomeData);
 
 
         $scope.$on("$destroy", function() {
@@ -19,9 +33,8 @@ noiControllers.controller('noiController', ['$rootScope', '$scope',
 
     }]);
 
-
-ampControllers.controller('toolbarController', ['$rootScope','$scope', '$routeParams',
-    function($rootScope,$scope, $routeParams) {
+noi.controller('noiToolController', ['$rootScope','$scope',
+    function($rootScope,$scope) {
         console.log("...");
 
         $scope.$on("$destroy", function() {

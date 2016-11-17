@@ -15,40 +15,39 @@
                 <tr class="tr-info-main">
                     <td>
                         <span>当月实际</span>
-                        <h3>216.57</h3>
+                        <h3>{{noiCtrl.noiData[0].value | number:2}}</h3>
                         <span>全年预测</span>
-                        <h5>2,652.32</h5>
-
+                        <h5>{{noiCtrl.noiData[1].value | number:2}}</h5>
                     </td>
                     <td>
                         <span>总成本</span>
-                        <h3>37,521</h3>
-                        <span>预测回报率(按成本)</span>
-                        <h5>7.29%</h5>
+                        <h3>{{noiCtrl.noiData[2].value | number:2}}</h3>
+                        <span>预测年回报率(按成本)</span>
+                        <h5>{{noiCtrl.noiData[3].value | percentFormat}}</h5>
                     </td>
                     <td>
                         <span>估值</span>
-                        <h3>45,569</h3>
+                        <h3>{{noiCtrl.noiData[4].value | number:2}}</h3>
                         <span>估值日期</span>
-                        <h5>2016-02-14</h5>
+                        <h5>{{noiCtrl.noiData[5].value}}</h5>
                         <span>预测年回报率(按估值)</span>
-                        <h5>5.82%</h5>
+                        <h5>{{noiCtrl.noiData[6].value | percentFormat}}</h5>
                     </td>
                     <td>
                         <span>本金</span>
-                        <h3>24,079.79</h3>
+                        <h3>{{noiCtrl.noiData[7].value | number:2}}</h3>
                         <span>到期日</span>
-                        <h5>2023-09-30</h5>
+                        <h5>{{noiCtrl.noiData[8].value}}</h5>
                         <span>年贷款利息</span>
-                        <h5>1,805.98</h5>
+                        <h5>{{noiCtrl.noiData[9].value | number:2}}</h5>
                     </td>
                     <td>
                         <span>当前收益</span>
-                        <h3>25,900.14</h3>
+                        <h3>{{noiCtrl.noiData[10].value | number:2}}</h3>
                         <span>预测税前现金流</span>
-                        <h5>49,979.93</h5>
+                        <h5>{{noiCtrl.noiData[11].value | number:2}}</h5>
                         <span>预测收益率(按ROE)</span>
-                        <h5>8.1%</h5>
+                        <h5>{{noiCtrl.noiData[12].value | percentFormat}}</h5>
                     </td>
                 </tr>
                 </tbody>
@@ -76,7 +75,7 @@
                             <table class="table table-no-bordered amp-table table-hover table-header-fixed" style="width:1500px;" >
                                 <thead>
                                 <tr style="">
-                                    <th colspan="4" ><em><</em>2016-08(万元)</th>
+                                    <th colspan="4" ><em><</em>2016-10(万元)</th>
                                     <th colspan="4" >全年累计(万元)</th>
                                     <th colspan="4" >全年(万元)</th>
                                     <th>达成率</th>
@@ -206,69 +205,23 @@
                             <table class="table table-no-bordered amp-table table-hover"  style="width:1500px;">
                                 <tbody>
                                 <tr class="tr-main">
-                                    <td>410.71</td>
-                                    <td>452.91 </td>
-                                    <td>-42.20</td>
-                                    <td class="t-split">-9.32%</td>
-                                    <td>639.51</td>
-                                    <td>654.48</td>
-                                    <td>-14.97</td>
-                                    <td class="t-split">-2.29%</td>                                    
-                                    <td>1,626.39</td>
-                                    <td>1,826.88</td>
-                                    <td>-200.49 </td>
-                                    <td class="t-split">-11%</td>                                    
-                                    <td></td>
+                                    <td ng-repeat="tdData in noiCtrl.incomeData[3].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
                                 </tr>
                                 <tr class="tr-sub">
-                                	<td>138.82</td>
-                                	<td>208.84</td>
-                                	<td>-70.02</td>
-                                	<td class="t-split">-33.53%</td>
-                                	<td>220.41</td>
-                                	<td> 290.43 </td>
-                                	<td>-70.02 </td>
-                                	<td class="t-split">-24.11%</td>                                  
-                                	<td>759.57</td>
-                                	<td>1,015.45</td>
-                                	<td>-255.88</td>
-                                	<td class="t-split">-25%</td>      
-                                	<td></td>
+                                    <td ng-repeat="tdData in noiCtrl.incomeData[0].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
                                     
                                 </tr>
                                 <tr class="tr-sub">
-                                    <td>234.35</td>
-                                	<td>189.02</td>
-                                	<td>45.33</td>
-                                	<td class="t-split">23.98%</td>
-                                	<td>352.83</td>
-                                	<td>307.50 </td>
-                                	<td>45.33</td>
-                                	<td class="t-split">14.74%</td>
-                                	<td>716.82</td>
-                                	<td>704.88 </td>
-                                	<td>11.94</td>
-                                	<td class="t-split">2%</td>
-                                	<td></td>
-
+                                    <td ng-repeat="tdData in noiCtrl.incomeData[1].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
                                 </tr>
 
                                 <!-- start -->
                                 <tr class="tr-sub">
-                                	<td>37.54</td>
-                                	<td>55.05</td>
-                                	<td>-17.51</td>
-                                	<td class="t-split">-31.81%</td>
-                                 	<td>66.27</td>
-                                	<td>56.55</td>
-                                	<td>9.72</td>
-                                	<td class="t-split">17.19%</td>
-                                	<td>150.00</td>
-                                	<td>106.55</td>
-                                	<td>43.45</td>
-                                	<td class="t-split">41%</td>                                	
-                                    <td></td>
-
+                                    <td ng-repeat="tdData in noiCtrl.incomeData[2].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
                                 </tr>
 
                                 <tr class="tr-main">

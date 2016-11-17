@@ -7,8 +7,8 @@
 
 var ampApp = angular.module('amp', [
     'ui.router',
-    'ampControllers',
-    'ampFilters'
+    'noi',
+    //'noiFilters'
 ]);
 
 
@@ -21,11 +21,13 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             views:{
                 'toolbar': {
                     templateUrl: '../components/toolbar/noi_filter.html',
-                    controller:"noiToolController"
+                    controller:"noiToolController",
+                    controllerAs:"tCtrl"
                 },
                 'content': {
                     templateUrl: '../views/noi_analyse/noi.html',
-                    controller:"noiController"
+                    controller:"noiController",
+                    controllerAs:"noiCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html',
@@ -33,6 +35,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                noiAllData: function(noiService) {
+                    return noiService.getAllData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
