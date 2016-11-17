@@ -20,13 +20,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             url: '/noi',
             views:{
                 'toolbar': {
-                    templateUrl: '../components/toolbar/noi_filter.html'
+                    templateUrl: '../components/toolbar/noi_filter.html',
+                    controller:"noiToolController"
                 },
                 'content': {
-                    templateUrl: '../views/noi_analyse/noi.html'
+                    templateUrl: '../views/noi_analyse/noi.html',
+                    controller:"noiController"
                 },
                 "right":{
-                    templateUrl: '../views/blank_right.html'
+                    templateUrl: '../views/blank_right.html',
                 }
             },
             controller:"page",

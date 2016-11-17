@@ -4,7 +4,7 @@
 /* App Module */
 
 var mainApp = angular.module('main', [
-    'ui.router'
+    'ui.router',
 ]);
 
 
