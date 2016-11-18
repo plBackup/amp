@@ -7,10 +7,10 @@ angular.module('ampFilter').directive('monthPicker', [
             restrict: 'A',
             scope: {
                monthSelect:"&",
-                //curMonth:"@"
+                curMonth:"@"
 
             },
-            require:"ngModel",
+            //require:"ngModel",
 
             template:'<div class="toolbar-item item-month-filter" style="padding:0;">' +
             '<label for="month-filter">时间</label>' +
@@ -24,7 +24,7 @@ angular.module('ampFilter').directive('monthPicker', [
             '</span>' +
             '</div>' +
             '</div>',
-            link: function($scope, $element,attrs,ngModelCtrl) {
+            link: function($scope, $element,attrs) {
                 function gd(year, month, day) {
                     return new Date(year, month, day).getTime();
                 }
@@ -84,19 +84,19 @@ angular.module('ampFilter').directive('monthPicker', [
                     }
                 };
 
-                var updateModel=function(dateText){
+               /* var updateModel=function(dateText){
                     $scope.$apply(function(){
                         ngModelCtrl.$setViewValue(dateText);
+
                     });
-                };
+                };*/
 
-
-
-                ngModelCtrl.$render=function(){
-                    console.log("...")
-                    console.log(ngModelCtrl.$viewValue);
+              /*  ngModelCtrl.$render=function(){
+                   // console.log("....")
                     $element.find("input").val(ngModelCtrl.$viewValue);
-                }
+                   // console.log("ok");
+
+                }*/
 
                 //month Selector
                 var mpicker;
@@ -114,7 +114,7 @@ angular.module('ampFilter').directive('monthPicker', [
                     }).on('changeDate', function(e){
 
                         var dateStr=$element.find("input").val()
-                        updateModel(dateStr);
+                        //updateModel(dateStr);
                         if($scope.monthSelect){
                             //如果作用域有处理函数，
                             $scope.$apply(function(){
@@ -137,7 +137,7 @@ angular.module('ampFilter').directive('monthPicker', [
                             var today=new Date();
                             var newDate=DateAdd("m",plus,today);
                             $element.find("input").val(newDate);
-                            updateModel(newDate);
+                            //updateModel(newDate);
                             if($scope.monthSelect){
                                 //如果作用域有处理函数，
                                 $scope.$apply(function(){
@@ -151,7 +151,7 @@ angular.module('ampFilter').directive('monthPicker', [
                             var newDate=DateAdd("m",plus,curDate);
                             $element.find("input").val(newDate);
 
-                            updateModel(newDate);
+                            //updateModel(newDate);
 
                             if($scope.monthSelect){
                                 //如果作用域有处理函数，
@@ -163,7 +163,12 @@ angular.module('ampFilter').directive('monthPicker', [
 
                         }
                     });
-
+                    var dateStr=$element.find("input").val()||"";
+                    if(dateStr==""){
+                        var today=new Date();
+                        var newDate=DateAdd("m",0,today);
+                        $element.find("input").val(newDate).datetimepicker("update");
+                    }
 
                 };
 
