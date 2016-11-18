@@ -8,6 +8,7 @@
 var ampApp = angular.module('amp', [
     'ui.router',
     'noi',
+    "ampFilter"
     //'noiFilters'
 ]);
 
@@ -21,7 +22,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             views:{
                 'toolbar': {
                     templateUrl: '../components/toolbar/noi_filter.html',
-                    controller:"noiToolController",
+                    controller:"monthFilterController",
                     controllerAs:"tCtrl"
                 },
                 'content': {

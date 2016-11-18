@@ -8,8 +8,7 @@ var filters=(function($,fl){
         return new Date(year, month, day).getTime();
     }
 
-    function DateAdd(interval,number,dateStr)
-    {
+    function DateAdd(interval,number,dateStr){
 
         // DateAdd(interval,number,date)
         var date = new Date(dateStr);
@@ -76,6 +75,9 @@ var filters=(function($,fl){
             minView:3,
             autoclose: true,
             language:"zh-CN"
+        }).on('changeDate', function(e){
+            console.log(e);
+
         });
 
         //这里把日期实例加入全局的垃圾回收站
@@ -122,7 +124,6 @@ var filters=(function($,fl){
 
     return filters;
 })(jQuery,filters||{});
-/*
 
 $(document).ready(function(){
     //这里有公共方法，确定业务后 单独放到一个文件
@@ -132,4 +133,3 @@ $(document).ready(function(){
     filters.dropdownSelector();
     filters.init();
 });
-*/
