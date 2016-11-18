@@ -113,12 +113,12 @@ angular.module('ampFilter').directive('monthPicker', [
                         language:"zh-CN",
                     }).on('changeDate', function(e){
 
-                        var dateStr=$element.find("input").val()
+                        var dateStr=$element.find("input").val();
                         updateModel(dateStr);
                         if($scope.monthSelect){
                             //如果作用域有处理函数，
                             $scope.$apply(function(){
-                                $scope.monthSelect({date:newDate});
+                                $scope.monthSelect({date:dateStr});
                             });
                         }
 
