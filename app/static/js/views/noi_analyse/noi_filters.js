@@ -2,9 +2,6 @@
  * Created by limeiting on 16/11/17.
  */
 /* Filters */
-
-
-
 angular.module('noi').filter('checkmark', function() {
     return function(input) {
         return input ? '\u2713' : '\u2718';
@@ -21,26 +18,39 @@ angular.module('noi').filter('checkmark', function() {
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
     };
 
-    //检查非负浮点数
+    //检查浮点数
     function checkNum(num){
-        var patt=/^\d+(\.\d+)?$/g;
+        var patt=/^(-?\d+)(\.\d+)?$/g;
         return patt.test(num);
     }
 
-    return function(input,fixed){
-        if(typeof  fixed==="undefined"){
-            fixed=2
-        }
-        if(checkNum(input)){
-            return parseFloat(input).formatMoney(fixed, '.', ',');
+    return function(input,$index,fixed){
+        if(($index+1)%4==0){
+            if(typeof  fixed==="undefined"){
+                fixed=2
+            }
+            if(checkNum(input)){
+                return parseFloat(input*100).toFixed(2)+"%";
+            }else{
+                return input
+            }
         }else{
-            return input
+            if(typeof  fixed==="undefined"){
+                fixed=2
+            }
+            if(checkNum(input)){
+                return parseFloat(input).formatMoney(fixed, '.', ',');
+            }else{
+                return input
+            }
         }
+
     }
 }).filter("percentFormat",function(){
     //检查非负浮点数
     function checkNum(num){
-        var patt=/^\d+(\.\d+)?$/g;
+        //var patt=/^\d+(\.\d+)?$/g;
+        var patt=/^(-?\d+)(\.\d+)?$/g;
         return patt.test(num);
     }
 

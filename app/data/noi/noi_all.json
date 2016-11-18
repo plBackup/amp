@@ -53,6 +53,10 @@
         {
           "name": "\u9884\u6d4b\u6536\u76ca\u7387\uff08\u6309ROE\uff09",
           "value": 0.0008
+        },
+        {
+          "name": "complete-rate",
+          "value": ""
         }
       ],
       "name": "noi"
@@ -1209,51 +1213,51 @@
         },
         {
           "rid": "fee_col1_row16",
-          "value": 23
+          "value": 188.64
         },
         {
           "rid": "fee_col2_row16",
-          "value": 23
+          "value": 183.71
         },
         {
           "rid": "fee_col3_row16",
-          "value": 23
+          "value": 4.93
         },
         {
           "rid": "fee_col4_row16",
-          "value": 23
+          "value": 0.0819
         },
         {
           "rid": "fee_col5_row16",
-          "value": 23
+          "value": 260.04
         },
         {
           "rid": "fee_col6_row16",
-          "value": 23
+          "value": 301.63
         },
         {
           "rid": "fee_col7_row16",
-          "value": 23
+          "value": -41.59
         },
         {
           "rid": "fee_col8_row16",
-          "value": 23
+          "value": -0.0983
         },
         {
           "rid": "fee_col9_row16",
-          "value": 23
+          "value": 557.13
         },
         {
           "rid": "fee_col10_row16",
-          "value": 23
+          "value": 1014.50
         },
         {
           "rid": "fee_col11_row16",
-          "value": 23
+          "value": -200.49
         },
         {
           "rid": "fee_col12_row16",
-          "value": 23
+          "value": -0.1097
         }
       ],
       "name": "NOI"
@@ -1266,51 +1270,51 @@
         },
         {
           "rid": "fee_col1_row17",
-          "value": 23
+          "value": 0.8494
         },
         {
           "rid": "fee_col2_row17",
-          "value": 23
+          "value": 0.6824
         },
         {
           "rid": "fee_col3_row17",
-          "value": 23
+          "value": -0.1045
         },
         {
           "rid": "fee_col4_row17",
-          "value": 23
+          "value": -0.4678
         },
         {
           "rid": "fee_col5_row17",
-          "value": 23
+          "value": 0.6853
         },
         {
           "rid": "fee_col6_row17",
-          "value": 23
+          "value": 0.8548
         },
         {
           "rid": "fee_col7_row17",
-          "value": 23
+          "value": -1.5624
         },
         {
           "rid": "fee_col8_row17",
-          "value": 23
+          "value": -1.3032
         },
         {
           "rid": "fee_col9_row17",
-          "value": 23
+          "value": 0.5210
         },
         {
           "rid": "fee_col10_row17",
-          "value": 23
+          "value": 1.2488
         },
         {
           "rid": "fee_col11_row17",
-          "value": 23
+          "value": "-"
         },
         {
           "rid": "fee_col12_row17",
-          "value": 23
+          "value": "-"
         }
       ],
       "name": "\u5229\u6da6\u7387"
@@ -1437,12 +1441,12 @@
   "chart":[
     {
       "values": [
-        2016.0,
-        2017.0,
-        2018.0,
-        2019.0,
-        2020.0,
-        2021.0
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
       ],
       "name": "year"
     },
@@ -1459,12 +1463,12 @@
     },
     {
       "values": [
-        6618.92304388,
-        7359.418507072,
-        7865.80194732,
-        8993.02904376,
-        9486.3235614,
-        11029.110401952
+        6618.92,
+        7359.41,
+        7865.80,
+        8993.02,
+        9486.32,
+        11029.11
       ],
       "name": "\u65b9\u6848\u4e8c"
     },

@@ -206,361 +206,139 @@
                                 <tbody>
                                 <tr class="tr-main">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[3].values.slice(1)"
-                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
+                                    <td>0.00</td>
                                 </tr>
                                 <tr class="tr-sub">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[0].values.slice(1)"
-                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
-                                    
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
+                                    <td></td>
                                 </tr>
                                 <tr class="tr-sub">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[1].values.slice(1)"
-                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
+                                    <td></td>
                                 </tr>
 
                                 <!-- start -->
                                 <tr class="tr-sub">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[2].values.slice(1)"
-                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                 </tr>
 
                                 <tr class="tr-main">
-                                    <td>222.07</td>
-                                    <td>269.20</td>
-                                    <td>-47.13 </td>
-                                    <td class="t-split">-0.18</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[15].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
+                                    <td>0.00</td>
 
-                                    <td>379.47</td>
-                                    <td>352.85</td>
-                                    <td>26.62</td>
-                                    <td class="t-split">0.08</td>
-
-                                    <td>1,069.26 </td>
-                                    <td>812.38</td>
-                                    <td>249.33</td>
-                                    <td class="t-split">-10.80%</td>
-
-                                    <td>171.21%</td>
                                 </tr>
                                 <tr class="tr-sub">
-                                    <td>56.06</td>
-                                    <td>12.58</td>
-                                    <td>56.06</td>
-                                    <td class="t-split">-6.60%</td>
-
-                                    <td>74.39 </td>
-                                    <td>122.06</td>
-                                    <td>74.39 </td>
-                                    <td class="t-split">-10.00%</td>
-
-                                    <td>150.00 </td>
-                                    <td>600</td>
-                                    <td>-53.67</td>
-                                    <td class="t-split">-8.94%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[0].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
+
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>123.13</td>
-                                    <td>123.21</td>
-                                    <td>-0.08</td>
-                                    <td class="t-split">-0.06%</td>
-
-                                    <td>1,257.55</td>
-                                    <td>1,232.96</td>
-                                    <td>24.59</td>
-                                    <td class="t-split">1.99%</td>
-
-                                    <td>107.76</td>
-                                    <td>332.45</td>
-                                    <td>33.2</td>
-                                    <td class="t-split">9.99%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[1].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
+
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>76.23</td>
-                                    <td>80</td>
-                                    <td>-3.77</td>
-                                    <td class="t-split">-4.71%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[2].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
 
-                                    <td>824.83</td>
-                                    <td>1,000</td>
-                                    <td>-175.17</td>
-                                    <td class="t-split">-17.52%</td>
-
-                                    <td>986.14</td>
-                                    <td>1,200</td>
-                                    <td>-213.86</td>
-                                    <td class="t-split">-17.82%</td>
-
-                                    <td></td>
 
                                 </tr>
 
                                 <tr class="tr-sub tr-sub-main">
-                                    <td>9.39</td>
-                                    <td>10.44</td>
-                                    <td>-1.05</td>
-                                    <td class="t-split">-10.06%</td>
-
-                                    <td>255.5</td>
-                                    <td>283.89</td>
-                                    <td>-28.39</td>
-                                    <td class="t-split">-10.00%</td>
-
-                                    <td>5.55</td>
-                                    <td>106.09</td>
-                                    <td>-4.89</td>
-                                    <td class="t-split">-46.84%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[3].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
+
                                 </tr>
 
                                 <tr class="tr-tri">
-                                    <td>3.39</td>
-                                    <td>10.44</td>
-                                    <td>-1.05</td>
-                                    <td class="t-split">-10.06%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[4].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
 
-                                    <td>255.5</td>
-                                    <td>283.89</td>
-                                    <td>-28.39</td>
-                                    <td class="t-split">-10.00%</td>
-
-                                    <td>10.00</td>
-                                    <td>10.44</td>
-                                    <td>-4.89</td>
-                                    <td class="t-split">-46.84%</td>
-
-                                    <td></td>
                                 </tr>
                                 <tr class="tr-tri">
-                                    <td>3.00</td>
-                                    <td>10.44</td>
-                                    <td>-1.05</td>
-                                    <td class="t-split">-10.06%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[5].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
 
-                                    <td>255.5</td>
-                                    <td>283.89</td>
-                                    <td>-28.39</td>
-                                    <td class="t-split">-10.00%</td>
-
-                                    <td>5.55</td>
-                                    <td>10.44</td>
-                                    <td>-4.89</td>
-                                    <td class="t-split">-46.84%</td>
-
-                                    <td></td>
                                 </tr>
                                 <tr class="tr-tri">
-                                    <td>3.00</td>
-                                    <td>10.44</td>
-                                    <td>-1.05</td>
-                                    <td class="t-split">-10.06%</td>
-
-                                    <td>255.5</td>
-                                    <td>283.89</td>
-                                    <td>-28.39</td>
-                                    <td class="t-split">-10.00%</td>
-
-                                    <td>10.00</td>
-                                    <td>10.44</td>
-                                    <td>-4.89</td>
-                                    <td class="t-split">-46.84%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[6].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
+
                                 </tr>
 
 
 
                                 <tr class="tr-sub">
-                                    <td>25.01</td>
-                                    <td>25.03</td>
-                                    <td>-0.02</td>
-                                    <td class="t-split">-0.08%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[7].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
 
-                                    <td>320.17</td>
-                                    <td>320.95</td>
-                                    <td>-0.78</td>
-                                    <td class="t-split">-0.24%</td>
+                                </tr>
 
-                                    <td>27.71</td>
-                                    <td>25.03</td>
-                                    <td>2.68</td>
-                                    <td class="t-split">10.71%</td>
-
+                                <tr class="tr-sub">
+                                    <td ng-repeat="tdData in noiCtrl.feeData[8].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>1.12</td>
-                                    <td>1.98</td>
-                                    <td>-0.86</td>
-                                    <td class="t-split">-43.43%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[9].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
+                                    <td></td>
 
-                                    <td>6.64</td>
-                                    <td>5.65</td>
-                                    <td>0.99</td>
-                                    <td class="t-split">17.52%</td>
+                                </tr>
 
-                                    <td>32.34</td>
-                                    <td>34.34</td>
-                                    <td>-2</td>
-                                    <td class="t-split">5.82%</td>
-
+                                <tr class="tr-sub">
+                                    <td ng-repeat="tdData in noiCtrl.feeData[10].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|number:2}}</td>
                                     <td></td>
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>41.49 </td>
-                                    <td> 110.83 </td>
-                                    <td>-69.34</td>
-                                    <td class="t-split">-0.63</td>
-
-                                    <td>96.05 </td>
-                                    <td> 110.83 </td>
-                                    <td>-14.78 </td>
-                                    <td class="t-split">-0.13</td>
-
-                                    <td>250.00 </td>
-                                    <td>224.60 </td>
-                                    <td>-2.12</td>
-                                    <td class="t-split">45.11%</td>
-                                </tr>
-
-                                <tr class="tr-sub">
-                                    <td>113.43</td>
-                                    <td>143.38</td>
-                                    <td>-29.95</td>
-                                    <td class="t-split">-0.21 </td>
-
-                                    <td>193.94</td>
-                                    <td> 223.88 </td>
-                                    <td> -29.94</td>
-                                    <td class="t-split">-0.13</td>
-
-                                    <td>500.00</td>
-                                    <td>441.92</td>
-                                    <td>3.09</td>
-                                    <td class="t-split">4.91%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[11].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>3.68</td>
-                                    <td>10.61</td>
-                                    <td>-6.93</td>
-                                    <td class="t-split">-0.65 </td>
-
-                                   <td>3.68 </td>
-                                   <td>10.61 </td>
-                                   <td>-6.93 </td>
-                                    <td class="t-split">-0.65</td>
-
-                                    <td>18.00</td>
-                                    <td>23.38</td>
-                                    <td>0.08</td>
-                                    <td class="t-split">5.88%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[12].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>2.54</td>
-                                    <td>2.5</td>
-                                    <td>0.04</td>
-                                    <td class="t-split">1.60%</td>
-
-                                    <td>278.65</td>
-                                    <td>300</td>
-                                    <td>-21.35</td>
-                                    <td class="t-split">-7.12%</td>
-
-                                    <td>21.13</td>
-                                    <td>32.21</td>
-                                    <td>-11.08</td>
-                                    <td class="t-split">-34.40%</td>
-
+                                    <td ng-repeat="tdData in noiCtrl.feeData[13].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
                                 </tr>
 
                                 <tr class="tr-sub">
-                                    <td>1.67</td>
-                                    <td>2.06 </td>
-                                    <td>-0.39</td>
-                                    <td class="t-split">-0.19 </td>
-
-                                    <td>-0.19 </td>
-                                    <td>2.06</td>
-                                    <td>-0.39</td>
-                                    <td class="t-split">-0.19</td>
-
-                                    <td>5.50</td>
-                                    <td>6.18 </td>
-                                    <td>-11.08</td>
-                                    <td class="t-split">-34.40%</td>
-
-                                    <td></td>
-                                </tr>
-
-                                <tr class="tr-sub">
-                                    <td>5.75</td>
-                                    <td> 2.32 </td>
-                                    <td>3.43</td>
-                                    <td class="t-split">1.48</td>
-
-                                    <td>9.74</td>
-                                    <td> 5.47</td>
-                                    <td>4.27</td>
-                                    <td class="t-split">0.78 </td>
-
-                                    <td>18.00</td>
-                                    <td>10.21</td>
-                                    <td>0</td>
-                                    <td class="t-split">-0.00%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[14].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
                                     <td></td>
                                 </tr>
                                 <!-- end -->
                                 </tbody>
                                 <tfoot>
                                 <tr class="tr-main">
-                                    <td>188.64</td>
-                                    <td>183.71</td>
-                                    <td>4.93</td>
-                                    <td class="t-split">8.19%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[16].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
 
-                                    <td>260.04</td>
-                                    <td>301.63</td>
-                                    <td>-41.59</td>
-                                    <td class="t-split">-9.83%</td>
-
-                                    <td>557.13</td>
-                                    <td>1,014.50</td>
-                                    <td>-200.49 </td>
-                                    <td class="t-split">-10.97%</td>
-
-                                    <td>63.35%</td>
                                 </tr>
                                 <tr class="tr-sub">
-                                    <td>84.94%</td>
-                                    <td>68.24%</td>
-                                    <td>-10.45%</td>
-                                    <td class="t-split">-46.78%</td>
+                                    <td ng-repeat="tdData in noiCtrl.feeData[17].values.slice(1)"
+                                        ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|percentFormat}}</td>
 
-                                    <td>68.53%</td>
-                                    <td>85.48%</td>
-                                    <td>156.24%</td>
-                                    <td class="t-split">-130.32%</td>
-
-                                    <td>52.10%</td>
-                                    <td>124.88%</td>
-                                    <td>-11.27</td>
-                                    <td class="t-split">-4.95%</td>
-                                    <td>-</td>
                                 </tr>
                                 </tfoot>
 
@@ -598,38 +376,19 @@
                 <tbody>
                 <tr class="tr-main">
                     <th>欠费(万元)<em class="ys-icon icon-menu-down"></em></th>
-                    <td>101.9</td>
-                    <td>50.5</td>
-                    <td>21.2</td>
-                    <td>23</td>
-                    <td>7.2</td>
-
+                    <td ng-repeat="tdData in noiCtrl.arrearageData[3].values.slice(1)">{{tdData.value|number:2}}</td>
                 </tr>
                 <tr class="tr-sub">
                     <th>租金(万元)</th>
-                    <td>42.7</td>
-                    <td>13.1</td>
-                    <td>4</td>
-                    <td>19.8</td>
-                    <td>5.8</td>
-
+                    <td ng-repeat="tdData in noiCtrl.arrearageData[0].values.slice(1)">{{tdData.value|number:2}}</td>
                 </tr>
                 <tr class="tr-sub">
                     <th>物业管理费(万元)</th>
-                    <td>59.2</td>
-                    <td>37.4</td>
-                    <td>17.2</td>
-                    <td>3.2</td>
-                    <td>1.4</td>
-
+                    <td ng-repeat="tdData in noiCtrl.arrearageData[1].values.slice(1)">{{tdData.value|number:2}}</td>
                 </tr>
                 <tr class="tr-sub">
                     <th>其他收入(万元)</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td ng-repeat="tdData in noiCtrl.arrearageData[2].values.slice(1)">{{tdData.value|number:2}}</td>
                 </tr>
                 </tbody>
 
@@ -643,7 +402,8 @@
         </div>
         <div class="col-xs-12 chart-wrapper" id="noi-chart-wrapper" >
             <em class="chart-axis-info chart-axis-y-info">万元</em>
-            <div id="noi-chart" style="height:310px;"></div>
+            <div id="noi-chart" style="height:310px;" line-chart
+                 chart-data="noiCtrl.chartData"></div>
             <div class="chart-legend">
 
                 <span><em class="color-label" style="background-color:#60cd7a;"></em><i class="name">NOI实际</i></span>
@@ -656,6 +416,7 @@
 
 
 </div><!-- amp-content-panel -->
+<!--
 <script src="../static/js/views/noi_analyse/noi.js"></script>
 <script>
     jQuery(document).ready(function(){
@@ -663,3 +424,4 @@
     });
 
 </script>
+-->
