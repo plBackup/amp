@@ -8,7 +8,8 @@
 var ampApp = angular.module('amp', [
     'ui.router',
     'noi',
-    "ampFilter"
+    "ampFilter",
+    "dataTool"
     //'noiFilters'
 ]);
 
@@ -54,17 +55,26 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             url: '/rpgindex',
             views:{
                 'toolbar': {
-                    templateUrl: '../components/toolbar/rent_package_filter.html'
+                    templateUrl: '../components/toolbar/rent_package_filter.html',
+                    controller:"dataFilterController",
+                    controllerAs:"fCtrl"
                 },
                 'content': {
-                    templateUrl: '../views/datatools/datatool_rent_package.html'
+                    templateUrl: '../views/datatools/datatool_rent_package.html',
+                    controller:"dataIndexController",
+                    controllerAs:"dCtrl"
                 },
                 "right":{
-                    templateUrl: '../views/datatools/datatool_rent_package_rpanel.html'
+                    templateUrl: '../views/datatools/datatool_rent_package_rpanel.html',
+                    controller:"dataRightController",
+                    controllerAs:"rCtrl"
                 }
             },
-            controller:"page",
+            //controller:"page",
             resolve: {
+                dataIndexData:function(dataIndexService){
+                    return dataIndexService.getIndexData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
@@ -91,6 +101,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

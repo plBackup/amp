@@ -8,7 +8,8 @@ var filters=(function($,fl){
         return new Date(year, month, day).getTime();
     }
 
-    function DateAdd(interval,number,dateStr){
+    function DateAdd(interval,number,dateStr)
+    {
 
         // DateAdd(interval,number,date)
         var date = new Date(dateStr);
@@ -75,9 +76,6 @@ var filters=(function($,fl){
             minView:3,
             autoclose: true,
             language:"zh-CN"
-        }).on('changeDate', function(e){
-            console.log(e);
-
         });
 
         //这里把日期实例加入全局的垃圾回收站
@@ -112,6 +110,100 @@ var filters=(function($,fl){
         $("#monthpicker input").val(start_date);
     };
 
+    //date Selector
+    filters.dateSelector=function(){
+        var curDate=new Date();
+        var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+
+        var dpicker=$("#datepicker input").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        });
+
+        $("#datepicker input").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dpicker);
+    };
+
+    //daterange Selector
+    filters.daterangeSelector=function(){
+        var curDate=new Date();
+        var start_date=curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+        var startDate,endDate;
+        var dateStart=$("#daterange input#date-range-filter-start").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        }).on("changeDate",function(e){
+            var curDateStr= DateAdd("d",0,e.date);
+            startDate=e.timeStamp;
+            if(endDate){
+                if(startDate>endDate){
+                    endDate=null;
+                    $("#daterange input#date-range-filter-end").val("");
+                }
+            }
+            $("#daterange input#date-range-filter-end").datetimepicker('setStartDate',curDateStr);
+        });
+        var dateEnd=$("#daterange input#date-range-filter-end").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN",
+        }).on("changeDate",function(e){
+            endDate=e.timeStamp;
+        });
+        $("#daterange input#date-range-filter-start").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        ampApp.collector.add_datepicker(dateStart);
+        ampApp.collector.add_datepicker(dateEnd);
+    };
+
+
+
+    //item-select-filter
+    filters.dropdownSelector=function(){
+        $(".item-select-filter").each(function(i,e){
+            var curVal=$(this).find("input").val();
+            if(curVal!=""){
+                $(this).find("button.dropdown-toggle>em").text(curVal);
+                $(this).find(".dropdown-menu a").each(function(i,e){
+                    if($(this).text().trim()==curVal){
+                        $(this).closest("li").addClass("active");
+                    }
+                });
+            }
+        });
+
+        $(".item-select-filter").on("click",".dropdown-menu a",function(e){
+            var $select=$(this).closest(".item-select-filter");
+            var $this=$(this);
+            e.preventDefault();
+            var curSelect=$this.text().trim();
+            $this.closest("ul.dropdown-menu").find("li").removeClass("active");
+            $this.parent("li").addClass("active");
+
+            $select.find("button.dropdown-toggle>em").text(curSelect);
+            $select.find("input").val(curSelect);
+
+        });
+
+    };
+    filters.dropdownSelector.getValue=function(){
+        return $(".item-select-filter #select-id").val();
+    };
+
     filters.init=function(){
         $("input").on("focus",function(){
             $(this).closest(".input-group").addClass("out-ring");
@@ -125,6 +217,7 @@ var filters=(function($,fl){
     return filters;
 })(jQuery,filters||{});
 
+/*
 $(document).ready(function(){
     //这里有公共方法，确定业务后 单独放到一个文件
     filters.monthSelector();
@@ -133,3 +226,4 @@ $(document).ready(function(){
     filters.dropdownSelector();
     filters.init();
 });
+*/

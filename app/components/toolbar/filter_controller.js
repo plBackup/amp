@@ -22,3 +22,27 @@ ampFilter.controller('monthFilterController', ['$rootScope', '$scope',"$timeout"
         });
         //self.selectedValue=""
     }]);
+
+ampFilter.controller('dataSelectorController', ['$rootScope', '$scope',
+    function($rootScope, $scope, $timeout) {
+        var self=this;
+
+        $scope.$on("$destroy", function() {
+            //清除配置
+
+
+        });
+
+    }]);
+
+ampFilter.controller('dataFilterController', ['$rootScope', '$scope',
+    function($rootScope, $scope, $timeout) {
+        var self=this;
+
+        $scope.$on("$destroy", function() {
+            //清除配置
+
+
+        });
+
+    }]);
