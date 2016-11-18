@@ -45,133 +45,15 @@
                         <col width="13%">
                     </colgroup>
                     <tbody>
-                    <tr>
-                        <td>B1-1</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>126.4</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-10</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>42</td>
-                        <td>-</td>
-                        <td>销售返租</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-					<tr>
-                        <td>B1-101</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>43.7</td>
-                        <td>服装</td>
-                        <td>自持</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-103</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>33.7</td>
-                        <td>服装</td>
-                        <td>自持</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-105</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>34.8</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-107</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>51.8</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-109</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>52.2</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-11/13-R</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>134.1</td>
-                        <td>-</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>
-                    <tr>
-                        <td>B1-12</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>43</td>
-                        <td>-</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>                    
-                     <tr>
-                        <td>B1-14</td>
-                         <td>B1~-1</td>
-                         <td>-</td>
-                        <td>39</td>
-                        <td>-</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr> 
-                    <tr>
-                        <td>B1-15/17</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>129.3</td>
-                        <td>-</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>                     
-                    <tr>
-                        <td>B1-16</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>56</td>
-                        <td>-</td>
-                        <td>自持</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>                     
-                        <tr>
-                        <td>B1-164</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>26.6</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>                 
-                        <tr>
-                        <td>B1-165</td>
-                        <td>B1~-1</td>
-                        <td>-</td>
-                        <td>26.6</td>
-                        <td>服装</td>
-                        <td>销售</td>
-                        <td class="text-right"><i>263</i>元/m&sup2/月</td>
-                    </tr>                 
-                    
+                        <tr ng-repeat="shop in dCtrl.indexData | limitTo:10" class="data-index data-index-{{$index}}">
+                            <td>{{shop.values[0].value}}</td>
+                            <td>{{shop.values[1].value}}</td>
+                            <td>{{shop.values[2].value | number:2}}</td>
+                            <td>{{shop.values[3].value | number:2}}</td>
+                            <td>{{shop.values[4].value}}</td>
+                            <td>{{shop.values[5].value}}</td>
+                            <td><i>{{shop.values[6].value | number:2}}</i>元/m&sup2/月</td>
+                        </tr>
                     </tbody>
                 </table>
 
