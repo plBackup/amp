@@ -17,6 +17,8 @@ ampFilter.controller('monthFilterController', ['$rootScope', '$scope',"$timeout"
         self.curMonth="2016-11";
         $scope.$on("$destroy", function() {
             //清除配置
-        })
+            //$(".ys-datepicker input").datetimepicker("destory");
+
+        });
         //self.selectedValue=""
     }]);

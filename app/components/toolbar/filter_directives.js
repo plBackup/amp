@@ -175,6 +175,14 @@ angular.module('ampFilter').directive('monthPicker', [
                 $element.find("input").on("blur",function(){
                         $(this).closest(".input-group").removeClass("out-ring");
                     });
-            }
+
+                //destroy
+                $scope.$on("$destroy", function() {
+                    //清除配置
+                    console.log("destroy");
+                    $element.find("input").datetimepicker("remove");
+
+                });
+            }//end link
         };
     }]);
