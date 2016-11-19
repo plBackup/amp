@@ -372,3 +372,6 @@ tr>td span.number-format{display: block;width:100%;}
     background-color: #f3f4f8;
     outline: none;
 }
+
+/*update by cheng 2016-11-19*/
+#rent-package .amp-table>thead>tr>th span, #rent-package .amp-table>tbody>tr>td span{display:block;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}

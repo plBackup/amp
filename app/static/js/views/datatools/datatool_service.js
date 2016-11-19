@@ -4,16 +4,10 @@
 angular.module('dataTool').service('dataIndexService', ["$http",function($http) {
     var service = {
         getIndexData: function () {
-            console.log("loadding");
-
             return $http.get('../data/shopInfo.json', {cache: true}).then(function (res) {
-                console.log("load....");
                 return res.data;
             });
         },
-
-
-
     };
     return service;
 
@@ -24,10 +18,11 @@ angular.module('dataTool').factory('paginatorService', [function() {
         var service = {
             //hasNextVar:false,
             next:function(){
-                if(this.hasNextVar){
+                if(this.hasNext()){
                     this.currentOffset+=pageLimit;
                     this.curPageIndex+=1;
-                    this._load(this.currentOffset,pageLimit);
+                    //this._load(this.currentOffset,pageLimit);
+                    this.pageTarget=this.curPageIndex;
                     console.log("...next");
                 }
             },
@@ -36,10 +31,12 @@ angular.module('dataTool').factory('paginatorService', [function() {
                 return parseInt(this.curPageIndex)< pageNum;
             },
             prev:function(){
-                if(this.hasPrevious){
+
+                if(this.hasPrevious()){
                     this.currentOffset -=pageLimit;
                     this.curPageIndex -=1;
-                    this._load(this.currentOffset,pageLimit);
+                    this.pageTarget=this.curPageIndex;
+                    //this._load(this.currentOffset,pageLimit);
                     console.log("...prev");
                 }
 
@@ -55,6 +52,7 @@ angular.module('dataTool').factory('paginatorService', [function() {
                 var self=this;
                 self.curPageIndex=targetIndex;
                 self.currentOffset=(targetIndex-1)*pageLimit;
+                self.pageTarget=targetIndex;
             },
             currentPageItems:[],
             currentOffset:0,
