@@ -23,7 +23,14 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
                 targetIndex=1;
             }
             self.paginator.setIndex(targetIndex);
-        }
+        };
+
+        self.shopEdit=function(index,shop){
+            console.log(shop);
+            console.log(index);
+            console.log(self.indexData[index]['shopIndex'])
+            //self.indexData[index].shopIndex+="###";
+        };
 
         self.filters={};
 
