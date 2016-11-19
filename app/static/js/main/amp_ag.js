@@ -696,9 +696,6 @@ ampApp.controller('MainController', function($rootScope, $scope) {
 
 
     $scope.$on("data_filter",function(e,data){
-        console.log("data---filter");
-        console.log(e.name);
-        console.dir(data);
         $scope.$broadcast("datatool_filter",data);
     });
     $scope.$on("right_open",function(e,data){
@@ -716,10 +713,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
     /*$scope.$on("shopEdit",function(e,data){
         console.log(e);
         console.log(data);
-
     });*/
-
-
 
 });
 

@@ -8,7 +8,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
         var shopData=dataIndexData.slice(1);
         self.indexData=shopData;
         self.recordsNum=self.indexData.length;
-        self.pageLimit=20;
+        self.pageLimit=10;
         self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
 
         self.paginator=paginatorService(self.pageLimit,self.pageNum,self.indexData);
@@ -26,18 +26,12 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
         };
 
         self.shopEdit=function(index,shop){
-            console.log(shop);
-            console.log(index);
-            console.log(self.indexData[index]['shopIndex']);
             //self.indexData[index].shopIndex+="###";
             $rootScope.$broadcast("shopEdit",{shopData:shop,index:index})
         };
 
         self.shopUpdate=function(index,shop){
-            console.log(shop);
-            console.log(index);
             shopData[index]=shop;
-
         };
 
         $scope.$on("shopUpdate",function(e,data){
@@ -45,9 +39,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
         });
 
         self.shopAdd=function(index,shop){
-            console.log(shop);
-            console.log(index);
-            if(index==""){
+            if(index=="add"){
                 shopData.unshift(shop);
                 self.recordsNum=self.indexData.length;
                 self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
@@ -69,18 +61,14 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         self.filters={};
         $scope.$on("datatool_filter",function(e,data){
-           console.log("get filters..--------.");
-           console.log(data);
            var curFilter={};
            $.each(data.filters,function(k,v){
                if(k!=="project" && v!=="" ){
                    curFilter[k]=v;
                }
            });
-           console.log(curFilter);
-           console.log("-----------------------------------");
+
            self.indexData=$filter("filter")(shopData,curFilter);
-           console.log(self.indexData);
            //self.filters=curFilter;
            self.recordsNum=self.indexData.length;
            self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
@@ -102,43 +90,33 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
             property:["自持","销售","销售返租"],
             type:["MAll","商业街"]
         };
-        self.index="";
+        self.index="add";
         self.shopInfo={};
         $scope.$on("shopEdit",function(e,data){
-            console.log(e);
-            console.log(data);
+
             self.index=data.index;
             self.shopInfo=data.shopData;
         });
 
         self.save=function(){
             if(typeof self.shopInfo.shopIndex==="undefined" || self.shopInfo.shopIndex==""){
-                console.log("...null");
                 return;
             }
-            console.log(self.shopInfo);
-            if(self.index==""){
+            if(self.index=="add"){
                 $rootScope.$broadcast("shopAdd",{
                     index:self.index,
                     shop:self.shopInfo
                 });
                 //amp_main.rightPanel_close();
                 //self.shopInfo={};
-                console.log("-------------")
-                console.log(self.index);
                 self.index="new";
-                console.log("lll ")
-                console.log(self.index);
             }else if(self.index=="new"){
-                console.log("if new")
                 $rootScope.$broadcast("shopUpdateAdd",{
                     index:self.index,
                     shop:self.shopInfo
                 });
                 //amp_main.rightPanel_close();
                 //self.shopInfo={};
-                console.log("-------------")
-                console.log(self.index);
                 self.index="new";
             }else{
                 $rootScope.$broadcast("shopUpdate",{
@@ -147,15 +125,13 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
                 });
                 amp_main.rightPanel_close();
                 self.shopInfo={};
-                console.log("-------------")
-                console.log(self.index);
+                self.index="add";
             }
 
         };
 
         self.next=function(){
-            console.log("next.....");
-            self.index="";
+            self.index="add";
             self.shopInfo={};
         }
 
@@ -168,8 +144,8 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         };
 
         self.reset=function(){
-            console.log("reset.....");
-            self.index="";
+
+            self.index="add";
             self.shopInfo={
             };
 
