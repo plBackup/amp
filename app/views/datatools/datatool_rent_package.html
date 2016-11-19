@@ -45,14 +45,14 @@
                         <col width="13%">
                     </colgroup>
                     <tbody>
-                        <tr ng-repeat="shop in dCtrl.indexData | limitTo:10" class="data-index data-index-{{$index}}">
+                        <tr ng-repeat="shop in dCtrl.indexData | take : dCtrl.paginator.curOffset : dCtrl.pageLimit" class="data-index data-index-{{$index}}">
                             <td>{{shop.values[0].value}}</td>
                             <td>{{shop.values[1].value}}</td>
                             <td>{{shop.values[2].value | number:2}}</td>
                             <td>{{shop.values[3].value | number:2}}</td>
                             <td>{{shop.values[4].value}}</td>
                             <td>{{shop.values[5].value}}</td>
-                            <td><i>{{shop.values[6].value | number:2}}</i>元/m&sup2/月</td>
+                            <td class="text-right"><i>{{shop.values[6].value | number:2}}</i>元/m&sup2/月</td>
                         </tr>
                     </tbody>
                 </table>
@@ -60,15 +60,15 @@
             </div>
         </div>
         <div class="amp-pagination clearfix">
-            <div class="btn-wrapper pull-right">
-                <span style="margin-right:10px;"><em class="page-index-bottom">共<i>122</i>条记录，当前第<i>1</i>/<i>7</i>页</em></span>
+            <div class="btn-wrapper pull-right" >
+                <span style="margin-right:10px;"><em class="page-index-bottom">共<i>{{dCtrl.recordsNum}}</i>条记录，当前第<i>{{dCtrl.paginatorpageIndex}}</i>/<i>{{dCtrl.pageNum}}</i>页</em></span>
                 <div class="btn-group" role="group" aria-label="">
-                    <button type="button" class="btn btn-default btn-disable" id="btn-pre-bottom">&lt;</button>
-                    <button type="button" class="btn btn-default" id="btn-next-bottom">&gt;</button>
-                    <input type="text" value="1" class="page-num-input">
+                    <button type="button" class="btn btn-default" id="btn-pre-bottom" ng-click="dCtrl.paginator.prev()"  ng-class="{'btn-disabled':dCtrl.paginator.hasPrevious() }">&lt;</button>
+                    <button type="button" class="btn btn-default" id="btn-next-bottom" ng-click="dCtrl.paginator.next()" ng-class="{'btn-disabled':dCtrl.paginator.hasNext() }">&gt;</button>
+                    <input type="text" value="1" class="page-num-input" ng-model="dCtrl.pageTarget">
                 </div>
 
-                <button type="button" class="btn btn-default amp-btn" id="btn-go">确定</button>
+                <button type="button" class="btn btn-default amp-btn" id="btn-go" ng-click="dCtrl.loadPage(dCtrl.paginator.pageTarget)">确定</button>
             </div>
         </div>
     </div><!--ys-block-->

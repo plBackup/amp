@@ -4,7 +4,6 @@
 angular.module('noi').directive('lineChart', ["noiService",
     function(noiService) {
 
-
         return {
             restrict: 'A',
             scope: {

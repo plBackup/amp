@@ -52,7 +52,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         }, //state
         {
             name: 'rpgindex',
-            url: '/rpgindex',
+            url: '/rpgindex?pageindex=1',
             views:{
                 'toolbar': {
                     templateUrl: '../components/toolbar/rent_package_filter.html',
@@ -75,6 +75,10 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 dataIndexData:function(dataIndexService){
                     return dataIndexService.getIndexData();
                 },
+               /* pageIndex:["$stateParams",function($stateParams){
+                    //这里的逻辑是把数据做在 list-> ui-view( create )里的方法
+                    return $stateParams.pageIndex;
+                }],*/
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
@@ -644,7 +648,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         $stateProvider.state(state);
     });
     $urlRouterProvider.when('', '/noi');
-
+    //$urlRouterProvider.when('/rpgindex', '/rpgindex/1');
     $urlRouterProvider.otherwise(
         function($injector, $location) {
             $location.path('/noi');
