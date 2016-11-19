@@ -46,13 +46,13 @@
                     </colgroup>
                     <tbody>
                         <tr ng-repeat="shop in dCtrl.indexData | take : dCtrl.paginator.currentOffset : dCtrl.pageLimit" class="data-index data-index-{{$index}}">
-                            <td><span title="{{shop.values[0].value}}">{{shop.values[0].value}}</span></td>
-                            <td>{{shop.values[1].value}}</td>
-                            <td>{{shop.values[2].value | number:2}}</td>
-                            <td>{{shop.values[3].value | number:2}}</td>
-                            <td>{{shop.values[4].value}}</td>
-                            <td>{{shop.values[5].value}}</td>
-                            <td class="text-right"><i>{{shop.values[6].value | number:2}}</i>元/m&sup2/月</td>
+                            <td><span title="{{shop.shopIndex}}">{{shop.shopIndex}}</span></td>
+                            <td>{{shop.floor}}</td>
+                            <td>{{shop.floorArea | number:2}}</td>
+                            <td>{{shop.indoorArea | number:2}}</td>
+                            <td>{{shop.form}}</td>
+                            <td>{{shop.property}}</td>
+                            <td class="text-right"><i>{{shop.rentStandard | number:2}}</i>元/m&sup2/月</td>
                         </tr>
                     </tbody>
                 </table>
