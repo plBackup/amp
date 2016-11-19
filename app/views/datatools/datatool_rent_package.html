@@ -45,7 +45,7 @@
                         <col width="13%">
                     </colgroup>
                     <tbody>
-                        <tr ng-click="dCtrl.shopEdit($index,shop)" ng-repeat="shop in dCtrl.indexData track by shop.shopIndex| take : dCtrl.paginator.currentOffset : dCtrl.pageLimit" class="data-index data-index-{{$index}}">
+                        <tr ng-click="dCtrl.shopEdit($index,shop)" ng-repeat="shop in dCtrl.indexData track by $index| take : dCtrl.paginator.currentOffset : dCtrl.pageLimit" class="data-index data-index-{{$index}}">
                             <td><span title="{{shop.shopIndex}}">{{shop.shopIndex}}</span></td>
                             <td>{{shop.floor}}</td>
                             <td>{{shop.floorArea | number:2}}</td>

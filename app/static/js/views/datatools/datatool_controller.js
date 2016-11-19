@@ -53,7 +53,8 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
                 self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
                 self.paginator=paginatorService(self.pageLimit,self.pageNum,self.indexData);
             }else if(index=="new"){
-                shopData[0]=shop;
+               console.log("new---------")
+                //shopData[0]=shop;
             }
         };
 
@@ -62,7 +63,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
         });
 
         $scope.$on("shopUpdateAdd",function(e,data){
-            self.shopUpdateAdd(data.index,data.shop);
+            self.shopAdd(data.index,data.shop);
 
         });
 
@@ -126,9 +127,12 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
                 console.log("-------------")
                 console.log(self.index);
                 self.index="new";
+                console.log("lll ")
+                console.log(self.index);
             }else if(self.index=="new"){
+                console.log("if new")
                 $rootScope.$broadcast("shopUpdateAdd",{
-                    //index:self.index,
+                    index:self.index,
                     shop:self.shopInfo
                 });
                 //amp_main.rightPanel_close();
@@ -147,7 +151,6 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
                 console.log(self.index);
             }
 
-            self.index="";
         };
 
         self.next=function(){
