@@ -2,10 +2,11 @@
  * Created by limeiting on 16/11/18.
  */
 var dataTool=angular.module("dataTool",[]);
-dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData","paginatorService","$timeout","$location",
-    function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location) {
+dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData","paginatorService","$timeout","$location","$filter",
+    function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location,$filter) {
         var self=this;
-        self.indexData=dataIndexData.slice(1);
+        var shopData=dataIndexData.slice(1);
+        self.indexData=shopData;
         self.recordsNum=self.indexData.length;
         self.pageLimit=20;
         self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
@@ -25,9 +26,25 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
         }
 
         self.filters={};
+
+
        $scope.$on("datatool_filter",function(e,data){
            console.log("get filters..--------.");
            console.log(data);
+           var curFilter={};
+           $.each(data.filters,function(k,v){
+               if(k!=="project" && v!=="" ){
+                   curFilter[k]=v;
+               }
+           });
+           console.log(curFilter);
+           console.log("-----------------------------------");
+           self.indexData=$filter("filter")(shopData,curFilter);
+           console.log(self.indexData);
+           //self.filters=curFilter;
+           self.recordsNum=self.indexData.length;
+           self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
+           self.paginator=paginatorService(self.pageLimit,self.pageNum,self.indexData);
        });
     }]);
 
