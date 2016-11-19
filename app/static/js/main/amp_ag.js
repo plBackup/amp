@@ -656,8 +656,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
 
 });
 
-
 ampApp.controller('MainController', function($rootScope, $scope) {
+
+    $rootScope.projectName="商业公司A"
     $rootScope.homePageIsShown = true;
     $scope.state = {};
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
@@ -693,6 +694,24 @@ ampApp.controller('MainController', function($rootScope, $scope) {
             $scope.state.loading=false;
         });
 
+
+    $scope.$on("data_filter",function(e,data){
+        console.log("data---filter");
+        console.log(e.name);
+        console.dir(data);
+        $scope.$broadcast("datatool_filter",data);
+    });
+    $scope.$on("right_open",function(e,data){
+        $scope.rightOpened=data["right_open"];
+        //这里演示框架写好后，重构下侧边栏的显示逻辑
+        if($scope.rightOpened==true){
+            amp_main.rightPanel_open();
+        }else{
+            amp_main.rightPanel_close();
+        }
+
+    });
+    $scope.rightOpened=false;
 });
 
 ampApp.nav_list={

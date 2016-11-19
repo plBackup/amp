@@ -19,4 +19,15 @@ angular.module('dataTool').filter("skip",function(){
         var skippedData=$filter("skip")(data,skipCount);
         return $filter("limitTo")(skippedData,takeCount);
     }
+}).filter("default",function(){
+    return function(data,str){
+        if(typeof str==="undefined"){
+            return data;
+        }else{
+            if(typeof data==="undefined" || data==""){
+                return str;
+            }
+            return data;
+        }
+    }
 });

@@ -23,6 +23,12 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
             }
             self.paginator.setIndex(targetIndex);
         }
+
+        self.filters={};
+       $scope.$on("datatool_filter",function(e,data){
+           console.log("get filters..--------.");
+           console.log(data);
+       });
     }]);
 
 dataTool.controller("dataRightController",['$rootScope', '$scope',
