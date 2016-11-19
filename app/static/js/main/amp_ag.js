@@ -712,7 +712,17 @@ ampApp.controller('MainController', function($rootScope, $scope) {
 
     });
     $scope.rightOpened=false;
+
+    /*$scope.$on("shopEdit",function(e,data){
+        console.log(e);
+        console.log(data);
+
+    });*/
+
+
+
 });
+
 
 ampApp.nav_list={
 
