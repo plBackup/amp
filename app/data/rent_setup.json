@@ -26,7 +26,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"交通通达性",
@@ -52,7 +52,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"配套完善度",
@@ -78,7 +78,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"人口条件",
@@ -104,7 +104,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                }
             ],
            "affect_product":[
@@ -132,7 +132,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"动线规划",
@@ -158,7 +158,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"硬件档次",
@@ -184,7 +184,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"停车位置量",
@@ -210,7 +210,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                }
            ],
            "affect_others":[
@@ -238,7 +238,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"企业品牌度",
@@ -264,7 +264,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"免租期",
@@ -290,7 +290,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                }
            ],
            "affect_count":[
@@ -318,7 +318,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"参考租金（元/平米/月）GLA",
@@ -344,7 +344,7 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
+                   ]
                },
                {
                    "name":"参考权重（近似的比重高）",
@@ -370,10 +370,10 @@
                            "value":"",
                            "description":""
                        }
-                   ]//projects
-               },
+                   ]
+               }
            ]
-       },//end rentcount
+       },
         "discount":"",
         "rent_increase":[
             {

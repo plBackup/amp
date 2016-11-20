@@ -7,10 +7,8 @@
 
 var ampAppSolo = angular.module('ampsolo', [
     'ui.router',
-    'ampControllers',
-    'ampFilters'
+    'dataSet'
 ]);
-
 
 ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
     // An array of state definitions
@@ -20,9 +18,10 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
             name: 'rpgpin',
             url: '/rpgpin',
             views:{
-
                 'content': {
-                    templateUrl: '../views/datatools/rpg_set_swiper_pin.html',
+                    templateUrl: '../views/datatools/rpg_set.html',
+                    controller:"dataSetController",
+                    controllerAs:"sCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html',
@@ -30,6 +29,9 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                rpgSetData:function(dataSetService){
+                    return dataSetService.getData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

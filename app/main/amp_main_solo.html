@@ -47,22 +47,16 @@
         })(jQuery,amp_main||{});
 
 
-        var ampAppSolo = angular.module('ampsolo', [
-            'ui.router',
-            'ampControllers',
-            'ampFilters'
-        ]);
-
     </script>
     <script src="../static/dist/js/bootstrap.min.js"></script>
     <script src="../static/dist/js/swiper.jquery.min.js"></script>
     <script src="../static/dist/js/jquery.pin.js"></script>
-    <script src="../static/js/main/controllers.js"></script>
-    <script src="../static/js/main/filters.js"></script>
-    <script src="../static/js/main/services.js"></script>
-
 
     <script src="../static/js/main/amp_ag_solo.js"></script>
+    <script src="../static/js/views/datatools/dataset_controller.js"></script>
+    <script src="../static/js/views/datatools/dataset_service.js"></script>
+    <script src="../static/js/views/datatools/dataset_directive.js"></script>
+    <script src="../static/js/views/datatools/dataset_filters.js"></script>
     <script>
 
 
@@ -135,17 +129,6 @@
                         <li class="active" >推算</li>
                     </ol>
                 </div>
-                <!--<div class="amp-header-filter clearfix">
-                    <button type="button" class="btn btn-default amp-dropdown-btn amp-btn-disabled pull-left" disabled>
-                        项目<span class="glyphicon glyphicon-menu-down"></span>
-                    </button>
-                    <div class="col-xs-3 amp-date-wrapper">
-                        <label>开业时间</label>
-                        <div class="amp-date-picker pull-left" data-date="" data-date-format="yyyy-mm-dd" >
-                            <input class="" size="16" type="text" value="2015-10" disabled>
-                        </div>
-                    </div>
-                </div>-->
             </div><!--amp-content-header-->
             <div ui-view="content" class="animated"
                  ng-class="{'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"></div>

@@ -269,10 +269,17 @@
 #rpg-set-table-wrapper .td-input-wrapper{position: absolute;width:100%;height:100%;left:0;top:0;}
 
 #rpg-set-table-wrapper .td-input-wrapper input{height:100%;border:0;padding:6px;line-height: 24px;width:100%;color:#3a4153;background-color:transparent;}
+#rpg-set-table-wrapper .td-input-wrapper .number-format{display: none;}
 #rpg-set-table-wrapper .td-input-wrapper input:focus{outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #rgp-set #rent-update-table-wrapper .ys-table-static{border-right:solid 1px #dfe5e9;margin-bottom: 0;}
 #rgp-set #rent-update-table-wrapper .ys-table-static tr>th{padding-left:12px;color:#8592a3;font-size: 13px;border-bottom: 0;}
 #rgp-set #rent-update-table-wrapper thead{background-color:transparent}
+
+#rpg-set-table-wrapper td .td-input-wrapper.num-input{}
+#rpg-set-table-wrapper td .td-input-wrapper.num-input input{display: none;}
+#rpg-set-table-wrapper td.active .td-input-wrapper.num-input input{display: block;}
+#rpg-set-table-wrapper td .td-input-wrapper.num-input span.number-format{display: block;height:100%;background-color:transparent;border:0;line-height: 26px;}
+#rpg-set-table-wrapper td.active .td-input-wrapper.num-input span.number-format{display: none;}
 
 #rgp-set #rent-first-year-set{}
 #rgp-set #rent-first-year-set .amp-table{margin-bottom:0;}
@@ -287,15 +294,26 @@
 #rgp-set #rent-first-year-set tr>td{position: relative;}
 #rgp-set #rent-first-year-set tr>td .td-input-wrapper{position: absolute;top:0;left:0;width:100%;height:100%;background-color:transparent;border:0;}
 #rgp-set #rent-first-year-set tr>td .td-input-wrapper input{border:0;background-color: #fff;height:38px;}
-
+#rgp-set #rent-first-year-set tr>td .td-input-wrapper span.number-format{padding: 6px 10px;  width: 100%;height:38px;
+    line-height: 26px;border:0;background-color: #fff;}
 #rent-update-main-table tr>td{position: relative}
-#rgp-set #rent-update-main-table tr>td .td-input-wrapper{position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
+#rgp-set #rent-update-main-table tr>td .td-input-wrapper{position: absolute;width:177px;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
 #rgp-set #rent-update-main-table tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;}
+#rgp-set #rent-update-main-table tr>td .td-input-wrapper>span.number-format{display:block;height: 28px;width:100%;
+    border: solid 1px #dfe5e9;
+    background-color: #fff;
+    padding: 3px 8px;}
+#rgp-set #rent-update-main-table tr>td.active .td-input-wrapper>span.number-format{display: none;}
 
 #rent-affect-table-wrapper tr>td{position: relative}
 #rent-affect-table-wrapper tr>td .td-input-wrapper{position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
-#rent-affect-table-wrapper tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;}
+#rent-affect-table-wrapper tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;width:96px;}
 #rent-affect-table-wrapper #rent-affect-floors tr>td .td-input-wrapper{left:inherit;right:0px;width:120px;text-align: right;}
+#rent-affect-table-wrapper tr>td .td-input-wrapper>span.number-format{ height: 28px;width:96px;padding: 3px 8px;text-align: left;
+    border: solid 1px #dfe5e9;
+    background-color: #fff;}
+
+
 #rent-affect-floors tr>td .td-input-wrapper input{text-align: right;}
     /*end rpg-set update*/
 #rent-package-result {
