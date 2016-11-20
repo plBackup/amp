@@ -150,7 +150,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../components/toolbar/blank_filter.html'
                 },
                 'content': {
-                    templateUrl: '../views/datatools/datatool_rpg_set_index.html'
+                    templateUrl: '../views/datatools/datatool_rpg_set_index.html',
+                    controller:'dataSetController',
+                    controllerAs:"sCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html'
@@ -158,6 +160,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                rpgSetData: function(dataSetService) {
+                    return dataSetService.getSetData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

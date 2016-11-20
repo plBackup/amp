@@ -13,6 +13,18 @@ angular.module('dataTool').service('dataIndexService', ["$http",function($http) 
 
 }]);
 
+angular.module('dataTool').service('dataSetService', ["$http",function($http) {
+    var service = {
+        getSetData: function () {
+            return $http.get('../data/rent_setup.json', {cache: true}).then(function (res) {
+                return res.data;
+            });
+        },
+    };
+    return service;
+
+}]);
+
 angular.module('dataTool').factory('paginatorService', [function() {
     return function(pageLimit,pageNum,data){
         var service = {
