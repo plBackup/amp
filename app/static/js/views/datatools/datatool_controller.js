@@ -261,9 +261,18 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
         console.log(self.irrData);
         //self.setData=rpgSetData[0].values;
         self.save=function(){
-
+            console.log(self.irrData)
         };
         self.count=function(){
+            var skip=2;
+            var count_array=self.irrData[5].values.slice(2);
+            $.each(count_array,function(i,e){
+                console.log(e.value);
+                console.log(self.irrData[2].values[i+skip].value);
+                console.log(self.irrData[3].values[i+skip].value);
+                e.value=parseFloat(self.irrData[2].values[i+skip].value)+parseFloat(self.irrData[3].values[i+skip].value);
+                console.log(e.value);
+            });
 
         };
 
