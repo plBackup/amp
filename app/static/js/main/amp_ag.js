@@ -97,7 +97,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../components/toolbar/blank_filter.html'
                 },
                 'content': {
-                    templateUrl: '../views/datatools/datatool_irr_plan.html'
+                    templateUrl: '../views/datatools/datatool_irr_plan.html',
+                    controller:"irrPlanController",
+                    controllerAs:"pCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html'
@@ -105,7 +107,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
-
+                irrPlanData: function(irrPlanService) {
+                    return irrPlanService.getIrrData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

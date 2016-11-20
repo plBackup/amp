@@ -25,6 +25,18 @@ angular.module('dataTool').service('dataSetService', ["$http",function($http) {
 
 }]);
 
+angular.module('dataTool').service('irrPlanService', ["$http",function($http) {
+    var service = {
+        getIrrData: function () {
+            return $http.get('../data/irrplan.json', {cache: true}).then(function (res) {
+                return res.data;
+            });
+        },
+    };
+    return service;
+
+}]);
+
 angular.module('dataTool').factory('paginatorService', [function() {
     return function(pageLimit,pageNum,data){
         var service = {
