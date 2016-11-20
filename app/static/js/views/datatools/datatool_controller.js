@@ -257,18 +257,21 @@ dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
 dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
     function($rootScope, $scope,irrPlanData) {
         var self=this;
-        console.dir(irrPlanData);
         self.irrData=irrPlanData;
+        console.log(self.irrData);
         //self.setData=rpgSetData[0].values;
-
         self.save=function(){
 
         };
-
         self.count=function(){
 
         };
 
+        $(".table").on("click","td",function(){
+            $(".table td").removeClass("active");
+            $(this).addClass("active");
+            $(this).find("input").focus();
+        });
 
         irr_plan.init();
         amp_main.leftPanel_update();
