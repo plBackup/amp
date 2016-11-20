@@ -59,7 +59,7 @@
         <div class="toolbar-item item-input-filter">
             <label for="input-id-shop">铺位号</label>
             <div class="input-group">
-                <input type="text" placeholder="" id="input-id-shop" name="input-id-shop" ng-model="fCtrl.filters.shopIndex">
+                <input type="text" placeholder="" id="input-id-shop" name="input-id-shop" ng-model="fCtrl.filters.shopIndex" ng-blur="fCtrl.removeFocus($event)" ng-focus="fCtrl.addFocus($event)">
             </div>
         </div><!--div toolbar-item-->
 

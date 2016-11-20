@@ -87,6 +87,14 @@ ampFilter.controller('dataFilterController', ['$rootScope', '$scope',
             });
         };
 
+        //self.shopIndexFocus=false;
+        self.addFocus=function(e){
+            $(e.target).closest(".input-group").addClass("out-ring");
+        };
+        self.removeFocus=function(e){
+            $(e.target).closest(".input-group").removeClass("out-ring");
+        }
+
         $scope.$on("$destroy", function() {
             //清除配置
         });

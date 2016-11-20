@@ -680,6 +680,8 @@ ampApp.controller('MainController', function($rootScope, $scope) {
             $scope.state.exit=false;
             $scope.state.loading=false;
             //console.log("prev:"+fromState.name);
+            //left panel update
+            amp_main.leftPanel_update();
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
