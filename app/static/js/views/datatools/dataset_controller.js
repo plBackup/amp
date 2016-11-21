@@ -294,7 +294,6 @@ dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData
             console.log(self.rpgResultData)
         };
 
-
         //dataSetView.init();
         rpg_result_table.init();
         $scope.$on("$destroy", function() {
