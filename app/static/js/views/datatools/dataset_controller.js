@@ -253,6 +253,127 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
             $(this).find("input").focus();
         });
 
+        self.affectData =self.rpgSetData.rentCount;
+        self.affect_count=[
+            {
+                "name":"因素权重打分小计",
+                "value":"1",
+                "projects":[
+                    {
+                        "name":"项目A",
+                        "value":82,
+                        "description":""
+                    },
+                    {
+                        "name":"项目B",
+                        "value":83.3,
+                        "description":""
+                    },
+
+                    {
+                        "name":"本项目",
+                        "value":80.50,
+                        "description":""
+                    }
+                ]
+            },
+            {
+                "name":"参考租金（元/平米/月）GLA",
+                "value":"",
+                "projects":[
+                    {
+                        "name":"项目A",
+                        "value":253,
+                        "description":""
+                    },
+                    {
+                        "name":"项目B",
+                        "value":335,
+                        "description":""
+                    },
+                    {
+                        "name":"本项目",
+                        "value":"",
+                        "description":""
+                    }
+                ]
+            },
+            {
+                "name":"加权租金（元/平米/月，GLA）",
+                "value":"",
+                "projects":[
+                    {
+                        "name":"项目A",
+                        "value":248.37,
+                        "description":""
+                    },
+                    {
+                        "name":"项目B",
+                        "value":323.74,
+                        "description":""
+                    },
+                    {
+                        "name":"本项目",
+                        "value":"",
+                        "description":""
+                    }
+                ]
+            },
+            {
+                "name":"参考权重（近似的比重高）",
+                "weight":"",
+                "projects":[
+                    {
+                        "name":"项目A",
+                        "value":0.78,
+                        "description":""
+                    },
+                    {
+                        "name":"项目B",
+                        "value":0.22,
+                        "description":""
+                    },
+                    {
+                        "name":"本项目",
+                        "value":265,
+                        "description":""
+                    }
+                ]
+            }
+        ];
+        self.affect_sum=function(index){
+            var ratioArray_0=[];
+            $.each(self.affectData,function(k,v){
+                $.each(v,function(i,e){
+                    var curRatio=parseFloat(e.weight);
+                    var value=e.projects[index].value;
+                    ratioArray_0.push(curRatio*value);
+                });
+
+            });
+            var curWeight=0;
+                $.each(ratioArray_0,function(i,e){
+                    curWeight+=e;
+            });
+            return curWeight;
+        };
+
+        self.updateWeight=function(){
+            console.log("----------update");
+            self.affect_count[0].projects[0]["value"]=self.affect_sum(0);
+            self.affect_count[0].projects[1]["value"]=self.affect_sum(1);
+            self.affect_count[0].projects[2]["value"]=self.affect_sum(2);
+            //加权租金
+            self.affect_count[2].projects[0]["value"]=self.affect_count[0].projects[2]["value"]*self.affect_count[1].projects[0]["value"]/self.affect_count[0].projects[0]["value"];
+            self.affect_count[2].projects[1]["value"]=self.affect_count[0].projects[2]["value"]*self.affect_count[1].projects[1]["value"]/self.affect_count[0].projects[1]["value"];
+
+            //参考租金
+            self.affect_count[3].projects[2]["value"]=self.affect_count[2].projects[0]["value"]*self.affect_count[3].projects[0]["value"]+self.affect_count[2].projects[1]["value"]*self.affect_count[3].projects[1]["value"]
+
+        }
+
+        self.updateWeight();
+
         //dataSetView.init();
         rpgSet_table.init();
         $scope.$on("$destroy", function() {
@@ -263,9 +384,8 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
 dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData","paginatorService",
     function($rootScope, $scope,rpgResultData,paginatorService) {
         var self=this;
-        console.log(rpgResultData);
         var shopData=rpgResultData.slice(1);
-        console.log(shopData);
+
         self.rpgResultData=shopData;
         self.recordsNum=self.rpgResultData.length;
         self.pageLimit=10;
