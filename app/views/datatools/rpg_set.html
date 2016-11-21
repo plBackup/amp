@@ -427,7 +427,7 @@
                                 </tr>
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[1].projects">
-                                        <div class="td-input-wrapper num-input" >
+                                        <div class="td-input-wrapper num-input" ng-if="$index<2">
                                             <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
@@ -441,7 +441,7 @@
                                 </tr>
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[2].projects">
-                                        <div class="td-input-wrapper num-input" >
+                                        <div class="td-input-wrapper num-input" ng-if="$index<2">
                                             <input type="text" placeholder="/" value="" ng-model="project.value" disabled>
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
@@ -454,9 +454,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td ng-repeat-start="project in sCtrl.affect_count[3].projects">
+                                    <td ng-repeat-start="project in sCtrl.affect_count[3].projects" >
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" disabled>
+                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-disabled="$index==2" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
                                     </td>
