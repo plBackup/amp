@@ -113,7 +113,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[13].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[13].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[13].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -132,7 +132,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[16].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[16].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[16].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -141,7 +141,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[17].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[17].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[17].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -217,7 +217,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[32].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[32].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[32].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -226,7 +226,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[33].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[33].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[33].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -240,14 +240,14 @@
                         </tr>
                         <tr class="tr-sub" data-index="36">
                             <th><span>{{pCtrl.irrData[36].values[0].value}}</span></th>
-                            <td>{{pCtrl.irrData[36].values[1].value | number:2}}<i class="unit-addon">%</i></td>
+                            <td>{{pCtrl.irrData[36].values[1].value*100 | number:2}}<i class="unit-addon">%</i></td>
 
                         </tr>
                         <tr class="tr-sub" data-index="37">
                             <th class="th-note">
                                 <span>{{pCtrl.irrData[37].values[0].value}}</span>
                             </th>
-                            <td>{{pCtrl.irrData[37].values[1].value | number:2}}<i class="unit-addon">%</i></td>
+                            <td>{{pCtrl.irrData[37].values[1].value *100| number:2}}<i class="unit-addon">%</i></td>
                         </tr>
                         <tr class="tr-sub" data-index="38">
                             <th class="th-note">
@@ -272,7 +272,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[41].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[41].values[1].value| number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[41].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -294,7 +294,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[43].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[43].values[1].value|number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[43].values[1].value*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -302,7 +302,7 @@
                             <th>
                                 <span>{{pCtrl.irrData[44].values[0].value}}</span>
                             </th>
-                            <td>{{pCtrl.irrData[44].values[1].value|number:2}}<i class="unit-addon">%</i></td>
+                            <td>{{pCtrl.irrData[44].values[1].value*100|number:2}}<i class="unit-addon">%</i></td>
                         </tr>
 
                         <tr class="tr-sub tr-split-top" data-index="45">
@@ -338,7 +338,7 @@
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[49].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[49].values[1].value |number:2}}<i class="unit-addon">%</i></span>
+                                    <span class="number-format">{{pCtrl.irrData[49].values[1].value *100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -352,13 +352,13 @@
                             <th class="th-note">
                                 <span>{{pCtrl.irrData[51].values[0].value}}</span>
                             </th>
-                            <td>{{pCtrl.irrData[51].values[1].value|number:2}}<i class="unit-addon">%</i></td>
+                            <td>{{pCtrl.irrData[51].values[1].value *100|number:2}}<i class="unit-addon">%</i></td>
                         </tr>
                         <tr class="tr-sub" data-index="52">
                             <th class="th-note">
                                 <span>{{pCtrl.irrData[52].values[0].value}}</span>
                             </th>
-                            <td>{{pCtrl.irrData[52].values[1].value |number:2}}<i class="unit-addon">%</i></td>
+                            <td>{{pCtrl.irrData[52].values[1].value *100|number:2}}<i class="unit-addon">%</i></td>
                         </tr>
                         <tr class="tr-sub"  data-index="53">
                             <th class="th-note">
@@ -395,7 +395,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[4].values | skip:2 ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
                                         <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
-                                        <span class="number-format">{{pv.value| number:2}}<i class="unit-addon">%</i></span>
+                                        <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -426,7 +426,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[9].values | skip:2 ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
-                                            <span class="number-format">{{pv.value| number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -434,7 +434,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[10].values | skip:2 ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
-                                            <span class="number-format">{{pv.value| number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -471,7 +471,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[19].values | skip:2 ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
-                                            <span class="number-format">{{pv.value| number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -479,7 +479,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[20].values | skip:2 ">{{pv.value| number:2}}</td>
                                 </tr>
                                 <tr class="tr-sub" data-index="21">
-                                    <td ng-repeat="pv in pCtrl.irrData[21].values | skip:2 ">{{pv.value| number:2}}<i class="unit-addon">%</i></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[21].values | skip:2 ">{{pv.value*100| number:2}}<i class="unit-addon">%</i></td>
                                 </tr>
                                 <tr class="tr-main tr-main-sum tr-split-bottom" data-index="22">
                                     <td ng-repeat="pv in pCtrl.irrData[22].values | skip:2 ">{{pv.value| number:2}}</td>
@@ -493,7 +493,7 @@
                                 </tr>
 
                                 <tr class="tr-main tr-split-top" data-index="25">
-                                    <td ng-repeat="pv in pCtrl.irrData[25].values | skip:2 ">{{pv.value| number:2}}<i class="unit-addon">%</i></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[25].values | skip:2 ">{{pv.value*100| number:2}}<i class="unit-addon">%</i></td>
                                 </tr>
                                 <tr class="tr-sub tr-split-bottom" data-index="26">
                                     <td ng-repeat="pv in pCtrl.irrData[26].values | skip:2 ">{{pv.value| number:2}}</td>
@@ -531,7 +531,7 @@
 
                                 </tr>
                                 <tr class="tr-sub" data-index="36">
-                                    <td ng-repeat="pv in pCtrl.irrData[36].values | skip:2 ">{{pv.value | number:2}}<i class="unit-addon">%</i></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[36].values | skip:2 ">{{pv.value*100 | number:2}}<i class="unit-addon">%</i></td>
                                 </tr>
                                 <tr class="tr-sub" data-index="37">
                                     <td ng-repeat="pv in pCtrl.irrData[37].values | skip:2 ">{{pv.value}}</td>
@@ -553,7 +553,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[42].values | skip:2 ">{{pv.value}}</td>
                                 </tr>
                                 <tr class="tr-sub" data-index="43">
-                                    <td ng-repeat="pv in pCtrl.irrData[43].values | skip:2 ">{{pv.value}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[43].values | skip:2 ">{{pv.value|number:2}}</td>
                                 </tr>
                                 <tr class="tr-sub tr-split-bottom" data-index="44">
                                     <td ng-repeat="pv in pCtrl.irrData[44].values | skip:2 ">{{pv.value}}</td>
@@ -581,7 +581,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[50].values | skip:2 ">{{pv.value | number:2}}</td>
                                 </tr>
                                 <tr class="tr-sub" data-index="51">
-                                    <td ng-repeat="pv in pCtrl.irrData[51].values | skip:2 ">{{pv.value | number:2}}<i class="unit<td>-addon">%</i></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[51].values | skip:2 ">{{pv.value*100 | number:2}}<i class="unit-addon">%</i></td>
                                 </tr>
                                 <tr class="tr-sub" data-index="52">
                                     <td ng-repeat="pv in pCtrl.irrData[52].values | skip:2 ">{{pv.value}}</td>
