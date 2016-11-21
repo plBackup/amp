@@ -126,7 +126,7 @@ var datasim=(function($,datasim){
             },
             grid:{
                 top:30,
-                left:50,
+                left:80,
                 right:30,
                 bottom:50
             },

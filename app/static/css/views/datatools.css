@@ -196,7 +196,7 @@
     background-position: -170px -261px;
 }*/
 #datatool-sim #datatool-sim-main-table .amp-table thead{background-color:transparent;}
-#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{text-align: left;}
+#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{text-align: left;border-bottom:0;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th:nth-child(1),
 #datatool-sim #datatool-sim-main-table .amp-table tbody>tr>th{width:135px;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th,

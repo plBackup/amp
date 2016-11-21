@@ -8,7 +8,7 @@
                     <th>总投资成本(万元)</th>
                     <th>估值(万元)</th>
                     <th>贷款(万元)</th>
-                    <th>资产收益年预测(万元)</th>
+                    <th>资产权益年预测(万元)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@
                         <h5>{{noiCtrl.noiData[9].value | number:2}}</h5>
                     </td>
                     <td>
-                        <span>当前收益</span>
+                        <span>当前权益</span>
                         <h3>{{noiCtrl.noiData[10].value | number:2}}</h3>
                         <span>预测税前现金流</span>
                         <h5>{{noiCtrl.noiData[11].value | number:2}}</h5>
@@ -207,7 +207,7 @@
                                 <tr class="tr-main">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[3].values |skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
-                                    <td>0.00</td>
+                                    <td>{{34.97|number:2}}%</td>
                                 </tr>
                                 <tr class="tr-sub">
                                     <td ng-repeat="tdData in noiCtrl.incomeData[0].values|skip:1"
@@ -229,7 +229,7 @@
                                 <tr class="tr-main">
                                     <td ng-repeat="tdData in noiCtrl.feeData[15].values|skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|numberFormat:$index:2}}</td>
-                                    <td>0.00</td>
+                                    <td>{{46.71}}%</td>
 
                                 </tr>
                                 <tr class="tr-sub">

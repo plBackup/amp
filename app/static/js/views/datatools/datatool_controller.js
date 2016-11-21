@@ -299,6 +299,21 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         console.log("--------------------------");
         self.chartData=simChartData["chart"];
         console.log(self.chartData);
+        self.shopInfo=simData.slice(0);
+        self.index=0;
+        console.log(simData);
+        self.form_menu={
+            form:["超市","影院","服装","餐饮","娱乐","配套","儿童","其他"],
+            property:["自持","销售","销售返租"],
+            payTime:["月付","季付"]
+        };
+        self.setModel=function(type,menu){
+            self.shopInfo[self.index][type]=menu;
+        };
+
+        self.isActive=function(menu,model){
+            return menu==model;
+        };
 
         amp_main.leftPanel_update();
     }]);

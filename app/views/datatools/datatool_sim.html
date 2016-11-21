@@ -50,21 +50,13 @@
                                         <th><span>业态</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 select-input" >
-                                                <input type="text" placeholder="" value="" hidden>
-                                                <!--<span class="number-format"></span>%-->
+                                                <input type="text" value="" hidden ng-model="sCtrl.shopInfo.form"/>
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                                        <em>业态</em><span class="ys-icon ys-icon-dropdown"></span>
+                                                        <em>{{sCtrl.shopInfo.form | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >超市</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >影院</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >时装</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >餐饮</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >娱乐</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >配套</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >儿童</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >其他</a></li>
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.form)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.form"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -256,17 +248,13 @@
                                         <th><span>租金方式</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 select-input" >
-                                                <input type="text" placeholder="" value="" hidden>
-                                                <!--<span class="number-format"></span>%-->
+                                                <input type="text" value="" hidden ng-model="sCtrl.shopInfo.property"/>
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                                        <em>租金方式</em><span class="ys-icon ys-icon-dropdown"></span>
+                                                        <em>{{sCtrl.shopInfo.property | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >自持</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >销售</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" >销售返租</a></li>
-
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.property)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.property"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -277,15 +265,13 @@
                                         <th><span>付款时间</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 select-input" >
-                                                <input type="text" placeholder="" value="" hidden>
-                                                <!--<span class="number-format"></span>%-->
+                                                <input type="text" value="" hidden ng-model="sCtrl.shopInfo.payTime"/>
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                                        <em>付款时间</em><span class="ys-icon ys-icon-dropdown"></span>
+                                                        <em>{{sCtrl.shopInfo.payTime | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">月付</a></li>
-                                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">季付</a></li>
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.payTime)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.payTime"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -305,7 +291,6 @@
                                     <span><em class="color-label" style="background-color:#ea7444;"></em><i class="name">实收</i></span>
                                     <span><em class="color-label" style="background-color:#1abd9d;"></em><i class="name">租金包</i></span>
                                 </div>
-                                <span>{{sCtrl.chartData[0].name}}</span>
                             </div>
                             <div class="block bottom-block bottom-block-fixed clearfix">
                                 <div class="btn-wrapper pull-right">

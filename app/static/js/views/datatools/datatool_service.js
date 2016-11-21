@@ -122,7 +122,7 @@ angular.module('dataTool').service('chartOptService', ["$http",function($http) {
                     },
                     grid:{
                         top:30,
-                        left:50,
+                        left:80,
                         right:30,
                         bottom:50
                     },
@@ -259,7 +259,6 @@ angular.module('dataTool').service('chartOptService', ["$http",function($http) {
                     ]
                 }
             };
-
 
             function _updateOpt(data,labels,chartType){
                 if(chartType=="line"){
