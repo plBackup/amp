@@ -140,15 +140,19 @@ var dataSet=angular.module("dataSet",[]);
 dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
     function($rootScope, $scope,rpgSetData) {
         var self=this;
-        self.rpgSetData=rpgSetData;
+        self.rpgSetData=rpgSetData[0];
         console.log(self.rpgSetData);
         //self.setData=rpgSetData[0].values;
-        self.save=function(){
+        self.setSave=function(){
             console.log(self.rpgSetData)
         };
-        self.count=function(){
 
-        };
+
+        //页面事件
+        $(".page-main").on("click",function(e){
+            e.stopPropagation();
+            $(".table td").removeClass("active");
+        });
 
         $(".table").on("click","td",function(e){
             e.stopPropagation();

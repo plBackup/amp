@@ -16,7 +16,8 @@ angular.module('dataTool').service('dataIndexService', ["$http",function($http) 
 angular.module('dataTool').service('dataSetService', ["$http",function($http) {
     var service = {
         getSetData: function () {
-            return $http.get('../data/rent_setup.json', {cache: true}).then(function (res) {
+            return $http.get('../data/rent_setup_index.json', {cache: true}).then(function (res) {
+                console.log(res);
                 return res.data;
             });
         },

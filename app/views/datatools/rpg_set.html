@@ -10,12 +10,12 @@
         </div>
         <div class="amp-header-filter clearfix">
             <button type="button" class="btn btn-default amp-dropdown-btn amp-btn-disabled pull-left" disabled>
-                项目<span class="glyphicon glyphicon-menu-down"></span>
+                {{sCtrl.rpgSetData.projectName}}<span class="glyphicon glyphicon-menu-down"></span>
             </button>
             <div class="col-xs-3 amp-date-wrapper">
                 <label>开业时间</label>
                 <div class="amp-date-picker pull-left" data-date="" data-date-format="yyyy-mm-dd" >
-                    <input class="" size="16" type="text" placeholder="2016-10" disabled>
+                    <input class="" size="16" type="text" placeholder="2016-10" disabled ng-model="sCtrl.rpgSetData.openDate" }>
                 </div>
             </div>
         </div>
@@ -83,8 +83,8 @@
                             <td><span>区域属性</span></td>
                             <td>
                                 <div class="td-input-wrapper num-input" >
-                                    <input type="text" placeholder="/" value="8">
-                                    <span class="number-format">8<i class="unit-addon">%</i></span>
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[0].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[0].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
 
                             </td>
@@ -94,9 +94,9 @@
                             <td><span>交通通达性</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="12%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[1].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[1].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -105,9 +105,9 @@
                             <td><span>配套完善度</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="8%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[2].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[2].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -116,9 +116,9 @@
                             <td><span>人口条件</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="15%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[3].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[3].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -128,9 +128,9 @@
                             <td><span>店型优势</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="7%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_product[0].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_product[0].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -139,9 +139,9 @@
                             <td><span>动线规划</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="8%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_product[1].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_product[1].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -150,9 +150,9 @@
                             <td><span>硬件档次</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="8%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_product[2].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_product[2].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -161,9 +161,9 @@
                             <td><span>停车位数量</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="5%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_product[3].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_product[3].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -173,9 +173,9 @@
                             <td><span>租户品质</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="12%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_others[0].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_others[0].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -184,9 +184,9 @@
                             <td><span><span>企业品牌度</span></span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="10%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_others[1].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_others[1].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -195,9 +195,9 @@
                             <td><span>免租期</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="7%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_others[2].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_others[2].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -206,9 +206,9 @@
                             <td colspan="2"><span>因素权重打分小计</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value="100%"  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_count[0].value">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_count[0].value*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -217,9 +217,9 @@
                             <td colspan="2"><span>参考租金（元/平米/月，GLA）</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value=""  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_count[1].value">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_count[1].value|number:2}}</span>
                                 </div>
                             </td>
                         </tr>
@@ -228,9 +228,9 @@
                             <td colspan="2"><span>加权租金（元/平米/月，GLA）</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value=""  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_count[2].value">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_count[2].value|number:2}}</span>
                                 </div>
                             </td>
                         </tr>
@@ -239,9 +239,9 @@
                             <td colspan="2"><span>参考权重（近似的比重高）</span></td>
 
                             <td>
-                                <div class="td-input-wrapper">
-                                    <input type="text" value=""  data-date="" placeholder=""/>
-                                    <span class="number-format"></span>
+                                <div class="td-input-wrapper num-input">
+                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_count[3].weight">
+                                    <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_count[3].weight*100|number:2}}</span>
                                 </div>
                             </td>
                         </tr>
@@ -254,821 +254,221 @@
                         <div class="swiper-slide">
                             <table class="table table-bordered amp-table table-hover"  style="width:1500px;">
                                 <tbody>
-                                <tr>                                  
-                                    <td>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[0].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="7">
-                                            <span class="number-format">7</span>
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="地处闵行七宝，离市区较远"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="地处闵行七宝，离市区较远"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="10"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="位于市中心人民广场附件，地理位置极佳"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                    
-
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[1].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="距离七宝地铁站和公交站一段距离，交通比较便利"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="位于七宝地铁口，交通极其便利"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="10"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="位于人民广场地铁口，交通极其便利"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                   
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[2].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="地处七宝成熟商圈，配套较完善"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="地处七宝成熟商圈，配套较完善"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="地处人民广场商圈，配套完善"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                    
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[3].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="周边小区多，人口密集"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="周边小区多，人口密集"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="位于市区黄金地段，人流量极大"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
 
                                 <tr>
-                                   
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[0].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="宝龙广场动线设计较合理，人流移动顺畅"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="万科广场动线设计较合理，人流移动顺畅"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="来福士电梯位置较偏僻，场内移动体验较差"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                   
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="硬件配套完善，设备全新，配有当下热门的室内wifi，导购屏等"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="硬件配套完善，设备全新，配有当下热门的室内wifi，导购屏等"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="属较老广场，硬件设施陈旧落后"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                   
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="停车位充裕"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="停车位充裕"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="车位紧张"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                   
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="有较多知名品牌"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="有较多知名品牌"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="知名品牌多，很多年轻人喜欢的潮牌及一些奢侈品品牌"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="国内知名商业地产，品牌度较好"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="9"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="国内名列前茅品牌"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="知名度较高，但有一定的地域局限性"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
 
                                 <tr>
-                                    
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[1].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
+                                </tr>
 
-                                    <td>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[2].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                    
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[3].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
+                                        <div class="td-input-wrapper text-input">
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
+                                            <!--<span class="number-format"></span>-->
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <td>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[0].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8.05"  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8.20"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="8.33"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                   
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[1].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
+                                        <div class="td-input-wrapper text-input">
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
+                                            <!--<span class="number-format"></span>-->
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                    <td>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[2].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
+                                </tr>
 
-                                    <td>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_count[0].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td class="td-acount">
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder="" disabled/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                   
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_count[1].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 <tr>
-                                   
-                                    <td>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_count[2].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-                                    <td>
+                                </tr>
+                                <tr>
+                                    <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_count[3].projects">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="project.value">
+                                            <span class="number-format">{{project.value}}</span>
+                                        </div>
+                                    </td>
+                                    <td ng-repeat-end>
                                         <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
+                                            <input type="text" value=""  data-date="" placeholder=""  ng-model="project.description"/>
                                             <!--<span class="number-format"></span>-->
                                         </div>
                                     </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value=""  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-
                                 </tr>
                                 </tbody>
                             </table>
@@ -1093,8 +493,8 @@
                     <th style="width:120px;">首年租金折扣</th>
                     <td class="required">
                         <div class="td-input-wrapper num-input" >
-                            <input type="text" placeholder="/" value="8">
-                            <span class="number-format">8<i class="unit-addon">%</i></span>
+                            <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.discount">
+                            <span class="number-format">{{sCtrl.rpgSetData.discount|number:2}}<i class="unit-addon">%</i></span>
                         </div>
                     </td>
                 </tr>
@@ -1141,103 +541,29 @@
 
                                 <tbody>
                                 <tr>
-                                    <td>
+                                    <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[0].value">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="2">
-                                            <span class="number-format">2<i class="unit-addon">%</i></span>
+                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.96%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="5.02%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.97%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="5.07%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
+                                </tr>
+                                <tr>
+                                    <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[1].value">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                     
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.80%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
+                                    <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[2].value">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.96%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="5.02%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.97%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="5.07%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="1.98%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.99%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="15.10%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="4.99%"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="-"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    
 
                                 </tr>
                                 </tbody>
@@ -1275,71 +601,17 @@
                             <table class="table table-right-bordered amp-table table-hover"  style="width:1100px;">
                                 <tbody>
                                 <tr>
-                                    <td>0-20</td>
-                                    <td>20-50</td>
-                                    <td>50-100</td>
-                                    <td>100-200</td>
-                                    <td>200-300</td>
-                                    <td>300-500</td>
-                                    <td>500-800</td>
-                                    <td>800-1000</td>
-                                    <td>1000＋</td>
+                                    <td ng-repeat="ratio in sCtrl.rpgSetData.ratios.area">{{ratio.name}}</td>
+
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td ng-repeat="ratio in sCtrl.rpgSetData.ratios.area">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="2">
-                                            <span class="number-format">2</span>
+                                            <input type="text" placeholder="/" value="" ng-model="ratio.value">
+                                            <span class="number-format">{{ratio.value|number:2}}</span>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="1.7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="1.2"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="1"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="0.8"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="0.7"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="0.5"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="0.5"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-input-wrapper text-input">
-                                            <input type="text" value="0.5"  data-date="" placeholder=""/>
-                                            <!--<span class="number-format"></span>-->
-                                        </div>
-                                    </td>
+
                                 </tr>
                             </table>
                         </div><!--swiper-slide-->
@@ -1362,43 +634,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th class="text-left">F1</th>
+                    <tr ng-repeat="ratio in sCtrl.rpgSetData.ratios.floors">
+                        <th class="text-left">{{ratio.name}}</th>
                         <td class="text-right">
                             <div class="td-input-wrapper text-input">
-                                <input type="text" value="1"  data-date="" placeholder=""/>
+                                <input type="text" value="1"  data-date="" placeholder="" ng-model="ratio.value"/>
                                 <!--<span class="number-format"></span>-->
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <th class="text-left">F2</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="0.6"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">F3</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="0.4"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">F4</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="0.4"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    
                     </tbody>
                 </table>
             </div><!--end row-->
@@ -1414,61 +658,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th class="text-left">主入口</th>
+                    <tr ng-repeat="ratio in sCtrl.rpgSetData.ratios.position">
+                        <th class="text-left">{{ratio.name}}</th>
                         <td class="text-right">
                             <div class="td-input-wrapper text-input">
-                                <input type="text" value="1.5"  data-date="" placeholder=""/>
+                                <input type="text" value=""  data-date="" placeholder="" ng-model="ratio.value"/>
                                 <!--<span class="number-format"></span>-->
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <th class="text-left">主立面外墙</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="1.3"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">次入口</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="1.3"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">主通道</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="1"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">侧面面街</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="1"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-left">后街</th>
-                        <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="0.9"  data-date="" placeholder=""/>
-                                <!--<span class="number-format"></span>-->
-                            </div>
-                        </td>
-                    </tr>
-
                     </tbody>
                 </table>
             </div><!--end row-->
@@ -1477,7 +675,7 @@
     </div><!--end ys-block-->
     <div class="amp-block-pd bottom-block clearfix">
         <div class="btn-wrapper pull-right">
-            <a ui-sref="rpgresult" ui-sref-active="active" href="#/rpgresult" class="btn btn-default amp-btn" id="btn-create">生成租金包</a>
+            <a ui-sref="rpgresult" ui-sref-active="active" href="#/rpgresult" class="btn btn-default amp-btn" id="btn-create" ng-click="sCtrl.setSave()">生成租金包</a>
         </div>
     </div>
 </div><!-- contentpanel -->

@@ -27,7 +27,6 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../views/blank_right.html',
                 }
             },
-            controller:"page",
             resolve: {
                 rpgSetData:function(dataSetService){
                     return dataSetService.getData();

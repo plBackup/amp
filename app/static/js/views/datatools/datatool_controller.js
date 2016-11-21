@@ -251,6 +251,7 @@ dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
     function($rootScope, $scope,rpgSetData) {
         var self=this;
         self.setData=rpgSetData[0].values;
+        console.log(self.setData)
         amp_main.leftPanel_update();
     }]);
 
