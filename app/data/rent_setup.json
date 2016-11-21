@@ -10,23 +10,19 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":7,
+                           "value":70,
                            "description":"地处闵行七宝，离市区较远"
                        },
                        {
                            "name":"项目B",
-                           "value":7,
-                           "description":"地处闵行七宝，离市区较远"
-                       },
-                       {
-                           "name":"项目C",
-                           "value":10,
+                           "value":100,
                            "description":"位于市中心人民广场附件，地理位置极佳"
                        },
+
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":70,
+                           "description":"地处闵行七宝，离市区较远"
                        }
                    ]
                },
@@ -36,23 +32,19 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
-                           "description":"距离七宝地铁站和公交站一段距离，交通比较便利"
-                       },
-                       {
-                           "name":"项目B",
-                           "value":9,
+                           "value":90,
                            "description":"位于七宝地铁口，交通极其便利"
                        },
                        {
-                           "name":"项目C",
-                           "value":10,
+                           "name":"项目B",
+                           "value":100,
                            "description":"位于人民广场地铁口，交通极其便利"
                        },
+
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"距离七宝地铁站和公交站一段距离，交通比较便利"
                        }
                    ]
                },
@@ -62,23 +54,18 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
+                           "value":80,
                            "description":"地处七宝成熟商圈，配套较完善"
                        },
                        {
                            "name":"项目B",
-                           "value":8,
-                           "description":"地处七宝成熟商圈，配套较完善"
-                       },
-                       {
-                           "name":"项目C",
-                           "value":9,
+                           "value":90,
                            "description":"地处人民广场商圈，配套完善"
                        },
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"地处七宝成熟商圈，配套较完善"
                        }
                    ]
                },
@@ -88,23 +75,18 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
-                           "description":"周边小区多，人口密集"
-                       },
-                       {
-                           "name":"项目B",
-                           "value":8,
+                           "value":80,
                            "description":"周边小区多，人口密集"
                        },
                        {
                            "name":"项目C",
-                           "value":9,
+                           "value":90,
                            "description":"位于市区黄金地段，人流量极大"
                        },
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"周边小区多，人口密集"
                        }
                    ]
                }
@@ -116,22 +98,18 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
+                           "value":70,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":7,
+                           "value":70,
                            "description":""
                        },
-                       {
-                           "name":"项目C",
-                           "value":7,
-                           "description":""
-                       },
+
                        {
                            "name":"本项目",
-                           "value":"",
+                           "value":80,
                            "description":""
                        }
                    ]
@@ -142,49 +120,39 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
-                           "description":"宝龙广场动线设计较合理，人流移动顺畅"
-                       },
-                       {
-                           "name":"项目B",
-                           "value":8,
+                           "value":80,
                            "description":"万科广场动线设计较合理，人流移动顺畅"
                        },
                        {
-                           "name":"项目C",
-                           "value":7,
+                           "name":"项目B",
+                           "value":70,
                            "description":"来福士电梯位置较偏僻，场内移动体验较差"
                        },
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"宝龙广场动线设计较合理，人流移动顺畅"
                        }
                    ]
                },
                {
                    "name":"硬件档次",
-                   "weight":"0.05",
+                   "weight":"0.08",
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":9,
+                           "value":90,
                            "description":"硬件配套完善，设备全新，配有当下热门的室内wifi，导购屏等"
                        },
                        {
                            "name":"项目B",
-                           "value":9,
-                           "description":"硬件配套完善，设备全新，配有当下热门的室内wifi，导购屏等"
-                       },
-                       {
-                           "name":"项目C",
-                           "value":7,
+                           "value":70,
                            "description":"属较老广场，硬件设施陈旧落后"
                        },
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":90,
+                           "description":"硬件配套完善，设备全新，配有当下热门的室内wifi，导购屏等"
                        }
                    ]
                },
@@ -194,23 +162,19 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":9,
+                           "value":90,
                            "description":"停车位充裕"
                        },
                        {
                            "name":"项目B",
-                           "value":9,
-                           "description":"停车位充裕"
-                       },
-                       {
-                           "name":"项目C",
-                           "value":7,
+                           "value":70,
                            "description":"车位紧张"
                        },
+
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":90,
+                           "description":"停车位充裕"
                        }
                    ]
                }
@@ -222,23 +186,18 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
+                           "value":80,
                            "description":"有较多知名品牌"
                        },
                        {
                            "name":"项目B",
-                           "value":8,
-                           "description":"有较多知名品牌"
-                       },
-                       {
-                           "name":"项目C",
-                           "value":9,
+                           "value":90,
                            "description":"知名品牌多，很多年轻人喜欢的潮牌及一些奢侈品品牌"
                        },
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"有较多知名品牌"
                        }
                    ]
                },
@@ -248,23 +207,19 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
-                           "description":"国内知名商业地产，品牌度较好"
-                       },
-                       {
-                           "name":"项目B",
-                           "value":9,
+                           "value":90,
                            "description":"国内名列前茅品牌"
                        },
                        {
-                           "name":"项目C",
-                           "value":8,
+                           "name":"项目B",
+                           "value":80,
                            "description":"知名度较高，但有一定的地域局限性"
                        },
+
                        {
                            "name":"本项目",
-                           "value":"",
-                           "description":""
+                           "value":80,
+                           "description":"国内知名商业地产，品牌度较好"
                        }
                    ]
                },
@@ -274,22 +229,17 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8,
+                           "value":80,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":8,
-                           "description":""
-                       },
-                       {
-                           "name":"项目C",
-                           "value":6,
+                           "value":60,
                            "description":""
                        },
                        {
                            "name":"本项目",
-                           "value":"",
+                           "value":80,
                            "description":""
                        }
                    ]
@@ -302,22 +252,18 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":8.05,
+                           "value":82,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":8.20,
+                           "value":83.3,
                            "description":""
                        },
-                       {
-                           "name":"项目C",
-                           "value":8.33,
-                           "description":""
-                       },
+
                        {
                            "name":"本项目",
-                           "value":"",
+                           "value":80.50,
                            "description":""
                        }
                    ]
@@ -328,17 +274,12 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":"",
+                           "value":253,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":"",
-                           "description":""
-                       },
-                       {
-                           "name":"项目C",
-                           "value":"",
+                           "value":335,
                            "description":""
                        },
                        {
@@ -354,17 +295,12 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":"",
+                           "value":248.37,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":"",
-                           "description":""
-                       },
-                       {
-                           "name":"项目C",
-                           "value":"",
+                           "value":323.74,
                            "description":""
                        },
                        {
@@ -380,22 +316,17 @@
                    "projects":[
                        {
                            "name":"项目A",
-                           "value":"",
+                           "value":0.78,
                            "description":""
                        },
                        {
                            "name":"项目B",
-                           "value":"",
-                           "description":""
-                       },
-                       {
-                           "name":"项目C",
-                           "value":"",
+                           "value":0.22,
                            "description":""
                        },
                        {
                            "name":"本项目",
-                           "value":"",
+                           "value":265,
                            "description":""
                        }
                    ]

@@ -50,10 +50,9 @@
                                 <thead>
                                 <tr>
 
-                                    <td colspan="2"><span>项目A</span></td>
-                                    <td colspan="2"><span>项目B</span></td>
-                                    <td colspan="2"><span>项目C</span></td>
-                                    <td colspan="2" class="text-center">本项目</td>
+                                    <td colspan="2"><span>项目A 七宝万科购物广场</span></td>
+                                    <td colspan="2"><span>项目B 来福士</span></td>
+                                    <td colspan="2"><span>本项目 七宝宝龙购物广场</span></td>
                                 </tr>
                                 <tr>                                 
                                     <td><span>比较</span></td>
@@ -62,8 +61,6 @@
                                     <td><span>比较本案的描述</span></td>
                                     <td><span>比较</span></td>
                                     <td><span>比较本案的描述</span></td>
-                                    <td><span>比较</span></td>
-                                    <td><span>描述</span></td>
                                 </tr>
                                 </thead>
                             </table>
@@ -494,7 +491,7 @@
                     <td class="required">
                         <div class="td-input-wrapper num-input" >
                             <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.discount">
-                            <span class="number-format">{{sCtrl.rpgSetData.discount|number:2}}<i class="unit-addon">%</i></span>
+                            <span class="number-format">{{sCtrl.rpgSetData.discount*100|number:2}}<i class="unit-addon">%</i></span>
                         </div>
                     </td>
                 </tr>
@@ -544,7 +541,7 @@
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[0].value">
                                         <div class="td-input-wrapper num-input" >
                                             <input type="text" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -552,7 +549,7 @@
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[1].value">
                                         <div class="td-input-wrapper num-input" >
                                             <input type="text" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                     
@@ -561,7 +558,7 @@
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[2].value">
                                         <div class="td-input-wrapper num-input" >
                                             <input type="text" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                            <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
 
