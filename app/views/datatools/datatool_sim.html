@@ -9,7 +9,7 @@
         <div class="clearfix">
             <div class="col-xs-6"  id="datatool-sim-floor-table">
                 <div  style="width:100%;">
-                            <div class="ys-mainpanel-inner">
+                            <div class="ys-mainpanel-inner" ng-click="sCtrl.setShopInfo()">
                                 <!--svg here-->
                                 <svg version="1.1" id="ys-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="980px" viewBox="0 0 600 1180" preserveAspectRetio="xMidYMin meet">
 
@@ -21,8 +21,8 @@
                 <div class="amp-svg-opt">
                     <h5>铺位</h5>
                     <div class="opt-block">
-                        <span class="opt-item"><em>1F 001</em><em class="ys-icon ys-icon-cancel">×</em></span>
-                        <span class="opt-item"><em>1F 001</em><em class="ys-icon ys-icon-cancel">×</em></span>
+                        <span class="opt-item"><em>{{sCtrl.shopInfo.shopIndex}}</em><em class="ys-icon ys-icon-cancel">×</em></span>
+                        <!--<span class="opt-item"><em>1F 001</em><em class="ys-icon ys-icon-cancel">×</em></span>-->
                     </div>
                     <div class="btn-wrapper">
                         <button class="btn btn-default amp-btn amp-btn-sm" id="shop-compressed">合并</button>
@@ -40,11 +40,11 @@
                                         <th><span>铺位号</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 text-input" >
-                                                <input type="text" placeholder="" value="">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.shopIndex">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
-                                        <td><span>套内面积:56m&sup2</span></td>
+                                        <td><span>套内面积:{{sCtrl.shopInfo.indoorArea|number:2}}m&sup2</span></td>
                                     </tr>
                                     <tr>
                                         <th><span>业态</span></th>
@@ -56,7 +56,7 @@
                                                         <em>{{sCtrl.shopInfo.form | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.form)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.form"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.form)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.form"><a role="menuitem" ng-click="sCtrl.setModel('form',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -79,14 +79,14 @@
                                         <th><span>2016</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input">
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentStandard[0]">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentStandard[0]|number:2}}</span>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input">
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.wyStandard[0]">
+                                                <span class="number-format">{{sCtrl.shopInfo.wyStandard[0]|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -94,59 +94,59 @@
                                         <th><span>2017</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input">
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentStandard[1]">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentStandard[1]|number:2}}</span>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input">
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.wyStandard[1]">
+                                                <span class="number-format">{{sCtrl.shopInfo.wyStandard[1]|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th><span>2018</span></th>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentStandard[2]">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentStandard[2]|number:2}}</span>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.wyStandard[2]">
+                                                <span class="number-format">{{sCtrl.shopInfo.wyStandard[2]|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th><span>2019</span></th>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentStandard[3]">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentStandard[3]|number:2}}</span>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.wyStandard[3]">
+                                                <span class="number-format">{{sCtrl.shopInfo.wyStandard[3]|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th><span>2020</span></th>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentStandard[4]">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentStandard[4]|number:2}}</span>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                            <div class="td-input-wrapper padding-r-15 num-input">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.wyStandard[4]">
+                                                <span class="number-format">{{sCtrl.shopInfo.wyStandard[4]|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -167,24 +167,24 @@
                                         <th><span>商家</span></th>
                                         <td colspan="2">
                                             <div class="td-input-wrapper padding-r-15 text-input" style="">
-                                                <input type="text" placeholder="" value="">
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.shopName">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
                                         <td></td>
                                     </tr>
-                                    <tr class="tr-date-range">
+                                    <tr class="tr-date-range" id="daterange">
                                         <th><span>合同开始</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 date-input" >
-                                                <input type="text" placeholder="" value="" id="date-start" readonly>
+                                                <input type="text" placeholder="" value="" id="date-range-filter-start" readonly ng-model="sCtrl.shopInfo.startDate" id="date-range-filter-start">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
                                         <th><span>结束时间</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 date-input" >
-                                                <input type="text" placeholder="" value="" id="date-end" readonly>
+                                                <input type="text" placeholder="" value="" id="date-range-filter-end" readonly ng-model="sCtrl.shopInfo.endDate" id="date-range-filter-end">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
@@ -193,14 +193,14 @@
                                         <th><span>平均租金(元/m&sup2/月)</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentAvg">
+                                                <span class="number-format" >{{sCtrl.shopInfo.rentAvg|number:2}}</span>
                                             </div>
                                         </td>
                                         <th><span>免租期(月)</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 text-input" >
-                                                <input type="text" placeholder="" value="" readonly>
+                                                <input type="text" placeholder="" value=""  ng-model="sCtrl.shopInfo.rentFree">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
@@ -209,31 +209,31 @@
                                         <th><span>租金总计(元)</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.rentCount">
+                                                <span class="number-format">{{sCtrl.shopInfo.rentCount|number:2}}</span>
                                             </div>
                                         </td>
                                         <th><span>物管费总计(元)</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.manageCount">
+                                                <span class="number-format">{{sCtrl.shopInfo.manageCount|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th><span>租金起记日期</span></th>
-                                        <td>
-                                            <div class="td-input-wrapper padding-r-15 date-input" >
-                                                <input type="text" placeholder="" value="" id="date-rent" readonly>
+                                        <td >
+                                            <div class="td-input-wrapper padding-r-15 date-input" id="datepicker">
+                                                <input type="text" placeholder="" value="" id="date-rent" readonly ng-model="sCtrl.shopInfo.rentDate">
                                                 <!--<span class="number-format"></span>%-->
                                             </div>
                                         </td>
                                         <th><span>月销售额</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.sales">
+                                                <span class="number-format">{{sCtrl.shopInfo.sales|number:2}}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -241,8 +241,8 @@
                                         <th><span>工程改造预算</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 num-input" >
-                                                <input type="text" placeholder="" value="">
-                                                <span class="number-format"></span>
+                                                <input type="text" placeholder="" value="" ng-model="sCtrl.shopInfo.budget">
+                                                <span class="number-format">{{sCtrl.shopInfo.budget|number:2}}</span>
                                             </div>
                                         </td>
                                         <th><span>租金方式</span></th>
@@ -265,13 +265,13 @@
                                         <th><span>付款时间</span></th>
                                         <td>
                                             <div class="td-input-wrapper padding-r-15 select-input" >
-                                                <input type="text" value="" hidden ng-model="sCtrl.shopInfo.payTime"/>
+                                                <input type="text" value="" hidden ng-model="sCtrl.shopInfo.payRange"/>
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                                        <em>{{sCtrl.shopInfo.payTime | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
+                                                        <em>{{sCtrl.shopInfo.payRange | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.payTime)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.payTime"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.payRange)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.payRange"><a role="menuitem" ng-click="sCtrl.setModel('payRange',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -294,8 +294,8 @@
                             </div>
                             <div class="block bottom-block bottom-block-fixed clearfix">
                                 <div class="btn-wrapper pull-right">
-                                    <a href="javascript:void(0)" class="btn btn-default amp-btn" id="btn-go">查看回报</a>
-                                    <a href="javascript:void(0)" class="btn btn-default amp-btn amp-btn-reverse" id="btn-dismiss">解约</a>
+                                    <a  class="btn btn-default amp-btn" id="btn-go" ng-click="sCtrl.checkReturn()">查看回报</a>
+                                    <a  class="btn btn-default amp-btn amp-btn-reverse" id="btn-dismiss" ng-click="sCtrl.dismiss()">解约</a>
                                 </div>
                             </div>
                     <!--<div class="swiper-scrollbar"></div>-->

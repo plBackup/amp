@@ -94,7 +94,137 @@ var irr_plan=(function($,irr_plan){
 
     return irr_plan;
 })(jQuery,irr_plan||{});
+var amp_datePicker=(function($,amp_datePicker){
+    var amp_datePicker=amp_datePicker;
 
+    function gd(year, month, day) {
+        return new Date(year, month, day).getTime();
+    }
+
+    function DateAdd(interval,number,dateStr)
+    {
+
+        // DateAdd(interval,number,date)
+        var date = new Date(dateStr);
+        var d="";
+        switch(interval)
+        {
+            case   "y"   :   {
+                date.setFullYear(date.getFullYear()+number);
+                break;
+            }
+            case   "q"   :   {
+                date.setMonth(date.getMonth()+number*3);
+                break;
+            }
+            case   "m"   :   {
+                date.setMonth(date.getMonth()+number);
+                d=  date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1));
+                break;
+            }
+            case   "w"   :   {
+                date.setDate(date.getDate()+number*7);
+                d =date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1))+"-"+(date.getDate()<9?("0"+date.getDate()):date.getDate());
+                break;
+            }
+            case   "d"   :   {
+                date.setDate(date.getDate()+number);
+                break;
+            }
+            case   "h"   :   {
+                date.setHours(date.getHours()+number);
+                break;
+
+            }
+            case   "mi"   :   {
+                date.setMinutes(date.getMinutes()+number);
+                break;
+            }
+            case   "s"   :   {
+                date.setSeconds(date.getSeconds()+number);
+                break;
+            }
+            default   :   {
+                date.setDate(date.getDate()+number);
+                break;
+            }
+
+        }//end switch
+        if(d!=""){
+            return d;
+        }else{
+            return date.getFullYear()+"-"+(date.getMonth()<9?("0"+(date.getMonth()+1)):(date.getMonth()+1))+"-"+(date.getDate()<9?("0"+date.getDate()):date.getDate());
+        }
+    };
+    //daterange Selector
+    amp_datePicker.dp_Array=[];
+    amp_datePicker.daterangeSelector=function(){
+        var curDate=new Date();
+        var start_date=$("#daterange input#date-range-filter-start").val() || curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+        var end_date=$("#daterange input#date-range-filter-end").val()
+        var startDate,endDate;
+        var dateStart=$("#daterange input#date-range-filter-start").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        }).on("changeDate",function(e){
+            var curDateStr= DateAdd("d",0,e.date);
+            startDate=e.timeStamp;
+            if(endDate){
+                if(startDate>endDate){
+                    endDate=null;
+                    $("#daterange input#date-range-filter-end").val("");
+                }
+            }
+            $("#daterange input#date-range-filter-end").datetimepicker('setStartDate',curDateStr);
+        });
+        var dateEnd=$("#daterange input#date-range-filter-end").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN",
+        }).on("changeDate",function(e){
+            endDate=e.timeStamp;
+        });
+
+        $("#daterange input#date-range-filter-start").val(start_date);
+        $("#daterange input#date-range-filter-end").val(end_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        amp_datePicker.dp_Array.push(dateStart);
+        amp_datePicker.dp_Array.push(dateEnd);
+    };
+    amp_datePicker.dateSelector=function(){
+        var curDate=new Date();
+        var start_date=$("#datepicker input").val()||curDate.getFullYear()+"-"+(curDate.getMonth()+1)+"-"+(curDate.getDate());
+
+        var dpicker=$("#datepicker input").datetimepicker({
+            format:"yyyy-mm-dd",
+            todayBtn:"linked",
+            startView:2,
+            minView:2,
+            autoclose: true,
+            language:"zh-CN"
+        });
+
+        $("#datepicker input").val(start_date);
+
+        //这里把日期实例加入全局的垃圾回收站
+        amp_datePicker.dp_Array.push(dpicker);
+    };
+    amp_datePicker.destroy=function(){
+        $.each(amp_datePicker.dp_Array,function(i,e){
+            $(e.selector).datetimepicker("remove");
+        });
+        amp_datePicker.dp_Array=[];
+    };
+    return amp_datePicker;
+})(jQuery,amp_datePicker||{})
 var dataTool=angular.module("dataTool",[]);
 dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData","paginatorService","$timeout","$location","$filter",
     function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location,$filter) {
@@ -299,22 +429,108 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         console.log("--------------------------");
         self.chartData=simChartData["chart"];
         console.log(self.chartData);
-        self.shopInfo=simData.slice(0);
+        self.shops=simData.slice(1);
         self.index=0;
         console.log(simData);
         self.form_menu={
             form:["超市","影院","服装","餐饮","娱乐","配套","儿童","其他"],
             property:["自持","销售","销售返租"],
-            payTime:["月付","季付"]
+            payRange:["月付","季付"]
         };
+        self.shopInfo=self.shops[self.index];
+        console.log("----------------shopInfo")
+        console.log(self.shopInfo);
+        self.setShopInfo=function(){
+            self.index+=1;
+            self.shopInfo=self.shops[self.index];
+        }
         self.setModel=function(type,menu){
-            self.shopInfo[self.index][type]=menu;
+            self.shopInfo[type]=menu;
         };
 
         self.isActive=function(menu,model){
             return menu==model;
         };
 
+        self.dismiss=function(){
+            var dismiss=window.confirm("确定解约？")
+
+        };
+         self.checkReturn=function(){
+             console.log(self.shopInfo)
+         }
+        //页面事件
+
+        $(".table").on("click","td",function(e){
+            //e.stopPropagation();
+            $(".table td").removeClass("active");
+            $(this).addClass("active");
+            $(this).find("input").focus();
+        });
+        amp_datePicker.daterangeSelector();
+        amp_datePicker.dateSelector();
+
+        var iscroll_init=function(){
+            var h=parseInt($(window).height());
+
+            $(".col-xs-6").css({
+                "overflow-y":"hidden",
+                "height":(h-88)+"px"
+            });
+
+            var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
+                mouseWheel: true,
+                scrollbars: true
+            });
+            var datasim_main_scroll= new IScroll('#datatool-sim-main-table', {
+                mouseWheel: true,
+                scrollbars: true
+            });
+
+
+            var defer=null;
+            var scrollUpdate=function(){
+                var h=parseInt($(window).height());
+
+                $(".col-xs-6").css({
+                    "overflow-y":"hidden",
+                    "height":(h-88)+"px"
+                });
+
+                datasim_floor_scroll.refresh();
+                datasim_main_scroll.refresh();
+            };
+
+            $(window).resize(function(){
+                if(!defer){
+                    defer=setTimeout(function(){
+                        scrollUpdate();
+                        defer=null;
+                    },200);
+                }else{
+                    clearTimeout(defer);
+                    defer=setTimeout(function(){
+                        scrollUpdate();
+                        defer=null;
+                    },200);
+                }
+
+            });
+            setTimeout(scrollUpdate,300);
+
+        };
+        var add_svg=function(){
+            $.get("floors.svg",function(data,status){
+                var importedSVGRootElement = document.importNode(data.documentElement,true);
+                $("#ys-svg").append(importedSVGRootElement);
+            });
+        };
+        iscroll_init();
+        add_svg();
+
+        $scope.$on("$destroy", function() {
+            amp_datePicker.destroy();
+        });
         amp_main.leftPanel_update();
     }]);
 

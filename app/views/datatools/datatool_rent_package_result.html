@@ -78,7 +78,7 @@
                                         <td><span>{{shop.form}}</span></td>
                                         <td><span>{{shop.property}}</span></td>
 
-                                        <td class="text-right" ng-repeat="rs in [0,1,2,3,4,5,6,7,8,9]"><span><i>{{shop.rentStandard | number:2}}</i>元/m&sup2/月</span></td>
+                                        <td class="text-right" ng-repeat="(k,v) in shop.rentStandard track by k"><span><i>{{v | number:2}}</i></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
