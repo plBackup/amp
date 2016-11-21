@@ -16,11 +16,11 @@
         },
         {
           "name": "\u9884\u6d4b\u5e74\u56de\u62a5\u7387\uff08\u6309\u6210\u672c\uff09",
-          "value": 0.01
+          "value": 0.005046
         },
         {
           "name": "\u4f30\u503c",
-          "value": 45569.0
+          "value": 110957.13
         },
         {
           "name": "\u4f30\u503c\u65e5\u671f",
@@ -28,7 +28,7 @@
         },
         {
           "name": "\u9884\u6d4b\u5e74\u56de\u62a5\u7387\uff08\u6309\u4f30\u503c",
-          "value": 0.012
+          "value": 0.00502
         },
         {
           "name": "\u672c\u91d1",
@@ -44,15 +44,15 @@
         },
         {
           "name": "\u5f53\u524d\u6743\u76ca",
-          "value": 12449.0
+          "value": 77837.13
         },
         {
           "name": "\u9884\u6d4b\u7a0e\u524d\u73b0\u91d1\u6d41 ",
-          "value": 60.33
+          "value": -1430.07
         },
         {
           "name": "\u9884\u6d4b\u6536\u76ca\u7387\uff08\u6309ROE\uff09",
-          "value": 0.0008
+          "value": 0.007157
         },
         {
           "name": "complete-rate",
@@ -854,11 +854,11 @@
         },
         {
           "rid": "chart_col11_row9",
-          "value": ""
+          "value": 25.40
         },
         {
           "rid": "chart_col12_row9",
-          "value": ""
+          "value": 0.11
         }
       ],
       "name": "\u8425\u9500\u8d39\u7528"
@@ -911,11 +911,11 @@
         },
         {
           "rid": "chart_col11_row10",
-          "value": ""
+          "value": 58.08
         },
         {
           "rid": "chart_col12_row10",
-          "value": ""
+          "value": 0.13
         }
       ],
       "name": "\u5de5\u8d44\u53ca\u76f8\u5173\u8d39\u7528"
@@ -968,11 +968,11 @@
         },
         {
           "rid": "chart_col11_row11",
-          "value": ""
+          "value": -5.38
         },
         {
           "rid": "chart_col12_row11",
-          "value": ""
+          "value": -0.23
         }
       ],
       "name": "\u7ba1\u7406\u8d39\u7528"
@@ -1082,11 +1082,11 @@
         },
         {
           "rid": "chart_col11_row13",
-          "value": ""
+          "value": -0.68
         },
         {
           "rid": "chart_col12_row13",
-          "value": ""
+          "value": -0.11
         }
       ],
       "name": "\u6298\u65e7 "
@@ -1139,11 +1139,11 @@
         },
         {
           "rid": "chart_col11_row14",
-          "value": ""
+          "value": 7.79
         },
         {
           "rid": "chart_col12_row14",
-          "value": ""
+          "value": 0.76
         }
       ],
       "name": "\u5176\u4ed6"
@@ -1196,11 +1196,11 @@
         },
         {
           "rid": "chart_col11_row15",
-          "value": ""
+          "value": 256.88
         },
         {
           "rid": "chart_col12_row15",
-          "value": ""
+          "value": 0.32
         }
       ],
       "name": "\u8d39\u7528\u603b\u8ba1"
