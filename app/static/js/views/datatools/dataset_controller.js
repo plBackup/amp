@@ -135,6 +135,98 @@ var rpgSet_table=(function($,rpgSet_table){
     return rpgSet_table;
 })(jQuery,rpgSet_table||{});
 
+var rpg_result_table=(function($,rpg_result_table){
+    var rpg_result_table=rpg_result_table;
+    var pin;
+    var rpg_result_table_head_rpg_result,rpg_result_table_main_rpg_result;
+    rpg_result_table.rpg_result_init=function(){
+        rpg_result_table_head_rpg_result = new Swiper('#rpg-result-table-head', {
+            //scrollbar: '.rpg_result-scrollbar',rpg-result-table-wrapper
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:true
+        });
+        rpg_result_table_main_rpg_result = new Swiper('#rpg-result-main-table', {
+            scrollbar: '.swiper-scrollbar',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false
+        });
+        rpg_result_table_head_rpg_result.params.control = rpg_result_table_main_rpg_result;
+        rpg_result_table_main_rpg_result.params.control = rpg_result_table_head_rpg_result;
+
+       /* //这里把swiper实例加入全局的垃圾回收站
+        ampApp.collector.add_swiper(rpg_result_table_head_rpg_result);
+        ampApp.collector.add_swiper(rpg_result_table_main_rpg_result);*/
+
+        pin=$(".ys-table-fixed-top").pin({
+            containerSelector: "#rpg-result-table-wrapper",
+            padding: {top: 88, bottom: 50}
+        });
+
+        var defer=null;
+        function _rpg_resultUpdate(){
+           /* rpg_result_table_head_rpg_result.update();
+            rpg_result_table_main_rpg_result.update();*/
+            pin.refresh();
+        };
+
+        $(window).resize(function(){
+            if(!defer){
+
+                defer=setTimeout(function(){
+                    _rpg_resultUpdate();
+                    defer=null;
+                },200);
+            }else{
+                clearTimeout(defer);
+                defer=setTimeout(function(){
+                    _rpg_resultUpdate();
+                    defer=null;
+                },200);
+            }
+
+        });
+    };
+
+    rpg_result_table.table_init=function(){
+        console.log("....");
+        $(".ys-table-main").on("mouseenter","tr",function(e){
+            var index=$(this).index();
+            var parentTagName=$(this).parent().get(0).tagName;
+            console.log("....");
+            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                $(this).find("tr").eq(index).addClass("hover");
+            });
+        });
+
+        $(".ys-table-main").on("mouseleave","tr",function(e){
+            var index=$(this).index();
+            var parentTagName=$(this).parent().get(0).tagName;
+            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                $(this).find("tr").eq(index).removeClass("hover");
+            });
+        });
+    };
+
+    rpg_result_table.destroy=function(){
+        console.log("result destroy -----------");
+        rpg_result_table_head_rpg_result.destroy();
+        rpg_result_table_main_rpg_result.destroy();
+    };
+    rpg_result_table.init=function(){
+        rpg_result_table.rpg_result_init();
+        rpg_result_table.table_init();
+    };
+
+    return rpg_result_table;
+})(jQuery,rpg_result_table||{});
+
+
 var dataSet=angular.module("dataSet",[]);
 
 dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
@@ -165,6 +257,48 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
         rpgSet_table.init();
         $scope.$on("$destroy", function() {
             rpgSet_table.destroy();
+        })
+    }]);
+
+dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData","paginatorService",
+    function($rootScope, $scope,rpgResultData,paginatorService) {
+        var self=this;
+        console.log(rpgResultData);
+        var shopData=rpgResultData.slice(1);
+        console.log(shopData);
+        self.rpgResultData=shopData;
+        self.recordsNum=self.rpgResultData.length;
+        self.pageLimit=10;
+        self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
+
+        self.paginator=paginatorService(self.pageLimit,self.pageNum,self.rpgResultData);
+
+        //pageTarget初始化与pageIndex一致
+        //这里演示时简化逻辑，没有http取数据操作，通过一次性取数据， 通过页面过滤器进行页面展示
+
+        self.loadPage=function(targetIndex){
+            if(targetIndex>=self.pageNum){
+                targetIndex=self.pageNum;
+            }else if(targetIndex<=1){
+                targetIndex=1;
+            }
+            self.paginator.setIndex(targetIndex);
+        };
+
+        self.dataReCount=function(){
+          console.log("re count data....");
+
+        };
+        self.setSave=function(){
+            console.log("save result data------------------");
+            console.log(self.rpgResultData)
+        };
+
+
+        //dataSetView.init();
+        rpg_result_table.init();
+        $scope.$on("$destroy", function() {
+            rpg_result_table.destroy();
         })
     }]);
 

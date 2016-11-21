@@ -36,7 +36,6 @@ angular.module('dataTool').service('irrPlanService', ["$http",function($http) {
         },
     };
     return service;
-
 }]);
 
 angular.module('dataTool').factory('paginatorService', [function() {

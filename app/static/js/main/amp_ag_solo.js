@@ -49,6 +49,8 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
 
                 'content': {
                     templateUrl: '../views/datatools/datatool_rent_package_result.html',
+                    controller:"dataResultController",
+                    controllerAs:"rCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html',
@@ -56,6 +58,9 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                rpgResultData:function(dataResultService){
+                    return dataResultService.getData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

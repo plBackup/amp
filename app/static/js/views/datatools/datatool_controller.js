@@ -121,7 +121,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         self.shopEdit=function(index,shop){
             //self.indexData[index].shopIndex+="###";
-            console.log("edit...")
+            console.log("edit...");
             $rootScope.$broadcast("shopEdit",{shopData:shop,index:index})
         };
 
@@ -140,7 +140,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
                 self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
                 self.paginator=paginatorService(self.pageLimit,self.pageNum,self.indexData);
             }else if(index=="new"){
-               console.log("new---------")
+               console.log("new---------");
                 //shopData[0]=shop;
             }
         };

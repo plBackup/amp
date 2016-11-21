@@ -330,6 +330,9 @@
     width: 100%;
     background-color: #f3f4f8;
 }
+
+#rpg-result-table-wrapper .amp-table>thead>tr>th{text-align: left;}
+#rpg-result-table-wrapper .amp-table>thead>tr>th.text-right{text-align: right;}
 /*inputs*/
 .td-input-wrapper{position: relative;}
 .td-input-wrapper:after{display: none;width:16px;height:16px;position: absolute;top:50%;right:12px;margin-top:-8px;background-image: url(../../images/icon.png);
@@ -393,3 +396,5 @@ tr>td span.number-format{display: block;width:100%;}
 
 /*update by cheng 2016-11-19*/
 #rent-package .amp-table>thead>tr>th span, #rent-package .amp-table>tbody>tr>td span{display:block;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
+#rent-package-result .amp-table>tbody>tr>th span,#rent-package-result .amp-table>tbody>tr>td span{display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}

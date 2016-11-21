@@ -58,18 +58,9 @@
                     <div class="ys-table-static ys-table-static-left" style="width:100px;">
                         <table class="table  amp-table table-hover" style="width:100%;">
                            <tbody>
-                               <tr>
-                                   <th>1F 102</th>
-                               </tr>
-                               <tr>
-                                   <th>1F 102</th>
-                               </tr>
-                               <tr>
-                                   <th>1F 102</th>
-                               </tr>
-                               <tr>
-                                   <th>1F 102</th>
-                               </tr>
+                           <tr  ng-repeat="shop in rCtrl.rpgResultData| take : rCtrl.paginator.currentOffset : rCtrl.pageLimit  track by $index" class="data-index data-index-{{$index}}">
+                               <th><span title="{{shop.shopIndex}}">{{shop.shopIndex}}</span></th>
+                           </tr>
                            </tbody>
                         </table>
                     </div>
@@ -79,81 +70,16 @@
                             <div class="swiper-slide">
                                 <table class="table  amp-table table-hover"  style="width:2000px;">
                                     <tbody>
-                                        <tr>
-                                            <td>1F</td>
-                                            <td>200</td>
-                                            <td>180</td>
-                                            <td>餐饮</td>
-                                            <td>自持</td>
-                                            
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                        </tr>
+                                    <tr ng-repeat="shop in rCtrl.rpgResultData| take : rCtrl.paginator.currentOffset : rCtrl.pageLimit  track by $index" class="data-index data-index-{{$index}}">
+                                        <!--<td><span title="{{shop.shopIndex}}">{{shop.shopIndex}}</span></td>-->
+                                        <td><span>{{shop.floor}}</span></td>
+                                        <td><span>{{shop.floorArea | number:2}}</span></td>
+                                        <td><span>{{shop.indoorArea | number:2}}</span></td>
+                                        <td><span>{{shop.form}}</span></td>
+                                        <td><span>{{shop.property}}</span></td>
 
-                                        <tr>
-                                            <td>1F</td>
-                                            <td>200</td>
-                                            <td>180</td>
-                                            <td>餐饮</td>
-                                            <td>自持</td>
-                                            
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1F</td>
-                                            <td>200</td>
-                                            <td>180</td>
-                                            <td>餐饮</td>
-                                            <td>自持</td>
-
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1F</td>
-                                            <td>200</td>
-                                            <td>180</td>
-                                            <td>餐饮</td>
-                                            <td>自持</td>
-
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                            <td><span class="number-format">265</span></td>
-                                        </tr>
+                                        <td class="text-right" ng-repeat="rs in [0,1,2,3,4,5,6,7,8,9]"><span><i>{{shop.rentStandard | number:2}}</i>元/m&sup2/月</span></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div><!--swiper-slide-->
@@ -167,18 +93,19 @@
             </div>
         <div class="amp-pagination clearfix">
             <div class="btn-wrapper pull-right">
-                <span style="margin-right:10px;"><em class="page-index-bottom">共<i>2652</i>条记录，当前第<i>1</i>/<i>7</i>页</em></span>
+                <span style="margin-right:10px;"><em class="page-index-bottom">共<i>{{rCtrl.recordsNum}}</i>条记录，当前第<i>{{rCtrl.paginator.curPageIndex}}</i>/<i>{{rCtrl.pageNum}}</i>页</em></span>
                 <div class="btn-group" role="group" aria-label="">
-                    <button type="button" class="btn btn-default btn-disable" id="btn-pre-bottom">&lt;</button>
-                    <button type="button" class="btn btn-default" id="btn-next-bottom">&gt;</button>
-                    <input type="text" value="1" class="page-num-input">
+                    <button type="button" class="btn btn-default" id="btn-pre-bottom" ng-click="rCtrl.paginator.prev()"  ng-class="{'btn-disabled':!rCtrl.paginator.hasPrevious()}" ng-disabled="!rCtrl.paginator.hasPrevious()">&lt;</button>
+                    <button type="button" class="btn btn-default" id="btn-next-bottom" ng-click="rCtrl.paginator.next()" ng-class="{'btn-disabled':!rCtrl.paginator.hasNext() }" ng-disabled="!rCtrl.paginator.hasNext()" >&gt;</button>
+                    <input type="text" value="1" class="page-num-input" ng-model="rCtrl.paginator.pageTarget">
                 </div>
 
-                <button type="button" class="btn btn-default amp-btn" id="btn-go">确定</button>
+                <button type="button" class="btn btn-default amp-btn" id="btn-go" ng-click="rCtrl.loadPage(rCtrl.paginator.pageTarget)">确定</button>
             </div>
         </div>
     </div><!--ys-block-->
 </div><!-- contentpanel -->
+<!--
 
 <script src="../static/js/views/datatools/rpg_result_index.js"></script>
 <script>
@@ -187,3 +114,4 @@
     });
 </script>
 
+-->
