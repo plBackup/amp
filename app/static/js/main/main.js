@@ -199,7 +199,7 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
             "pm":{
                 "name":"",
                 "title":"",
-                "figure":"",
+                "figure":"male.png",
                 "teamNum":0,
                 "contact":"email",
                 "resume":"/"
