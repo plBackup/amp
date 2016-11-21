@@ -297,15 +297,12 @@
                             </div>
                             <div class="chart-wrapper" id="chart-rpg-wrapper" style="padding-left:30px;padding-right:0;">
                                 <!--<em class="chart-axis-info chart-axis-y-info">万元</em>-->
-                                <!--<div id="chart-rpg" style="height:310px;"></div>-->
-                                <div id="chart-rpg" style="height:310px;"
-                                     sim-chart chart-data="sCtrl.chartData"></div>
+                                <div id="chart-rpg" style="height:310px;"></div>
                                 <div class="chart-legend">
                                     <span><em class="color-label" style="background-color:#18b0e2;"></em><i class="name">应收</i></span>
                                     <span><em class="color-label" style="background-color:#ea7444;"></em><i class="name">实收</i></span>
                                     <span><em class="color-label" style="background-color:#1abd9d;"></em><i class="name">租金包</i></span>
                                 </div>
-                                <span>{{sCtrl.chartData[0].name}}</span>
                             </div>
                             <div class="block bottom-block bottom-block-fixed clearfix">
                                 <div class="btn-wrapper pull-right">
@@ -318,19 +315,23 @@
             </div>
         </div>
     </div><!--ys-block-->
-
+    <!--<div class="block bottom-block bottom-block-fixed clearfix">
+        <div class="btn-wrapper pull-right">
+            <a href="javascript:void(0)" class="btn btn-default amp-btn" id="btn-go">查看回报</a>
+            <a href="javascript:void(0)" class="btn btn-default amp-btn amp-btn-reverse" id="btn-dismiss">解约</a>
+        </div>
+    </div>-->
 </div><!-- contentpanel -->
-<!--
 <script src="../static/js/views/datatools/datasim.js"></script>
 <script src="../static/js/views/datatools/inputs.js"></script>
 <script src="../static/js/views/datatools/irr_table_input.js"></script>
 <script>
     jQuery(document).ready(function(){
-        console.log(".....");
+        console.log(".....")
         datasim.init();
         amp_main.leftPanel_update();
         table_input.init();
+
     });
 </script>
--->
 

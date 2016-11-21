@@ -27,6 +27,20 @@ angular.module('dataSet').service('dataResultService', ["$http",function($http) 
 
 }]);
 
+/*angular.module('dataSet').service('dataSimService', ["$http",function($http) {
+
+    var service = {
+        getData: function () {
+            return $http.get('../data/shopInfo.json', {cache: true}).then(function (res) {
+                return res.data;
+            });
+        },
+    };
+    return service;
+
+}]);*/
+
+
 angular.module('dataSet').factory('paginatorService', [function() {
     return function(pageLimit,pageNum,data){
         var service = {

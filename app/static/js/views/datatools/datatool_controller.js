@@ -293,4 +293,14 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
         })
     }]);
 
+dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData",
+    function($rootScope, $scope,simData,simChartData) {
+        var self=this;
+        console.log("--------------------------");
+        self.chartData=simChartData["chart"];
+        console.log(self.chartData);
+
+        amp_main.leftPanel_update();
+    }]);
+
 

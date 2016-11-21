@@ -128,7 +128,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     templateUrl: '../components/toolbar/blank_filter.html'
                 },
                 'content': {
-                    templateUrl: '../views/datatools/datatool_sim.html'
+                    templateUrl: '../views/datatools/datatool_sim.html',
+                    controller:"dataSimController",
+                    controllerAs:"sCtrl"
                 },
                 "right":{
                     templateUrl: '../views/blank_right.html'
@@ -136,6 +138,12 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                simData:function(dataIndexService){
+                    return dataIndexService.getIndexData();
+                },
+                simChartData:function(dataSimChart){
+                  return dataSimChart.getSimChartData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
