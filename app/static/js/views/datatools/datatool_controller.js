@@ -121,6 +121,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         self.shopEdit=function(index,shop){
             //self.indexData[index].shopIndex+="###";
+            console.log("edit...")
             $rootScope.$broadcast("shopEdit",{shopData:shop,index:index})
         };
 
@@ -187,7 +188,8 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         self.index="add";
         self.shopInfo={};
         $scope.$on("shopEdit",function(e,data){
-
+            console.log("shop--edit");
+            amp_main.rightPanel_open();
             self.index=data.index;
             self.shopInfo=data.shopData;
         });
