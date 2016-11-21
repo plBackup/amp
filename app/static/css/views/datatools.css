@@ -98,7 +98,7 @@
 #irr-plan  .ys-table-static .table tr.tr-main>th{padding-left:25px;color:#373c42;font-size:14px;font-weight:bold;}
 #irr-plan  .ys-table-static .table tr.tr-main>td,#irr-plan .amp-table tr.tr-main>td{font-size: 14px;color:#373c42;font-size:14px;font-weight:bold;}
 #irr-plan .amp-table tr.tr-note>tr,#irr-plan .amp-table tr.tr-note>td,
-#irr-plan  .ys-table-static .table tr.tr-note>th,#irr-plan  .ys-table-static .table tr.tr-note>td{font-size: 14px;color:#8592a3;font-weight:bold;}
+#irr-plan  .ys-table-static .table tr.tr-note>th,#irr-plan  .ys-table-static .table tr.tr-note>td{font-size: 14px;/*color:#8592a3;*/font-weight:bold;}
 
 
 #irr-plan .table>tbody>tr>th, #irr-plan .table>tbody>tr>td{padding:3px 10px;padding-left:25px;
@@ -196,7 +196,7 @@
     background-position: -170px -261px;
 }*/
 #datatool-sim #datatool-sim-main-table .amp-table thead{background-color:transparent;}
-#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{text-align: left;border-bottom:0;}
+#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{text-align: left;b}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th:nth-child(1),
 #datatool-sim #datatool-sim-main-table .amp-table tbody>tr>th{width:135px;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th,

@@ -383,7 +383,7 @@ dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
     function($rootScope, $scope,rpgSetData) {
         var self=this;
         self.setData=rpgSetData[0].values;
-        console.log(self.setData)
+
         amp_main.leftPanel_update();
     }]);
 
@@ -391,13 +391,13 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
     function($rootScope, $scope,irrPlanData) {
         var self=this;
         self.irrData=irrPlanData;
-        console.log(self.irrData);
+
         //self.setData=rpgSetData[0].values;
         self.save=function(){
-            console.log(self.irrData)
+            console.log(self.irrData);
         };
         self.count=function(){
-            var skip=2;
+            /*var skip=2;
             var count_array=self.irrData[5].values.slice(2);
             $.each(count_array,function(i,e){
                 console.log(e.value);
@@ -405,8 +405,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
                 console.log(self.irrData[3].values[i+skip].value);
                 e.value=parseFloat(self.irrData[2].values[i+skip].value)+parseFloat(self.irrData[3].values[i+skip].value);
                 console.log(e.value);
-            });
-
+            });*/
+            console.log("count----");
         };
 
         $(".table").on("click","td",function(){
@@ -426,24 +426,21 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
 dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData",
     function($rootScope, $scope,simData,simChartData) {
         var self=this;
-        console.log("--------------------------");
         self.chartData=simChartData["chart"];
-        console.log(self.chartData);
         self.shops=simData.slice(1);
         self.index=0;
-        console.log(simData);
+
         self.form_menu={
             form:["超市","影院","服装","餐饮","娱乐","配套","儿童","其他"],
             property:["自持","销售","销售返租"],
             payRange:["月付","季付"]
         };
         self.shopInfo=self.shops[self.index];
-        console.log("----------------shopInfo")
-        console.log(self.shopInfo);
+
         self.setShopInfo=function(){
             self.index+=1;
             self.shopInfo=self.shops[self.index];
-        }
+        };
         self.setModel=function(type,menu){
             self.shopInfo[type]=menu;
         };
@@ -458,7 +455,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         };
          self.checkReturn=function(){
              console.log(self.shopInfo)
-         }
+         };
         //页面事件
 
         $(".table").on("click","td",function(e){

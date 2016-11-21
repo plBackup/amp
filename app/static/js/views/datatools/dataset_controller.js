@@ -108,7 +108,6 @@ var rpgSet_table=(function($,rpgSet_table){
     };
 
     rpgSet_table.destroy=function(){
-        console.log("------destroy");
         rpgSet_table_head_swiper.destroy();
         rpgSet_table_main_swiper.destroy();
         swiper_rent_affect_table.destroy();
@@ -233,7 +232,6 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
     function($rootScope, $scope,rpgSetData) {
         var self=this;
         self.rpgSetData=rpgSetData[0];
-        console.log(self.rpgSetData);
         //self.setData=rpgSetData[0].values;
         self.setSave=function(){
             console.log(self.rpgSetData)
@@ -359,7 +357,6 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
         };
 
         self.updateWeight=function(){
-            console.log("----------update");
             self.affect_count[0].projects[0]["value"]=self.affect_sum(0);
             self.affect_count[0].projects[1]["value"]=self.affect_sum(1);
             self.affect_count[0].projects[2]["value"]=self.affect_sum(2);

@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th>开业后顺延年NOI</th>
-                                <th>备注</th>
+                                <th class="text-right">备注</th>
                             </tr>
                         </thead>
                     </table>
@@ -232,7 +232,7 @@
                         </tr>
                         <tr class="tr-sub" data-index="34">
                             <th><span>{{pCtrl.irrData[34].values[0].value}}</span></th>
-                            <td>{{pCtrl.irrData[34].values[1].value | number:2}}</td>
+                            <td>{{pCtrl.irrData[34].values[1].value | number:2}}<i>万元/m&sup2/GLA</i></td>
                         </tr>
                         <tr class="tr-sub" data-index="35">
                             <th><span>{{pCtrl.irrData[35].values[0].value}}</span></th>
@@ -240,7 +240,7 @@
                         </tr>
                         <tr class="tr-sub" data-index="36">
                             <th><span>{{pCtrl.irrData[36].values[0].value}}</span></th>
-                            <td>{{pCtrl.irrData[36].values[1].value*100 | number:2}}<i class="unit-addon">%</i></td>
+                            <td></td>
 
                         </tr>
                         <tr class="tr-sub" data-index="37">
@@ -517,13 +517,13 @@
                                     <td ng-repeat="pv in pCtrl.irrData[31].values | skip:2 ">{{pv.value}}</td>
                                 </tr>
                                 <tr class="tr-sub" data-index="32">
-                                    <td ng-repeat="pv in pCtrl.irrData[32].values | skip:2 ">{{pv.value | number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[32].values | skip:2 "></td>
                                 </tr>
                                 <tr class="tr-sub" data-index="33">
-                                    <td ng-repeat="pv in pCtrl.irrData[33].values | skip:2 ">{{pv.value | number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[33].values | skip:2 "></td>
                                 </tr>
                                 <tr class="tr-sub" data-index="34">
-                                    <td ng-repeat="pv in pCtrl.irrData[34].values | skip:2 ">{{pv.value | number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[34].values | skip:2 "><!--{{pv.value | number:2}}--></td>
 
                                 </tr>
                                 <tr class="tr-sub" data-index="35">
@@ -564,7 +564,7 @@
                                 </tr>
 
                                 <tr class="tr-sub" data-index="46">
-                                    <td ng-repeat="pv in pCtrl.irrData[46].values | skip:2 ">{{pv.value | number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[46].values | skip:2 "><!--{{pv.value | number:2}}--></td>
                                 </tr>
                                 <tr class="tr-sub"  data-index="47">
                                     <td ng-repeat="pv in pCtrl.irrData[47].values | skip:2 ">{{pv.value}}</td>
