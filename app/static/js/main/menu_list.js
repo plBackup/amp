@@ -123,7 +123,7 @@ var menu_list={
                     re_locate:true//点击一级目录直接跳转
                 },
                 {
-                    name:"影子模型",
+                    name:"沙盒模型",
                     index:"sub-4",
                     links:"datasim",
                     target:"#page-frame",

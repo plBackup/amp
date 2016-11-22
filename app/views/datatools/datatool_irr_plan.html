@@ -400,7 +400,7 @@
                                     </td>
                                 </tr>
                                 <tr class="tr-sub tr-split-bottom tr-note" data-index="5">
-                                    <td ng-repeat="pv in pCtrl.irrData[5].values | skip:2 ">{{pv.value| number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[5].values | skip:2 ">{{pCtrl.irrData[2].values[$index+2].value + (pCtrl.irrData[3].values[$index+2].value*(1-pCtrl.irrData[4].values[$index+2].value)) | number:2 }}</td>
                                 </tr>
 
                                 <tr class="tr-main tr-split-top" data-index="6">
@@ -513,19 +513,24 @@
                                 <tr class="tr-sub" data-index="30">
                                     <td ng-repeat="pv in pCtrl.irrData[30].values | skip:2 ">{{pv.value}}</td>
                                 </tr>
+
                                 <tr class="tr-sub" data-index="31">
                                     <td ng-repeat="pv in pCtrl.irrData[31].values | skip:2 ">{{pv.value}}</td>
                                 </tr>
+
                                 <tr class="tr-sub" data-index="32">
                                     <td ng-repeat="pv in pCtrl.irrData[32].values | skip:2 "></td>
                                 </tr>
+
                                 <tr class="tr-sub" data-index="33">
                                     <td ng-repeat="pv in pCtrl.irrData[33].values | skip:2 "></td>
                                 </tr>
+
                                 <tr class="tr-sub" data-index="34">
                                     <td ng-repeat="pv in pCtrl.irrData[34].values | skip:2 "><!--{{pv.value | number:2}}--></td>
 
                                 </tr>
+
                                 <tr class="tr-sub" data-index="35">
                                     <td ng-repeat="pv in pCtrl.irrData[35].values | skip:2 ">{{pv.value | number:2}}</td>
 
@@ -612,7 +617,5 @@
             <a href="javascript:void(0)" class="btn btn-default amp-btn amp-btn-reverse" id="btn-count" ng-click="pCtrl.count()">计算</a>
         </div>
     </div>
-
-
     </form>
 </div><!-- contentpanel -->
