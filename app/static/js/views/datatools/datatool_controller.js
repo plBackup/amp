@@ -387,32 +387,81 @@ dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
         amp_main.leftPanel_update();
     }]);
 
-dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData",
-    function($rootScope, $scope,irrPlanData) {
+dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$timeout",
+    function($rootScope, $scope,irrPlanData,$timeout) {
         var self=this;
         self.irrData=irrPlanData;
+        console.log(self.irrData);
 
-        //self.setData=rpgSetData[0].values;
         self.save=function(){
             console.log(self.irrData);
         };
+        var skip=2;
+
+        //这里出于性能考虑 不采用$watch 直接在触发元素上绑定change事件，触发
+
+
+       /* $scope.$watch('irrData', function(newValue, oldValue) {
+            /!*if (newValue === oldValue) { return; }*!/
+            console.log("self update")
+
+        },true);*/
         self.count=function(){
-            /*var skip=2;
-            var count_array=self.irrData[5].values.slice(2);
-            $.each(count_array,function(i,e){
-                console.log(e.value);
-                console.log(self.irrData[2].values[i+skip].value);
-                console.log(self.irrData[3].values[i+skip].value);
-                e.value=parseFloat(self.irrData[2].values[i+skip].value)+parseFloat(self.irrData[3].values[i+skip].value);
-                console.log(e.value);
-            });*/
-            console.log("count----");
+            console.log("count")
+            var skip=2;
+            var watchData={
+                subEmptyRate:self.irrData[5].values,
+                anchorManageFee:self.irrData[7].values,
+                manageFeeUpdate:self.irrData[10].values,
+                multiIncomeRatio:self.irrData[13].values[1],
+                propertyTaxes:self.irrData[16].values[1],
+                salesTaxes:self.irrData[17].values[1],
+                runCostRate:self.irrData[19].values,
+                quitYear:self.irrData[31].values[1],
+                quitRRate:self.irrData[32].values[1],
+                quitFee:self.irrData[33].values[1],
+
+                valOfYear:self.irrData[41].values[1],
+                loanYears:self.irrData[42].values[1],
+                loanPP:self.irrData[42].values[1],
+
+                loanInterest:self.irrData[49].values[1]
+            };
+
+            var countData={
+                rentIncome:self.irrData[5].values.slice(2),
+                manageFeeIncome:self.irrData[11].values.slice(2),
+                multiIncome:self.irrData[13].values.slice(2),
+                totleRevenue:self.irrData[14].values.slice(2),
+                propertyTaxes:self.irrData[16].values.slice(2),
+                salesTaxes:self.irrData[17].values.slice(2),
+                expenseRatio:self.irrData[21].values.slice(2),
+                expense:self.irrData[22].values.slice(2),
+                noi:self.irrData[24].values.slice(2)
+            };
+
+            var countSum={
+                noiSum:self.irrData[24].values[1]
+            };
+
+
+            $.each(countData.rentIncome,function(i,e){
+                e.value=self.irrData[2].values[i+skip].value+self.irrData[3].values[i+skip].value*(1-self.irrData[4].values[i+skip].value);
+            });
+
+            $.each(countData.manageFeeIncome,function(i,e){
+                e.value=self.irrData[7].values[i+skip].value+self.irrData[8].values[i+skip].value*(1-self.irrData[9].values[i+skip].value);
+            });
         };
 
         $(".table").on("click","td",function(){
             $(".table td").removeClass("active");
             $(this).addClass("active");
             $(this).find("input").focus();
+        });
+
+        $(".table").on("change","input",function(e){
+                self.count();
         });
 
         irr_plan.init();

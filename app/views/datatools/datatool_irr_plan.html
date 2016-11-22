@@ -400,7 +400,9 @@
                                     </td>
                                 </tr>
                                 <tr class="tr-sub tr-split-bottom tr-note" data-index="5">
-                                    <td ng-repeat="pv in pCtrl.irrData[5].values | skip:2 ">{{pCtrl.irrData[2].values[$index+2].value + (pCtrl.irrData[3].values[$index+2].value*(1-pCtrl.irrData[4].values[$index+2].value)) | number:2 }}</td>
+                           <!--         <td ng-repeat="pv in pCtrl.irrData[5].values | skip:2 ">{{pCtrl.irrData[2].values[$index+2].value + (pCtrl.irrData[3].values[$index+2].value*(1-pCtrl.irrData[4].values[$index+2].value)) | number:2 }}</td>
+                          -->
+                                    <td ng-repeat="pv in pCtrl.irrData[5].values | skip:2 ">{{pv.value| number:2}}</td>
                                 </tr>
 
                                 <tr class="tr-main tr-split-top" data-index="6">
