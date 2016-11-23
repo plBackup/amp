@@ -318,7 +318,7 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         self.index="add";
         self.shopInfo={};
         $scope.$on("shopEdit",function(e,data){
-            console.log("shop--edit");
+            //console.log("shop--edit");
             amp_main.rightPanel_open();
             self.index=data.index;
             self.shopInfo=data.shopData;
@@ -393,10 +393,10 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
     function($rootScope, $scope,irrPlanData,$timeout) {
         var self=this;
         self.irrData=irrPlanData;
-        console.log(self.irrData);
+        //console.log(self.irrData);
 
         self.save=function(){
-            console.log(self.irrData);
+            //console.log(self.irrData);
         };
         var skip=2;
 
@@ -409,7 +409,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
         },true);*/
         self.count=function(){
-            console.log("count")
+            console.log("count");
             var skip=2;
             var watchData={
                 subEmptyRate:self.irrData[5].values,
@@ -435,24 +435,75 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 manageFeeIncome:self.irrData[11].values.slice(2),
                 multiIncome:self.irrData[13].values.slice(2),
                 totleRevenue:self.irrData[14].values.slice(2),
+
                 propertyTaxes:self.irrData[16].values.slice(2),
                 salesTaxes:self.irrData[17].values.slice(2),
-                expenseRatio:self.irrData[21].values.slice(2),
-                expense:self.irrData[22].values.slice(2),
+
+                runCost:self.irrData[20].values.slice(2),//经营费用
+                expenseRatio:self.irrData[21].values.slice(2),//总经营费用占比
+                expense:self.irrData[22].values.slice(2), //总经营费用
+
                 noi:self.irrData[24].values.slice(2)
             };
 
-            var countSum={
+           /* var countSum={
                 noiSum:self.irrData[24].values[1]
-            };
+            };*/
 
-
+            //租金总收入
             $.each(countData.rentIncome,function(i,e){
                 e.value=self.irrData[2].values[i+skip].value+self.irrData[3].values[i+skip].value*(1-self.irrData[4].values[i+skip].value);
             });
-
+            //物业管理费
             $.each(countData.manageFeeIncome,function(i,e){
-                e.value=self.irrData[7].values[i+skip].value+self.irrData[8].values[i+skip].value*(1-self.irrData[9].values[i+skip].value);
+                e.value=parseFloat(self.irrData[7].values[i+skip].value)+self.irrData[8].values[i+skip].value*(1-self.irrData[4].values[i+skip].value);
+            });
+            //多经收入
+            $.each(countData.multiIncome,function(i,e){
+                e.value=self.irrData[5].values[i+skip].value*self.irrData[13].values[1].value;
+            });
+            //经营总收入
+            $.each(countData.totleRevenue,function(i,e){
+                e.value=self.irrData[5].values[i+skip].value+self.irrData[11].values[i+skip].value+self.irrData[13].values[i+skip].value;
+            });
+            //房产税－暂无输入
+            self.propertyTaxesNum=12000;
+            $.each(countData.propertyTaxes,function(i,e){
+               // e.value=self.irrData[5].values[i+skip].value+self.irrData[11].values[i+skip].value+self.irrData[13].values[i+skip].value;
+                e.value=self.propertyTaxesNum*self.irrData[16].values[1].value
+            });
+            //营业税
+            $.each(countData.salesTaxes,function(i,e){
+                 e.value=self.irrData[14].values[i+skip].value*self.irrData[17].values[1].value;
+            });
+
+            //经营费用runCost
+            self.runCostInit=2868.80;
+
+            $.each(countData.runCost,function(i,e){
+                if(i==0){
+                    e.value=parseFloat(self.irrData[19].values[i+skip].value+1)*self.runCostInit;
+                }else{
+                    //console.log(self.irrData[19].values[i+skip].value+1);
+                    e.value=(parseFloat(self.irrData[19].values[i+skip].value)+1)*self.irrData[20].values[i+skip-1].value;
+                }
+            });
+
+            //总费用占比
+            $.each(countData.expenseRatio,function(i,e){
+                e.value=parseFloat(self.irrData[20].values[i+skip].value)/self.irrData[14].values[i+skip].value;
+                console.log(e.value);
+            });
+
+            //总经营费用
+            $.each(countData.expense,function(i,e){
+                e.value=parseFloat(self.irrData[20].values[i+skip].value)+self.irrData[16].values[i+skip].value+self.irrData[17].values[i+skip].value;
+                console.log(e.value);
+            });
+
+            //noi
+            $.each(countData.noi,function(i,e){
+                e.value=parseFloat(self.irrData[14].values[i+skip].value)-parseFloat(self.irrData[22].values[i+skip].value)
             });
         };
 
@@ -463,7 +514,11 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         });
 
         $(".table").on("change","input",function(e){
-                self.count();
+            $scope.$apply(
+                function(){
+                    self.count();
+                }
+            );
         });
 
         irr_plan.init();
@@ -505,7 +560,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
         };
          self.checkReturn=function(){
-             console.log(self.shopInfo)
+             //console.log(self.shopInfo)
          };
         //页面事件
 

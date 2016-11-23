@@ -425,7 +425,7 @@
                                 </tr>
 
                                 <tr class="tr-sub" data-index="9">
-                                    <td ng-repeat="pv in pCtrl.irrData[9].values | skip:2 ">
+                                    <td ng-repeat="pv in pCtrl.irrData[4].values | skip:2 ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
                                             <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
@@ -434,7 +434,7 @@
                                 </tr>
                                 <tr class="tr-sub" data-index="10">
                                     <td ng-repeat="pv in pCtrl.irrData[10].values | skip:2 ">
-                                        <div class="td-input-wrapper num-input padding-r-15" >
+                                        <div class="td-input-wrapper num-input padding-r-15" ng-hide="$index==0">
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
                                             <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
@@ -471,7 +471,7 @@
                                 </tr>
                                 <tr class="tr-sub" data-index="19">
                                     <td ng-repeat="pv in pCtrl.irrData[19].values | skip:2 ">
-                                        <div class="td-input-wrapper num-input padding-r-15"  ng-hide="$index==1">
+                                        <div class="td-input-wrapper num-input padding-r-15"  ng-hide="$index==0">
                                             <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
                                             <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>

@@ -736,13 +736,12 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
     });*/
     $scope.goPath = function(href){
         console.log("go path");
-        //alert(href)
-        /*$timeout(function(){
-            alert("..");
-            $location.path(href);
-        },500)*/
-
-
+        if(href){
+            var target=href.split("#/")[1];
+        }
+        $scope.$apply(function(){
+            $location.path(target);
+        });
     };
     $(".ys-amp").on("relocate",function(e,id,href){
         //alert("href:"+href);
