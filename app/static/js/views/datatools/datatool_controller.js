@@ -6,6 +6,8 @@ var irr_plan=(function($,irr_plan){
     var irr_plan=irr_plan;
     var pin;
     var irr_plan_head_swiper,irr_plan_main_swiper;
+
+
     irr_plan.swiper_init=function(){
         irr_plan_head_swiper = new Swiper('#irr-plan-table-head', {
             //scrollbar: '.swiper-scrollbar',
@@ -57,6 +59,15 @@ var irr_plan=(function($,irr_plan){
             }
 
         });
+    };
+
+    irr_plan.swiper_update=function(){
+       /* irr_plan_head_swiper.update();
+        irr_plan_main_swiper.update();
+        irr_plan_head_swiper.params.control = irr_plan_main_swiper;
+        irr_plan_main_swiper.params.control = irr_plan_head_swiper;*/
+       irr_plan.destory();
+        irr_plan.swiper_init();
     };
 
     irr_plan.table_init=function(){
@@ -405,8 +416,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         self.quitRRate=irrPlanData[32].values[1].value;
         self.quitFee=self.irrData[33].values[1].value;
 
-        console.log(self.quitYear);
-
        /* $scope.$watch('irrData', function(newValue, oldValue) {
             /!*if (newValue === oldValue) { return; }*!/
         },true);*/
@@ -453,6 +462,26 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
            /* var countSum={
                 noiSum:self.irrData[24].values[1]
             };*/
+           self.quitYear=Math.abs(parseInt(self.irrData[31].values[1].value));
+
+            function _updateTableHead(quitYear){
+
+                var y=parseInt(quitYear);
+                var irr_width=150*y;
+                console.log("year---------"+y);
+                var $irrYear=$("#irr-year");
+                $irrYear.empty();
+                for(i=0;i<y;i++){
+                    $irrYear.append('<th>第'+(i+1)+'年</th>');
+                    console.log($irrYear.html())
+                }
+                $(".swiper-wrapper table").css("width",irr_width+"px");
+                $timeout(function(){
+                    irr_plan.swiper_update();
+                },300);
+
+            }
+            //_updateTableHead(self.quitYear);
 
             //租金总收入
             $.each(countData.rentIncome,function(i,e){
@@ -520,6 +549,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                     e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))-parseFloat(Math.abs(self.irrData[26].values[i+skip-1].value))
                 }
             });
+
+            _updateTableHead(self.quitYear);
         };
 
         $(".table").on("click","td",function(){

@@ -1,6 +1,7 @@
 'use strict';
 
 /* Directives */
+/*
 angular.module('ng-swipe', []);
 angular.module('ng-swipe').directive('swipe', function(){
 
@@ -19,7 +20,7 @@ angular.module('ng-swipe').directive('swipe', function(){
         restrict:'E',
         link:linker,
         controller:controller,
-        /*templateUrl:'../static/js/main/swipe.html',*/
+        /!*templateUrl:'../static/js/main/swipe.html',*!/
         template:'<div class="swiper-container" style="width:100%;">'
             + '<div class="swiper-wrapper">'
             + '<div class="swiper-slide"></div></div></div>',
@@ -30,4 +31,4 @@ angular.module('ng-swipe').directive('swipe', function(){
             prev:'='
         }
     }
-});
+});*/
