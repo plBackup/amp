@@ -12,7 +12,13 @@
                             <div class="ys-mainpanel-inner" ng-click="sCtrl.setShopInfo()">
                                 <!--svg here-->
                                 <svg version="1.1" id="ys-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="980px" viewBox="0 0 600 1180" preserveAspectRetio="xMidYMin meet">
-
+                                        <defs>
+                                            <style type="text/css">
+                                                .cur-select{
+                                                    stroke:black;strokeWidth: 5;fill:red;stroke-dasharray:12;fill-opacity:0.8;color:red;cursor:pointer;
+                                                }
+                                            </style>
+                                        </defs>
                                 </svg>
                                 <!--svg here-->
                             </div>
@@ -318,4 +324,36 @@
     });
 </script>
 -->
+<script>
+    $(document).ready(function(){
+        var s=Snap("#ys-svg");
+        var curElement;
+        var $container=$("#ys-svg");
+
+        s.click(function(e){
+            console.log(e);
+            console.log(e.target.id);
+            curElement=s.select("#"+e.target.id);
+            if(s.select(".cur-select")){
+                s.select(".cur-select").removeClass("cur-select");
+            }
+
+            curElement.addClass("cur-select");
+           /* curElement.attr({
+                stroke: "black",
+                strokeWidth: 5,
+                fill:"red",
+                "stroke-dasharray":12,
+                "file-opacity":0.8,
+                color:"red"
+            });*/
+            if(curElement.data("shopid")){
+               // alert(curElement.data("shopid"));
+
+            }else{
+              //  curElement.data("shopid",1);
+            }
+        });
+    });
+</script>
 
