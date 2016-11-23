@@ -254,7 +254,7 @@
                                                         <em>{{sCtrl.shopInfo.property | default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.property)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.property"><a role="menuitem" ng-click="sCtrl.setModel('payTime',menu)">{{menu}}</a></li>
+                                                        <li ng-class="{'active':sCtrl.isActive(menu,sCtrl.shopInfo.property)}" role="presentation" ng-repeat="menu in sCtrl.form_menu.property"><a role="menuitem" ng-click="sCtrl.setModel('property',menu)">{{menu}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
