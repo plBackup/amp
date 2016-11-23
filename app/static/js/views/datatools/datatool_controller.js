@@ -241,6 +241,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
     function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location,$filter) {
         var self=this;
         var shopData=dataIndexData.slice(1);
+        console.log(shopData);
         self.indexData=shopData;
         self.recordsNum=self.indexData.length;
         self.pageLimit=10;
@@ -262,6 +263,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         self.shopEdit=function(index,shop){
             //self.indexData[index].shopIndex+="###";
+            console.log(shop);
             console.log("edit...");
             $rootScope.$broadcast("shopEdit",{shopData:shop,index:index})
         };
@@ -331,6 +333,7 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         $scope.$on("shopEdit",function(e,data){
             //console.log("shop--edit");
             amp_main.rightPanel_open();
+            console.log(data);
             self.index=data.index;
             self.shopInfo=data.shopData;
         });
@@ -575,8 +578,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         })
     }]);
 
-dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData",
-    function($rootScope, $scope,simData,simChartData) {
+dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData","$location","$timeout",
+    function($rootScope, $scope,simData,simChartData,$location,$timeout) {
         var self=this;
         self.chartData=simChartData["chart"];
         self.shops=simData.slice(1);
@@ -607,6 +610,11 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         };
          self.checkReturn=function(){
              //console.log(self.shopInfo)
+             amp_main.loading_show();
+             $timeout(function(){
+                amp_main.loading_hide();
+                 $location.path("irrplan");
+             },1000);
          };
         //页面事件
 

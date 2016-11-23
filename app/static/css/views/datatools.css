@@ -202,7 +202,7 @@
 #datatool-sim #datatool-sim-main-table .amp-table tr>th,
 #datatool-sim #datatool-sim-main-table .amp-table tr>td{padding-left:0px;padding-right:15px;}
 #datatool-sim #datatool-sim-main-table .amp-table tr>th{padding-left:20px;font-size: 14px;color:#8592a3;}
-#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{padding-left:0;}
+#datatool-sim #datatool-sim-main-table .amp-table thead>tr>th{padding-left:0;border-bottom:0;}
 
 #datatool-sim-main-table .amp-table>tbody>tr>th,
 #datatool-sim-main-table .amp-table>tbody>tr>td,
