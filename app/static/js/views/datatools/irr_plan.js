@@ -7,6 +7,7 @@
  */
 var irr_plan=(function($,irr_plan){
     var irr_plan=irr_plan;
+
     var pin;
     var irr_plan_head_swiper,irr_plan_main_swiper;
     irr_plan.swiper_init=function(){

@@ -27,7 +27,8 @@ var project_create=(function($,pc){
             }
         });
 
-        $(".input-select").on("click",".dropdown-menu a",function(e){
+        $(".input-select").on("click touchend",".dropdown-menu a",function(e){
+           /* alert("click touchend");*/
             var $select=$(this).closest(".input-select");
             var $this=$(this);
             e.preventDefault();

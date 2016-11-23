@@ -673,9 +673,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
 
 });
 
-ampApp.controller('MainController', function($rootScope, $scope) {
+ampApp.controller('MainController', function($rootScope, $scope,$location,$timeout) {
 
-    $rootScope.projectName="商业公司A"
+    $rootScope.projectName="商业公司A";
     $rootScope.homePageIsShown = true;
     $scope.state = {};
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
@@ -686,7 +686,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
         $scope.state.loading=false;
         $scope.state.enter=false;
         $scope.state.exit=true;
-        ampApp.collector.destory();
+        //ampApp.collector.destory();
        // $scope.$apply();
     });
     $rootScope.$on('$stateChangeSuccess',
@@ -699,6 +699,7 @@ ampApp.controller('MainController', function($rootScope, $scope) {
             //console.log("prev:"+fromState.name);
             //left panel update
             amp_main.leftPanel_update();
+            ampApp.setNav(toState.name);
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
@@ -733,6 +734,32 @@ ampApp.controller('MainController', function($rootScope, $scope) {
         console.log(e);
         console.log(data);
     });*/
+    $scope.goPath = function(href){
+        console.log("go path");
+        //alert(href)
+        /*$timeout(function(){
+            alert("..");
+            $location.path(href);
+        },500)*/
+
+
+    };
+    $(".ys-amp").on("relocate",function(e,id,href){
+        //alert("href:"+href);
+      /*  console.log("on relocate")
+        console.log(e)
+        console.log(id);
+        console.log(href);
+        console.log($location);*/
+        $scope.goPath(href);
+
+    });
+
+    amp_main.init();
+
+   /* $timeout(function(){
+        $location.path("noi")
+    },3000)*/
 
 });
 
@@ -777,6 +804,15 @@ ampApp.setNav=function(navhash){
         $(navSets.headerBar).addClass("active").find("li").removeClass("active").end().find(navSets.headerItem).addClass("active");
     }
 };
+
+/*<div tap="message=tapped"></div>*/
+/*ampApp.directive("tap",function(){
+    return function($scope,$elem,attrs){
+        $elem.on("touchstart touchend",function(){
+            $scope.$apply(attrs["tap"]);
+        });
+    }
+});*/
 
 //swiper 和 datetimepicker的回收器
 ampApp.collector=(function($,ac){

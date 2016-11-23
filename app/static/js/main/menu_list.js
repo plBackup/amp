@@ -10,7 +10,7 @@ var menu_list={
             links:"noi",
             target:"#",
             show_sub_menu:false,
-            re_locate:false,//点击一级目录直接跳转
+            re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
                     name:"实际",
@@ -113,7 +113,7 @@ var menu_list={
             links:"rpgindex",
             target:"#page-frame",
             show_sub_menu:false,
-            re_locate:false,//点击一级目录直接跳转
+            re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
                     name:"租金包",

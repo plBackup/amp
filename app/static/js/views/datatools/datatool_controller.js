@@ -377,6 +377,8 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
 
         };
 
+        amp_main.leftPanel_update();
+
     }]);
 
 dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",

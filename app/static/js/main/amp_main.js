@@ -48,7 +48,7 @@ var amp_main=(function($,menu,am){
                     var sub_ul=[];
                     if(sub_menu_length>=1){
                         $.each(sub_menu,function(i,e){
-                            var sub_id=i
+                            var sub_id=i;
                             var sub_li=[
                                 '<li>',
                                     '<a ui-sref="'+ e.links+'" target="'+ e.target+'" data-show-header="'+e.show_page_header+'" data-relocate="'+ e.re_locate+'" id="sub-'+ main_id+'-'+sub_id+'">'+ e.name+'</a>',
@@ -139,7 +139,7 @@ var amp_main=(function($,menu,am){
         });
         // Toggle 展开
         $('.nav-parent > a').click(function(e) {
-            e.preventDefault();
+            //e.preventDefault();
             var $parent = $(this).parent();
             var $sub = $parent.find('> ul');
 
@@ -188,7 +188,9 @@ var amp_main=(function($,menu,am){
     }
 
     function re_locate(id,href){
+        //alert(href);
         var boolean_re_locate=$("#"+id).data("relocate");
+        //alert(boolean_re_locate);
         if(boolean_re_locate==true){
             $(".ys-amp").trigger("relocate",[id,href]);
         }else if(typeof boolean_re_locate==="undefined"){
@@ -200,7 +202,7 @@ var amp_main=(function($,menu,am){
 
     amp_main.sideNav_nav=function(){
         $('.nav-bracket  a').on("click touchend",function(e){
-           // e.preventDefault();
+            //e.preventDefault();
             if($(this).hasClass("ys-menu-link")){
                 //一级目录
                 var $parent=$(this).parent("li");
@@ -232,7 +234,6 @@ var amp_main=(function($,menu,am){
                     //$(".nav-parent").removeClass("nav-active");
                     $(this).parent("li").addClass("active").closest(".nav-parent").addClass("active");
                     //relocate & render menu
-
                 }else{
                     if(!$(this).parent("li").hasClass("active")){
                         $("ul.children li").removeClass("active");
@@ -242,7 +243,6 @@ var amp_main=(function($,menu,am){
                         var id=$(this).attr("id");
                         render_menu(id);
                         re_locate(id,href);*/
-
                     }
                 }
             }
@@ -345,7 +345,7 @@ var amp_main=(function($,menu,am){
         $(".ys-amp").trigger("right_panel_close");
     };
     amp_main.rightPanel_init=function(){
-        $(".rightpanel").on("click",".closebtn",function(e){
+        $(".rightpanel").on("click touchend",".closebtn",function(e){
             e.preventDefault();
             amp_main.rightPanel_close();
         })
@@ -368,7 +368,16 @@ var amp_main=(function($,menu,am){
         });
     };
 
-
+    function _isPC()
+    {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var isPC= true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { isPC = false; break; }
+        }
+        return isPC;
+    }
     amp_main.init=function(sys){
         if(!sys){
             sys="amp_menu";
@@ -396,6 +405,10 @@ var amp_main=(function($,menu,am){
                re_locate(id,href);
            }
         });*/
+        var is_pc=_isPC();
+        if(!is_pc){
+            $(".menutoggle").click();
+        }
     };
     return amp_main;
 })(jQuery,menu_list,amp_main||{});

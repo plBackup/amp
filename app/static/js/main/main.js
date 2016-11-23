@@ -2,6 +2,50 @@
  * Created by limeiting on 16/11/15.
  */
 /* App Module */
+var project_create=(function($,pc){
+    var project_create=pc;
+
+    project_create.init=function(){
+        $("#open-date").datetimepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left",
+            startView:3,
+            minView:2,
+            maxView:4,
+            language:"zh-CN"
+        });
+        $(".input-select").each(function(i,e){
+            var curVal=$(this).find("input").val();
+            if(curVal!=""){
+                $(this).find("button.dropdown-toggle>em").text(curVal);
+                $(this).find(".dropdown-menu a").each(function(i,e){
+                    if($(this).text().trim()==curVal){
+                        $(this).closest("li").addClass("active");
+                    }
+                });
+            }
+        });
+
+        $(".input-select").on("click",".dropdown-menu a",function(e){
+           /* alert("....");*/
+            var $select=$(this).closest(".input-select");
+            var $this=$(this);
+            e.preventDefault();
+            var curSelect=$this.text().trim();
+            $this.closest("ul.dropdown-menu").find("li").removeClass("active");
+            $this.parent("li").addClass("active");
+
+            $select.find("button.dropdown-toggle>em").text(curSelect);
+            $select.find("input").val(curSelect);
+
+        });
+    };
+
+    return project_create;
+})(jQuery,project_create||{});
+
 
 var mainApp = angular.module('main', [
     'ui.router',
@@ -164,6 +208,19 @@ mainApp.controller('MainController', function($rootScope, $scope) {
             $scope.state.loading=false;
         });
 
+    function _isPC()
+    {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var isPC= true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) { isPC = false; break; }
+        }
+        return isPC;
+    }
+
+
+
 });
 
 mainApp.controller("pjListController",["$rootScope","$scope","projects",function($rootScope,$scope,projects){
@@ -214,6 +271,11 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
         $location.path("/main");
     };
 
+    project_create.init();
+    $scope.$on("$destroy", function() {
+        $("#open-date-wrapper input").datetimepicker("remove");
+    });
+
 }]);
 mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid",function($rootScope,$scope,$location,pid){
     //$scope.project=project;
@@ -227,6 +289,12 @@ mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid"
         //$rootScope.projects.push(self.project);
         $location.path("/main");
     };
+
+    project_create.init();
+
+    $scope.$on("$destroy", function() {
+       $("#open-date-wrapper input").datetimepicker("remove");
+    });
 }]);
 
 mainApp.run(function($http) {
