@@ -232,7 +232,12 @@
                         </tr>
                         <tr class="tr-sub" data-index="34">
                             <th><span>{{pCtrl.irrData[34].values[0].value}}</span></th>
-                            <td>{{pCtrl.irrData[34].values[1].value | number:2}}<i>万元/m&sup2/GLA</i></td>
+                            <td>
+                                <div class="td-input-wrapper num-input padding-r-15" >
+                                    <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[34].values[1].value">
+                                    <span class="number-format">{{pCtrl.irrData[34].values[1].value | number:2}}<i>万元/m&sup2/GLA</i></span>
+                                </div>
+                            </td>
                         </tr>
                         <tr class="tr-sub" data-index="35">
                             <th><span>{{pCtrl.irrData[35].values[0].value}}</span></th>
@@ -607,7 +612,6 @@
                     <!-- Add Scroll Bar -->
                     <div class="swiper-scrollbar"></div>
                 </div><!--swiper container-->
-
 
             </div>
         </div>

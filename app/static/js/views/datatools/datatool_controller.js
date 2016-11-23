@@ -393,20 +393,22 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
     function($rootScope, $scope,irrPlanData,$timeout) {
         var self=this;
         self.irrData=irrPlanData;
-        //console.log(self.irrData);
 
         self.save=function(){
             //console.log(self.irrData);
         };
         var skip=2;
-
         //这里出于性能考虑 不采用$watch 直接在触发元素上绑定change事件，触发
 
+        $scope.years=["第1年","第2年","第3年","第4年","第5年","第6年","第7年","第8年","第9年","第10年"];
+        self.quitYear=irrPlanData[31].values[1].value;
+        self.quitRRate=irrPlanData[32].values[1].value;
+        self.quitFee=self.irrData[33].values[1].value;
+
+        console.log(self.quitYear);
 
        /* $scope.$watch('irrData', function(newValue, oldValue) {
             /!*if (newValue === oldValue) { return; }*!/
-            console.log("self update")
-
         },true);*/
         self.count=function(){
             console.log("count");
@@ -443,7 +445,9 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 expenseRatio:self.irrData[21].values.slice(2),//总经营费用占比
                 expense:self.irrData[22].values.slice(2), //总经营费用
 
-                noi:self.irrData[24].values.slice(2)
+                noi:self.irrData[24].values.slice(2),
+                roi:self.irrData[25].values.slice(2),
+                roiRes:self.irrData[26].values.slice(2),
             };
 
            /* var countSum={
@@ -492,18 +496,29 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             //总费用占比
             $.each(countData.expenseRatio,function(i,e){
                 e.value=parseFloat(self.irrData[20].values[i+skip].value)/self.irrData[14].values[i+skip].value;
-                console.log(e.value);
             });
 
             //总经营费用
             $.each(countData.expense,function(i,e){
                 e.value=parseFloat(self.irrData[20].values[i+skip].value)+self.irrData[16].values[i+skip].value+self.irrData[17].values[i+skip].value;
-                console.log(e.value);
+
             });
 
-            //noi
+            //noi 总收入－总费用
             $.each(countData.noi,function(i,e){
                 e.value=parseFloat(self.irrData[14].values[i+skip].value)-parseFloat(self.irrData[22].values[i+skip].value)
+            });
+            //roi 每一年的noi/总投入
+            $.each(countData.roi,function(i,e){
+                e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))/parseFloat(Math.abs(self.irrData[24].values[1].value))
+            });
+            //roiRes 无杠杆现金流
+            $.each(countData.roiRes,function(i,e){
+                if(i==0){
+                    e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))-parseFloat(Math.abs(self.irrData[24].values[1].value))
+                }else{
+                    e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))-parseFloat(Math.abs(self.irrData[26].values[i+skip-1].value))
+                }
             });
         };
 
