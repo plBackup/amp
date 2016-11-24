@@ -3,7 +3,7 @@
  */
 var local_storage=(function($,ls){
     if(typeof localStorage!=="undefined"){
-        var ls=localstorage;
+        var ls=localStorage;
     }else{
         var ls=new Object();
         ls.setItem=function(state,data){

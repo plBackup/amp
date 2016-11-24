@@ -788,6 +788,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         });
 
         irr_plan.init();
+        self.count();
         amp_main.leftPanel_update();
 
         $scope.$on("$destroy", function() {
