@@ -452,6 +452,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
             var countData={
                 rentIncome:self.irrData[5].values.slice(2),
+                manageFeeUpdate:self.irrData[10].values.slice(2),
                 manageFeeIncome:self.irrData[11].values.slice(2),
                 multiIncome:self.irrData[13].values.slice(2),
                 totleRevenue:self.irrData[14].values.slice(2),
@@ -469,7 +470,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
                 quitRRate:self.irrData[32].values.slice(2),
                 quitFee:self.irrData[33].values.slice(2),
-                quitIncome:self.irrData[34].values.slice(2), //
+                quitIncome:self.irrData[34].values.slice(2), //退出收益
+
                 unleveredCashFlow:self.irrData[35].values.slice(2),//无杠杆现金流
                 unleveredNRR:self.irrData[36].values.slice(2),//净回报率
                 unleveredIRR:self.irrData[37].values.slice(2),//无杠杆内部收益率
@@ -521,10 +523,20 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             $.each(countData.rentIncome,function(i,e){
                 e.value=self.irrData[2].values[i+skip].value+self.irrData[3].values[i+skip].value*(1-self.irrData[4].values[i+skip].value);
             });
+
             //物业管理费
             $.each(countData.manageFeeIncome,function(i,e){
                 e.value=parseFloat(self.irrData[7].values[i+skip].value)+self.irrData[8].values[i+skip].value*(1-self.irrData[4].values[i+skip].value);
             });
+            //物业管理费递增率
+            $.each(countData.manageFeeUpdate,function(i,e){
+                if(i==0){
+                    e.value=0;
+                }else{
+                    e.value=parseFloat(self.irrData[11].values[i+skip].value)/parseFloat(self.irrData[11].values[i+skip-1].value)-1;
+                }
+            });
+
             //多经收入
             $.each(countData.multiIncome,function(i,e){
                 e.value=self.irrData[5].values[i+skip].value*self.irrData[13].values[1].value;
@@ -611,6 +623,53 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 }
             });
 
+            //无杠杆现金流unleveredCashFlow
+            $.each(countData.unleveredCashFlow,function(i,e){
+                if(i==(self.quitYear-1)){
+                    e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))+parseFloat(Math.abs(self.irrData[34].values[i+skip].value))
+                }else{
+                    e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value));
+                }
+            });
+
+            //净回报率
+            $.each(countData.unleveredNRR,function(i,e){
+                e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))/parseFloat(Math.abs(self.irrData[35].values[1].value));
+            });
+
+            //无杠杆内部收益率
+            //self.irrData[35].values[1] finance.IRR(initial investment, [cash flows]);
+            /*finance.IRR(-500000, 200000, 300000, 200000);
+            => 18.82*/
+            var finance = new Finance();
+            var qy=self.quitYear;
+            var irrArgs=[];
+            irrArgs.push(Math.abs(self.irrData[35].values[1].value)*(-1));
+            for(i=0;i<qy;i++){
+               /* if(i==(qy-1)){
+                    irrArgs.push(Math.abs(self.irrData[24].values[i].value));
+                }else{
+                    irrArgs.push(Math.abs(self.irrData[24].values[i].value));
+                }*/
+                irrArgs.push(Math.abs(self.irrData[35].values[i+skip].value));
+            }
+            console.log(irrArgs);
+            var unleaveredIRR=finance.IRRAMP(irrArgs);
+            console.log(unleaveredIRR);
+            self.irrData[37].values[1].value=unleaveredIRR/100;
+
+            //无杠杆利润unleveredProfits
+
+            var unleveredCF=self.irrData[35].values.slice(2);
+            var unleveredProfitsSum=0;
+            for(i=0;i<qy;i++){
+                unleveredProfitsSum+=parseFloat(unleveredCF[i].value);
+            }
+            self.irrData[38].values[1].value=unleveredProfitsSum-parseFloat(Math.abs(self.irrData[35].values[1].value));
+
+            //人民币利润倍数unleveredRMBPP
+            self.irrData[39].values[1].value= parseFloat(self.irrData[38].values[1].value)/parseFloat(Math.abs(self.irrData[35].values[1].value));
+
 
 
 
@@ -618,8 +677,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             if(curQuitYear!==self.quitYear){
                 _updateTableHead(self.quitYear);
             }
-
-
 
         };
 
