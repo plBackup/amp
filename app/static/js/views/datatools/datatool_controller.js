@@ -593,8 +593,12 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         self.shopInfo=self.shops[self.index];
 
         self.setShopInfo=function(){
-            self.index+=1;
-            self.shopInfo=self.shops[self.index];
+
+            $scope.$apply(function(){
+                self.index+=1;
+                self.shopInfo=self.shops[self.index];
+            });
+
         };
         self.setModel=function(type,menu){
             self.shopInfo[type]=menu;
@@ -619,14 +623,13 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         //页面事件
 
         $(".table").on("click","td",function(e){
-            //e.stopPropagation();
-            $(".table td").removeClass("active");
-            $(this).addClass("active");
-            $(this).find("input").focus();
-        });
+             //e.stopPropagation();
+             $(".table td").removeClass("active");
+             $(this).addClass("active");
+             $(this).find("input").focus();
+         });
         amp_datePicker.daterangeSelector();
         amp_datePicker.dateSelector();
-
         var iscroll_init=function(){
             var h=parseInt($(window).height());
 
@@ -684,6 +687,23 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         };
         iscroll_init();
         add_svg();
+
+        var s=Snap("#ys-svg");
+        var curElement;
+        var $container=$("#ys-svg");
+
+        s.click(function(e){
+            curElement=s.select("#"+e.target.id);
+            if(s.select(".cur-select")){
+                s.select(".cur-select").removeClass("cur-select");
+            }
+            curElement.addClass("cur-select");
+            if(curElement.data("shopid")){
+                self.setShopInfo()
+            }else{
+                self.setShopInfo();
+            }
+        });
 
         $scope.$on("$destroy", function() {
             amp_datePicker.destroy();

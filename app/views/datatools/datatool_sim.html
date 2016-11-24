@@ -9,7 +9,7 @@
         <div class="clearfix">
             <div class="col-xs-6"  id="datatool-sim-floor-table">
                 <div  style="width:100%;">
-                            <div class="ys-mainpanel-inner" ng-click="sCtrl.setShopInfo()">
+                            <div class="ys-mainpanel-inner">
                                 <!--svg here-->
                                 <svg version="1.1" id="ys-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="980px" viewBox="0 0 600 1180" preserveAspectRetio="xMidYMin meet">
                                         <defs>
@@ -311,49 +311,3 @@
     </div><!--ys-block-->
 
 </div><!-- contentpanel -->
-<!--
-<script src="../static/js/views/datatools/datasim.js"></script>
-<script src="../static/js/views/datatools/inputs.js"></script>
-<script src="../static/js/views/datatools/irr_table_input.js"></script>
-<script>
-    jQuery(document).ready(function(){
-        console.log(".....");
-        datasim.init();
-        amp_main.leftPanel_update();
-        table_input.init();
-    });
-</script>
--->
-<script>
-    $(document).ready(function(){
-        var s=Snap("#ys-svg");
-        var curElement;
-        var $container=$("#ys-svg");
-
-        s.click(function(e){
-            console.log(e);
-            console.log(e.target.id);
-            curElement=s.select("#"+e.target.id);
-            if(s.select(".cur-select")){
-                s.select(".cur-select").removeClass("cur-select");
-            }
-
-            curElement.addClass("cur-select");
-           /* curElement.attr({
-                stroke: "black",
-                strokeWidth: 5,
-                fill:"red",
-                "stroke-dasharray":12,
-                "file-opacity":0.8,
-                color:"red"
-            });*/
-            if(curElement.data("shopid")){
-               // alert(curElement.data("shopid"));
-
-            }else{
-              //  curElement.data("shopid",1);
-            }
-        });
-    });
-</script>
-
