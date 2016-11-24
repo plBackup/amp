@@ -82,8 +82,8 @@ var rpgSet_table=(function($,rpgSet_table){
 
         //这里实验tab切换输入的情况
        /* $("#rpg-set-table-wrapper input").on("blur",function(e){
-            console.log("-----------blur-------------");
-            console.log(rpgSet_table_main_swiper.getWrapperTranslate('x'))
+            //console.log("-----------blur-------------");
+            //console.log(rpgSet_table_main_swiper.getWrapperTranslate('x'))
         });*/
     };
 
@@ -193,11 +193,11 @@ var rpg_result_table=(function($,rpg_result_table){
     };
 
     rpg_result_table.table_init=function(){
-        console.log("....");
+        //console.log("....");
         $(".ys-table-main").on("mouseenter","tr",function(e){
             var index=$(this).index();
             var parentTagName=$(this).parent().get(0).tagName;
-            console.log("....");
+            //console.log("....");
             $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
                 $(this).find("tr").eq(index).addClass("hover");
             });
@@ -213,7 +213,7 @@ var rpg_result_table=(function($,rpg_result_table){
     };
 
     rpg_result_table.destroy=function(){
-        console.log("result destroy -----------");
+        //console.log("result destroy -----------");
         rpg_result_table_head_rpg_result.destroy();
         rpg_result_table_main_rpg_result.destroy();
     };
@@ -234,7 +234,7 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
         self.rpgSetData=rpgSetData[0];
         //self.setData=rpgSetData[0].values;
         self.setSave=function(){
-            console.log(self.rpgSetData)
+            //console.log(self.rpgSetData)
         };
 
 
@@ -403,12 +403,12 @@ dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData
         };
 
         self.dataReCount=function(){
-          console.log("re count data....");
+          //console.log("re count data....");
 
         };
         self.setSave=function(){
-            console.log("save result data------------------");
-            console.log(self.rpgResultData)
+            //console.log("save result data------------------");
+            //console.log(self.rpgResultData)
         };
 
         //dataSetView.init();

@@ -49,7 +49,7 @@ var noi=(function($,noi){
             if(!defer){
 
                 defer=setTimeout(function(){
-                    console.log("..........up");
+                    //console.log("..........up");
                     swiperUpdate();
                     defer=null;
                 },200);

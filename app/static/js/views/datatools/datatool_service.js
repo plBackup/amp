@@ -17,7 +17,7 @@ angular.module('dataTool').service('dataSetService', ["$http",function($http) {
     var service = {
         getSetData: function () {
             return $http.get('../data/rent_setup_index.json', {cache: true}).then(function (res) {
-                console.log(res);
+                ////console.log(res);
                 return res.data;
             });
         },
@@ -289,7 +289,7 @@ angular.module('dataTool').factory('paginatorService', [function() {
                     this.curPageIndex+=1;
                     //this._load(this.currentOffset,pageLimit);
                     this.pageTarget=this.curPageIndex;
-                    console.log("...next");
+                    ////console.log("...next");
                 }
             },
 
@@ -303,7 +303,7 @@ angular.module('dataTool').factory('paginatorService', [function() {
                     this.curPageIndex -=1;
                     this.pageTarget=this.curPageIndex;
                     //this._load(this.currentOffset,pageLimit);
-                    console.log("...prev");
+                    ////console.log("...prev");
                 }
 
             },

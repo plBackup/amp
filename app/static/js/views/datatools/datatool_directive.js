@@ -4,7 +4,7 @@
 /**
  * Created by limeiting on 16/11/17.
  */
-console.log("------d dr")
+//console.log("------d dr")
 angular.module('dataTool').directive('simChart', ["chartOptService",
     function(chartOptService) {
         return {
@@ -14,8 +14,8 @@ angular.module('dataTool').directive('simChart', ["chartOptService",
                 chartLabels: '='
             },
             link: function($scope, $element) {
-                console.log("-------ddd")
-                console.log($element);
+                //console.log("-------ddd")
+                //console.log($element);
                 //var lineChart;
                 var dataSimChart = echarts.init($element[0]);
 
@@ -25,7 +25,7 @@ angular.module('dataTool').directive('simChart', ["chartOptService",
                 dataSimChart.setOption(opt);
 
                 $scope.$watch('chartData', function(newVal, oldVal) {
-                    console.log(newVal);
+                    //console.log(newVal);
                     if (newVal) {
                         var labels = $scope.chartData[0];
                         var data=$scope.chartData.slice(1);

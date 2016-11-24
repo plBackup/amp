@@ -696,7 +696,7 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
             $scope.state.enter=true;
             $scope.state.exit=false;
             $scope.state.loading=false;
-            //console.log("prev:"+fromState.name);
+            ////console.log("prev:"+fromState.name);
             //left panel update
             amp_main.leftPanel_update();
             ampApp.setNav(toState.name);
@@ -731,11 +731,11 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
     $scope.rightOpened=false;
 
     /*$scope.$on("shopEdit",function(e,data){
-        console.log(e);
-        console.log(data);
+        //console.log(e);
+        //console.log(data);
     });*/
     $scope.goPath = function(href){
-        console.log("go path");
+        //console.log("go path");
         if(href){
             var target=href.split("#/")[1];
         }
@@ -745,11 +745,11 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
     };
     $(".ys-amp").on("relocate",function(e,id,href){
         //alert("href:"+href);
-      /*  console.log("on relocate")
-        console.log(e)
-        console.log(id);
-        console.log(href);
-        console.log($location);*/
+      /*  //console.log("on relocate")
+        //console.log(e)
+        //console.log(id);
+        //console.log(href);
+        //console.log($location);*/
         $scope.goPath(href);
 
     });

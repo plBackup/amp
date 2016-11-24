@@ -11,7 +11,7 @@ angular.module('noi').directive('lineChart', ["noiService",
                 chartLabels: '='
             },
             link: function($scope, $element) {
-                console.log($element);
+                //console.log($element);
                 //var lineChart;
                 var noiChart = echarts.init($element[0]);
 
@@ -21,7 +21,7 @@ angular.module('noi').directive('lineChart', ["noiService",
                 noiChart.setOption(opt);
 
                 $scope.$watch('chartData', function(newVal, oldVal) {
-                    console.log(newVal);
+                    //console.log(newVal);
                     if (newVal) {
                         var labels = $scope.chartData[0];
                         var data=$scope.chartData.slice(1);

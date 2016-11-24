@@ -45,9 +45,9 @@ var table_input=(function($,ti){
         $(".table").on("change","input",function(e){
             var val=($(this).val());
             var oldVal=$(this).next("span").text();
-            console.log(oldVal);
-            console.log(val);
-            console.log(checkNum(val));
+            //console.log(oldVal);
+            //console.log(val);
+            //console.log(checkNum(val));
             //如果当前值有变化，在当前td加修改标记
             if($(this).closest(".td-input-wrapper").hasClass("num-input")){
                 if(checkNum(val)){
@@ -57,10 +57,10 @@ var table_input=(function($,ti){
                         $(this).next("span").html(table_input.numberFormat(val)).append(addOn);
                     }
                 }else{
-                    console.log("false");
+                    //console.log("false");
                     $(this).closest("td").addClass("error");
                     var addOn=$(this).next("span").find(".unit-addon").get(0);
-                    console.log(addOn);
+                    //console.log(addOn);
                     $(this).next("span").text(val).append(addOn);
                 }
             }else{
@@ -73,7 +73,7 @@ var table_input=(function($,ti){
     };
 
     table_input.submit_item=function($elm){
-        console.log($elm);
+        //console.log($elm);
         if($elm.find(".error").length==0){
             var id=$elm.data("id");
             var datas={};
@@ -92,7 +92,7 @@ var table_input=(function($,ti){
                     "darray":datas
                 };
                 //ajax here;
-                console.log(json_data);
+                //console.log(json_data);
                 //callback
                 //合计 和营业额合计 是取历史总数据，需要后台计算后回传，也写在回调里
                 //var sum=1234567890 以下方法写在ajax回掉里

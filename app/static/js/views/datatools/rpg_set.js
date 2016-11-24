@@ -6,7 +6,7 @@
  * Created by limeiting on 16/11/6.
  */
 var swiper_table=(function($,swiper_table){
-    console.log("swiper talbe")
+    //console.log("swiper talbe")
     var swiper_table=swiper_table;
     var pin;
     var swiper_table_head_swiper,swiper_table_main_swiper;
@@ -86,8 +86,8 @@ var swiper_table=(function($,swiper_table){
         });
 
         $("#rpg-set-table-wrapper input").on("blur",function(e){
-            console.log("-----------blur-------------");
-            console.log(swiper_table_main_swiper.getWrapperTranslate('x'))
+            //console.log("-----------blur-------------");
+            //console.log(swiper_table_main_swiper.getWrapperTranslate('x'))
         });
 
        /* var defer=null;

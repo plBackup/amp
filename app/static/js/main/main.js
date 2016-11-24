@@ -115,8 +115,8 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
               /*  project:["projects","$stateParams",function(projects,$stateParams){
                     //这里的逻辑是把数据做在 list-> ui-view( create )里的方法
                     var pId=$stateParams.projectId;
-                    console.log(projects);
-                    console.log(pId);
+                    //console.log(projects);
+                    //console.log(pId);
                     return projects[pId];
                     /!* return projects.find(function (project) {
                      return project.id==pId;

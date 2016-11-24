@@ -270,7 +270,7 @@ var datasim=(function($,datasim){
             /*   chart_data_init[chartType+"Data"].datasets[0].data=data[0];
              chart_data_init[chartType+"Data"].datasets[1].data=data[1];
              chart_data_init[chartType+"Data"].labels=label;
-             console.log(typeof label);*/
+             //console.log(typeof label);*/
             chart_opt[chartType+"Opt"].xAxis.data=label;
             chart_opt[chartType+"Opt"].series=chart_data_init[chartType+"Data"].datasets;
         }

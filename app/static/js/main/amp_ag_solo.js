@@ -105,7 +105,7 @@ ampAppSolo.controller('MainController', function($rootScope, $scope) {
             $scope.state.exit=false;
             $scope.state.loading=false;
             $rootScope.shownav=(toState.name==="rpgresult");
-            //console.log("prev:"+fromState.name);
+            ////console.log("prev:"+fromState.name);
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
