@@ -11,18 +11,18 @@
                        {
                            "name":"项目A",
                            "value":70,
-                           "description":"地处闵行七宝，离市区较远"
+                           "description":"地处闵行，离市区较远"
                        },
                        {
                            "name":"项目B",
                            "value":100,
-                           "description":"位于市中心人民广场附件，地理位置极佳"
+                           "description":"位于市中心附近，地理位置极佳"
                        },
 
                        {
                            "name":"本项目",
                            "value":70,
-                           "description":"地处闵行七宝，离市区较远"
+                           "description":"地处闵行，离市区较远"
                        }
                    ]
                },
@@ -33,18 +33,18 @@
                        {
                            "name":"项目A",
                            "value":90,
-                           "description":"位于七宝地铁口，交通极其便利"
+                           "description":"位于地铁口，交通极其便利"
                        },
                        {
                            "name":"项目B",
                            "value":100,
-                           "description":"位于人民广场地铁口，交通极其便利"
+                           "description":"位于地铁口，交通极其便利"
                        },
 
                        {
                            "name":"本项目",
                            "value":80,
-                           "description":"距离七宝地铁站和公交站一段距离，交通比较便利"
+                           "description":"距离地铁站和公交站一段距离，交通比较便利"
                        }
                    ]
                },
@@ -55,17 +55,17 @@
                        {
                            "name":"项目A",
                            "value":80,
-                           "description":"地处七宝成熟商圈，配套较完善"
+                           "description":"地处成熟商圈，配套较完善"
                        },
                        {
                            "name":"项目B",
                            "value":90,
-                           "description":"地处人民广场商圈，配套完善"
+                           "description":"地处市中心商圈，配套完善"
                        },
                        {
                            "name":"本项目",
                            "value":80,
-                           "description":"地处七宝成熟商圈，配套较完善"
+                           "description":"地处成熟商圈，配套较完善"
                        }
                    ]
                },
@@ -121,17 +121,17 @@
                        {
                            "name":"项目A",
                            "value":80,
-                           "description":"万科广场动线设计较合理，人流移动顺畅"
+                           "description":"动线设计较合理，人流移动顺畅"
                        },
                        {
                            "name":"项目B",
                            "value":70,
-                           "description":"来福士电梯位置较偏僻，场内移动体验较差"
+                           "description":"电梯位置较偏僻，场内移动体验较差"
                        },
                        {
                            "name":"本项目",
                            "value":80,
-                           "description":"宝龙广场动线设计较合理，人流移动顺畅"
+                           "description":"动线设计较合理，人流移动顺畅"
                        }
                    ]
                },
