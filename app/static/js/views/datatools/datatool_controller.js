@@ -26,7 +26,6 @@ var irr_plan=(function($,irr_plan){
             scrollbarHide:false
         });
 
-        console.log("update controller");
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
         irr_plan_main_swiper.params.control = irr_plan_head_swiper;
 
@@ -59,17 +58,35 @@ var irr_plan=(function($,irr_plan){
                     defer=null;
                 },200);
             }
-
         });
     };
 
-    irr_plan.swiper_update=function(){
-       /* irr_plan_head_swiper.update();
-        irr_plan_main_swiper.update();
+    irr_plan.irr_plan_swiper_reset=function(){
+        irr_plan_head_swiper = new Swiper('#irr-plan-table-head', {
+            //scrollbar: '.swiper-scrollbar',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:true
+        });
+        irr_plan_main_swiper = new Swiper('#irr-plan-main-table', {
+            scrollbar: '.swiper-scrollbar',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false
+        });
+     /*   irr_plan_head_swiper.update(true);
+        irr_plan_main_swiper.update(true);*/
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
-        irr_plan_main_swiper.params.control = irr_plan_head_swiper;*/
+        irr_plan_main_swiper.params.control = irr_plan_head_swiper;
+
+    };
+
+    irr_plan.swiper_update=function(){
         irr_plan.destroy();
-        irr_plan.swiper_init();
     };
 
     irr_plan.table_init=function(){
@@ -93,7 +110,6 @@ var irr_plan=(function($,irr_plan){
     };
 
     irr_plan.destroy=function(){
-        console.log("destory");
         irr_plan_head_swiper.destroy(true,true);
         irr_plan_main_swiper.destroy(true,true);
     };
@@ -517,13 +533,18 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                     $irrYear.append('<th>第'+(i+1)+'年</th>');
                 }
                 $(".swiper-wrapper table").css("width",irr_width+"px");
-                $timeout(function(){
-                    console.log("....");
-                    irr_plan.swiper_update();
-                },300);
 
+              /*  $timeout(function(){
+                    irr_plan.destroy();
+                   irr_plan.irr_plan_swiper_reset();
+                },1000);*/
             }
             //_updateTableHead(self.quitYear);
+            //更改表头
+            if(curQuitYear!==self.quitYear){
+                 _updateTableHead(self.quitYear);
+             }
+
 
             //租金总收入
             $.each(countData.rentIncome,function(i,e){
@@ -772,9 +793,9 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             self.irrData[54].values[1].value= parseFloat(self.irrData[53].values[1].value)/parseFloat(Math.abs(self.irrData[35].values[1].value));
 
             //更改表头
-            if(curQuitYear!==self.quitYear){
+            /*if(curQuitYear!==self.quitYear){
                 _updateTableHead(self.quitYear);
-            }
+            }*/
         };
 
         $(".table").on("click","td",function(){
