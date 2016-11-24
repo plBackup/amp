@@ -403,19 +403,25 @@ dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
         amp_main.leftPanel_update();
     }]);
 
-dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$timeout",
-    function($rootScope, $scope,irrPlanData,$timeout) {
+dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$timeout","$location",
+    function($rootScope, $scope,irrPlanData,$timeout,$location) {
         var self=this;
         self.irrData=irrPlanData;
 
         self.save=function(){
             //console.log(self.irrData);
+            amp_main.loading_show();
+            $timeout(function(){
+                amp_main.loading_hide();
+                $location.path("noi");
+            },1000);
         };
         var skip=2;
         //这里出于性能考虑 不采用$watch 直接在触发元素上绑定change事件，触发
-
+        var curQuitYear;
         $scope.years=["第1年","第2年","第3年","第4年","第5年","第6年","第7年","第8年","第9年","第10年"];
         self.quitYear=irrPlanData[31].values[1].value;
+        curQuitYear=self.quitYear;
         self.quitRRate=irrPlanData[32].values[1].value;
         self.quitFee=self.irrData[33].values[1].value;
 
@@ -460,6 +466,31 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 noi:self.irrData[24].values.slice(2),
                 roi:self.irrData[25].values.slice(2),
                 roiRes:self.irrData[26].values.slice(2),
+
+                quitRRate:self.irrData[32].values.slice(2),
+                quitFee:self.irrData[33].values.slice(2),
+                quitIncome:self.irrData[34].values.slice(2), //
+                unleveredCashFlow:self.irrData[35].values.slice(2),//无杠杆现金流
+                unleveredNRR:self.irrData[36].values.slice(2),//净回报率
+                unleveredIRR:self.irrData[37].values.slice(2),//无杠杆内部收益率
+                unleveredProfits:self.irrData[38].values.slice(2),//无杠杆利润
+                unleveredRMBPP:self.irrData[39].values.slice(2),//人民币利润倍数
+                //杠杆现金流
+                leveredValue:self.irrData[41].values.slice(2),//当年估值
+                loanPP:self.irrData[43].values.slice(2),//贷款额
+
+                loanMoney:self.irrData[45].values.slice(2),//贷款金额
+                mortgageCashFlow:self.irrData[46].values.slice(2),//按揭现金流
+                quitPayment:self.irrData[47].values.slice(2),//退出时还债
+                endLoan:self.irrData[48].values.slice(2),//尾期余额
+                loanRate:self.irrData[49].values.slice(2),//贷款利息
+
+                leveredCashFlow:self.irrData[35].values.slice(2),//无杠杆现金流
+                leveredNRR:self.irrData[36].values.slice(2),//净回报率
+                leveredIRR:self.irrData[37].values.slice(2),//无杠杆内部收益率
+                leveredProfits:self.irrData[38].values.slice(2),//无杠杆利润
+                leveredRMBPP:self.irrData[39].values.slice(2),//人民币利润倍数
+
             };
 
            /* var countSum={
@@ -468,7 +499,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
            self.quitYear=Math.abs(parseInt(self.irrData[31].values[1].value));
 
             function _updateTableHead(quitYear){
-
+                curQuitYear=quitYear;
                 var y=parseInt(quitYear);
                 var irr_width=150*y;
                 console.log("year---------"+y);
@@ -553,7 +584,43 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 }
             });
 
-            _updateTableHead(self.quitYear);
+            //退出收益率
+            self.quitRRate=irrPlanData[32].values[1].value;
+            self.quitFee=self.irrData[33].values[1].value;
+            $.each(countData.quitRRate,function(i,e){
+                if(i==(self.quitYear-1)){
+                    e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))/parseFloat(self.quitRRate)
+                }else{
+
+                }
+            });
+            //退出费用
+            $.each(countData.quitFee,function(i,e){
+                if(i==(self.quitYear-1)){
+                    e.value=parseFloat(Math.abs(self.irrData[32].values[i+skip].value))*parseFloat(self.quitFee);
+                }else{
+
+                }
+            });
+            //退出收益
+            $.each(countData.quitIncome,function(i,e){
+                if(i==(self.quitYear-1)){
+                    e.value=parseFloat(Math.abs(self.irrData[32].values[i+skip].value))-parseFloat(Math.abs(self.irrData[33].values[i+skip].value))
+                }else{
+
+                }
+            });
+
+
+
+
+            //更改表头
+            if(curQuitYear!==self.quitYear){
+                _updateTableHead(self.quitYear);
+            }
+
+
+
         };
 
         $(".table").on("click","td",function(){
@@ -708,6 +775,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         $scope.$on("$destroy", function() {
             amp_datePicker.destroy();
         });
+
         amp_main.leftPanel_update();
     }]);
 

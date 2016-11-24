@@ -306,7 +306,12 @@
                             <th>
                                 <span>{{pCtrl.irrData[44].values[0].value}}</span>
                             </th>
-                            <td>{{pCtrl.irrData[44].values[1].value*100|number:2}}<i class="unit-addon">%</i></td>
+                            <td>
+                                <div class="td-input-wrapper num-input padding-r-15" >
+                                    <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[44].values[1].value">
+                                    <span class="number-format">{{pCtrl.irrData[44].values[1].value*100|number:2}}<i class="unit-addon">%</i></span>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr class="tr-sub tr-split-top" data-index="45">
@@ -525,15 +530,15 @@
                                 </tr>
 
                                 <tr class="tr-sub" data-index="32">
-                                    <td ng-repeat="pv in pCtrl.irrData[32].values | take:2 :pCtrl.quitYear "></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[32].values | take:2 :pCtrl.quitYear "><span ng-show="$index==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span></td>
                                 </tr>
 
                                 <tr class="tr-sub" data-index="33">
-                                    <td ng-repeat="pv in pCtrl.irrData[33].values | take:2 :pCtrl.quitYear "></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[33].values | take:2 :pCtrl.quitYear "><span ng-show="$index==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span></td>
                                 </tr>
 
                                 <tr class="tr-sub" data-index="34">
-                                    <td ng-repeat="pv in pCtrl.irrData[34].values | take:2 :pCtrl.quitYear "><!--{{pv.value | number:2}}--></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[34].values | take:2 :pCtrl.quitYear "><span ng-show="$index==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span></td>
 
                                 </tr>
 
@@ -564,7 +569,7 @@
                                     <td ng-repeat="pv in pCtrl.irrData[42].values | take:2 :pCtrl.quitYear ">{{pv.value}}</td>
                                 </tr>
                                 <tr class="tr-sub" data-index="43">
-                                    <td ng-repeat="pv in pCtrl.irrData[43].values | take:2 :pCtrl.quitYear ">{{pv.value|number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[43].values | take:2 :pCtrl.quitYear "><span ng-show="$index==0">{{pv.value|number:2}}</span></td>
                                 </tr>
                                 <tr class="tr-sub tr-split-bottom" data-index="44">
                                     <td ng-repeat="pv in pCtrl.irrData[44].values | take:2 :pCtrl.quitYear ">{{pv.value}}</td>
