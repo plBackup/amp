@@ -275,8 +275,8 @@
                             </th>
                             <td>
                                 <div class="td-input-wrapper num-input padding-r-15" >
-                                    <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[41].values[1].value">
-                                    <span class="number-format">{{pCtrl.irrData[41].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
+                                    <input type="text" placeholder="/" data-date="" value="" ng-model="pCtrl.irrData[32].values[1].value">
+                                    <span class="number-format">{{pCtrl.irrData[32].values[1].value*100| number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
                         </tr>
@@ -585,11 +585,15 @@
                                     <td ng-repeat="pv in pCtrl.irrData[46].values | take:2 :pCtrl.quitYear "><!--{{pv.value | number:2}}--></td>
                                 </tr>
                                 <tr class="tr-sub"  data-index="47">
-                                    <td ng-repeat="pv in pCtrl.irrData[47].values | take:2 :pCtrl.quitYear ">{{pv.value}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[47].values | take:2 :pCtrl.quitYear ">
+                                        <span ng-show="($index)==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span>
+                                    </td>
                                 </tr>
 
                                 <tr class="tr-sub tr-split-bottom"  data-index="48">
-                                    <td ng-repeat="pv in pCtrl.irrData[48].values | take:2 :pCtrl.quitYear ">{{pv.value | number:2}}</td>
+                                    <td ng-repeat="pv in pCtrl.irrData[48].values | take:2 :pCtrl.quitYear ">
+                                        <span ng-hide="($index)==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span>
+                                    </td>
                                 </tr>
 
                                 <tr class="tr-sub tr-split" data-index="49">

@@ -487,18 +487,28 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 endLoan:self.irrData[48].values.slice(2),//尾期余额
                 loanRate:self.irrData[49].values.slice(2),//贷款利息
 
-                leveredCashFlow:self.irrData[35].values.slice(2),//无杠杆现金流
-                leveredNRR:self.irrData[36].values.slice(2),//净回报率
-                leveredIRR:self.irrData[37].values.slice(2),//无杠杆内部收益率
-                leveredProfits:self.irrData[38].values.slice(2),//无杠杆利润
-                leveredRMBPP:self.irrData[39].values.slice(2),//人民币利润倍数
+                leveredCashFlow:self.irrData[50].values.slice(2),//无杠杆现金流
+                leveredNRR:self.irrData[51].values.slice(2),//净回报率
+                leveredIRR:self.irrData[52].values.slice(2),//无杠杆内部收益率
+                leveredProfits:self.irrData[53].values.slice(2),//无杠杆利润
+                leveredRMBPP:self.irrData[54].values.slice(2),//人民币利润倍数
 
             };
 
            /* var countSum={
                 noiSum:self.irrData[24].values[1]
             };*/
-           self.quitYear=Math.abs(parseInt(self.irrData[31].values[1].value));
+            if(typeof parseInt(self.irrData[31].values[1].value)!=="number"){
+                alert("请输入正确的退出年");
+                self.irrData[31].values[1].value=10;
+            }else{
+                if(parseInt(self.irrData[31].values[1].value)>10 || parseInt(self.irrData[31].values[1].value)<=1){
+                    alert("请输入2-10年为退出年");
+                    self.irrData[31].values[1].value=10;
+                }
+            }
+
+            self.quitYear=Math.abs(parseInt(self.irrData[31].values[1].value));
 
             function _updateTableHead(quitYear){
                 curQuitYear=quitYear;
@@ -670,8 +680,109 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             //人民币利润倍数unleveredRMBPP
             self.irrData[39].values[1].value= parseFloat(self.irrData[38].values[1].value)/parseFloat(Math.abs(self.irrData[35].values[1].value));
 
+            /*========== 杠杆现金流 ===========*/
+            //当年估值 leveredValue
+            for(i=0;i<qy;i++){
+                if(i==(qy-1)){
+                    self.irrData[41].values[i+skip].value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))/parseFloat(Math.abs(self.irrData[32].values[1].value));
+                }else {
+                    self.irrData[41].values[i+skip].value= parseFloat(Math.abs(self.irrData[24].values[i + skip + 1].value)) / parseFloat(Math.abs(self.irrData[32].values[1].value));
+                }
+            }
 
 
+            //贷款额loanPP
+            self.irrData[43].values[2].value=parseFloat(Math.abs(self.irrData[35].values[1].value))*parseFloat(Math.abs(self.irrData[43].values[1].value));
+
+            //贷款金额loanMoney
+            self.irrData[45].values[1].value=self.irrData[43].values[2].value*(-1);
+            $.each(countData.loanMoney,function(i,e){
+                e.value= self.irrData[45].values[1].value;
+            });
+
+            //按揭现金流mortgageCashFlow
+
+
+            //退出时还债
+            $.each(countData.quitPayment,function(i,e){
+                if(i==(qy-1)){
+                    e.value= self.irrData[45].values[1].value;
+                }else{
+                    e.value=0;
+                }
+
+            });
+
+            //尾期余额
+            self.irrData[48].values[1].value=self.irrData[45].values[1].value;
+            $.each(countData.endLoan,function(i,e){
+                if(i==(qy-1)){
+                    e.value=0;
+                }else{
+                    e.value= self.irrData[45].values[1].value;
+                }
+            });
+
+            //贷款利息
+            var loanRate=self.irrData[49].values[1].value;
+            var loan=self.irrData[45].values[1].value;
+            console.log(loanRate);
+            console.log(loan);
+            $.each(countData.loanRate,function(i,e){
+                e.value=loanRate*loan;
+            });
+
+            //无杠杆现金流
+            console.log(Math.abs(self.irrData[45].values[1].value));
+            console.log(Math.abs(self.irrData[43].values[2].value));
+            self.irrData[50].values[1].value=parseFloat(Math.abs(self.irrData[24].values[1].value))-parseFloat(Math.abs(self.irrData[43].values[2].value));
+            $.each(countData.leveredCashFlow,function(i,e){
+                if(i==(qy-1)){
+                    e.value= self.irrData[24].values[i+skip].value+self.irrData[34].values[i+skip].value-Math.abs(self.irrData[49].values[i+skip].value)-Math.abs(self.irrData[45].values[1].value);
+                }else{
+                    e.value=self.irrData[24].values[i+skip].value-Math.abs(self.irrData[49].values[i+skip].value);
+                    console.log(e.value);
+                }
+            });
+
+            //净回报率
+            var v=parseFloat(Math.abs(self.irrData[24].values[1].value))-parseFloat(Math.abs(self.irrData[43].values[1].value));
+            console.log(v);
+            $.each(countData.leveredNRR,function(i,e){
+                    e.value=parseFloat(self.irrData[50].values[i+skip].value)/v;
+                console.log(e.value);
+            });
+
+            //杠杆内部收益率
+            //self.irrData[35].values[1] finance.IRR(initial investment, [cash flows]);
+            /*finance.IRR(-500000, 200000, 300000, 200000);
+             => 18.82*/
+
+            var leveredirrArgs=[];
+            leveredirrArgs.push(Math.abs(self.irrData[35].values[1].value)*(-1));
+            for(i=0;i<qy;i++){
+
+                leveredirrArgs.push(Math.abs(self.irrData[50].values[i+skip].value));
+            }
+            console.log(irrArgs);
+            var leaveredIRR=finance.IRRAMP(leveredirrArgs);
+            console.log(leaveredIRR);
+            self.irrData[52].values[1].value=leaveredIRR/100;
+
+
+            //杠杆利润
+            var leveredCF=self.irrData[50].values.slice(2);
+            var leveredProfitsSum=0;
+            for(i=0;i<qy;i++){
+                leveredProfitsSum+=parseFloat(leveredCF[i].value);
+            }
+            self.irrData[53].values[1].value=leveredProfitsSum-parseFloat(Math.abs(self.irrData[35].values[1].value));
+
+
+
+
+            //人民币利润倍数
+            self.irrData[54].values[1].value= parseFloat(self.irrData[53].values[1].value)/parseFloat(Math.abs(self.irrData[35].values[1].value));
 
             //更改表头
             if(curQuitYear!==self.quitYear){
