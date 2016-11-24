@@ -241,7 +241,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
     function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location,$filter) {
         var self=this;
         var shopData=dataIndexData.slice(1);
-        console.log(shopData);
+
         self.indexData=shopData;
         self.recordsNum=self.indexData.length;
         self.pageLimit=10;
@@ -263,8 +263,6 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         self.shopEdit=function(index,shop){
             //self.indexData[index].shopIndex+="###";
-            console.log(shop);
-            console.log("edit...");
             $rootScope.$broadcast("shopEdit",{shopData:shop,index:index})
         };
 
@@ -283,7 +281,6 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
                 self.pageNum=Math.ceil(parseFloat(self.recordsNum)/self.pageLimit);
                 self.paginator=paginatorService(self.pageLimit,self.pageNum,self.indexData);
             }else if(index=="new"){
-               console.log("new---------");
                 //shopData[0]=shop;
             }
         };
@@ -331,9 +328,7 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         self.index="add";
         self.shopInfo={};
         $scope.$on("shopEdit",function(e,data){
-            //console.log("shop--edit");
             amp_main.rightPanel_open();
-            console.log(data);
             self.index=data.index;
             self.shopInfo=data.shopData;
         });
@@ -409,7 +404,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         self.irrData=irrPlanData;
 
         self.save=function(){
-            //console.log(self.irrData);
             amp_main.loading_show();
             $timeout(function(){
                 amp_main.loading_hide();
@@ -429,7 +423,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             /!*if (newValue === oldValue) { return; }*!/
         },true);*/
         self.count=function(){
-            console.log("count");
             var skip=2;
             var watchData={
                 subEmptyRate:self.irrData[5].values,
@@ -514,12 +507,11 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 curQuitYear=quitYear;
                 var y=parseInt(quitYear);
                 var irr_width=150*y;
-                console.log("year---------"+y);
+
                 var $irrYear=$("#irr-year");
                 $irrYear.empty();
                 for(i=0;i<y;i++){
                     $irrYear.append('<th>第'+(i+1)+'年</th>');
-                    console.log($irrYear.html())
                 }
                 $(".swiper-wrapper table").css("width",irr_width+"px");
                 $timeout(function(){
@@ -573,7 +565,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 if(i==0){
                     e.value=parseFloat(self.irrData[19].values[i+skip].value+1)*self.runCostInit;
                 }else{
-                    //console.log(self.irrData[19].values[i+skip].value+1);
                     e.value=(parseFloat(self.irrData[19].values[i+skip].value)+1)*self.irrData[20].values[i+skip-1].value;
                 }
             });
@@ -663,9 +654,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 }*/
                 irrArgs.push(Math.abs(self.irrData[35].values[i+skip].value));
             }
-            console.log(irrArgs);
             var unleaveredIRR=finance.IRRAMP(irrArgs);
-            console.log(unleaveredIRR);
             self.irrData[37].values[1].value=unleaveredIRR/100;
 
             //无杠杆利润unleveredProfits
@@ -726,31 +715,27 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             //贷款利息
             var loanRate=self.irrData[49].values[1].value;
             var loan=self.irrData[45].values[1].value;
-            console.log(loanRate);
-            console.log(loan);
+
             $.each(countData.loanRate,function(i,e){
                 e.value=loanRate*loan;
             });
 
             //无杠杆现金流
-            console.log(Math.abs(self.irrData[45].values[1].value));
-            console.log(Math.abs(self.irrData[43].values[2].value));
+
             self.irrData[50].values[1].value=parseFloat(Math.abs(self.irrData[24].values[1].value))-parseFloat(Math.abs(self.irrData[43].values[2].value));
             $.each(countData.leveredCashFlow,function(i,e){
                 if(i==(qy-1)){
                     e.value= self.irrData[24].values[i+skip].value+self.irrData[34].values[i+skip].value-Math.abs(self.irrData[49].values[i+skip].value)-Math.abs(self.irrData[45].values[1].value);
                 }else{
                     e.value=self.irrData[24].values[i+skip].value-Math.abs(self.irrData[49].values[i+skip].value);
-                    console.log(e.value);
                 }
             });
 
             //净回报率
             var v=parseFloat(Math.abs(self.irrData[24].values[1].value))-parseFloat(Math.abs(self.irrData[43].values[1].value));
-            console.log(v);
+
             $.each(countData.leveredNRR,function(i,e){
                     e.value=parseFloat(self.irrData[50].values[i+skip].value)/v;
-                console.log(e.value);
             });
 
             //杠杆内部收益率
@@ -764,9 +749,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
                 leveredirrArgs.push(Math.abs(self.irrData[50].values[i+skip].value));
             }
-            console.log(irrArgs);
             var leaveredIRR=finance.IRRAMP(leveredirrArgs);
-            console.log(leaveredIRR);
             self.irrData[52].values[1].value=leaveredIRR/100;
 
 
@@ -788,7 +771,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             if(curQuitYear!==self.quitYear){
                 _updateTableHead(self.quitYear);
             }
-
         };
 
         $(".table").on("click","td",function(){
@@ -848,7 +830,6 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
         };
          self.checkReturn=function(){
-             //console.log(self.shopInfo)
              amp_main.loading_show();
              $timeout(function(){
                 amp_main.loading_hide();
