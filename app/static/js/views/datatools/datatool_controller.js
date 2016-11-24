@@ -25,6 +25,8 @@ var irr_plan=(function($,irr_plan){
             freeMode: true,
             scrollbarHide:false
         });
+
+        console.log("update controller");
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
         irr_plan_main_swiper.params.control = irr_plan_head_swiper;
 
@@ -66,7 +68,7 @@ var irr_plan=(function($,irr_plan){
         irr_plan_main_swiper.update();
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
         irr_plan_main_swiper.params.control = irr_plan_head_swiper;*/
-       irr_plan.destroy();
+        irr_plan.destroy();
         irr_plan.swiper_init();
     };
 
@@ -91,6 +93,7 @@ var irr_plan=(function($,irr_plan){
     };
 
     irr_plan.destroy=function(){
+        console.log("destory");
         irr_plan_head_swiper.destroy(true,true);
         irr_plan_main_swiper.destroy(true,true);
     };
@@ -515,6 +518,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 }
                 $(".swiper-wrapper table").css("width",irr_width+"px");
                 $timeout(function(){
+                    console.log("....");
                     irr_plan.swiper_update();
                 },300);
 
