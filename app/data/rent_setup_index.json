@@ -3,11 +3,11 @@
         "values": [
             {
                 "name": "\u5efa\u7b51\u9762\u79ef", 
-                "value": 75149.4
+                "value": 62000.00
             }, 
             {
                 "name": "\u603b\u79df\u91d1\uff08\u4e07\u5143\uff09", 
-                "value": 154.89
+                "value": 2774.09
             }, 
             {
                 "name": "\u5e73\u5747\u79df\u91d1\uff08\u5143/\u33a1/\u6708\uff09", 
@@ -15,11 +15,11 @@
             }, 
             {
                 "name": "\u5f00\u4e1a\u65f6\u95f4", 
-                "value": "2016-9-10"
+                "value": "2013-9-30"
             }, 
             {
                 "name": "\u5957\u5185\u9762\u79ef", 
-                "value": 62113.31
+                "value": 41660.00
             }
         ], 
         "name": "rent_setup"
