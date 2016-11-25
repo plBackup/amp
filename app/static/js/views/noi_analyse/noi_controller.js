@@ -131,6 +131,12 @@ noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
 
             noi_head_swiper.destroy(true,true);
             noi_main_swiper.destroy(true,true);
+        });
+
+        $scope.$on("noiMonthUpdate",function(e,data){
+            /*console.log("-----------------------noiMonthUpdate");
+            console.log(data);
+*/
         })
 
     }]);

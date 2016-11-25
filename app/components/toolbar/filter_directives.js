@@ -93,8 +93,8 @@ angular.module('ampFilter').directive('monthPicker', [
 
 
                 ngModelCtrl.$render=function(){
-                    console.log("...")
-                    console.log(ngModelCtrl.$viewValue);
+                    //console.log("...")
+                    //console.log(ngModelCtrl.$viewValue);
                     $element.find("input").val(ngModelCtrl.$viewValue);
                 }
 
@@ -155,13 +155,17 @@ angular.module('ampFilter').directive('monthPicker', [
 
                             if($scope.monthSelect){
                                 //如果作用域有处理函数，
-
                                 $scope.$apply(function(){
                                     $scope.monthSelect({date:newDate});
                                 });
                             }
-
                         }
+
+                        //broadcast
+                        $scope.$emit("monthUpdate",{
+                            date:"date 2016"
+                        });
+
                     });
 
 
@@ -179,7 +183,7 @@ angular.module('ampFilter').directive('monthPicker', [
                 //destroy
                 $scope.$on("$destroy", function() {
                     //清除配置
-                    console.log("destroy");
+                    //console.log("destroy");
                     $element.find("input").datetimepicker("remove");
 
                 });

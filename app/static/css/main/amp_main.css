@@ -205,7 +205,7 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 
 #countdown-wrapper{width:inherit;padding-left:22px;height:44px;line-height: 44px;background-color: transparent;top:0;margin-top:0;}
 span#countdown{font-size: 14px;height:44px;line-height: 44px;color:#373c42;}
-span#countdown i{display: inline-block;width:26px;height:28px;text-align: center;line-height: 28px;font-size:24px;color:#5ab46e;font-weight:bold;background-color:#3a4153;vertical-align: -2px;margin-left:3px;margin-right:3px;}
+span#countdown i{display: inline-block;width:26px;height:28px;text-align: center;line-height: 28px;font-size:24px;color:#5ab46e;font-weight:bold;background-color:#3a4153;vertical-align: -3px;margin-left:3px;margin-right:3px;}
 span#countdown .countdown-lastDay i{padding:0 5px;width:inherit;}
 span#countdown i#clock-day-a{margin-right:0;}
 span#countdown .countdown-lastDay~em.unit{display: none;}

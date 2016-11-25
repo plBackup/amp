@@ -769,6 +769,13 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
         }
 
     });
+    //monthupdate emit;
+    $scope.$on("monthUpdate",function(e,data){
+        /*console.log("-----------------------data");
+        console.dir(data);*/
+        $scope.$broadcast("noiMonthUpdate",data);
+    });
+
     $scope.rightOpened=false;
 
     /*$scope.$on("shopEdit",function(e,data){
