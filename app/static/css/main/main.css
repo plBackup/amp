@@ -12,6 +12,12 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #ys-amp-main .ys-content-header{position: relative;height:320px;width:100%;background-image:url(../../images/home_background.jpg);background-position:center top;background-size:cover;background-repeat: no-repeat;}
 #ys-amp-main .ys-content-header em.ys-icon-amp{position: absolute;top:138px;margin-top:0;}
 
+.ys-amp-icon{display: block;background-image: url(../../images/icon.png);content: " ";background-repeat: no-repeat;}
+.ys-icon-clock{display: block;position: absolute;width:15px;height:18px;background-position:-712px -198px; top:50%;left:0;margin-top:-8px;}
+.ys-icon-tips{display: block;position: absolute;width:20px;height:20px;background-position:-653px -199px;top:50%;margin-top:-10px;left:0;}
+.ys-icon-tips:hover{background-position:-593px -198px;}
+.ys-icon-tips-hover{background-position:-593px -198px;}
+
 #ys-amp-main .ys-content-panel{position: relative;top:-40px;margin-bottom:60px;padding:0;min-height: 320px;background-color:#fff;border-radius:12px;overflow: hidden;}
 
 #ys-amp-main #amp-projects-table{margin-bottom:0;}
@@ -38,7 +44,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #amp-projects-table .amp-pm-info>h5{margin-bottom:5px;}
 #amp-projects-table tbody .amp-pm .t-main,#amp-projects-table tbody .amp-pm .t-sub{text-align: left;}
 
-#ys-amp-main .amp-opt-block{margin-top:50px;height:80px;padding:20px;text-align: center;}
+#ys-amp-main .amp-opt-block{margin-top:50px;height:80px;padding:20px;text-align: center;position: relative;}
 
 #ys-amp-main .amp-create-project{padding:25px 15px;padding-top:70px;text-align: center;}
 #ys-amp-main .amp-create-project h3{height: 54px;line-height: 54px;font-size: 35px;color:#333;}
@@ -48,7 +54,12 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 
 #amp-projects-table .text-note{font-weight:bold;}
 
-
+.ys-amp .tooltip.right .tooltip-arrow { top: 50%; left: 0; margin-top: -5px; border-width: 5px 5px 5px 0; border-right-color: #f3f4f8; }
+.ys-amp .tooltip.top .tooltip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #f3f4f8; }
+.ys-amp .tooltip.left .tooltip-arrow { top: 50%; right: 0; margin-top: -5px; border-width: 5px 0 5px 5px; border-top-color: #f3f4f8; }
+.ys-amp .tooltip.bottom .tooltip-arrow { top: 0; left: 50%; margin-left: -5px; border-width: 0 5px 5px; border-top-color: #f3f4f8; }
+.ys-amp .tooltip-inner { max-width: 200px; padding: 3px 8px; color: #8592a3; text-align: center; background-color: #f3f4f8; border-radius: 4px; }
+.amp-btn:hover em.ys-icon-tips{background-position:-593px -198px;}
 
 /* #ys-amp-create */
 
@@ -61,7 +72,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 
 #ys-amp-create #amp-projects-table{margin-bottom:0;}
 
-#ys-amp-create .amp-opt-block{height:80px;padding:20px;text-align: center;}
+#ys-amp-create .amp-opt-block{height:80px;padding:20px;text-align: center;position: relative;}
 
 #ys-amp-create .amp-create-project{padding:25px 15px;text-align: center;}
 #ys-amp-create .amp-create-project h3{margin-bottom:45px;height: 54px;line-height: 54px;font-size: 35px;color:#fff;}

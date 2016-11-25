@@ -407,6 +407,8 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
 
         amp_main.leftPanel_update();
 
+        $(".ys-tips").tooltip();
+
     }]);
 
 dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
@@ -815,10 +817,10 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         irr_plan.init();
         self.count();
         amp_main.leftPanel_update();
-
+        $(".ys-tips").tooltip();
         $scope.$on("$destroy", function() {
             irr_plan.destroy();
-        })
+        });
     }]);
 
 dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData","$location","$timeout",
@@ -950,7 +952,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         $scope.$on("$destroy", function() {
             amp_datePicker.destroy();
         });
-
+        $(".ys-tips").tooltip();
         amp_main.leftPanel_update();
     }]);
 

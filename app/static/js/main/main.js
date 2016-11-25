@@ -219,7 +219,7 @@ mainApp.controller('MainController', function($rootScope, $scope) {
         return isPC;
     }
 
-
+    $(".ys-tips").tooltip();
 
 });
 
@@ -229,6 +229,7 @@ mainApp.controller("pjListController",["$rootScope","$scope","projects",function
         $rootScope.projects=projects;
     }
     self.projects=$rootScope.projects;
+    $(".ys-tips").tooltip();
 }]);
 mainApp.controller("testCtrl",function($rootScope,$scope){
     $scope.name="txt";
@@ -267,7 +268,7 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
     self.index=$rootScope.projects.length;
 
     self.submit=function(){
-        $rootScope.projects.push(self.project);
+       // $rootScope.projects.push(self.project);
         $location.path("/main");
     };
 
@@ -275,6 +276,8 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
     $scope.$on("$destroy", function() {
         $("#open-date-wrapper input").datetimepicker("remove");
     });
+
+    $(".ys-tips").tooltip();
 
 }]);
 mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid",function($rootScope,$scope,$location,pid){
@@ -295,6 +298,8 @@ mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid"
     $scope.$on("$destroy", function() {
        $("#open-date-wrapper input").datetimepicker("remove");
     });
+
+    $(".ys-tips").tooltip();
 }]);
 
 mainApp.run(function($http) {

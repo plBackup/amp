@@ -373,6 +373,8 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
 
         //dataSetView.init();
         rpgSet_table.init();
+
+        $(".ys-tips").tooltip();
         $scope.$on("$destroy", function() {
             rpgSet_table.destroy();
         })
@@ -413,6 +415,7 @@ dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData
 
         //dataSetView.init();
         rpg_result_table.init();
+        $(".ys-tips").tooltip();
         $scope.$on("$destroy", function() {
             rpg_result_table.destroy();
         })

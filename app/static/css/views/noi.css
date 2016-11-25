@@ -1,6 +1,6 @@
 #noi{}
-
-#noi #noi-summary{padding:40px 10px;}
+#noi-note{position:absolute;display: block;top:10px;left:22px;padding: 3px 8px; padding-left:28px; color: #8592a3; text-align: center; background-color: #f3f4f8; border-radius: 4px; font-size: 13px;}
+#noi #noi-summary{padding:40px 10px;position: relative;}
 #noi #noi-summary .amp-table{margin-bottom: 0;}
 #noi #noi-summary .amp-table thead{background-color:#fff;}
 #noi #noi-summary .amp-table thead>tr>th{padding:0 30px; padding-right:15px;font-size: 14px;text-align: left; vertical-align: top; border-right:solid 1px #ddd;}

@@ -700,6 +700,7 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
             //left panel update
             amp_main.leftPanel_update();
             ampApp.setNav(toState.name);
+
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){

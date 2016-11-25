@@ -17,14 +17,10 @@ var ampTimeCountDown = function(year,month,day){
 
     if(endDate>t){
         var count=(endDate-t)/(1000*60*60*24);
-        console.log(t)
-        console.log(count);
         if(count<1){
-            console.log(count);
+
             $("#countdown-nums").addClass("countdown-lastDay");
-            console.log(count);
             var h=count*24;
-            console.log(h);
             var min=(h-Math.floor(h))*60||0;
             var sec=(min-Math.floor(min))*60||0;
             var hStr=turnZero(Math.floor(h)).join("");
@@ -32,7 +28,6 @@ var ampTimeCountDown = function(year,month,day){
             var secStr=turnZero(Math.floor(sec)).join("");
 
             var countArray=[hStr,minStr,secStr];
-            console.log(countArray);
             var curLength=$("#countdown-nums").find("i").length;
             if(countArray.length==curLength){
                 $.each(countArray,function(i,e){
@@ -46,14 +41,12 @@ var ampTimeCountDown = function(year,month,day){
                     }else{
                         $("#countdown-nums").append('<i class="countdown-num">'+e+'</i>:');
                     }
-
                 });
             }
         }else{
             var count=Math.floor(count);
 
             var countArray=turnZero(count);
-            console.log(countArray);
             var curLength=$("#countdown-nums").find("i").length;
             if(countArray.length==curLength){
                 $.each(countArray,function(i,e){
