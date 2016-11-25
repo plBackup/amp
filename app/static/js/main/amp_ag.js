@@ -837,6 +837,11 @@ ampApp.nav_list={
         sideNav:"#main-4",
         headerBar:"#header-tabs-4",
         headerItem:"#nav-tabs-item-4-2"
+    },
+    "business_merchant_list":{
+        sideNav:"#main-2",
+        headerBar:"#header-tabs-2",
+        headerItem:"#nav-tabs-item-2-0"
     }
 };
 
