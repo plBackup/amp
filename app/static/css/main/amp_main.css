@@ -4,6 +4,10 @@ html,body{/*position:relative;*/width:100%;height:inherit;overflow: auto;min-hei
 .ys-icon{display: block;/*background-size: contain;background-position: center center;*/background-repeat: no-repeat;}
 .ys-icon-spirit{display: block;background-image: url(../../images/main/menu_icon.png);content: " ";}
 .ys-icon-togglebar{position:absolute;top:50%;left:50%;margin-left:-10px;margin-top:-9px;width:20px;height:18px;background-position: -26px -20px;}
+.ys-amp-icon{display: block;background-image: url(../../images/icon.png);content: " ";background-repeat: no-repeat;}
+.ys-icon-clock{display: block;position: absolute;width:15px;height:18px;background-position:-712px -198px; top:50%;left:0;margin-top:-8px;}
+.ys-icon-tips{display: block;position: absolute;width:20px;height:20px;background-position:-652px -198px;top:50%;margin-top:-10px;left:0;}
+.ys-icon-tips-hover{display: block;position: absolute;width:20px;height:20px;background-position:-593px -198px;top:50%;margin-top:-10px;left:0;}
 
 .ys-icon-asset{position:absolute;top:50%;left:14px;margin-top:-10px;width:20px;height:20px;background-position: -26px -56px;}
 .ys-icon-finacial{position:absolute;top:50%;left:14px;margin-top:-9px;width:20px;height:20px;background-position: -25px -96px;}
@@ -199,7 +203,13 @@ a.system-item:hover .ys-icon-systoggle{background-position: -74px -254px;}
 .header-right{position: absolute;width:32px;height:32px;border-radius:32px;background-color:#ccc;top:50%;right:40px;margin-top:-16px;}
 .ys-figure{display: block;position: absolute;top:0;left:0;width:32px;height:32px;border-radius:32px;background-image: url(../../images/main/figure.jpg);background-position: center center;background-repeat: no-repeat;background-size: contain;}
 
-/*right panel*/
+#countdown-wrapper{width:inherit;padding-left:22px;height:44px;line-height: 44px;background-color: transparent;top:0;margin-top:0;}
+span#countdown{font-size: 14px;height:44px;line-height: 44px;color:#373c42;}
+span#countdown i{display: inline-block;width:26px;height:28px;text-align: center;line-height: 28px;font-size:24px;color:#5ab46e;font-weight:bold;background-color:#3a4153;vertical-align: -2px;margin-left:3px;margin-right:3px;}
+span#countdown .countdown-lastDay i{padding:0 5px;width:inherit;}
+span#countdown i#clock-day-a{margin-right:0;}
+span#countdown .countdown-lastDay~em.unit{display: none;}
+    /*right panel*/
 .backdrop{display: none;position: fixed;top:0;left:0;right:0;bottom:0;background-color:#373c42;opacity:0;z-index:999;
     -webkit-transition: opactiy 0.3s;
     -moz-transition: opactiy 0.3s;

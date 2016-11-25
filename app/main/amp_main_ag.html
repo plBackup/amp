@@ -58,6 +58,7 @@
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
     <script src="../static/js/main/amp_ag.js"></script>
+    <script src="../static/js/main/timecount.js"></script>
 
     <script src="../static/js/views/noi_analyse/noi_controller.js"></script>
     <script src="../static/js/views/noi_analyse/noi_services.js"></script>
@@ -81,17 +82,9 @@
         });
         var i=0;
         $(document).ready(function(){
-           /* $(".ys-amp").on("relocate",function(e,id,href){
-                console.log(e);
-                console.log(id);
-                console.log(href);
-                i+=1;
-                if(i>=2){
-                    window.location.href=href;
-                }
-            });*/
-            //amp_main.init();
-
+            setInterval(function(){
+                ampTimeCountDown(2016,11,26)
+            },1000);
         });
     </script>
     <style>
@@ -141,9 +134,11 @@
             <div class="head-main-menu">
                 <!-- Nav tabs -->
             </div>
-           <!-- <div class="header-right">
-                <span class="ys-figure ys-useer-figure"></span>
-            </div> &lt;!&ndash;h-->eader-right-->
+            <div class="header-right" id="countdown-wrapper">
+                <!--<span class="ys-figure ys-useer-figure"></span>-->
+                <span id="countdown"><em class="ys-amp-icon ys-icon-clock"></em>数据工具模块开通倒计时<span id="countdown-nums"><i class="countdown-num">0</i><i class="countdown-num">3</i></span><em class="unit">天</em></span>
+            </div>
+
         </div><!-- headerbar -->
     </div>
     <div class="mainpanel">
