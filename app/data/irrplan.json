@@ -1344,11 +1344,11 @@
         "values": [
             {
                 "rid": "irr_col0_row27", 
-                "value": "Unleveraged Cash Flow"
+                "value": "\u9759\u6001\u73b0\u91d1\u6d41"
             }, 
             {
                 "rid": "irr_col1_row27", 
-                "value": "\u9759\u6001\u73b0\u91d1\u6d41"
+                "value": ""
             }, 
             {
                 "value": ""
@@ -1386,7 +1386,7 @@
         "values": [
             {
                 "rid": "irr_col0_row28", 
-                "value": "On-going Capital Expenditures "
+                "value": "\u6301\u7eed\u6027\u8d44\u672c\u6027\u652f\u51fa "
             }, 
             {
                 "value": ""
@@ -1427,7 +1427,7 @@
         "values": [
             {
                 "rid": "irr_col0_row29", 
-                "value": "Leasing Commission"
+                "value": "\u79df\u8d41\u4f63\u91d1"
             }, 
             {
                 "value": ""
@@ -1467,13 +1467,13 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row30", 
-                "value": "Selling Considerations:"
-            }, 
-            {
-                "rid": "irr_col1_row30", 
+                "rid": "irr_col0_row30",
                 "value": "\u9000\u51fa\u8003\u8651"
-            }, 
+            },
+            {
+                "rid": "irr_col1_row30",
+                "value": "\u9000\u51fa\u8003\u8651"
+            },
             {
                 "value": ""
             }, 
@@ -1509,13 +1509,13 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row31", 
-                "value": "Year of Exit \u9000\u51fa\u5e74"
-            }, 
+                "rid": "irr_col0_row31",
+                "value": " \u9000\u51fa\u5e74"
+            },
             {
-                "rid": "irr_col1_row31", 
-                "value": 8.0
-            }, 
+                "rid": "irr_col1_row31",
+                "value": 10.0
+            },
             {
                 "value": ""
             }, 
@@ -1551,9 +1551,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row32", 
-                "value": "Terminal yield \u9000\u51fa\u6536\u76ca\u7387"
-            }, 
+                "rid": "irr_col0_row32",
+                "value": "\u9000\u51fa\u6536\u76ca\u7387"
+            },
             {
                 "rid": "irr_col1_row32", 
                 "value": 0.06
@@ -1603,9 +1603,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row33", 
-                "value": "Selling Expenses % \u9000\u51fa\u8d39\u7528"
-            }, 
+                "rid": "irr_col0_row33",
+                "value": "\u9000\u51fa\u8d39\u7528"
+            },
             {
                 "rid": "irr_col1_row33", 
                 "value": 0.015
@@ -1655,9 +1655,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row34", 
-                "value": "Net Sale Proceeds \u9000\u51fa\u6536\u76ca"
-            }, 
+                "rid": "irr_col0_row34",
+                "value": " \u9000\u51fa\u6536\u76ca"
+            },
             {
                 "rid": "irr_col1_row34", 
                 "value": 0.0
@@ -1707,9 +1707,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row35", 
-                "value": "Unleverged Cash Flow"
-            }, 
+                "rid": "irr_col0_row35",
+                "value": "\u65e0\u6760\u6746\u73b0\u91d1\u6d41"
+            },
             {
                 "rid": "irr_col1_row35", 
                 "value": -37520.5999
@@ -1759,9 +1759,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row36", 
-                "value": "Net Yeild"
-            }, 
+                "rid": "irr_col0_row36",
+                "value": "\u51c0\u56de\u62a5\u7387"
+            },
             {
                 "rid": "irr_col1_row36", 
                 "value": 0.0961887965033141
@@ -1811,9 +1811,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row37", 
-                "value": "Unleveraged IRR"
-            }, 
+                "rid": "irr_col0_row37",
+                "value": "\u65e0\u6760\u6746\u5185\u90e8\u6536\u76ca\u7387"
+            },
             {
                 "rid": "irr_col1_row37", 
                 "value": 0.178325189940486
@@ -1853,9 +1853,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row38", 
-                "value": "Unleveraged Profit"
-            }, 
+                "rid": "irr_col0_row38",
+                "value": "\u65e0\u6760\u6746\u5229\u6da6"
+            },
             {
                 "rid": "irr_col1_row38", 
                 "value": 82639.5488244428
@@ -1895,9 +1895,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row39", 
-                "value": "RMB CF Multiple"
-            }, 
+                "rid": "irr_col0_row39",
+                "value": "\u4eba\u6c11\u5e01\u5229\u6da6\u500d\u6570"
+            },
             {
                 "rid": "irr_col1_row39", 
                 "value": 2.20251139493222
@@ -1937,9 +1937,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row40", 
-                "value": "Leveraged Cash Flow"
-            }, 
+                "rid": "irr_col0_row40",
+                "value": "\u6760\u6746\u73b0\u91d1\u6d41"
+            },
             {
                 "rid": "irr_col1_row40", 
                 "value": "\u6760\u6746\u73b0\u91d1\u6d41"
@@ -1979,9 +1979,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row41", 
-                "value": "Value \u5f53\u5e74\u4f30\u503c\uff08\u4e07\uff09"
-            }, 
+                "rid": "irr_col0_row41",
+                "value": "\u5f53\u5e74\u4f30\u503c\uff08\u4e07\uff09"
+            },
             {
                 "rid": "irr_col1_row41", 
                 "value": 0.06
@@ -2031,9 +2031,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row42", 
-                "value": "Loan Term"
-            }, 
+                "rid": "irr_col0_row42",
+                "value": "\u8d37\u6b3e\u5e74\u6570"
+            },
             {
                 "rid": "irr_col1_row42", 
                 "value": 10
@@ -2073,9 +2073,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row43", 
-                "value": "Loan Amount (% of PP)"
-            }, 
+                "rid": "irr_col0_row43",
+                "value": "\u8d37\u6b3e\u989d (% of PP)"
+            },
             {
                 "rid": "irr_col1_row43", 
                 "value": 0.5
@@ -2116,9 +2116,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row44", 
-                "value": "Upfront Fee to Lender % "
-            }, 
+                "rid": "irr_col0_row44",
+                "value": "\u501f\u6b3e\u8d39\u7528 % "
+            },
             {
                 "rid": "irr_col1_row44", 
                 "value": 0.0
@@ -2158,9 +2158,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row45", 
-                "value": "Beginning Balance \u8d37\u6b3e\u91d1\u989d"
-            }, 
+                "rid": "irr_col0_row45",
+                "value": "\u8d37\u6b3e\u91d1\u989d"
+            },
             {
                 "rid": "irr_col1_row45", 
                 "value": -24079.7855061884
@@ -2210,9 +2210,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row46", 
-                "value": "Cash Flow Amortization"
-            }, 
+                "rid": "irr_col0_row46",
+                "value": "\u6309\u63ed\u73b0\u91d1\u6d41"
+            },
             {
                 "value": ""
             }, 
@@ -2251,9 +2251,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row47", 
-                "value": "Debt Repayment At Disposition"
-            }, 
+                "rid": "irr_col0_row47",
+                "value": "\u9000\u51fa\u65f6\u8fd8\u503a"
+            },
             {
                 "value": ""
             }, 
@@ -2302,9 +2302,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row48", 
-                "value": "Ending Balance"
-            }, 
+                "rid": "irr_col0_row48",
+                "value": "\u5c3e\u671f\u4f59\u989d"
+            },
             {
                 "rid": "irr_col1_row48", 
                 "value": -24079.7855061884
@@ -2354,9 +2354,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row49", 
-                "value": "Interest Rate \u8d37\u6b3e\u5229\u606f"
-            }, 
+                "rid": "irr_col0_row49",
+                "value": "\u8d37\u6b3e\u5229\u606f"
+            },
             {
                 "rid": "irr_col1_row49", 
                 "value": 0.075
@@ -2406,9 +2406,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row50", 
-                "value": "Leverged Cash Flow"
-            }, 
+                "rid": "irr_col0_row50",
+                "value": "\u6760\u6746\u73b0\u91d1\u6d41"
+            },
             {
                 "rid": "irr_col1_row50", 
                 "value": -13440.8143938116
@@ -2458,9 +2458,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row51", 
-                "value": "Net Yeild"
-            }, 
+                "rid": "irr_col0_row51",
+                "value": "\u51c0\u56de\u62a5\u7387"
+            },
             {
                 "rid": "irr_col1_row51", 
                 "value": 0.134149418529982
@@ -2510,9 +2510,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row52", 
-                "value": "Leveraged IRR"
-            }, 
+                "rid": "irr_col0_row52",
+                "value": "\u6760\u6746\u5185\u90e8\u6536\u76ca\u7387"
+            },
             {
                 "rid": "irr_col1_row52", 
                 "value": 0.272051278537738
@@ -2552,9 +2552,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row53", 
-                "value": "Unleveraged Profit"
-            }, 
+                "rid": "irr_col0_row53",
+                "value": "\u65e0\u6760\u6746\u5229\u6da6"
+            },
             {
                 "rid": "irr_col1_row53", 
                 "value": 68191.6775207298
@@ -2594,9 +2594,9 @@
     {
         "values": [
             {
-                "rid": "irr_col0_row54", 
-                "value": "RMB CF Multiple"
-            }, 
+                "rid": "irr_col0_row54",
+                "value": "\u4eba\u6c11\u5e01\u5229\u6da6\u500d\u6570"
+            },
             {
                 "rid": "irr_col1_row54", 
                 "value": 5.0734781035386

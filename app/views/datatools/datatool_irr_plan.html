@@ -184,7 +184,7 @@
                         </tr>
                         <tr class="tr-sub tr-split-bottom" data-index="26">
                             <th>{{pCtrl.irrData[26].values[0].value}}</th>
-                            <td>第{{pCtrl.irrData[26].values[1].value|number:2}}年</td>
+                            <td>第{{pCtrl.irrData[26].values[1].value|numberFormat:2}}年</td>
                         </tr>
 
                         <tr class="tr-main tr-head" data-index="27">
@@ -247,7 +247,7 @@
                         </tr>
                         <tr class="tr-sub" data-index="36">
                             <th><span>{{pCtrl.irrData[36].values[0].value}}</span></th>
-                            <td></td>
+                            <td>{{pCtrl.irrData[36].values[1].value*100|number:2}}<i class="unit-addon">%</i></td>
 
                         </tr>
                         <tr class="tr-sub" data-index="37">
@@ -543,7 +543,7 @@
                                 </tr>
 
                                 <tr class="tr-sub" data-index="34">
-                                    <td ng-repeat="pv in pCtrl.irrData[34].values | take:2 :pCtrl.quitYear "><span ng-show="$index==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span></td>
+                                    <td ng-repeat="pv in pCtrl.irrData[34].values | take:2 :pCtrl.quitYear "><span ng-if="$index==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span></td>
 
                                 </tr>
 
@@ -589,7 +589,7 @@
                                 </tr>
                                 <tr class="tr-sub"  data-index="47">
                                     <td ng-repeat="pv in pCtrl.irrData[47].values | take:2 :pCtrl.quitYear ">
-                                        <span ng-show="($index)==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span>
+                                        <span ng-if="($index)==(pCtrl.quitYear-1)">{{pv.value | number:2}}</span>
                                     </td>
                                 </tr>
 

@@ -590,9 +590,10 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             $.each(countData.runCost,function(i,e){
                 if(i==0){
                     e.value=parseFloat(self.irrData[20].values[1].value)*(parseFloat(self.irrData[2].values[1].value)+parseFloat(self.irrData[3].values[1].value))/10000;
-
+                    console.log(e.value);
                 }else{
                     e.value=parseFloat(self.irrData[20].values[i+skip-1].value)*(1+parseFloat(self.irrData[19].values[i+skip].value));
+                    console.log(e.value);
                 }
 
             });
@@ -622,19 +623,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                     e.value=parseFloat(Math.abs(self.irrData[24].values[i+skip].value))-parseFloat(Math.abs(self.irrData[26].values[i+skip-1].value))
                 }
             });
-            var qyy=self.quitYear;
-
-            for(i=0;i<qyy;i++){
-
-                if(parseFloat(self.irrData[26].values[i+skip].value)>0){
-                    var y=i;
-                    var value=parseFloat(Math.abs(self.irrData[26].values[y-1].value))/(parseFloat(Math.abs(self.irrData[26].values[y-1].value))+parseFloat(Math.abs(self.irrData[26].values[y].value)));
-                    self.irrData[26].values[1].value=y+value;
-                }else{
-                    self.irrData[26].values[1].value="-"
-                }
-            }
-
 
             //退出收益率
             self.quitRRate=irrPlanData[32].values[1].value;
@@ -725,10 +713,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
 
             //贷款额loanPP
-            self.irrData[43].values[2].value=parseFloat(Math.abs(self.irrData[35].values[1].value))*parseFloat(Math.abs(self.irrData[43].values[1].value));
-
-            //allen version
-            //self.irrData[43].values[2].value=parseFloat(Math.abs(self.irrData[41].values[2].value))*parseFloat(Math.abs(self.irrData[43].values[1].value));
+            //self.irrData[43].values[2].value=parseFloat(Math.abs(self.irrData[35].values[1].value))*parseFloat(Math.abs(self.irrData[43].values[1].value));
+            self.irrData[43].values[2].value=parseFloat(Math.abs(self.irrData[41].values[2].value))*parseFloat(Math.abs(self.irrData[43].values[1].value));
             //贷款金额loanMoney
             self.irrData[45].values[1].value=self.irrData[43].values[2].value*(-1);
             $.each(countData.loanMoney,function(i,e){
@@ -788,7 +774,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             for(i=0;i<qy;i++){
                 avr+=parseFloat(self.irrData[51].values[i+skip].value)
             }
-
+            console.log(avr);
             self.irrData[51].values[1].value=avr/qy;
 
             //杠杆内部收益率
@@ -797,7 +783,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
              => 18.82*/
 
             var leveredirrArgs=[];
-            leveredirrArgs.push(Math.abs(self.irrData[50].values[1].value)*(-1));
+            console.log("irr-----------"+Math.abs(self.irrData[35].values[1].value)*(-1));
+            leveredirrArgs.push(Math.abs(self.irrData[35].values[1].value)*(-1));
             for(i=0;i<qy;i++){
 
                 leveredirrArgs.push(Math.abs(self.irrData[50].values[i+skip].value));
@@ -812,13 +799,13 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             for(i=0;i<qy;i++){
                 leveredProfitsSum+=parseFloat(leveredCF[i].value);
             }
-            self.irrData[53].values[1].value=leveredProfitsSum-parseFloat(Math.abs(self.irrData[50].values[1].value));
+            self.irrData[53].values[1].value=leveredProfitsSum-parseFloat(Math.abs(self.irrData[35].values[1].value));
 
 
 
 
             //人民币利润倍数
-            self.irrData[54].values[1].value= parseFloat(self.irrData[53].values[1].value)/parseFloat(Math.abs(self.irrData[50].values[1].value));
+            self.irrData[54].values[1].value= parseFloat(self.irrData[53].values[1].value)/parseFloat(Math.abs(self.irrData[35].values[1].value));
 
             //更改表头
             /*if(curQuitYear!==self.quitYear){
