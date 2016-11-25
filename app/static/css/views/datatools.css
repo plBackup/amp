@@ -164,7 +164,7 @@
 
 /*block btn-wrapper*/
 #rgp-set-index .bottom-block{position: absolute; bottom: 0; width: 100%; left: 0;border-top:solid 1px #d0e9c6;}
-#rgp-set-index .btn-wrapper{height:72px;overflow: hidden;padding-top:40px;padding-bottom:40px;text-align: center;border-top:solid 1px #dae1e7; }
+#rgp-set-index .btn-wrapper{/*height:72px;overflow: hidden;*/padding-top:40px;padding-bottom:40px;text-align: center;border-top:solid 1px #dae1e7; }
 #rgp-set-index .btn-wrapper .amp-btn{height:32px;padding:3px 15px;text-align: center;border-radius:0;font-size:14px;line-height: 24px;border: solid 1px #5ab46e;min-width: 110px;border-radius: 2px;}
 #rgp-set-index .btn-wrapper .amp-btn.amp-btn-reverse{background-color:#fff;color: #5ab46e;}
 
