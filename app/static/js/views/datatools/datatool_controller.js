@@ -586,25 +586,25 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             });
 
             //经营费用runCost
-            self.runCostInit=2868.80;
-
+            //self.runCostInit=2868.80;
             $.each(countData.runCost,function(i,e){
                 if(i==0){
-                    e.value=parseFloat(self.irrData[19].values[i+skip].value+1)*self.runCostInit;
+                    e.value=parseFloat(self.irrData[20].values[1].value)*(parseFloat(self.irrData[2].values[1].value)+parseFloat(self.irrData[3].values[1].value))/10000;
+                    console.log(e.value);
                 }else{
-                    e.value=(parseFloat(self.irrData[19].values[i+skip].value)+1)*self.irrData[20].values[i+skip-1].value;
+                    e.value=parseFloat(self.irrData[20].values[i+skip-1].value)*(1+parseFloat(self.irrData[19].values[i+skip].value));
+                    console.log(e.value);
                 }
-            });
 
-            //总费用占比
-            $.each(countData.expenseRatio,function(i,e){
-                e.value=parseFloat(self.irrData[20].values[i+skip].value)/self.irrData[14].values[i+skip].value;
             });
 
             //总经营费用
             $.each(countData.expense,function(i,e){
-                e.value=parseFloat(self.irrData[20].values[i+skip].value)+self.irrData[16].values[i+skip].value+self.irrData[17].values[i+skip].value;
-
+                e.value=parseFloat(self.irrData[20].values[i+skip].value)+parseFloat(self.irrData[16].values[i+skip].value)+parseFloat(self.irrData[17].values[i+skip].value)
+            });
+            //总费用占比
+            $.each(countData.expenseRatio,function(i,e){
+                e.value=parseFloat(self.irrData[20].values[i+skip].value)/parseFloat(self.irrData[11].values[i+skip].value)
             });
 
             //noi 总收入－总费用
