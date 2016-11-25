@@ -1,0 +1,28 @@
+/* ======================================== amp-left-panel ======================================== */
+.amp-left-panel{background-color:#4a5468;}
+
+/* ======================================== amp-right-panel ======================================== */
+.amp-right-panel{}
+
+/* ======================================== amp-header-panel ======================================== */
+.amp-header-panel{}
+
+/* ======================================== amp-main-panel ======================================== */
+.amp-main-panel{}
+.amp-main-panel .amp-content-header{
+    height:44px;
+    background-color:#f2f5f7;
+}
+.amp-main-panel .amp-content-panel{position:relative;overflow: auto;}
+.amp-main-panel .amp-content-panel .amp-content-panel-head{
+
+
+}
+.amp-main-panel .amp-content-panel .amp-content-panel-body{position: relative;background-color:#fff;}
+
+.amp-main-panel .amp-content-panel .amp-content-panel-foot{}
+
+
+
+/* ======================================== amp-backdrop-panel ======================================== */
+.amp-backdrop-panel{}

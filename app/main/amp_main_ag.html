@@ -33,10 +33,10 @@
     <link href="../components/toolbar/filter.css" rel="stylesheet">
     <link href="../static/css/views/datatools.css" rel="stylesheet">
 
-    <!--<link href="../static/css/common/amp_common.css" rel="stylesheet">
+    <link href="../static/css/common/amp_common.css" rel="stylesheet">
     <link href="../static/css/common/amp_page_structure.css" rel="stylesheet">
     <link href="../static/css/common/component.css" rel="stylesheet">
-    <link href="../static/css/common/amp_animation.css" rel="stylesheet">-->
+    <link href="../static/css/common/amp_animation.css" rel="stylesheet">
 
 
     <script src="../static/dist/js/jquery-1.11.3.min.js"></script>
@@ -52,14 +52,18 @@
     <script src="../static/dist/js/echarts.common.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.min.js"></script>
     <script src="../static/dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
-
     <script src="../static/js/views/datatools/finacial.js"></script>
+    
 <!--    <script src="../static/js/main/me-pageloading.js"></script>-->
+    <script src="../static/js/common/common.js"></script>
+    <script src="../static/js/main/local_storage.js"></script>
+
     <script src="../static/js/main/menu_list.js"></script>
     <script src="../static/js/main/amp_main.js"></script>
     <script src="../static/js/main/amp_ag.js"></script>
     <script src="../static/js/main/timecount.js"></script>
-
+    <script src="../static/js/main/filters.js"></script>
+	<script src="../static/js/common/service/amp_common_service.js"></script>
     <script src="../static/js/views/noi_analyse/noi_controller.js"></script>
     <script src="../static/js/views/noi_analyse/noi_services.js"></script>
     <script src="../static/js/views/noi_analyse/noi_filters.js"></script>
@@ -73,8 +77,55 @@
     <script src="../static/js/views/datatools/datatool_filters.js"></script>
     <script src="../static/js/views/datatools/datatool_directive.js"></script>
 
+    <script src="../static/js/investment_analysis/controller/simulation_calculation_main_controller.js"></script>
 
     <script src="../static/js/main/snap.svg.js"></script>
+    <script src="../static/js/mgt_analysis/controller/contract_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/contract_main_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/contract_main_right_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_main_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_enrolment_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_manual_work_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_manual_work_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/cost_manual_work_enrolment_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/passenger_flow_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/passenger_flow_main_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/passenger_flow_main_enrolment_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/passenger_flow_main_enrolment_left_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/merchant_sale_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/merchant_sale_main_left_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/rent_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/rent_main_left_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/arrears_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_main_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_detail_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_detail_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_enrolment_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_merchant_detail_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_merchant_detail_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/arrears_merchant_detail_receiving_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/shop_sale_type_list_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/shop_sale_type_list_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/shop_sale_type_enrolment_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/shop_sale_rank_controller.js"></script>
+
+    <script src="../static/js/mgt_analysis/controller/business_main_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_main_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_merchant_list_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_merchant_list_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_merchant_detail_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_merchant_detail_left_controller.js"></script>
+    <script src="../static/js/mgt_analysis/controller/business_merchant_detail_enrolment_controller.js"></script>
+
+
+
+
 
     <script>
         $(window).load(function() {
@@ -152,7 +203,7 @@
         <ui-view name="right"></ui-view>
     </div>
     <!--modal parts-->
-
+    <ui-view name="enrolment"></ui-view>
     <!--end modal parts-->
     <!--backdrop loading-->
     <div class="backdrop"></div>
@@ -166,6 +217,6 @@
         </div>
     </div>
 </main>
-
+<script src="../static/js/common/component.js"></script>
 </body>
 </html>

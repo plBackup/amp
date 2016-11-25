@@ -1,0 +1,77 @@
+<link href="../static/css/mgt_analysis/arrears_detail.css" rel="stylesheet">
+
+<div class="amp-main-panel"  id="arrears-detail">
+    <div class="amp-content-header clearfix">
+        <div class="pull-left">
+            <ul class="amp-breadcrumb">
+                <li><a href="#/rent_main">租赁分析</a></li>
+                 <li><a href="#/arrears_main">欠费</a></li>
+                <li><a>欠费明细</a></li>
+            </ul>
+        </div>
+    	<ul class="amp-status-item-list pull-right">
+        	<li class="amp-status-item"><span>欠费总额(元)</span><em>24,079</em></li>
+  		</ul>
+    </div>
+    <div class="amp-content-panel">
+        <div class="ys-table-block">
+            <div class="amp-collapse-table">
+                <div class="amp-thead">
+                    <div class="amp-table-row">
+                        <ul class="amp-table-row-content">
+                            <li class="amp-table-cell">商家</li>
+                            <li class="amp-table-cell">欠费总额</li>
+                            <li class="amp-table-cell">押金</li>
+                            <li class="amp-table-cell">押金占比</li>   
+                            <li class="amp-table-cell">掉铺概率</li>
+                            <li class="amp-table-cell">&le;30天</li>
+                            <li class="amp-table-cell">31-60天</li>
+                            <li class="amp-table-cell">61-90天</li>
+                            <li class="amp-table-cell">&gt;90天</li>
+                            <li class="amp-table-cell">租金</li>
+                            <li class="amp-table-cell">合同剩余（月）</li>
+                        </ul>
+                    </div>
+                </div><!-- amp-thead -->
+
+                <div class="amp-tbody">
+
+                    <div class="amp-table-row" ng-repeat="item in result.records|limitTo:result.pageSize">
+                        <ul class="amp-table-row-content">
+                            <li class="amp-table-cell">{{item.merchantName}}</li>
+                            <li class="amp-table-cell">{{item.arrearsTotalAmount|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.deposit|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.depositRate}}</li>
+                            <li class="amp-table-cell">{{item.crashStoreRate}}</li>
+                            <li class="amp-table-cell">{{item.dateItem1|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.dateItem2|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.dateItem3|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.dateItem4|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.rentAmount|numberFormatDefault}}</li>
+                            <li class="amp-table-cell">{{item.contractLeaveMonth|numberFormatDefault}}</li>
+                        </ul>
+                    </div><!-- amp-table-collapse-row -->
+
+                </div><!-- amp-tbody -->
+
+            </div><!-- amp-table-collapse -->
+
+            <div class="amp-pagination-toolbar-wrapper clearfix">
+                <div class="amp-pagination-toolbar pull-right">
+                    <span>共{{result.recordCount}}条记录,当前1/{{result.pageCount}}页</span>
+                    <div class="pagination-nav-group">
+                        <a>&lt;</a>
+                        <a>&gt;</a>
+                        <input type="text" value="1"/>
+                    </div>
+                    <a class="pagination-ok-btn">确定</a>
+                </div>
+            </div><!-- amp-pagination-toolbar-wrapper -->
+
+        </div><!-- ys-table-block -->
+
+    </div><!-- amp-content-panel -->
+
+</div><!-- amp-main-panel -->
+
+

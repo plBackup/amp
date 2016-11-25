@@ -8,7 +8,9 @@
 var ampApp = angular.module('amp', [
     'ui.router',
     'noi',
+    "ampFilters",
     "ampFilter",
+    'commonService',
     "dataTool"
     //'noiFilters'
 ]);
@@ -32,7 +34,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     controllerAs:"noiCtrl"
                 },
                 "right":{
-                    templateUrl: '../views/blank_right.html',
+                    templateUrl: '../views/blank_right.html'
                 }
             },
             controller:"page",
@@ -196,6 +198,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "toolbar": {
             },
             "content": {
+                controller:"simulation-calculation-main-controller",
                 templateUrl: "../investment_analysis/simulation_calculation_main.html"
             },
             "right": {
@@ -219,13 +222,17 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/contract_main",
         views: {
             "toolbar": {
+                controller:"contract-main-left-controller",
                 templateUrl: "../mgt_analysis/contract_main_left.html"
             },
             "content": {
+                controller:"contract-main-controller",
                 templateUrl: "../mgt_analysis/contract_main.html"
             },
             "enrolment": {
+                controller:"contract-main-right-controller",
                 templateUrl: "../mgt_analysis/contract_main_right.html"
+
             }
         },
         controller:"page",
@@ -246,9 +253,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/business_main",
         views: {
             "toolbar": {
+                controller:"business-main-left-controller",
                 templateUrl: "../mgt_analysis/business_main_left.html"
             },
             "content": {
+                controller:"business-main-controller",
                 templateUrl: "../mgt_analysis/business_main.html"
             },
             "enrolment": {
@@ -272,9 +281,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/business_merchant_list",
         views: {
             "toolbar": {
+                controller:"business-merchant-list-left-controller",
                 templateUrl: "../mgt_analysis/business_merchant_list_left.html"
             },
             "content": {
+                controller:"business-merchant-list-controller",
                 templateUrl: "../mgt_analysis/business_merchant_list.html"
             },
             "enrolment": {
@@ -299,12 +310,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/business_merchant_detail",
         views: {
             "toolbar": {
+                controller:"business-merchant-detail-left-controller",
                 templateUrl: "../mgt_analysis/business_merchant_detail_left.html"
             },
             "content": {
+                controller:"business-merchant-detail-controller",
                 templateUrl: "../mgt_analysis/business_merchant_detail.html"
             },
             "enrolment": {
+                controller:"business-merchant-detail-enrolment-controller",
                 templateUrl: "../mgt_analysis/business_merchant_detail_enrolment.html"
             }
         },
@@ -326,9 +340,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/passenger_flow_main",
         views: {
             "toolbar": {
+                controller:"passenger-flow-main-left-controller",
                 templateUrl: "../mgt_analysis/passenger_flow_main_left.html"
             },
             "content": {
+                controller:"passenger-flow-main-controller",
                 templateUrl: "../mgt_analysis/passenger_flow_main.html"
             },
             "enrolment": {
@@ -352,9 +368,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/passenger_flow_main_enrolment",
         views: {
             "toolbar": {
+                controller:"passenger-flow-main-enrolment-left-controller",
                 templateUrl:"../mgt_analysis/passenger_flow_main_enrolment_left.html"
             },
             "content": {
+                controller:"passenger-flow-main-enrolment-controller",
                 templateUrl: "../mgt_analysis/passenger_flow_main_enrolment.html"
             },
             "enrolment": {
@@ -381,12 +399,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/cost_main",
         views: {
             "toolbar": {
+                controller:"cost-main-left-controller",
                 templateUrl: "../mgt_analysis/cost_main_left.html"
             },
             "content": {
+                controller:"cost-main-controller",
                 templateUrl: "../mgt_analysis/cost_main.html"
             },
             "enrolment": {
+                controller:"cost-enrolment-controller",
                 templateUrl: "../mgt_analysis/cost_enrolment.html"
             }
         },
@@ -408,13 +429,16 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/cost_manual_work",
         views: {
             "toolbar": {
-
+                controller:"cost-manual-work-left-controller",
+                templateUrl: "../mgt_analysis/cost_manual_work_left.html"
             },
             "content": {
+                controller:"cost-manual-work-controller",
                 templateUrl: "../mgt_analysis/cost_manual_work.html"
             },
             "enrolment": {
-
+                controller:"cost-manual-work-enrolment-controller",
+                templateUrl: "../mgt_analysis/cost_manual_work_enrolment.html"
             }
         },
         controller:"page",
@@ -435,9 +459,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/merchant_sale_main",
         views: {
             "toolbar": {
+                controller:"merchant-sale-main-left-controller",
                 templateUrl: "../mgt_analysis/merchant_sale_main_left.html"
             },
             "content": {
+                controller:"merchant-sale-main-controller",
                 templateUrl: "../mgt_analysis/merchant_sale_main.html"
             },
             "enrolment": {
@@ -460,9 +486,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/arrears_main",
         views: {
             "toolbar": {
+                controller:"arrears-main-left-controller",
                 templateUrl: "../mgt_analysis/arrears_main_left.html"
             },
             "content": {
+                controller:"arrears-main-controller",
                 templateUrl: "../mgt_analysis/arrears_main.html"
             },
             "enrolment": {
@@ -485,12 +513,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/arrears_detail",
         views: {
             "toolbar": {
+                controller:"arrears-detail-left-controller",
                 templateUrl: "../mgt_analysis/arrears_detail_left.html"
             },
             "content": {
+                controller:"arrears-detail-controller",
                 templateUrl: "../mgt_analysis/arrears_detail.html"
             },
             "enrolment": {
+                controller:"arrears-enrolment-controller",
                 templateUrl: "../mgt_analysis/arrears_enrolment.html"
             }
         },
@@ -536,12 +567,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/shop_sale_type_list",
         views: {
             "toolbar": {
+                controller:"shop-sale-type-list-left-controller",
                 templateUrl: "../mgt_analysis/shop_sale_type_list_left.html"
             },
             "content": {
+                controller:"shop-sale-type-list-controller",
                 templateUrl: "../mgt_analysis/shop_sale_type_list.html"
             },
             "enrolment": {
+                controller:"shop-sale-type-enrolment-controller",
                 templateUrl: "../mgt_analysis/shop_sale_type_enrolment.html"
             }
         },
@@ -563,9 +597,11 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/rent_main",
         views: {
             "toolbar": {
+                controller:"rent-main-left-controller",
                 templateUrl: "../mgt_analysis/rent_main_left.html"
             },
             "content": {
+                controller:"rent-main-controller",
                 templateUrl: "../mgt_analysis/rent_main.html"
             },
             "enrolment": {
@@ -589,12 +625,15 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         url: "/arrears_merchant_detail",
         views: {
             "toolbar": {
+                controller:"arrears-merchant-detail-left-controller",
                 templateUrl: "../mgt_analysis/arrears_merchant_detail_left.html"
             },
             "content": {
+                controller:"arrears-merchant-detail-controller",
                 templateUrl: "../mgt_analysis/arrears_merchant_detail.html"
             },
             "enrolment": {
+                controller:"arrears-merchant-detail-receiving-controller",
                 templateUrl:"../mgt_analysis/arrears_merchant_detail_receiving.html"
             }
         },
@@ -618,6 +657,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             "toolbar": {
             },
             "content": {
+                controller:"shop-sale-rank-controller",
                 templateUrl: "../mgt_analysis/shop_sale_rank.html"
             },
             "enrolment": {

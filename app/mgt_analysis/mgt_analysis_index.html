@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="" lang="zh-cn"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>悦商AMP</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- 导入CSS -->
+    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/dist/css/swiper.min.css" rel="stylesheet">
+
+    <!-- 自有CSS -->
+    <link href="../static/css/common/common_xiao.css" rel="stylesheet">
+    <link href="../static/css/common/amp_main.css" rel="stylesheet">
+
+    <link href="../static/css/common/amp_common.css" rel="stylesheet">
+    <link href="../static/css/common/amp_page_structure.css" rel="stylesheet">
+    <link href="../static/css/common/component.css" rel="stylesheet">
+    <link href="../static/css/common/amp_animation.css" rel="stylesheet">
+
+</head>
+<body ng-app="my-app">
+
+<!--[if lt IE 9]>
+<p class="updateBrowser">您的浏览器太旧了，请更新最新浏览器，以获得最佳效果.</p>
+<![endif]-->
+
+<!-- Preloader -->
+<!--<div id="preloader">-->
+<!--<div id="status"><i class="fa fa-spinner fa-spin"></i></div>-->
+<!--</div>-->
+
+
+
+<div class="ys-amp" id="mgt-analysis-index">
+    <div class="leftpanel">
+        <div class="logopanel">
+            <!--<h1>悦商<span>AMP</span>系统</h1>-->
+        </div><!-- logopanel -->
+        <div class="leftpanelinner">
+            <h5 class="sidebartitle">
+                <a href="#" class="menutoggle"><em class="ys-icon-spirit ys-icon-togglebar"></em></a>
+            </h5>
+            <div class="amp-side-toolbar">
+                <div ui-view="left"></div>
+            </div><!--amp-side-toolbar-->
+            <ul class="nav nav-pills nav-stacked nav-bracket">
+                <li>
+                    <a class="ys-menu-link" id="main-0" data-show-header="undefined" data-relocate="true">
+                        <em class="ys-icon-spirit ys-icon-asset"></em><span>存量分析</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="ys-menu-link" id="main-1" href="../investment_analysis/investment_analysis_index.html" data-show-header="undefined" data-relocate="true">
+                        <em class="ys-icon-spirit ys-icon-finacial"></em><span>投资分析</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a class="ys-menu-link" id="main-3" data-show-header="undefined" data-relocate="true">
+                        <em class="ys-icon-spirit ys-icon-tool"></em><span>管理分析</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="ys-menu-link" id="main-2" data-show-header="undefined" data-relocate="true">
+                        <em class="ys-icon-spirit ys-icon-risk"></em><span>风控分析</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="ys-menu-link" id="main-4" data-show-header="undefined" data-relocate="true">
+                        <em class="ys-icon-spirit ys-icon-data"></em><span>数据工具</span>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- leftpanelinner -->
+    </div><!-- leftpanel -->
+
+    <div class="headerpanel">
+        <div class="headerbar">
+            <div class="head-main-menu">
+                <ul class="nav nav-tabs animated active fadeIn" role="tablist" id="header-tabs-0">
+                    <li class="active"><a data-href="#/contract_main">收入分析</a></li>
+                    <li><a data-href="#/cost_main">支出分析</a></li>
+                    <li><a data-href="#/rent_main">租赁分析</a></li>
+                    <li><a data-href="#/passenger_flow_main">运营分析</a></li>
+                </ul>
+            </div><!-- head-main-menu -->
+        </div><!-- headerbar -->
+    </div><!-- headerpanel -->
+
+    <div class="mainpanel">
+        <div ui-view="main"></div>
+    </div><!-- mainpanel -->
+
+    <!-- rightpanel -->
+    <div ui-view="right"></div>
+
+
+    <div class="backdrop">
+        <div ui-view="backdrop"></div>
+    </div>
+
+</div>
+<script src="../static/dist/js/jquery-1.11.3.min.js"></script>
+<script src="../static/dist/js/jquery.tmpl.js"></script>
+<script src="../static/dist/js/swiper.jquery.min.js"></script>
+<script src="../static/dist/js/angular.min.js"></script>
+<script src="../static/dist/js/angular-ui-router.min.js"></script>
+<script src="../static/dist/js/echarts.common.min.js"></script>
+
+<script src="../static/js/common/component.js"></script>
+<script src="../static/js/mgt_analysis/mgt_analysis_index.js"></script>
+
+
+</body>
+</html>
