@@ -575,10 +575,10 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 e.value=self.irrData[5].values[i+skip].value+self.irrData[11].values[i+skip].value+self.irrData[13].values[i+skip].value;
             });
             //房产税－暂无输入
-            self.propertyTaxesNum=12000;
+            //self.propertyTaxesNum=12000;
             $.each(countData.propertyTaxes,function(i,e){
                // e.value=self.irrData[5].values[i+skip].value+self.irrData[11].values[i+skip].value+self.irrData[13].values[i+skip].value;
-                e.value=self.propertyTaxesNum*self.irrData[16].values[1].value
+                e.value=self.irrData[5].values[i+skip].value*self.irrData[16].values[1].value
             });
             //营业税
             $.each(countData.salesTaxes,function(i,e){
