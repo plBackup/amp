@@ -142,18 +142,17 @@
                             <th>地租</th>
                         </tr>
 
-                       <!-- <tr class="tr-sub tr-sub-main">-->
-                        <tr class="tr-sub">
-                            <th>能耗费用<!--<em class="ys-icon icon-menu-down"></em>--></th>
+                        <tr class="tr-sub tr-sub-main">
+                            <th>能耗费用<em class="ys-icon icon-menu-down"></em></th>
                         </tr>
 
-                        <tr class="tr-tri" ng-hide="true">
+                        <tr class="tr-tri">
                             <th>水费</th>
                         </tr>
-                        <tr class="tr-tri" ng-hide="true">
+                        <tr class="tr-tri">
                             <th>电费</th>
                         </tr>
-                        <tr class="tr-tri" ng-hide="true">
+                        <tr class="tr-tri">
                             <th>煤气费</th>
                         </tr>
 
@@ -255,25 +254,24 @@
 
                                 </tr>
 
-                                <!--<tr class="tr-sub tr-sub-main">-->
-                                <tr class="tr-sub">
+                                <tr class="tr-sub tr-sub-main">
                                     <td ng-repeat="tdData in noiCtrl.feeData[3].values|skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|default:"-"|numberFormat:$index:2}}</td>
                                     <td></td>
 
                                 </tr>
 
-                                <tr class="tr-tri" ng-hide="true">
+                                <tr class="tr-tri">
                                     <td ng-repeat="tdData in noiCtrl.feeData[4].values|skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|default:"-"|numberFormat:$index:2}}</td>
 
                                 </tr>
-                                <tr class="tr-tri" ng-hide="true">
+                                <tr class="tr-tri">
                                     <td ng-repeat="tdData in noiCtrl.feeData[5].values|skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|default:"-"|numberFormat:$index:2}}</td>
 
                                 </tr>
-                                <tr class="tr-tri" ng-hide="true">
+                                <tr class="tr-tri">
                                     <td ng-repeat="tdData in noiCtrl.feeData[6].values|skip:1"
                                         ng-class="{'t-split':noiCtrl.isSplit($index)}">{{tdData.value|default:"-"|numberFormat:$index:2}}</td>
                                     <td></td>
