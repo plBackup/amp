@@ -905,7 +905,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
             $(".col-xs-6").css({
                 "overflow-y":"hidden",
-                "height":(h-88)+"px"
+                "height":(h-88-54)+"px"
             });
 
             var datasim_floor_scroll = new IScroll('#datatool-sim-floor-table', {
@@ -924,7 +924,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
                 $(".col-xs-6").css({
                     "overflow-y":"hidden",
-                    "height":(h-88)+"px"
+                    "height":(h-88-54)+"px"
                 });
 
                 datasim_floor_scroll.refresh();
