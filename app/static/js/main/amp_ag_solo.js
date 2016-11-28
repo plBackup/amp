@@ -86,6 +86,9 @@ ampAppSolo.config(function($stateProvider,$urlRouterProvider) {
 });
 
 ampAppSolo.controller('MainController', function($rootScope, $scope) {
+    var curProject=window.location.search.slice(1).split("=")[1];
+    $rootScope.curProject=curProject;
+
     $rootScope.homePageIsShown = true;
     $scope.state = {};
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {

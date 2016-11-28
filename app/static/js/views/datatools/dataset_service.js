@@ -1,11 +1,11 @@
 /**
  * Created by limeiting on 16/11/18.
  */
-angular.module('dataSet').service('dataSetService', ["$http",function($http) {
+angular.module('dataSet').service('dataSetService', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {
         getData: function () {
-            return $http.get('../data/rent_setup.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/rent_setup.json', {cache: true}).then(function (res) {
                 return res.data;
             });
         },
@@ -14,11 +14,11 @@ angular.module('dataSet').service('dataSetService', ["$http",function($http) {
 
 }]);
 
-angular.module('dataSet').service('dataResultService', ["$http",function($http) {
+angular.module('dataSet').service('dataResultService', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {
         getData: function () {
-            return $http.get('../data/shopInfo.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/shopInfo.json', {cache: true}).then(function (res) {
                 return res.data;
             });
         },
@@ -51,7 +51,7 @@ angular.module('dataSet').factory('paginatorService', [function() {
                     this.curPageIndex+=1;
                     //this._load(this.currentOffset,pageLimit);
                     this.pageTarget=this.curPageIndex;
-                    console.log("...next");
+
                 }
             },
 
@@ -65,7 +65,6 @@ angular.module('dataSet').factory('paginatorService', [function() {
                     this.curPageIndex -=1;
                     this.pageTarget=this.curPageIndex;
                     //this._load(this.currentOffset,pageLimit);
-                    console.log("...prev");
                 }
 
             },

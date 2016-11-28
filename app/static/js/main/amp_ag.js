@@ -2,7 +2,6 @@
  * Created by limeiting on 16/11/4.
  */
 'use strict';
-
 /* App Module */
 
 var ampApp = angular.module('amp', [
@@ -54,7 +53,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
         }, //state
         {
             name: 'rpgindex',
-            url: '/rpgindex?pageindex=1',
+            url: '/rpgindex',
             views:{
                 'toolbar': {
                     templateUrl: '../components/toolbar/rent_package_filter.html',

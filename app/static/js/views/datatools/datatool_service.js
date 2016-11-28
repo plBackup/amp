@@ -4,9 +4,7 @@
 angular.module('dataTool').service('dataIndexService', ["$rootScope","$http",function($rootScope,$http) {
     var service = {
         getIndexData: function () {
-            console.log("----------curProject");
-            console.log($rootScope.curProject);
-            return $http.get('../data/shopInfo.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/shopInfo.json', {cache: true}).then(function (res) {
                 return res.data;
             });
         },
@@ -15,10 +13,10 @@ angular.module('dataTool').service('dataIndexService', ["$rootScope","$http",fun
 
 }]);
 
-angular.module('dataTool').service('dataSetService', ["$http",function($http) {
+angular.module('dataTool').service('dataSetService', ["$rootScope","$http",function($rootScope,$http) {
     var service = {
         getSetData: function () {
-            return $http.get('../data/rent_setup_index.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/rent_setup_index.json', {cache: true}).then(function (res) {
                 ////console.log(res);
                 return res.data;
             });
@@ -28,11 +26,11 @@ angular.module('dataTool').service('dataSetService', ["$http",function($http) {
 
 }]);
 
-angular.module('dataTool').service('irrPlanService', ["$http",function($http) {
+angular.module('dataTool').service('irrPlanService', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {
         getIrrData: function () {
-            return $http.get('../data/irrplan.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/irrplan.json', {cache: true}).then(function (res) {
                 return res.data;
             });
         },
@@ -40,11 +38,11 @@ angular.module('dataTool').service('irrPlanService', ["$http",function($http) {
     return service;
 }]);
 
-angular.module('dataTool').service('dataSimChart', ["$http",function($http) {
+angular.module('dataTool').service('dataSimChart', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {
         getSimChartData: function () {
-            return $http.get('../data/datasim_chart.json', {cache: true}).then(function (res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/datasim_chart.json', {cache: true}).then(function (res) {
                 return res.data;
             });
         },
@@ -52,7 +50,7 @@ angular.module('dataTool').service('dataSimChart', ["$http",function($http) {
     return service;
 }]);
 
-angular.module('dataTool').service('chartOptService', ["$http",function($http) {
+angular.module('dataTool').service('chartOptService', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {
         setChartOption:function(data,labels){

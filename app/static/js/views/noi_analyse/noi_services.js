@@ -3,12 +3,9 @@
  */
 angular.module('noi').service('noiService', function($rootScope,$http) {
 
-    console.log("----------curProject");
-    console.log($rootScope.curProject);
-
     var service = {
         getAllData: function() {
-            return $http.get('../data/noi/noi_all.json', { cache: true }).then(function(res) {
+            return $http.get('../data/data_'+$rootScope.curProject+'/noi/noi_all.json', { cache: true }).then(function(res) {
                 return res.data;
             });
         },

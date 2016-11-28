@@ -274,11 +274,6 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         //pageTarget初始化与pageIndex一致
         //这里演示时简化逻辑，没有http取数据操作，通过一次性取数据， 通过页面过滤器进行页面展示
-
-        console.log("location-------------------------");
-
-        console.log($location);
-
         self.loadPage=function(targetIndex){
             if(targetIndex>=self.pageNum){
                 targetIndex=self.pageNum;
