@@ -5,7 +5,7 @@
             <li><a href="#" id="tri-0-1-0" class="header-subnav-item active" target="#page-frame">回报测算</a></li>
         </ul>
     </div><!--amp-content-header-->
-    <form name="irr-form">
+    <form name="irrForm" novalidate>
         <div class="clearfix">
             <span class="amp-tipsnote" style="position: relative;float:left; top:5px;background-color:transparent;margin-left:-3px;margin-bottom:20px;"><em class="ys-amp-icon ys-icon-tips ys-icon-tips-hover" style="left:5px;margin-top:-11px;"></em>体验版数据为模拟数据，请勿引用。可提供数据整合服务</span>
         </div>
@@ -406,7 +406,7 @@
                                 <tr class="tr-sub" data-index="4">
                                     <td ng-repeat="pv in pCtrl.irrData[4].values | take:2 :pCtrl.quitYear ">
                                         <div class="td-input-wrapper num-input padding-r-15" >
-                                        <input type="text" placeholder="/" data-date="" value="" ng-model="pv.value">
+                                        <input type="number" placeholder="/" data-date="" value="" ng-model="pv.value">
                                         <span class="number-format">{{pv.value*100| number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
@@ -632,8 +632,8 @@
     <div class="block bottom-block clearfix">
         <div class="btn-wrapper pull-right">
 
-            <a href="javascript:void(0)" class="btn btn-default amp-btn ys-tips" id="btn-save" ng-click="pCtrl.save()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用" >保存</a>
-            <a href="javascript:void(0)" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-count" ng-click="pCtrl.count()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用">计算</a>
+            <a href="javascript:void(0)" class="btn btn-default amp-btn ys-tips" id="btn-save" ng-click="pCtrl.save()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用"  ng-disabled="irrForm.$invalid">保存</a>
+            <a href="javascript:void(0)" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-count" ng-click="pCtrl.count()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用" ng-disabled="irrForm.$invalid">计算</a>
            <!-- <span class="amp-tipsnote" style="position: relative;float:right; top:5px;background-color:transparent;margin-right:16px;"><em class="ys-amp-icon ys-icon-tips ys-icon-tips-hover" style="left:5px;margin-top:-11px;"></em>体验版数据为模拟数据，请勿引用，可提供数据整合服务</span>-->
         </div>
     </div>

@@ -627,9 +627,11 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             });
             var qyy=self.quitYear;
 
-            for(i=0;i<=qyy;i++){
-
+            for(i=0;i<qyy;i++){
+                console.log(qyy);
                 if(parseFloat(self.irrData[26].values[i+skip].value)>0){
+                   /* console.log(i+skip)
+                    console.log(self.irrData[26].values[i+skip])*/
                     var y=i;
                     var value=parseFloat(Math.abs(self.irrData[26].values[y-1+skip].value))/(parseFloat(Math.abs(self.irrData[26].values[y-1+skip].value))+parseFloat(Math.abs(self.irrData[26].values[y+skip].value)));
                     self.irrData[26].values[1].value=y+value;
@@ -803,9 +805,9 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             var leveredirrArgs=[];
             leveredirrArgs.push(Math.abs(self.irrData[50].values[1].value)*(-1));
             for(i=0;i<qy;i++){
-
                 leveredirrArgs.push(Math.abs(self.irrData[50].values[i+skip].value));
             }
+
             var leaveredIRR=finance.IRRAMP(leveredirrArgs);
             self.irrData[52].values[1].value=leaveredIRR/100;
 
@@ -836,13 +838,29 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             $(this).find("input").focus();
         });
 
+        function _checkErrot($e){
+            var $this=$e;
+            var errorInfo="请输入正确的数据格式";
+            if($this.hasClass("ng-invalid")){
+                if(($this).hasClass("ng-invalid-number")){
+                    errorInfo="请输入有效数字";
+                }
+                $this.parent(".td-input-wrapper").append("<em class='error-msg'>"+errorInfo+"</em>");
+            }else{
+                $this.parent().find("em.error-msg").remove();
+            }
+        };
+
         $(".table").on("change","input",function(e){
+            _checkErrot($(e.target));
             $scope.$apply(
                 function(){
                     self.count();
                 }
             );
         });
+
+
 
         irr_plan.init();
         self.count();

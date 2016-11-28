@@ -45,6 +45,10 @@ ampApp.controller("shop-sale-type-list-controller",["$scope","$ampDocumentReady"
         resetPaginationInfo();
     });
 
+    $scope.$on("shop-sale-type.enrolment",function(e,data){
+        console.log("----------------");
+        console.log(e);
+    })
 
     /* ======================================== 初始化页面 ======================================== */
     var container = null;

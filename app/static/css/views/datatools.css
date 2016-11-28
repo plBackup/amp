@@ -102,7 +102,7 @@
 
 
 #irr-plan .table>tbody>tr>th, #irr-plan .table>tbody>tr>td{padding:3px 10px;padding-left:25px;
-    height:38px;line-height:28px;overflow:hidden;}/*这里修改改变整体表格单元高度*/
+    height:38px;line-height:28px;overflow:visible;}/*这里修改改变整体表格单元高度*/
 
 #irr-plan  .ys-table-static .table tr.tr-sub>th{color:#8592a3;font-size:13px;}
 #irr-plan  .ys-table-static .table tr.tr-sub>th span{display:block;font-size:13px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
@@ -369,7 +369,9 @@ tr>td.active .num-input span.number-format{display: none;}
     margin-top: -4px;
     background-position: -170px -261px;
 }
-
+.td-input-wrapper em.error-msg{display: none;position: absolute;height:16px;top:-22px;z-index:999;right:0;margin:0;padding:0 5px; background-color:rgba(33,33,33,0.78);color:#fff;font-size:12px;line-height: 16px;}
+.td-input-wrapper em.error-msg:before{position: absolute;top:15px;right:0;display: block;border:solid 10px transparent;border-width:6px 0 0 8px;border-top-color: rgba(33,33,33,0.78);content:" ";}
+.td-input-wrapper:hover em.error-msg{display: block;}
 /*td status*/
 tr>td.active{}
 tr>td.error{}
@@ -398,3 +400,16 @@ tr>td span.number-format{display: block;width:100%;}
 #rent-package .amp-table>thead>tr>th span, #rent-package .amp-table>tbody>tr>td span{display:block;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
 
 #rent-package-result .amp-table>tbody>tr>th span,#rent-package-result .amp-table>tbody>tr>td span{display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.ys-amp .table td input{}
+.ys-amp .table input.ng-dirty,#irr-plan .table td.active input.ng-dirty{background-color:#d8e8db;}
+.ys-amp .table input.ng-dirty~span{background-color:#d8e8db;}
+
+#irr-plan .table .td-input-wrapper.padding-r-15 input.ng-dirty~.number-format{background-color:#d8e8db;color:#373c42;}
+#irr-plan .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
+#irr-plan .table td input.ng-invalid{border:solid 2px #ff3030;}
+#irr-plan .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#irr-plan .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+    background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
+
+

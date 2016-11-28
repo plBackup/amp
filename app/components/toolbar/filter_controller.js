@@ -85,6 +85,7 @@ ampFilter.controller('dataFilterController', ['$rootScope', '$scope',
                 name:"data_tool",
                 filters:self.filters
             });
+            console.log(self.filters);
         };
 
         //self.shopIndexFocus=false;
