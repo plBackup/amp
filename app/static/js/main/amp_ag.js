@@ -716,7 +716,8 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
     var curProject=window.location.search.slice(1).split("=")[1];
     $rootScope.curProject=curProject;
 
-    $rootScope.projectName="商业公司A";
+    //$rootScope.projectName="商业公司A";
+
     $rootScope.homePageIsShown = true;
     $scope.state = {};
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState) {
