@@ -365,9 +365,8 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
             self.affect_count[2].projects[1]["value"]=self.affect_count[0].projects[2]["value"]*self.affect_count[1].projects[1]["value"]/self.affect_count[0].projects[1]["value"];
 
             //参考租金
-            self.affect_count[3].projects[2]["value"]=self.affect_count[2].projects[0]["value"]*self.affect_count[3].projects[0]["value"]+self.affect_count[2].projects[1]["value"]*self.affect_count[3].projects[1]["value"]
-
-        }
+            self.affect_count[3].projects[2]["value"]=self.affect_count[2].projects[0]["value"]*self.affect_count[3].projects[0]["value"]+self.affect_count[2].projects[1]["value"]*self.affect_count[3].projects[1]["value"];
+        };
 
         self.updateWeight();
 

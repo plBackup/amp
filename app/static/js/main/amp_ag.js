@@ -714,6 +714,8 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
 });
 
 ampApp.controller('MainController', function($rootScope, $scope,$location,$timeout) {
+    var curProject=window.location.search.slice(1).split("=")[1];
+    $rootScope.curProject=curProject;
 
     $rootScope.projectName="商业公司A";
     $rootScope.homePageIsShown = true;
