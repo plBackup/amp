@@ -1133,43 +1133,43 @@
             }, 
             {
                 "rid": "irr_col2_row23", 
-                "value": "\u7b2c\u4e00\u5e74"
+                "value": "1"
             }, 
             {
                 "rid": "irr_col3_row23", 
-                "value": "\u7b2c\u4e8c\u5e74"
+                "value": "2"
             }, 
             {
                 "rid": "irr_col4_row23", 
-                "value": "\u7b2c\u4e09\u5e74"
+                "value": "3"
             }, 
             {
                 "rid": "irr_col5_row23", 
-                "value": "\u7b2c\u56db\u5e74"
+                "value": "4"
             }, 
             {
                 "rid": "irr_col6_row23", 
-                "value": "\u7b2c\u4e94\u5e74"
+                "value": "5"
             }, 
             {
                 "rid": "irr_col7_row23", 
-                "value": "\u7b2c\u516d\u5e74"
+                "value": "6"
             }, 
             {
                 "rid": "irr_col8_row23", 
-                "value": "\u7b2c\u4e03\u5e74"
+                "value": "7"
             }, 
             {
                 "rid": "irr_col9_row23", 
-                "value": "\u7b2c\u516b\u5e74"
+                "value": "8"
             }, 
             {
                 "rid": "irr_col10_row23", 
-                "value": "\u7b2c\u4e5d\u5e74"
+                "value": "9"
             }, 
             {
                 "rid": "irr_col11_row23", 
-                "value": "\u7b2c\u5341\u5e74"
+                "value": "10"
             }
         ]
     }, 

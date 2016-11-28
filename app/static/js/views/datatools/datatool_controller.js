@@ -627,12 +627,13 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             });
             var qyy=self.quitYear;
 
-            for(i=0;i<qyy;i++){
+            for(i=0;i<=qyy;i++){
 
                 if(parseFloat(self.irrData[26].values[i+skip].value)>0){
                     var y=i;
-                    var value=parseFloat(Math.abs(self.irrData[26].values[y-1].value))/(parseFloat(Math.abs(self.irrData[26].values[y-1].value))+parseFloat(Math.abs(self.irrData[26].values[y].value)));
+                    var value=parseFloat(Math.abs(self.irrData[26].values[y-1+skip].value))/(parseFloat(Math.abs(self.irrData[26].values[y-1+skip].value))+parseFloat(Math.abs(self.irrData[26].values[y+skip].value)));
                     self.irrData[26].values[1].value=y+value;
+                    break;
                 }else{
                     self.irrData[26].values[1].value="-"
                 }
