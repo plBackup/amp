@@ -521,8 +521,177 @@
       ],
       "name": "\u80fd\u8017\u8d39\u7528"
     },
-
-
+    {
+      "values": [
+        {
+          "rid": "chart_col0_row4",
+          "value": "\u6c34\u8d39"
+        },
+        {
+          "rid": "chart_col1_row4",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col2_row4",
+          "value": ""
+        },
+        {
+          "rid": "chart_col3_row4",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col4_row4",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col5_row4",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col6_row4",
+          "value": ""
+        },
+        {
+          "rid": "chart_col7_row4",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col8_row4",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col9_row4",
+          "value": 10.0
+        },
+        {
+          "rid": "chart_col10_row4",
+          "value": ""
+        },
+        {
+          "rid": "chart_col11_row4",
+          "value": ""
+        },
+        {
+          "rid": "chart_col12_row4",
+          "value": ""
+        }
+      ],
+      "name": "\u6c34\u8d39"
+    },
+    {
+      "values": [
+        {
+          "rid": "chart_col0_row5",
+          "value": "\u7535\u8d39"
+        },
+        {
+          "rid": "chart_col1_row5",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col2_row5",
+          "value": ""
+        },
+        {
+          "rid": "chart_col3_row5",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col4_row5",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col5_row5",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col6_row5",
+          "value": ""
+        },
+        {
+          "rid": "chart_col7_row5",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col8_row5",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col9_row5",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col10_row5",
+          "value": ""
+        },
+        {
+          "rid": "chart_col11_row5",
+          "value": ""
+        },
+        {
+          "rid": "chart_col12_row5",
+          "value": ""
+        }
+      ],
+      "name": "\u7535\u8d39"
+    },
+    {
+      "values": [
+        {
+          "rid": "chart_col0_row6",
+          "value": "\u7164\u8d39"
+        },
+        {
+          "rid": "chart_col1_row6",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col2_row6",
+          "value": ""
+        },
+        {
+          "rid": "chart_col3_row6",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col4_row6",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col5_row6",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col6_row6",
+          "value": ""
+        },
+        {
+          "rid": "chart_col7_row6",
+          "value": 0.0
+        },
+        {
+          "rid": "chart_col8_row6",
+          "value": "-"
+        },
+        {
+          "rid": "chart_col9_row6",
+          "value": 10.0
+        },
+        {
+          "rid": "chart_col10_row6",
+          "value": ""
+        },
+        {
+          "rid": "chart_col11_row6",
+          "value": ""
+        },
+        {
+          "rid": "chart_col12_row6",
+          "value": ""
+        }
+      ],
+      "name": "\u7164\u8d39"
+    },
     {
       "values": [
         {
