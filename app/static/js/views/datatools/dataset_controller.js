@@ -370,6 +370,23 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
 
         self.updateWeight();
 
+        function _checkErrot($e){
+            var $this=$e;
+            var errorInfo="请输入正确的数据格式";
+            if($this.hasClass("ng-invalid")){
+                if(($this).hasClass("ng-invalid-number")){
+                    errorInfo="请输入有效数字";
+                }
+                $this.parent(".td-input-wrapper").append("<em class='error-msg'>"+errorInfo+"</em>");
+            }else{
+                $this.parent().find("em.error-msg").remove();
+            }
+        };
+
+        $(".table").on("change","input",function(e){
+            _checkErrot($(e.target));
+        });
+
         //dataSetView.init();
         rpgSet_table.init();
 

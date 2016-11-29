@@ -920,6 +920,25 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
              $(this).addClass("active");
              $(this).find("input").focus();
          });
+
+        function _checkErrot($e){
+            var $this=$e;
+            var errorInfo="请输入正确的数据格式";
+            if($this.hasClass("ng-invalid")){
+                if(($this).hasClass("ng-invalid-number")){
+                    errorInfo="请输入有效数字";
+                }
+                $this.parent(".td-input-wrapper").append("<em class='error-msg'>"+errorInfo+"</em>");
+            }else{
+                $this.parent().find("em.error-msg").remove();
+            }
+        };
+
+        $(".table").on("change","input",function(e){
+            _checkErrot($(e.target));
+        });
+
+
         amp_datePicker.daterangeSelector();
         amp_datePicker.dateSelector();
         var iscroll_init=function(){

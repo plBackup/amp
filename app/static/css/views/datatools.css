@@ -403,7 +403,7 @@ tr>td span.number-format{display: block;width:100%;}
 
 .ys-amp .table td input{}
 .ys-amp .table input.ng-dirty,#irr-plan .table td.active input.ng-dirty{background-color:#d8e8db;}
-.ys-amp .table input.ng-dirty~span{background-color:#d8e8db;}
+.ys-amp .table input.ng-dirty~span{background-color:#d8e8db;color:#373c42;}
 
 #irr-plan .table .td-input-wrapper.padding-r-15 input.ng-dirty~.number-format{background-color:#d8e8db;color:#373c42;}
 #irr-plan .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
@@ -413,3 +413,38 @@ tr>td span.number-format{display: block;width:100%;}
     background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
 
 
+
+#rent-package-rpanel .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
+#rent-package-rpanel .table td input.ng-invalid{border:solid 2px #ff3030;}
+#rent-package-rpanel .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#rent-package-rpanel .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+    background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
+
+
+#datatool-sim .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
+#datatool-sim .table td input.ng-invalid{border:solid 2px #ff3030;}
+#datatool-sim .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#datatool-sim .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+    background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
+
+
+#rpg-set .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
+
+#rgp-set .table td input.ng-invalid{border:solid 2px #ff3030;}
+#rgp-set .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#rgp-set .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+    background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
+
+#rpg-set-table-wrapper .td-input-wrapper em.error-msg{
+    position: absolute;
+    height: 16px;
+    top: 2px;
+    z-index: 12999;
+    right: 2px;
+    margin: 0;
+    padding: 0 5px;
+    background-color: rgba(33,33,33,0.78);
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+}

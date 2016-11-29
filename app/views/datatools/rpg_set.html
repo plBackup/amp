@@ -84,7 +84,7 @@
                             <td><span>区域属性</span></td>
                             <td>
                                 <div class="td-input-wrapper num-input" >
-                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[0].weight" ng-change="sCtrl.updateWeight()">
+                                    <input type="number" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[0].weight" ng-change="sCtrl.updateWeight()">
                                     <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[0].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
 
@@ -96,7 +96,7 @@
 
                             <td>
                                 <div class="td-input-wrapper num-input">
-                                    <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[1].weight" ng-change="sCtrl.updateWeight()">
+                                    <input type="number" placeholder="/" value="" ng-model="sCtrl.rpgSetData.rentCount.affect_position[1].weight" ng-change="sCtrl.updateWeight()">
                                     <span class="number-format">{{sCtrl.rpgSetData.rentCount.affect_position[1].weight*100|number:2}}<i class="unit-addon">%</i></span>
                                 </div>
                             </td>
@@ -258,7 +258,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[0].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -272,7 +272,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[1].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -286,7 +286,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[2].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -494,7 +494,7 @@
                     <th style="width:120px;">首年租金折扣</th>
                     <td class="required">
                         <div class="td-input-wrapper num-input" >
-                            <input type="text" placeholder="/" value="" ng-model="sCtrl.rpgSetData.discount">
+                            <input type="number" placeholder="/" value="" ng-model="sCtrl.rpgSetData.discount">
                             <span class="number-format">{{sCtrl.rpgSetData.discount*100|number:2}}<i class="unit-addon">%</i></span>
                         </div>
                     </td>
@@ -544,7 +544,7 @@
                                 <tr>
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[0].value">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <input type="number" placeholder="/" value="" ng-model="value">
                                             <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
@@ -552,7 +552,7 @@
                                 <tr>
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[1].value">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <input type="number" placeholder="/" value="" ng-model="value">
                                             <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
@@ -561,7 +561,7 @@
                                 <tr>
                                     <td ng-repeat="(year,value) in sCtrl.rpgSetData.rent_increase[2].value">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="value">
+                                            <input type="number" placeholder="/" value="" ng-model="value">
                                             <span class="number-format">{{value*100|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
