@@ -933,16 +933,23 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
         };
          self.checkReturn=function(){
-             amp_main.loading_show();
-             $timeout(function(){
-                amp_main.loading_hide();
-                 $location.path("irrplan");
-             },1000);
+             if($scope.dataSimForm.$invalid){
+                 alert("请输入有效的数据");
+                 return false;
+             }else{
+                 amp_main.loading_show();
+                 $timeout(function(){
+                     amp_main.loading_hide();
+                     $location.path("irrplan");
+                 },1000);
+             }
          };
         //页面事件
-
+        $("#datatool-sim").on("click",function(e){
+            $(".table td").removeClass("active");
+        });
         $(".table").on("click","td",function(e){
-             //e.stopPropagation();
+             e.stopPropagation();
              $(".table td").removeClass("active");
              $(this).addClass("active");
              $(this).find("input").focus();
@@ -1037,8 +1044,16 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
             }
             curElement.addClass("cur-select");
             if(curElement.data("shopid")){
+                $scope.$apply(function() {
+                    $scope.dataSimForm.$setPristine();
+                    $scope.dataSimForm.$setUntouched();
+                });
                 self.setShopInfo()
             }else{
+                $scope.$apply(function() {
+                    $scope.dataSimForm.$setPristine();
+                    $scope.dataSimForm.$setUntouched();
+                });
                 self.setShopInfo();
             }
         });
