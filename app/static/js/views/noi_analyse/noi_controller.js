@@ -136,8 +136,8 @@ noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
         });
 
         $scope.$on("noiMonthUpdate",function(e,data){
-            console.log("-----------------------noiMonthUpdate");
-            console.log(data);
+           /* console.log("-----------------------noiMonthUpdate");
+            console.log(data);*/
         })
 
     }]);
