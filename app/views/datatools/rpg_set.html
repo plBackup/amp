@@ -301,7 +301,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_position[3].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -316,7 +316,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[0].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -331,7 +331,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[1].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -346,7 +346,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[2].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -360,7 +360,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_product[3].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -375,7 +375,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[0].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -389,7 +389,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[1].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -404,7 +404,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.rpgSetData.rentCount.affect_others[2].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value}}</span>
                                         </div>
                                     </td>
@@ -419,7 +419,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[0].projects">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" disabled >
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" disabled >
                                             <span class="number-format">{{project.value | number:2}}</span>
                                         </div>
                                     </td>
@@ -433,7 +433,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[1].projects">
                                         <div class="td-input-wrapper num-input" ng-if="$index<2">
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
                                     </td>
@@ -447,7 +447,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[2].projects">
                                         <div class="td-input-wrapper num-input" ng-if="$index<2">
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" disabled>
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" disabled>
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
                                     </td>
@@ -461,7 +461,7 @@
                                 <tr>
                                     <td ng-repeat-start="project in sCtrl.affect_count[3].projects" >
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="project.value" ng-disabled="$index==2" ng-change="sCtrl.updateWeight()">
+                                            <input type="number" placeholder="/" value="" ng-model="project.value" ng-disabled="$index==2" ng-change="sCtrl.updateWeight()">
                                             <span class="number-format">{{project.value|number:2}}</span>
                                         </div>
                                     </td>
