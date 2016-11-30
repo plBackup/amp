@@ -1,4 +1,5 @@
 <div class="amp-content-panel" id="rgp-set">
+    <form name="rpgSetForm">
     <div class="amp-content-header">
         <div class="amp-header-breadcrumb">
             <a href="#" class="amp-solo-close"></a>
@@ -608,7 +609,7 @@
                                 <tr>
                                     <td ng-repeat="ratio in sCtrl.rpgSetData.ratios.area">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="text" placeholder="/" value="" ng-model="ratio.value">
+                                            <input type="number" placeholder="/" value="" ng-model="ratio.value">
                                             <span class="number-format">{{ratio.value|number:2}}</span>
                                         </div>
                                     </td>
@@ -638,9 +639,9 @@
                     <tr ng-repeat="ratio in sCtrl.rpgSetData.ratios.floors">
                         <th class="text-left">{{ratio.name}}</th>
                         <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value="1"  data-date="" placeholder="" ng-model="ratio.value"/>
-                                <!--<span class="number-format"></span>-->
+                            <div class="td-input-wrapper num-input">
+                                <input type="number" value=""  data-date="" placeholder="" ng-model="ratio.value"/>
+                                <span class="number-format">{{ratio.value|number:2}}</span>
                             </div>
                         </td>
                     </tr>
@@ -662,9 +663,9 @@
                     <tr ng-repeat="ratio in sCtrl.rpgSetData.ratios.position">
                         <th class="text-left">{{ratio.name}}</th>
                         <td class="text-right">
-                            <div class="td-input-wrapper text-input">
-                                <input type="text" value=""  data-date="" placeholder="" ng-model="ratio.value"/>
-                                <!--<span class="number-format"></span>-->
+                            <div class="td-input-wrapper num-input">
+                                <input type="number" value=""  data-date="" placeholder="" ng-model="ratio.value"/>
+                                <span class="number-format">{{ratio.value|number:2}}</span>
                             </div>
                         </td>
                     </tr>
@@ -676,9 +677,11 @@
     </div><!--end ys-block-->
     <div class="amp-block-pd bottom-block clearfix">
         <div class="btn-wrapper pull-right">
-            <a ui-sref="rpgresult" ui-sref-active="active" href="#/rpgresult" class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="sCtrl.setSave()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用" style="float:right;">生成租金包</a>
+            <a ng-disabled="rpgSetForm.$invalid"class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="sCtrl.setSave()" data-toggle="tooltip" data-placement="top"  title="我们将于12月15日开放使用" style="float:right;">生成租金包</a>
         </div>
     </div>
+
+    </form>
 </div><!-- contentpanel -->
 <!--<script src="../static/js/views/datatools/rpg_set.js"></script>
 <script>

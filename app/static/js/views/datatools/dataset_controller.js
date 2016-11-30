@@ -116,14 +116,14 @@ var rpgSet_table=(function($,rpgSet_table){
 
     rpgSet_table.init=function(){
 
-        $("#btn-create").on("click",function(e){
+       /* $("#btn-create").on("click",function(e){
             e.preventDefault();
             amp_main.loading_show();
             setTimeout(function(){
                 amp_main.loading_hide();
             },1000);
 
-        });
+        });*/
         rpgSet_table.swiper_init();
         rpgSet_table.table_init();
         $('#preloader').delay(350).fadeOut(function(){
@@ -228,13 +228,26 @@ var rpg_result_table=(function($,rpg_result_table){
 
 var dataSet=angular.module("dataSet",[]);
 
-dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
-    function($rootScope, $scope,rpgSetData) {
+dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgSetData",
+    function($rootScope, $scope,$location,rpgSetData) {
         var self=this;
         self.rpgSetData=rpgSetData[0];
         //self.setData=rpgSetData[0].values;
         self.setSave=function(){
+
+            console.log("set save-----------");
             //console.log(self.rpgSetData)
+            if($scope.rpgSetForm.$invalid){
+                alert("请输入正确的数据");
+                return false;
+            }else{
+                amp_main.loading_show();
+                setTimeout(function(){
+                    amp_main.loading_hide();
+                },1000);
+                $location.path("rpgresult");
+                /*ui-sref="rpgresult"  ui-sref-active="active" href="#/rpgresult"*/
+            }
         };
 
 

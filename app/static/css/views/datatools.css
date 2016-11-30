@@ -315,7 +315,7 @@
     background-color: #fff;}
 
 
-#rent-affect-floors tr>td .td-input-wrapper input{text-align: right;}
+#rent-affect-floors tr>td .td-input-wrapper input{text-align: right;width:100%;}
     /*end rpg-set update*/
 #rent-package-result {
     padding-bottom: 38px;
@@ -442,6 +442,10 @@ tr>td span.number-format{display: block;width:100%;}
 #rent-update-table-wrapper .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:13px;}
 
 #rent-first-year-set .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:1px;}
+#rent-affect-table-wrapper .table td input.ng-invalid~span.number-format:before{right:13px;}
+#rent-affect-table-wrapper .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:13px;}
+#rent-affect-floors tr>td .td-input-wrapper>span.number-format{width:100%;}
+#rent-affect-floors .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:14px;}
 
 #rpg-set-table-wrapper .td-input-wrapper em.error-msg,#rpg-set .td-input-wrapper em.error-msg{
     position: absolute;
