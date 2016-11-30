@@ -11,15 +11,16 @@
 #rent-package-rpanel .table-input-typeA{table-layout: fixed;margin-bottom:20px;}
 
 #rent-package-rpanel .table-input-typeA>tbody>tr>td{padding:0;padding-top:12px;padding-right:20px;height:78px;overflow: visible;}
-
+#rent-package-rpanel .table td input:focus{outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>th{padding-left:0;text-align: left;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>td{padding:0;padding-top:0px;padding-right:20px;height:34px;overflow: visible;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead{background-color:transparent;text-align: left;font-size:14px;color:#8592a3; }
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly>tbody>tr>td input{text-align: right;}
+
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th{border-top:0;border-bottom:0;padding-left:0;text-align: left;}
 #rent-package-rpanel .table-input-typeA.table-input-typeYearly thead>tr>th.table-title{font-size: 14px;}
 #rent-package-rpanel .table-input-type>tbody>tr>td{padding-top:0;padding-bottom:8px;height:34px;}
-.table-input-typeA .input-wrapper label{display: block;margin-bottom:0;height:32px;line-height: 32px;
+.table-input-typeA label{display: block;margin-bottom:0;height:32px;line-height: 32px;
     color: #8592a3;font-size: 14px;}
 .table-input-typeA .input-wrapper input{width:100%;padding:6px 10px;line-height:20px;height:34px;border:solid 1px #dae1e7;background-color:#f3f4f8;}
 
@@ -369,9 +370,9 @@ tr>td.active .num-input span.number-format{display: none;}
     margin-top: -4px;
     background-position: -170px -261px;
 }
-.td-input-wrapper em.error-msg{display: none;position: absolute;height:16px;top:-22px;z-index:999;right:0;margin:0;padding:0 5px; background-color:rgba(33,33,33,0.78);color:#fff;font-size:12px;line-height: 16px;}
-.td-input-wrapper em.error-msg:before{position: absolute;top:15px;right:0;display: block;border:solid 10px transparent;border-width:6px 0 0 8px;border-top-color: rgba(33,33,33,0.78);content:" ";}
-.td-input-wrapper:hover em.error-msg{display: block;}
+.td-input-wrapper em.error-msg, .input-wrapper em.error-msg{display: none;position: absolute;height:16px;top:-22px;z-index:999;right:0;margin:0;padding:0 5px; background-color:rgba(33,33,33,0.78);color:#fff;font-size:12px;line-height: 16px;}
+.td-input-wrapper em.error-msg:before, .input-wrapper em.error-msg:before{position: absolute;top:15px;right:0;display: block;border:solid 10px transparent;border-width:6px 0 0 8px;border-top-color: rgba(33,33,33,0.78);content:" ";}
+.td-input-wrapper:hover em.error-msg, .input-wrapper:hover em.error-msg{display: block;}
 /*td status*/
 tr>td.active{}
 tr>td.error{}
@@ -415,9 +416,11 @@ tr>td span.number-format{display: block;width:100%;}
 
 
 #rent-package-rpanel .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
-#rent-package-rpanel .table td input.ng-invalid{border:solid 2px #ff3030;}
+#rent-package-rpanel .table td input.ng-invalid{/*border:solid 2px #ff3030;*/}
 #rent-package-rpanel .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
-#rent-package-rpanel .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+#rent-package-rpanel .table td .input-wrapper{position:relative;}
+#rent-package-rpanel .table td .input-wrapper.error{outline:solid 2px #ff3030;outline-offset: -2px;}
+#rent-package-rpanel .table td .input-wrapper.error:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
     background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
 
 

@@ -5,24 +5,26 @@
     </div>
 
     <div class="right-content">
+        <form name="shopInfoForm">
         <table class="table table-no-bordered amp-table table-input-typeA">
             <tbody>
                 <tr>
                     <td>
+                        <label>铺位号</label>
                         <div class="input-wrapper">
-                            <label>铺位号</label>
                             <input type="text" value="" ng-model="rCtrl.shopInfo.shopIndex" required/>
                         </div>
                     </td>
                     <td>
+                        <label>楼层</label>
                         <div class="input-wrapper">
-                            <label>楼层</label>
                             <input type="text" value="" ng-model="rCtrl.shopInfo.floor"/>
                         </div>
                     </td>
                     <td>
+                        <label>位置</label>
                         <div class="input-wrapper input-wrapper-select">
-                            <label>位置</label>
+
                             <input type="text" value="" hidden ng-model="rCtrl.shopInfo.position"/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -35,8 +37,9 @@
                         </div>
                     </td>
                     <td>
+                        <label>物业类型</label>
                         <div class="input-wrapper input-wrapper-select">
-                            <label>物业类型</label>
+
                             <input type="text" value="" hidden/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -54,22 +57,22 @@
 
                 <tr>
                     <td>
+                        <label>建筑面积</label>
                         <div class="input-wrapper">
-                            <label>建筑面积</label>
                             <input type="number" value="" ng-model="rCtrl.shopInfo.floorArea"/>
                         </div>
                     </td>
 
                     <td>
+                        <label>套内面积</label>
                         <div class="input-wrapper">
-                            <label>套内面积</label>
                             <input type="number" value="" ng-model="rCtrl.shopInfo.indoorArea"/>
                         </div>
                     </td>
 
                     <td>
+                        <label>产权性质</label>
                         <div class="input-wrapper input-wrapper-select">
-                            <label>产权性质</label>
                             <input type="text" value="" hidden/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -85,8 +88,8 @@
                     </td>
 
                     <td>
+                        <label>业态</label>
                         <div class="input-wrapper input-wrapper-select">
-                            <label>业态</label>
                             <input type="text" value="" hidden/>
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -94,7 +97,6 @@
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                                     <li ng-class="{'active':rCtrl.isActive(menu,rCtrl.filters.form)}" role="presentation" ng-repeat="menu in rCtrl.form_menu.form"><a role="menuitem" ng-click="rCtrl.setModel('form',menu)">{{menu}}</a></li>
-
                                 </ul>
                             </div>
                         </div>
@@ -151,13 +153,16 @@
         </table>
         <div class="block clearfix">
             <div class="btn-wrapper pull-right">
-                <a class="btn btn-default amp-btn ys-tips" id="btn-save" ng-click="rCtrl.save()" data-toggle="tooltip" data-placement="top"  title="将于12月15日开放使用">保存</a>
+                <a class="btn btn-default amp-btn ys-tips" id="btn-save" ng-click="rCtrl.save()" data-toggle="tooltip" data-placement="top"  title="将于12月15日开放使用" ng-disabled="shopInfoForm.$invalid">保存</a>
                 <a class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-continue" ng-click="rCtrl.next()" ng-show="rCtrl.index=='add' ||rCtrl.index=='new' " data-toggle="tooltip" data-placement="top"  title="将于12月15日开放使用">继续录入</a>
                 <span class="amp-tipsnote" style="position: relative;float:right; top:5px;background-color:transparent;margin-right:16px;"><em class="ys-amp-icon ys-icon-tips ys-icon-tips-hover" style="left:5px;margin-top:-11px;"></em>体验版数据为模拟数据，请勿引用。可提供数据整合服务</span>
 
             </div>
         </div>
+
+        </form>
     </div>
+
 </div>
 <!--
 <script src="../static/js/views/datatools/rpgindex_rpanel.js"></script>

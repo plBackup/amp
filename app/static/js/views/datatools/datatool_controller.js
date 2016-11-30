@@ -350,12 +350,20 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         self.index="add";
         self.shopInfo={};
         $scope.$on("shopEdit",function(e,data){
+            $("#rent-package-rpanel").find(".error").find("em.error-msg").remove().end().removeClass("error");
+            $scope.shopInfoForm.$setPristine();
+            $scope.shopInfoForm.$setUntouched();
             amp_main.rightPanel_open();
             self.index=data.index;
             self.shopInfo=data.shopData;
         });
 
         self.save=function(){
+            if($scope.shopInfoForm.$invalid){
+                alert("请输入正确的数据");
+                return;
+            }
+
             if(typeof self.shopInfo.shopIndex==="undefined" || self.shopInfo.shopIndex==""){
                 return;
             }
@@ -407,6 +415,25 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
             };
 
         };
+
+        /*dom */
+        function _checkErrot($e){
+            var $this=$e;
+            var errorInfo="请输入正确的数据格式";
+            if($this.hasClass("ng-invalid")){
+                if(($this).hasClass("ng-invalid-number")){
+                    errorInfo="请输入有效数字";
+                }
+                $this.parent(".input-wrapper").addClass("error").append("<em class='error-msg'>"+errorInfo+"</em>");
+            }else{
+                $this.parent().removeClass("error").find("em.error-msg").remove();
+            }
+        };
+
+        $("#rent-package-rpanel").on("change","input",function(e){
+            console.log("on change---------");
+            _checkErrot($(e.target));
+        });
 
         amp_main.leftPanel_update();
 

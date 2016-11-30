@@ -277,8 +277,9 @@ span#countdown .countdown-lastDay~em.unit{display: none;}
 .ys-amp .bottom-block .btn-wrapper .amp-btn{height:32px;padding:3px 15px;text-align: center;font-size:14px;line-height: 24px;border: solid 1px #5ab46e;min-width: 110px;border-radius: 2px;}
 .ys-amp .bottom-block .btn-wrapper .amp-btn.amp-btn-reverse{background-color:#fff;color: #5ab46e;}
 
-
+.ys-amp .btn-wrapper .amp-btn[disabled]:hover,.ys-amp .btn-wrapper .amp-btn[disabled]:focus,
 .ys-amp .bottom-block .btn-wrapper .amp-btn[disabled]:hover,.ys-amp .bottom-block .btn-wrapper .amp-btn[disabled]:focus{background-color: #4c9855;color:#fff;}
+.ys-amp .btn-wrapper .amp-btn.amp-btn-reverse[disabled]:hover,
 .ys-amp .bottom-block .btn-wrapper .amp-btn.amp-btn-reverse[disabled]:hover{background-color:#f3f3f3;color: #5ab46e;}
 
 /*amp solo*/
