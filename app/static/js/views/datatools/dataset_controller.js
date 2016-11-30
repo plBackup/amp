@@ -377,13 +377,15 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
                 if(($this).hasClass("ng-invalid-number")){
                     errorInfo="请输入有效数字";
                 }
+                console.log("input")
                 $this.parent(".td-input-wrapper").append("<em class='error-msg'>"+errorInfo+"</em>");
             }else{
                 $this.parent().find("em.error-msg").remove();
             }
         };
 
-        $(".table").on("change","input",function(e){
+        $("#rgp-set").on("change","input",function(e){
+            console.log("-----change");
             _checkErrot($(e.target));
         });
 

@@ -433,12 +433,17 @@ tr>td span.number-format{display: block;width:100%;}
 
 #rpg-set .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
 
-#rgp-set .table td input.ng-invalid{border:solid 2px #ff3030;}
-#rgp-set .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#rgp-set .table td input.ng-invalid{outline:solid 3px #ff3030;outline-offset: -2px;}
+#rgp-set .table td input.ng-invalid~span.number-format{outline:solid 3px #ff3030;outline-offset: -3px;}
 #rgp-set .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
     background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
 
-#rpg-set-table-wrapper .td-input-wrapper em.error-msg{
+#rent-update-table-wrapper  .table td input.ng-invalid~span.number-format:before{right:13px;}
+#rent-update-table-wrapper .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:13px;}
+
+#rent-first-year-set .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:1px;}
+
+#rpg-set-table-wrapper .td-input-wrapper em.error-msg,#rpg-set .td-input-wrapper em.error-msg{
     position: absolute;
     height: 16px;
     top: 2px;

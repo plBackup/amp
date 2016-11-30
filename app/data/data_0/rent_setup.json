@@ -6,7 +6,7 @@
            "affect_position": [
                {
                    "name":"区域属性",
-                   "weight":"0.08",
+                   "weight":0.08,
                    "projects":[
                        {
                            "name":"项目A",
@@ -28,7 +28,7 @@
                },
                {
                    "name":"交通通达性",
-                   "weight":"0.12",
+                   "weight":0.12,
                    "projects":[
                        {
                            "name":"项目A",
@@ -50,7 +50,7 @@
                },
                {
                    "name":"配套完善度",
-                   "weight":"0.08",
+                   "weight":0.08,
                    "projects":[
                        {
                            "name":"项目A",
@@ -71,7 +71,7 @@
                },
                {
                    "name":"人口条件",
-                   "weight":"0.15",
+                   "weight":0.15,
                    "projects":[
                        {
                            "name":"项目A",
@@ -94,7 +94,7 @@
            "affect_product":[
                {
                    "name":"店型优势",
-                   "weight":"0.07",
+                   "weight":0.07,
                    "projects":[
                        {
                            "name":"项目A",
@@ -116,7 +116,7 @@
                },
                {
                    "name":"动线规划",
-                   "weight":"0.08",
+                   "weight":0.08,
                    "projects":[
                        {
                            "name":"项目A",
@@ -137,7 +137,7 @@
                },
                {
                    "name":"硬件档次",
-                   "weight":"0.08",
+                   "weight":0.08,
                    "projects":[
                        {
                            "name":"项目A",
@@ -158,7 +158,7 @@
                },
                {
                    "name":"停车位置量",
-                   "weight":"0.05",
+                   "weight":0.05,
                    "projects":[
                        {
                            "name":"项目A",
@@ -182,7 +182,7 @@
            "affect_others":[
                {
                    "name":"租户品质",
-                   "weight":"0.12",
+                   "weight":0.12,
                    "projects":[
                        {
                            "name":"项目A",
@@ -203,7 +203,7 @@
                },
                {
                    "name":"企业品牌度",
-                   "weight":"0.10",
+                   "weight":0.10,
                    "projects":[
                        {
                            "name":"项目A",
@@ -225,7 +225,7 @@
                },
                {
                    "name":"免租期",
-                   "weight":"0.07",
+                   "weight":0.07,
                    "projects":[
                        {
                            "name":"项目A",
