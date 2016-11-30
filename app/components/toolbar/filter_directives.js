@@ -85,7 +85,9 @@ angular.module('ampFilter').directive('monthPicker', [
                 };
 
                 var updateModel=function(dateText){
+
                     $scope.$apply(function(){
+
                         ngModelCtrl.$setViewValue(dateText);
                     });
                 };
@@ -162,9 +164,9 @@ angular.module('ampFilter').directive('monthPicker', [
                         }
 
                         //broadcast
-                        $scope.$emit("monthUpdate",{
+                      /*  $scope.$emit("monthUpdate",{
                             date:"date 2016"
-                        });
+                        });*/
 
                     });
 

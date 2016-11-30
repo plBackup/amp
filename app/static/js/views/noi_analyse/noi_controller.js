@@ -126,6 +126,8 @@ noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
         swiper_init();
         table_init();
 
+
+
         $scope.$on("$destroy", function() {
             //清除配置,不然swiper会重复请求
 
@@ -134,9 +136,8 @@ noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
         });
 
         $scope.$on("noiMonthUpdate",function(e,data){
-            /*console.log("-----------------------noiMonthUpdate");
+            console.log("-----------------------noiMonthUpdate");
             console.log(data);
-*/
         })
 
     }]);

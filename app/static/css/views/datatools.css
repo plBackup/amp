@@ -443,9 +443,9 @@ tr>td span.number-format{display: block;width:100%;}
 
 #rent-first-year-set .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:1px;}
 #rent-affect-table-wrapper .table td input.ng-invalid~span.number-format:before{right:13px;}
-#rent-affect-table-wrapper .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:13px;}
+#rent-affect-table-wrapper .td-input-wrapper em.error-msg{top:1px;right:13px;}
 #rent-affect-floors tr>td .td-input-wrapper>span.number-format{width:100%;}
-#rent-affect-floors .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:14px;}
+#rent-affect-floors .td-input-wrapper em.error-msg{top:1px;right:14px;}
 
 #rpg-set-table-wrapper .td-input-wrapper em.error-msg,#rpg-set .td-input-wrapper em.error-msg{
     position: absolute;

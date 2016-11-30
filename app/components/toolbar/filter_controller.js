@@ -6,9 +6,14 @@ var ampFilter=angular.module("ampFilter",[]);
 ampFilter.controller('monthFilterController', ['$rootScope', '$scope',"$timeout",
     function($rootScope, $scope, $timeout) {
         var self=this;
-        self.selectedMonth=function(date){
+        self.selectedMonth=function(data){
+            console.log("----------selected month----------------");
            console.log(self.curMonth);
+            console.log(data);
+            $rootScope.$broadcast("noiMonthUpdate",data);
         };
+
+
        /* $timeout(function(){
             self.curMonth="2017-09";
             console.log("....");
