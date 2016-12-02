@@ -2,6 +2,7 @@
  * Created by limeiting on 16/12/2.
  */
 var ampApp = angular.module('amp', [
+    'ngRoute',
     'ui.router',
     'mobile-angular-ui',
     'mobile-angular-ui.gestures',
@@ -33,7 +34,7 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                     var defer = $q.defer();
                     $timeout(function(){
                         defer.resolve();
-
+                        amp_main.loading_hide();
                     }, 300);
                     return defer.promise;
                 }]
@@ -57,9 +58,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
 });
 
 ampApp.controller('MainController', function($rootScope, $scope,$location,$timeout) {
-    /*  var curProject=window.location.search.slice(1).split("=")[1] ||0;
-     console.log(curProject);
-     $rootScope.curProject=curProject;*/
+  /*  var curProject=window.location.search.slice(1).split("=")[1] ||0;
+    console.log(curProject);
+    $rootScope.curProject=curProject;*/
 
     //$rootScope.projectName="商业公司A";
 

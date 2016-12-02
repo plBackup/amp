@@ -901,9 +901,13 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData","$location","$timeout",
     function($rootScope, $scope,simData,simChartData,$location,$timeout) {
         var self=this;
-        self.chartData=simChartData["chart"];
-        self.shops=simData.slice(1);
-        self.index=0;
+        if(typeof simChartData==="undefined"){
+            self.shops=[];
+        }else{
+            self.chartData=simChartData["chart"];
+            self.shops=simData.slice(1);
+            self.index=0;
+        }
 
         self.form_menu={
             form:["超市","影院","服装","餐饮","娱乐","配套","儿童","其他"],
@@ -913,7 +917,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         self.shopInfo=self.shops[self.index];
 
         self.setShopInfo=function(){
-
+            //data-shopid $(element).data("shopId")   shopid
             $scope.$apply(function(){
                 self.index+=1;
                 self.shopInfo=self.shops[self.index];
@@ -946,10 +950,13 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
          };
         //页面事件
         $("#datatool-sim").on("click",function(e){
-            $(".table td").removeClass("active");
+            if(!$(e.target).hasClass("number-format")){
+                $(".table td").removeClass("active");
+            }
         });
+
         $(".table").on("click","td",function(e){
-             e.stopPropagation();
+             //e.stopPropagation();
              $(".table td").removeClass("active");
              $(this).addClass("active");
              $(this).find("input").focus();
@@ -1039,6 +1046,9 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
         s.click(function(e){
             curElement=s.select("#"+e.target.id);
+            /*if($(curElement).hasAttr("data-shopId")){
+
+            }*/
             if(s.select(".cur-select")){
                 s.select(".cur-select").removeClass("cur-select");
             }
@@ -1056,6 +1066,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
                 });
                 self.setShopInfo();
             }
+
         });
 
         $scope.$on("$destroy", function() {
