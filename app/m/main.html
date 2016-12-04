@@ -44,8 +44,16 @@
 <body ng-app="amp" ng-controller="MainController">
 
 <!-- Sidebars -->
-<div class="sidebar sidebar-left"><!-- ... --></div>
-<div class="sidebar sidebar-right"><!-- ... --></div>
+<div class="sidebar sidebar-left">
+    <div ui-view="sidebarLeft">
+        sidbarLeft
+    </div>
+</div>
+<div class="sidebar sidebar-right">
+    <div ui-view="sidebarRight">
+        sidbarRight
+    </div>
+</div>
 
 <div class="app">
     <div class="navbar navbar-app navbar-absolute-top">
@@ -82,8 +90,11 @@
             <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
         <div class='app-content'>
-            <div ui-view="content" class="animated"></div>
-
+            <div class="scrollable">
+                <div class="scrollable-content">
+                    <div ui-view="content" class="animated"></div>
+                </div>
+            </div>
         </div>
     </div><!--app body-->
 </div><!--app -->
