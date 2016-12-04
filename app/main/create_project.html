@@ -37,13 +37,18 @@
                                 <input ng-model="ctrl.project.proportionType" type="text" placeholder=" " value="" hidden>
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                                        <em>请选择</em><span class="ys-icon ys-icon-dropdown"></span>
+                                        <em>{{ctrl.project.proportionType| default:"请选择"}}</em><span class="ys-icon ys-icon-dropdown"></span>
                                     </button>
                                     <ul class="dropdown-menu" role="menu" >
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">套内面积</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">建筑面积</a></li>
+                                       <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">套内面积</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">建筑面积</a></li>-->
+                                        <li ng-class="{'active':ctrl.isActive(menu,ctrl.project.proportionType)}" role="presentation" ng-repeat="menu in ctrl.form_menu.proportionType">
+                                            <a role="menuitem" ng-click="ctrl.setModel('proportionType',menu)">{{menu}}</a></li>
+
                                     </ul>
                                 </div>
+
+
                             </div>
 
                             <div class="input-group">

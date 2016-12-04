@@ -172,6 +172,33 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
     return service;
 });*/
 
+mainApp.filter("default",function(){
+    return function(data,str){
+        if(typeof str==="undefined"){
+            return data;
+        }else{
+            if(typeof data==="undefined" || data==""){
+                return str;
+            }
+            return data;
+        }
+    }
+}).filter("percentFormat",function(){
+    //检查非负浮点数
+    function checkNum(num){
+        //var patt=/^\d+(\.\d+)?$/g;
+        var patt=/^(-?\d+)(\.\d+)?$/g;
+        return patt.test(num);
+    }
+
+    return function(input){
+        if(checkNum(input)){
+            return parseFloat(input*100).toFixed(2)+"%";
+        }else{
+            return input
+        }
+    }
+});
 
 mainApp.controller('MainController', function($rootScope, $scope) {
     $rootScope.homePageIsShown = true;
@@ -245,14 +272,14 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
             "openRate":"%",
             "income":0,
             "irr":"%",
-            "complete":"%",
+            "complete":"",
             "noi":{
                 "monthly":0,
                 "yearly":"0"
             },
             "asset":{
                 "value":"",
-                "rate":"%"
+                "rate":""
             },
             "pm":{
                 "name":"",
@@ -264,11 +291,24 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
             },
             "position":""
     };
+
+    self.form_menu={
+        proportionType:["套内面积","建筑面积"],
+    };
+
     self.curState=$rootScope.curState;
     self.index=$rootScope.projects.length;
 
+    self.setModel=function(type,menu){
+        self.project[type]=menu;
+    };
+
+    self.isActive=function(menu,model){
+        return menu==model;
+    };
+
     self.submit=function(){
-       // $rootScope.projects.push(self.project);
+        $rootScope.projects.push(self.project);
         $location.path("/main");
     };
 
@@ -287,6 +327,19 @@ mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid"
     self.curState=$rootScope.curState;
     self.index="update";
     self.project=$rootScope.projects[pid];
+
+    self.form_menu={
+        proportionType:["套内面积","建筑面积"],
+    };
+
+
+    self.setModel=function(type,menu){
+        self.project[type]=menu;
+    };
+
+    self.isActive=function(menu,model){
+        return menu==model;
+    };
 
     self.submit=function(){
         //$rootScope.projects.push(self.project);
