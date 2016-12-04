@@ -139,3 +139,5 @@ span.ys-icon-dropdown{display: block;
     text-decoration: none;
     background-color: #4b5368;
 }
+
+#ys-amp-create .input-group>input.ng-invalid{border-left:solid 2px #ff3030;}

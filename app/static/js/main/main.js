@@ -311,14 +311,18 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
         $rootScope.projects.push(self.project);
         $location.path("/main");
     };
-
+    self.saveCheck=function(){
+        if($scope.projectForm.$invalid) {
+            alert("请输入正确的数据");
+        }else{
+            self.submit();
+        }
+    };
     project_create.init();
     $scope.$on("$destroy", function() {
         $("#open-date-wrapper input").datetimepicker("remove");
     });
-
     $(".ys-tips").tooltip();
-
 }]);
 mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid",function($rootScope,$scope,$location,pid){
     //$scope.project=project;
@@ -342,8 +346,17 @@ mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid"
     };
 
     self.submit=function(){
+        console.log("...........");
         //$rootScope.projects.push(self.project);
         $location.path("/main");
+    };
+
+    self.saveCheck=function(){
+        if($scope.projectForm.$invalid) {
+            alert("请输入正确的数据");
+        }else{
+            self.submit();
+        }
     };
 
     project_create.init();

@@ -6,7 +6,7 @@
             <h1><em class="ys-icon ys-icon-amp"></em></h1>
         </div>
         <div class="ys-content-panel container clearfix">
-            <form ng-submit="ctrl.submit()" name="project" id="project">
+            <form  name="projectForm" id="projectForm" novalidate>
             <div class="ys-block amp-create-project clearfix" ng-switch on="ctrl.index">
                     <h3 ng-switch-when="0">建立您的第一个项目</h3>
                     <h3 ng-switch-when="update">修改项目信息</h3>
@@ -16,7 +16,7 @@
                         <div class="input-wrapper pull-right">
                             <div class="input-group">
                                 <label>项目</label>
-                                <input ng-model="ctrl.project.name" type="text" placeholder="" value="" >
+                                <input ng-model="ctrl.project.name" type="text" placeholder="" value="" required>
                             </div>
 
                             <div class="input-group" id="open-date-wrapper">
@@ -26,7 +26,7 @@
 
                             <div class="input-group">
                                 <label>团队人数</label>
-                                <input ng-model="ctrl.project.pm.teamNum" type="text" placeholder="" value="">
+                                <input ng-model="ctrl.project.pm.teamNum" type="number" placeholder="" value="">
                             </div>
                         </div>
                     </div><!--col-xs-6-->
@@ -64,7 +64,7 @@
 
             </div>
             <div class="amp-opt-block">
-                <button   type="submit" href="main.html" class="btn amp-btn amp-btn-lg amp-btn-save ys-tips"  id="btn-amp-create" data-toggle="tooltip" data-placement="top"  title="体验版数据为模拟数据，请勿引用">保存
+                <button   ng-click="ctrl.saveCheck()"  type="submit" href="main.html" class="btn amp-btn amp-btn-lg amp-btn-save ys-tips"  id="btn-amp-create" data-toggle="tooltip" data-placement="top"  title="体验版数据为模拟数据，请勿引用">保存
                     <em class="ys-amp-icon ys-icon-tips"style="margin-top: -11px;left: 50%;margin-left:145px;"></em>
                 </button>
                <!-- <em class="ys-amp-icon ys-icon-tips ys-tips" data-toggle="tooltip" data-placement="right" title="新建项目功能将于12月6日开通" style="margin-top: -11px;left: 50%;margin-left:145px;"></em>-->
