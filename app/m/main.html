@@ -41,7 +41,7 @@
     <script src="../static/js/views/noi_analyse/noi_directives.js"></script>
 
 </head>
-<body ng-app="amp" ng-controller="MainController">
+<body ng-app="amp" ng-controller="MainController as mCtrl">
 
 <!-- Sidebars -->
 <div class="sidebar sidebar-left">
@@ -59,8 +59,8 @@
     <div class="navbar navbar-app navbar-absolute-top">
         <!--nav top-->
         <div>
-            <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-                Mobile Angular UI
+            <div class="navbar-brand navbar-brand-center">
+                {{mCtrl.title}}
             </div>
             <div class="btn-group pull-left">
                 <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">

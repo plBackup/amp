@@ -62,6 +62,8 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
      $rootScope.curProject=curProject;*/
 
     //$rootScope.projectName="商业公司A";
+    var self=this;
+    self.title="存量分析";
 
     $rootScope.homePageIsShown = true;
     $scope.state = {};
