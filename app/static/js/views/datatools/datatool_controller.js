@@ -916,7 +916,10 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         };
         self.shopInfo=self.shops[self.index];
 
-        self.setShopInfo=function(){
+
+
+        self.setShopInfo=function(shopId){
+            console.log(shopId);
             //data-shopid $(element).data("shopId")   shopid
             $scope.$apply(function(){
                 self.index+=1;
@@ -924,6 +927,13 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
             });
 
         };
+        self.clearShopInfo=function(){
+            $scope.$apply(function(){
+                self.shopInfo={}
+            });
+
+        };
+
         self.setModel=function(type,menu){
             self.shopInfo[type]=menu;
         };
@@ -1031,24 +1041,52 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
             setTimeout(scrollUpdate,300);
 
         };
+
+        function _svgCallback(shopData){
+            console.log(shopData);
+
+            if(typeof shopData !=="undefined" && shopData["shop_id"]!==""){
+                $scope.$apply(function() {
+                    $scope.dataSimForm.$setPristine();
+                    $scope.dataSimForm.$setUntouched();
+                });
+                self.setShopInfo(shopData["shop_id"]);
+
+            }else{
+                $scope.$apply(function() {
+                    $scope.dataSimForm.$setPristine();
+                    $scope.dataSimForm.$setUntouched();
+                });
+                self.clearShopInfo();
+            }
+
+        };
+
         var add_svg=function(){
-            $.get("floors.svg",function(data,status){
+            $.get("svg.svg",function(data,status){
                 var importedSVGRootElement = document.importNode(data.documentElement,true);
                 $("#ys-svg").append(importedSVGRootElement);
+                console.log("refresh----------------");
+                svg_editor.refresh();
+                svg_editor.init(_svgCallback);
+
             });
         };
         iscroll_init();
         add_svg();
 
+
+
+/*
         var s=Snap("#ys-svg");
         var curElement;
         var $container=$("#ys-svg");
 
         s.click(function(e){
             curElement=s.select("#"+e.target.id);
-            /*if($(curElement).hasAttr("data-shopId")){
+            /!*if($(curElement).hasAttr("data-shopId")){
 
-            }*/
+            }*!/
             if(s.select(".cur-select")){
                 s.select(".cur-select").removeClass("cur-select");
             }
@@ -1067,7 +1105,7 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
                 self.setShopInfo();
             }
 
-        });
+        });*/
 
         $scope.$on("$destroy", function() {
             amp_datePicker.destroy();

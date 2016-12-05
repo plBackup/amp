@@ -35,8 +35,14 @@
                         <!--<span class="opt-item"><em>1F 001</em><em class="ys-icon ys-icon-cancel">×</em></span>-->
                     </div>
                     <div class="btn-wrapper">
-                        <button class="btn btn-default amp-btn amp-btn-sm" id="shop-compressed">合并</button>
-                        <button class="btn btn-default amp-btn amp-btn-sm amp-btn-grey" id="shop-split">拆分</button>
+                        <label id="compressed-info">
+                            合铺ID:<input type="text" placeholder="请输入合铺ID">
+                        </label>
+                        <span class="amp-tipsnote" style="position: relative;float:left; top:5px;background-color:transparent;margin-left:-3px;margin-right:20px;margin-bottom:20px;">
+                            <em class="ys-amp-icon ys-icon-tips ys-icon-tips-hover" style="left:5px;margin-top:-11px;"></em>按住 SHIFT 键选取多个店铺合铺
+                        </span>
+                        <button class="btn btn-default amp-btn amp-btn-sm" id="compressed-button">合并</button>
+                        <button class="btn btn-default amp-btn amp-btn-sm amp-btn-grey" id="shop-split" style="display: none;">拆分</button>
                     </div>
                 </div>
             </div>
