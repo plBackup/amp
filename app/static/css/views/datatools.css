@@ -65,6 +65,9 @@
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>th,
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>td{padding:3px 10px;padding-left:25px;height:32px;line-height: 20px;background-color: #f3f4f8;}
 
+#irr-plan .amp-table>tbody>tr.tr-main.tr-head>th>span,
+#irr-plan .amp-table>tbody>tr.tr-main.tr-head>td>span{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
 #irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;line-height: 22px;}
 #irr-plan .ys-table-static .table  tbody>tr>td{text-align:left;}
 #irr-plan .table td input {
