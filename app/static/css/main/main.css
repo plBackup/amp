@@ -26,7 +26,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #amp-projects-table thead>tr>th{padding:8px 16px;padding-left:25px;}
 #amp-projects-table tbody>tr>th,#amp-projects-table tbody>tr>td{padding:16px;padding-left:25px;}
 
-#amp-projects-table tbody>tr>th h5{height:20px;line-height: 20px;font-weight:bold;}
+#amp-projects-table tbody>tr>th h5{height:20px;line-height: 20px;font-weight:bold;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
 #amp-projects-table .t-opt{font-size: 13px;color:#333;}
 #amp-projects-table .t-opt>span{display:block;height:20px;line-height:20px;color:#55bbe6;font-size: 12px;margin-left:-5px;}
 #amp-projects-table .t-opt>span>a{display: inline-block;margin-right:5px;margin-left:5px;}
