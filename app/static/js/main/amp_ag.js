@@ -845,6 +845,11 @@ ampApp.nav_list={
         sideNav:"#main-2",
         headerBar:"#header-tabs-2",
         headerItem:"#nav-tabs-item-2-0"
+    },
+    "floor_mgt":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-0"
     }
 };
 
