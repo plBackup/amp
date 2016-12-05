@@ -223,6 +223,8 @@
 
 #datatool-sim .amp-svg-opt span.opt-item{float:left;display: block;margin-right:15px;padding:3px 0px;padding-right:25px;height:28px;line-height: 22px;text-align: left;position: relative;
     font-size: 14px;}
+
+#datatool-sim .amp-svg-opt span.opt-item>em{display: inline-block;margin-right:12px;}
 #datatool-sim .amp-svg-opt span.opt-item>em.ys-icon-cancel{display: block;position: absolute;height:16px;width:16px;right:0;top:6px;
     background-color:#b0b0b0;color:#fff;font-size: 14px;line-height: 14px;text-align: center;}
 /*block btn-wrapper*/
@@ -461,6 +463,5 @@ tr>td span.number-format{display: block;width:100%;}
     line-height: 16px;
 }
 
-#compressed-info{height: 32px;
-    line-height: 32px;}
+#compressed-info{height: 32px;  line-height: 32px;font-size: 13px;}
 #compressed-info>input{height: 32px; line-height: 26px; border: 0; margin-left: 6px; border-radius: 2px;  padding-left: 8px;color:#333;}

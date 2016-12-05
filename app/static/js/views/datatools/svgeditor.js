@@ -211,9 +211,14 @@ var svg_editor = (function (sv){
             curRootGroup=$target.closest(".rootGroup").get(0);
         }
 
-        while (mouse_target.parentNode !== (curRootGroup || root)) {
-            mouse_target = mouse_target.parentNode;
+        if((mouse_target.parentNode.nodeName).toLocaleLowerCase()!=="div"){
+            while (mouse_target.parentNode !== (curRootGroup || root)) {
+                mouse_target = mouse_target.parentNode;
+            }
+        }else{
+            mouse_target=undefined;
         }
+
 
         return mouse_target;
     };//end getMouseTarget
@@ -263,11 +268,18 @@ var svg_editor = (function (sv){
 
             shop_data['shop_id']=shopeId_str;
         }else{
-            shop_data['shop_id']=$mouseTarget.attr("data-shopid");
+            if(typeof $mouseTarget.attr("data-shopid")==="undefined"){
+                shop_data['shop_id']="";
+            }else{
+                shop_data['shop_id']=$mouseTarget.attr("data-shopid");
+            }
+
         }
 
         shop_data['shop_pos']=$mouseTarget.attr("data-shoppos");
         shop_data['shop_name']=$mouseTarget.attr("data-shopname");
+        //opt-item infos
+        $(".opt-item").empty().append("<em>"+shop_data['shop_id']+"</em>");
         return shop_data;
     }
     /**
@@ -326,7 +338,6 @@ var svg_editor = (function (sv){
                     "shop_name":"商铺名称"
                 };
                 if(sv.callback){
-
                     sv.callback(data);
                 }
                 /*  $.each(data,function(k,v){
@@ -473,7 +484,14 @@ var svg_editor = (function (sv){
             }else{ //(e.shiftKey==true)
                 if(mouseTarget.classList.contains("cur-select") && !$(mouseTarget).attr("data-compressed")){
                     mouseTarget.classList.remove("cur-select");
-                }else{
+                }else if(mouseTarget.classList.contains("cur-select")&& $(mouseTarget).attr("data-compressed")){
+                    console.log("-----target-----------");
+                    var targetClass=".compressed-"+$(mouseTarget).attr("data-compressed");
+                    $(targetClass).each(function (i, e) {
+                        this.classList.remove("cur-select");
+                    });
+                }
+                else{
                     //这里考虑compressed的情况。
                     var $cur_select=sv.getSelect(mouseTarget);
 
@@ -483,6 +501,11 @@ var svg_editor = (function (sv){
                     //mouseTarget.classList.add("cur-select");
                 }
                 // curSelectSet.push(mouseTarget);
+                $(".opt-item").empty();
+                $(".cur-select").each(function(i,e){
+                   var attr=$(this).attr("data-shopid");
+                    $(".opt-item").append("<em>"+attr+"</em>");
+                });
             }
 
         }//end if else
