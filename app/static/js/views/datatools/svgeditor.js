@@ -485,7 +485,6 @@ var svg_editor = (function (sv){
                 if(mouseTarget.classList.contains("cur-select") && !$(mouseTarget).attr("data-compressed")){
                     mouseTarget.classList.remove("cur-select");
                 }else if(mouseTarget.classList.contains("cur-select")&& $(mouseTarget).attr("data-compressed")){
-                    console.log("-----target-----------");
                     var targetClass=".compressed-"+$(mouseTarget).attr("data-compressed");
                     $(targetClass).each(function (i, e) {
                         this.classList.remove("cur-select");
@@ -875,10 +874,7 @@ svg_editor.init=function(_svgCallback){
             return;
         }
         $(".cur-select").each(function(i,e){
-            console.log("------compressed")
-            console.log($(this).attr("data-compressed"))
             if($(this).attr("data-compressed")){
-                console.log("---v")
                 var cur_compressed_class="compressed-"+$(this).attr("data-compressed");
                 this.classList.remove(cur_compressed_class);
             }
