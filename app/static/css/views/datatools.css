@@ -70,6 +70,8 @@
 
 #irr-plan .td-input-wrapper i.unit-addon{float:right;margin-left:5px;line-height: 22px;}
 #irr-plan .ys-table-static .table  tbody>tr>td{text-align:left;}
+#irr-plan .ys-table-static .table  tbody>tr>td>span{display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
 #irr-plan .table td input {
     display: none;
     width: 100%;
