@@ -840,7 +840,6 @@ svg_editor.init=function(_svgCallback){
             if(svg_editor.callback){
                 svg_editor.callback()
             }
-
         }else{
             alert("没有可进行的拆铺操作");
         }
