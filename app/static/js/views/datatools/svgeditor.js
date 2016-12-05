@@ -681,6 +681,13 @@ var handler=svg_editor.handler= (function(){
                 this.classList.remove("cur-select");
             });
             var mouseTarget= svg_editor.getMouseTarget(e);
+
+            if($(mouseTarget).attr("data-compressed")){
+                //svg_editor.splitEditor(e,mouseTarget);
+                $("#split-button").show();
+            }else{
+                $("#split-button").hide();
+            }
             svg_editor.popView(e,mouseTarget);
         }
     };
@@ -696,6 +703,7 @@ var handler=svg_editor.handler= (function(){
 
     hd.compressedHandler=function(e){
         if(sv.curMode=="compressed"){
+            sv.callback();
             var mouseTarget= svg_editor.getMouseTarget(e);
            svg_editor.compressedEditor(e,mouseTarget);
         }
@@ -825,8 +833,14 @@ svg_editor.init=function(_svgCallback){
                 this.classList.remove("compressed");
                 this.classList.remove(compressed_class);
                 this.classList.remove("cur-select");
+                $(this).removeAttr("data-compressed");
             });
+
             alert("拆铺完成");
+            if(svg_editor.callback){
+                svg_editor.callback()
+            }
+
         }else{
             alert("没有可进行的拆铺操作");
         }
