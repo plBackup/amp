@@ -231,7 +231,9 @@ var svg_editor = (function (sv){
             var cur_compressed_cls=$(mouseTarget).attr("data-compressed");
             $cur_select=$(".compressed-"+cur_compressed_cls);
         }else{
-            $cur_select=$(mouseTarget);
+            if($(mouseTarget).attr("data-shopid")){
+                $cur_select=$(mouseTarget);
+            }
         }
             return $cur_select;
     };
@@ -469,14 +471,12 @@ var svg_editor = (function (sv){
                     this.classList.add("cur-select");
                 });
             }else{ //(e.shiftKey==true)
-                console.log("compress log")
-                if(mouseTarget.classList.contains("cur-select")){
+                if(mouseTarget.classList.contains("cur-select") && !$(mouseTarget).attr("data-compressed")){
                     mouseTarget.classList.remove("cur-select");
                 }else{
                     //这里考虑compressed的情况。
-                    console.log("---------");
                     var $cur_select=sv.getSelect(mouseTarget);
-                    console.log($cur_select);
+
                     $cur_select.each(function(i,e){
                         this.classList.add("cur-select");
                     });
