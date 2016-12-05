@@ -431,7 +431,6 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         };
 
         $("#rent-package-rpanel").on("change","input",function(e){
-            console.log("on change---------");
             _checkErrot($(e.target));
         });
 
@@ -655,7 +654,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             var qyy=self.quitYear;
 
             for(i=0;i<qyy;i++){
-                console.log(qyy);
+
                 if(parseFloat(self.irrData[26].values[i+skip].value)>0){
                    /* console.log(i+skip)
                     console.log(self.irrData[26].values[i+skip])*/
@@ -919,7 +918,6 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
 
 
         self.setShopInfo=function(shopId){
-            console.log(shopId);
             //data-shopid $(element).data("shopId")   shopid
             $scope.$apply(function(){
                 self.index+=1;
@@ -1043,8 +1041,6 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
         };
 
         function _svgCallback(shopData){
-            console.log(shopData);
-
             if(typeof shopData !=="undefined" && shopData["shop_id"]!==""){
                 $scope.$apply(function() {
                     $scope.dataSimForm.$setPristine();
@@ -1066,7 +1062,6 @@ dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simCh
             $.get("svg.svg",function(data,status){
                 var importedSVGRootElement = document.importNode(data.documentElement,true);
                 $("#ys-svg").append(importedSVGRootElement);
-                console.log("refresh----------------");
                 svg_editor.refresh();
                 svg_editor.init(_svgCallback);
 
