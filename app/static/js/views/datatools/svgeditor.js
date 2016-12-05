@@ -836,6 +836,7 @@ svg_editor.init=function(_svgCallback){
             });
 
             alert("拆铺完成");
+            $("#split-button").hide();
             if(svg_editor.callback){
                 svg_editor.callback()
             }
