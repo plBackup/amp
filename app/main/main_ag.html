@@ -7,7 +7,7 @@
         </div>
         <div class="ys-content-panel container clearfix">
 
-            <table class="table table-hover amp-table" id="amp-projects-table">
+            <table class="table table-hover amp-table" ng-show="listCtrl.projects.length>0" id="amp-projects-table">
                 <colgroup>
                     <col width="16%">
                     <col width="12%">
@@ -67,11 +67,11 @@
                 </tr><!--tr-->
                 </tbody>
             </table>
-            <!-- <div class="ys-block amp-create-project">
+             <div class="ys-block amp-create-project" ng-show="listCtrl.projects.length==0">
                  <h3>还没有在AMP创建任何项目</h3>
                  <p>AMP为您提供专业的资产估值服务<br>
                     是最有效的资产管理平台和数据增值系统<br></p>
-            </div>-->
+            </div>
             <div class="amp-opt-block">
                 <a href="#/create" class="btn amp-btn amp-btn-lg ys-tips" data-toggle="tooltip" data-placement="top"  title="新建项目功能将于12月6日开通">新建项目
                     <em class="ys-amp-icon ys-icon-tips"style="margin-top: -11px;left: 50%;margin-left:145px;"></em>
