@@ -1,5 +1,4 @@
 /* eslint no-alert: 0 */
-
 'use strict';
 
 //
