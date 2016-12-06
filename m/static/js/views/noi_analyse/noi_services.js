@@ -5,9 +5,13 @@ angular.module('noi').service('noiService', function($rootScope,$http) {
 
     var service = {
         getAllData: function() {
-            return $http.get('../data/data_'+$rootScope.curProject+'/noi/noi_all.json', { cache: true }).then(function(res) {
+            /*return $http.get('./data/data_'+$rootScope.curProject+'/noi/noi_all.json', { cache: true }).then(function(res) {
+                return res.data;
+            });*/
+            return $http.get('./data/data_'+0+'/noi/noi_all.json', { cache: true }).then(function(res) {
                 return res.data;
             });
+
         },
         setChartOption:function(data,labels){
             var chart_data_init={

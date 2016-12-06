@@ -29,6 +29,29 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 },
             },
             resolve: {
+                noiAllData: function(noiService) {
+                    return noiService.getAllData();
+                },
+                data: ['$q','$timeout', function($q,$timeout){
+                    var defer = $q.defer();
+                    $timeout(function(){
+                        defer.resolve();
+
+                    }, 300);
+                    return defer.promise;
+                }]
+            }
+        }, //state
+
+        {
+            name: 'rpgset',
+            url: '/rpgset',
+            views:{
+                'content': {
+                    templateUrl: './views/datatool/datatool_rpg_set_index.html',
+                },
+            },
+            resolve: {
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){
@@ -57,10 +80,12 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
 });
 
 ampApp.controller('MainController', function($rootScope, $scope,$location,$timeout) {
-    /*var curProject=window.location.search.slice(1).split("=")[1] ||0;
+
+    var curProject=window.location.search.slice(1).split("=")[1] ||0;
      console.log(curProject);
-     $rootScope.curProject=curProject;*/
-    //$rootScope.projectName="商业公司A";
+     $rootScope.curProject=curProject;
+    $rootScope.projectName="商业公司A";
+
     var self=this;
     self.title="悦商AMP";
     self.menu=menu_list["amp_menu"];
@@ -75,8 +100,7 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
         $scope.state.loading=false;
         $scope.state.enter=false;
         $scope.state.exit=true;
-        //ampApp.collector.destory();
-        // $scope.$apply();
+
     });
     $rootScope.$on('$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams){

@@ -32,20 +32,25 @@
     <script src="./static/dist/js/mobile-angular-ui.min.js"></script>
     <script src="./static/dist/js/mobile-angular-ui.gestures.min.js"></script>
 
+    <script src="./static/dist/js/swiper.jquery.min.js"></script>
+    <script src="./static/dist/js/jquery.pin.js"></script>
+    <script src="./static/dist/js/iscroll.js"></script>
+    <script src="./static/dist/js/echarts.common.min.js"></script>
+
     <script src="./static/dist/js/echarts.common.min.js"></script>
 
     <script src="./static/js/amp_menu.js"></script>
     <script src="./static/js/amp_main_m.js"></script>
 
 
-    <script src="./static/js/views/noi_analyse/noi_controller_m.js"></script>
+    <script src="./static/js/views/noi_analyse/noi_controller.js"></script>
     <script src="./static/js/views/noi_analyse/noi_services.js"></script>
     <script src="./static/js/views/noi_analyse/noi_filters.js"></script>
     <script src="./static/js/views/noi_analyse/noi_directives.js"></script>
 </head>
 <body ng-app="amp" ng-controller="MainController as mCtrl">
 
-<div class="ampApp">
+<div class="app ampApp">
     <div class="navbar navbar-app navbar-absolute-top">
         <!--nav top-->
         <div >
@@ -84,7 +89,7 @@
         <div class='app-content'>
             <div class="scrollable">
                 <div class="scrollable-content">
-                    <div ui-view="content" class="animated"></div>
+                    <div ui-view="content"  class="animated" ng-class="{'view-back': state.back, 'view-to-home': state.toHome, 'view-exit': state.exit, 'fadeOut': state.exit,'fadeIn': state.enter, 'view-enter': state.enter, 'view-loading': state.loading}"></div>
                 </div>
             </div>
         </div>
