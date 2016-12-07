@@ -23,7 +23,8 @@ var irr_plan=(function($,irr_plan){
             slidesPerView: 'auto',
             //mousewheelControl: true,
             freeMode: true,
-            scrollbarHide:false
+            scrollbarHide:false,
+            preventClicksPropagation:false
         });
 
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;

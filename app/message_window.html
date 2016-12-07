@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.addEventListener('message', function(e) {
+            console.log("message --------------------");
+            document.querySelector("#message").innerHTML = "接受到的信息是：" + e.data;
+        }, false);
+
+        // 当文档加载完毕, 给父级来源发送信息。
+        window.addEventListener('load', function(e){
+            console.log("load-----------")
+            e.currentTarget.opener.postMessage('ready', 'http://192.168.120.241:3000');
+        }, false);
+
+        // 当窗体关闭，告诉父级窗体已经关闭了。
+        window.addEventListener('unload', function(e){
+            e.currentTarget.opener.postMessage('closed', 'http://192.168.120.241:3000');
+        }, false);
+    </script>
+</head>
+<body>
+<div id="message"></div>
+
+</body>
+</html>

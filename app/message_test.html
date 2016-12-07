@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="show">
+    <div class="demo">
+        <a target="_blank" href="message_window.html" id="boy">男生点这个</a>
+        <a target="_blank" href="message_window.html" id="girl">女生点这个</a>
+        <p style="padding-top:160px;"></p>
+        <h5>打开页JS代码：</h5>
+        <pre name="code" class="DlHighlight js"><span class="operand builtin">window</span>.<span class="operand">addEventListener</span><span class="paren">(</span><span class="string"><span class="before">'</span>message<span class="after">'</span></span><span class="comma">,</span> <span class="operand keyword">function</span><span class="paren">(</span><span class="operand">e</span><span class="paren">)</span> <span class="paren">{</span>
+    <span class="operand builtin">document</span>.<span class="operand">querySelector</span><span class="paren">(</span><span class="string"><span class="before">"</span>#message<span class="after">"</span></span><span class="paren">)</span>.<span class="operand">innerHTML</span> <span class="operator">=</span> <span class="string"><span class="before">"</span>接受到的信息是：<span class="after">"</span></span> <span class="operator">+</span> <span class="operand">e</span>.<span class="operand">data</span>;
+<span class="paren">}</span><span class="comma">,</span> <span class="operand keyword">false</span><span class="paren">)</span>;
+
+<span class="comment comment-line"><span class="before">//</span> 当文档加载完毕, 给父级来源发送信息。</span>
+<span class="operand builtin">window</span>.<span class="operand">addEventListener</span><span class="paren">(</span><span class="string"><span class="before">'</span>load<span class="after">'</span></span><span class="comma">,</span> <span class="operand keyword">function</span><span class="paren">(</span><span class="operand">e</span><span class="paren">)</span><span class="paren">{</span>
+    <span class="operand">e</span>.<span class="operand">currentTarget</span>.<span class="operand">opener</span>.<span class="operand">postMessage</span><span class="paren">(</span><span class="string"><span class="before">'</span>ready<span class="after">'</span></span><span class="comma">,</span> <span class="string"><span class="before">'</span>http://www.zhangxinxu.com<span class="after">'</span></span><span class="paren">)</span>;
+<span class="paren">}</span><span class="comma">,</span> <span class="operand keyword">false</span><span class="paren">)</span>;
+
+<span class="comment comment-line"><span class="before">//</span> 当窗体关闭，告诉父级窗体已经关闭了。</span>
+<span class="operand builtin">window</span>.<span class="operand">addEventListener</span><span class="paren">(</span><span class="string"><span class="before">'</span>unload<span class="after">'</span></span><span class="comma">,</span> <span class="operand keyword">function</span><span class="paren">(</span><span class="operand">e</span><span class="paren">)</span><span class="paren">{</span>
+    <span class="operand">e</span>.<span class="operand">currentTarget</span>.<span class="operand">opener</span>.<span class="operand">postMessage</span><span class="paren">(</span><span class="string"><span class="before">'</span>closed<span class="after">'</span></span><span class="comma">,</span> <span class="string"><span class="before">'</span>http://www.zhangxinxu.com<span class="after">'</span></span><span class="paren">)</span>;
+<span class="paren">}</span><span class="comma">,</span> <span class="operand keyword">false</span><span class="paren">)</span>;</pre>
+    </div>
+</div>
+<script>
+    var message = '';
+
+    document.querySelector("#boy").onclick = function() {
+        console.log("click--------------");
+        message = '我是男生，帅气的男生！';
+    };
+    document.querySelector("#girl").onclick = function() {
+        message = '我是女生，漂亮的女生！';
+    };
+
+    window.addEventListener('message', function(e) {
+        var interval;
+        // 检测来源
+        if (e.origin == 'http://www.zhangxinxu.com')
+            switch (e.data) {
+                case 'ready':
+                    // e.source 为发送的 window 对象
+                    interval = setTimeout(function(win) {
+                        console.log(message);
+                        console.log("--------------");
+                        console.log(e.source);
+                        win.postMessage(message,'http://192.168.120.241:3000');
+                    }, 2000, e.source);
+                    break;
+
+                case 'closed':
+                    clearInterval(interval);
+                    break;
+            }
+    }, false);
+
+</script>
+</body>
+</html>
