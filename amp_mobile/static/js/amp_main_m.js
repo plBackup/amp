@@ -13,7 +13,6 @@ ampApp.run(function($transform) {
     window.$transform = $transform;
 });
 
-
 ampApp.config(function($stateProvider,$urlRouterProvider) {
     // An array of state definitions
     var states = [
@@ -144,7 +143,6 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
             $scope.state.exit=false;
             $scope.state.loading=false;
             //console.log("prev:"+fromState.name);
-
         });
     $rootScope.$on('$viewContentLoading',
         function(event, viewConfig){
