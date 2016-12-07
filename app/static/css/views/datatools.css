@@ -61,7 +61,7 @@
     overflow: hidden;
 }
 #irr-plan .table tbody>tr>td,
-#irr-plan .amp-table>tbody>tr.tr-main.tr-head{background-color:#f3f4f8;height:28px;}
+#irr-plan .amp-table>tbody>tr.tr-main.tr-head{/*background-color:#f3f4f8;height:28px;*/}
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>th,
 #irr-plan .amp-table>tbody>tr.tr-main.tr-head>td{padding:3px 10px;padding-left:25px;height:32px;line-height: 20px;background-color: #f3f4f8;}
 
