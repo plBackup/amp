@@ -443,6 +443,10 @@ dataSet.controller("dataResultController",['$rootScope', '$scope',"rpgResultData
             //console.log("save result data------------------");
             //console.log(self.rpgResultData)
         };
+        self.setData=function(){
+            //console.log("save result data------------------");
+            //console.log(self.rpgResultData)
+        };
 
         //dataSetView.init();
         rpg_result_table.init();
