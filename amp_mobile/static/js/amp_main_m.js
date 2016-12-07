@@ -5,7 +5,6 @@ var ampApp = angular.module('amp', [
     'ui.router',
     'mobile-angular-ui',
     'mobile-angular-ui.gestures',
-
     'noi'
 ]);
 
@@ -22,11 +21,20 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             name: 'noi',
             url: '/noi',
             views:{
+                'header': {
+                    templateUrl: './views/noi_analyse/noi_header.html',
+                },
                 'content': {
                     templateUrl: './views/noi_analyse/noi.html',
                     controller:"noiController",
                     controllerAs:"noiCtrl"
                 },
+                "sidebarLeft":{
+                    templateUrl:"./views/blank.html"
+                },
+                "sidebarRight":{
+                    templateUrl:"./views/blank.html"
+                }
             },
             resolve: {
                 noiAllData: function(noiService) {
@@ -47,9 +55,18 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             name: 'rpgset',
             url: '/rpgset',
             views:{
+                'header': {
+                    templateUrl: './views/datatool/rpg_set_header.html',
+                },
                 'content': {
                     templateUrl: './views/datatool/datatool_rpg_set_index.html',
                 },
+                "sidebarLeft":{
+                    templateUrl:"./views/blank.html"
+                },
+                "sidebarRight":{
+                    templateUrl:"./views/blank.html"
+                }
             },
             resolve: {
                 data: ['$q','$timeout', function($q,$timeout){
@@ -89,6 +106,23 @@ ampApp.controller('MainController', function($rootScope, $scope,$location,$timeo
     var self=this;
     self.title="悦商AMP";
     self.menu=menu_list["amp_menu"];
+
+    self.bottomShow=true;
+    self.headerShow=true;
+
+    $rootScope.showBottom=function(){
+        self.bottomShow=true;
+    };
+    $rootScope.hideBottom=function(){
+        self.bottomShow=false;
+    };
+
+    $rootScope.showHeader=function(){
+        self.headerShow=true;
+    };
+    $rootScope.hideHeader=function(){
+        self.headerShow=false;
+    };
 
     $rootScope.homePageIsShown = true;
     $scope.state = {};

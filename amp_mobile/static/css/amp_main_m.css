@@ -5,6 +5,8 @@
 .ampApp .navbar-absolute-bottom{height:48px;min-height: 48px;}
 .ampApp .navbar-brand{padding:12px 15px;height:44px;color:#fff;font-weight:normal;}
 .ampApp .navbar-app .btn-navbar, .navbar-app .btn{line-height: 44px;color:#fff;}
+
+.sidebar-right,.sidebar-left{background-color:#fff;}
 /*.ampApp .navbar-absolute-bottom .btn-navbar, .navbar-app .btn{line-height: 44px;}*/
 .ampApp .navbar-app .btn-navbar:hover, .ampApp .navbar-app .btn:hover{color:#fff;}
 

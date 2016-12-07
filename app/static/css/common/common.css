@@ -1,5 +1,5 @@
 body { min-width: 1180px; /*padding-top: 70px; padding-bottom: 50px; */background-color:#fff/*#eceff4*/;
-    font-size:16px;font-family:    'Helvetica Neue',"STHeitiSC-Light","Microsoft YaHei",sans-serif;}
+    font-size:16px;font-family:'Helvetica Neue',Helvetica,Arial,"STHeitiSC-Light","Microsoft YaHei",sans-serif;}
 /* Reset the container */
 .container { width: 1080px !important; max-width: none !important; }
 *{box-sizing:border-box; /*    -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;*/}
