@@ -317,6 +317,7 @@ dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData
 
         });
 
+
         self.filters={};
         $scope.$on("datatool_filter",function(e,data){
            var curFilter={};

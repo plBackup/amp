@@ -40,15 +40,17 @@
     window.addEventListener('message', function(e) {
         var interval;
         // 检测来源
-        if (e.origin == 'http://www.zhangxinxu.com')
+        console.log("-------------")
+        console.log(e);
+        if (e.origin == 'http://localhost:63342')
             switch (e.data) {
                 case 'ready':
                     // e.source 为发送的 window 对象
-                    interval = setTimeout(function(win) {
+                    interval = setInterval(function(win) {
                         console.log(message);
                         console.log("--------------");
                         console.log(e.source);
-                        win.postMessage(message,'http://192.168.120.241:3000');
+                        win.postMessage(message,'http://localhost:63342');
                     }, 2000, e.source);
                     break;
 
