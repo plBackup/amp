@@ -253,7 +253,7 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
 
         //页面事件
         $(".page-main").on("click",function(e){
-            e.stopPropagation();
+           // e.stopPropagation();
             $(".table td").removeClass("active");
         });
 
@@ -285,11 +285,13 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
                     console.log(rowSpan);
                     console.log(trIndex+"--"+tdIndex);
                     /*if()*/
-                    if(parseInt($curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(0).attr("rowspan"))>1){
-                        $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len+1).trigger("click");
+                    if(parseInt($curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(0).attr("rowspan"))>1){
+                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len+1).trigger("click");
 
                     }else{
-                        $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).trigger("click");
+                        console.log("......")
+                        console.log($curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len));
+                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).trigger("click");
                     }
 
                 }
@@ -386,6 +388,16 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
                 ]
             }
         ];
+
+        self.shopInfo={
+            "mallProportionType":"",
+            "streetProportionType":""
+        };
+        self.proportionType={
+            "indoor":"套内面积",
+            "floor":"建筑面积"
+        };
+
         self.affect_sum=function(index){
             var ratioArray_0=[];
             $.each(self.affectData,function(k,v){
@@ -416,6 +428,17 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
         };
 
         self.updateWeight();
+
+        self.setModel=function(type,menu){
+            self.shopInfo[type]=menu;
+
+            console.log(self.shopInfo);
+        };
+
+        self.isActive=function(menu,model){
+            return menu==model;
+        };
+
 
         function _checkErrot($e){
             var $this=$e;

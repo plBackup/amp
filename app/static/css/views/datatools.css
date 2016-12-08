@@ -470,3 +470,12 @@ tr>td span.number-format{display: block;width:100%;}
 
 #compressed-info{height: 32px;  line-height: 32px;font-size: 13px;}
 #compressed-info>input{height: 32px; line-height: 26px; border: 0; margin-left: 6px; border-radius: 2px;  padding-left: 8px;color:#333;}
+
+
+/*rpgset update*/
+.amp-proportion-select{height:34px;line-height: 34px;}
+#rgp-set #rent-affect-table-wrapper .amp-proportion-select .amp-sub-title{float:left;height:36px;line-height: 34px;}
+
+.amp-proportion-select .td-input-wrapper{float:left;margin-left:30px;}
+.amp-proportion-select .td-input-wrapper label{display: block;float:left;margin-right:10px;margin-bottom:0;font-size:15px;color:#373c32;}
+.amp-proportion-select .td-input-wrapper .dropdown{float:left;width:160px;}
