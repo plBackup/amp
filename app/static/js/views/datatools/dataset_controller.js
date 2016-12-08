@@ -265,7 +265,8 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
         });
         //回车向下输入
         $(".table").on("keyup",function(e){
-            if(e.target.nodeName.toLowerCase()==="input"){
+
+            if(e.keyCode==13 && e.target.nodeName.toLowerCase()==="input"){
                 var $curInput=$(e.target);
                 var trIndex= $curInput.closest("tr").index();
                 var tdIndex= $curInput.closest("td").index();
