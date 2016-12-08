@@ -263,6 +263,18 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
             $(this).addClass("active");
             $(this).find("input").focus();
         });
+        //回车向下输入
+        $(".table").on("keyup",function(e){
+            if(e.target.nodeName.toLowerCase()==="input"){
+                var $curInput=$(e.target);
+                var trIndex= $curInput.closest("tr").index();
+                var tdIndex= $curInput.closest("td").index();
+                /*if()*/
+                $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex).trigger("click");
+            }
+
+        });
+
 
         self.affectData =self.rpgSetData.rentCount;
         self.affect_count=[
