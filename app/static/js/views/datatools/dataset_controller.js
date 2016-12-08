@@ -265,13 +265,34 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
         });
         //回车向下输入
         $(".table").on("keyup",function(e){
-
+            console.log("e-------------");
+            console.log(e.target);
             if(e.keyCode==13 && e.target.nodeName.toLowerCase()==="input"){
                 var $curInput=$(e.target);
+                var rowSpan=parseInt($curInput.closest("tr").find("td").eq(0).attr("rowspan"));
                 var trIndex= $curInput.closest("tr").index();
                 var tdIndex= $curInput.closest("td").index();
-                /*if()*/
-                $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex).trigger("click");
+
+                var th_len=parseInt($curInput.closest("tr").find("th").length);
+
+                if(rowSpan>1){
+                    console.log(rowSpan);
+                    console.log(trIndex+"--"+tdIndex);
+                    /*if()*/
+                    $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-1-th_len).trigger("click");
+
+                }else{
+                    console.log(rowSpan);
+                    console.log(trIndex+"--"+tdIndex);
+                    /*if()*/
+                    if(parseInt($curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(0).attr("rowspan"))>1){
+                        $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len+1).trigger("click");
+
+                    }else{
+                        $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).trigger("click");
+                    }
+
+                }
             }
 
         });
