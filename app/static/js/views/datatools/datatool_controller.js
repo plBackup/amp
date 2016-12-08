@@ -351,13 +351,17 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
         };
         self.index="add";
         self.shopInfo={};
+
         $scope.$on("shopEdit",function(e,data){
+            var editData=angular.copy(data);
             $("#rent-package-rpanel").find(".error").find("em.error-msg").remove().end().removeClass("error");
             $scope.shopInfoForm.$setPristine();
             $scope.shopInfoForm.$setUntouched();
             amp_main.rightPanel_open();
             self.index=data.index;
-            self.shopInfo=data.shopData;
+            console.log("shop edit---------");
+            console.log(editData.shopData);
+            self.shopInfo=editData.shopData;
         });
 
         self.save=function(){
@@ -386,6 +390,7 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
                 //self.shopInfo={};
                 self.index="new";
             }else{
+
                 $rootScope.$broadcast("shopUpdate",{
                     index:self.index,
                     shop:self.shopInfo
