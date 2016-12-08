@@ -65,7 +65,7 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
                     controllerAs: 'listCtrl'
                 },
             },
-
+            reloadOnSearch: false,
             resolve: {
                 projects: function(ProjectService) {
                     return ProjectService.getAllProject();
@@ -89,7 +89,7 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
                     controllerAs: 'ctrl',
                 },
             },
-
+            reloadOnSearch: false,
             resolve: {
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
@@ -110,7 +110,7 @@ mainApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$u
                     controllerAs: 'ctrl',
                 },
             },
-
+            reloadOnSearch: false,
             resolve: {
               /*  project:["projects","$stateParams",function(projects,$stateParams){
                     //这里的逻辑是把数据做在 list-> ui-view( create )里的方法
