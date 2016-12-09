@@ -7,7 +7,7 @@ var irr_plan=(function($,irr_plan){
     var pin;
     var irr_plan_head_swiper,irr_plan_main_swiper;
 
-
+    irr_plan.swipers={}
     irr_plan.swiper_init=function(){
         irr_plan_head_swiper = new Swiper('#irr-plan-table-head', {
             //scrollbar: '.swiper-scrollbar',
@@ -33,6 +33,12 @@ var irr_plan=(function($,irr_plan){
         //这里把swiper实例加入全局的垃圾回收站
         /*ampApp.collector.add_swiper(irr_plan_head_swiper);
         ampApp.collector.add_swiper(irr_plan_main_swiper);*/
+
+
+        irr_plan.swipers={
+            irr_plan_head_swiper:irr_plan_head_swiper,
+            irr_plan_main_swiper:irr_plan_main_swiper
+        };
 
         pin=$(".ys-table-fixed-top").pin({
             containerSelector: "#irr-plan-table-wrapper",
@@ -83,6 +89,11 @@ var irr_plan=(function($,irr_plan){
         irr_plan_main_swiper.update(true);*/
         irr_plan_head_swiper.params.control = irr_plan_main_swiper;
         irr_plan_main_swiper.params.control = irr_plan_head_swiper;
+
+        irr_plan.swipers={
+            irr_plan_head_swiper:irr_plan_head_swiper,
+            irr_plan_main_swiper:irr_plan_main_swiper
+        };
 
     };
 
@@ -865,10 +876,36 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             }*/
         };
 
+
+        /*irr_plan.swipers={
+         irr_plan_head_swiper:irr_plan_head_swiper,
+         irr_plan_main_swiper:irr_plan_main_swiper
+         };*/
+        //页面事件
+        //这里暂时先禁掉 table的 tab键
+        $(".table").find("input").attr("tabIndex","-1");
+
+
         $(".table").on("click","td",function(){
             $(".table td").removeClass("active");
             $(this).addClass("active");
             $(this).find("input").focus();
+        });
+
+        $("#irr-plan-main-table tbody").on("click","td",function(e){
+            //e.stopPropagation();
+            var td_width=parseInt($(this).css("width"));
+            var td_offset=parseInt($(this).position().left);
+            var translate=irr_plan.swipers.irr_plan_main_swiper.translate;
+            var cont_width=irr_plan.swipers.irr_plan_main_swiper.width;
+
+            if(td_offset+td_width+translate>cont_width){
+                return false;
+            }else{
+                /*$(this).find("span.span-editable").addClass("focus");
+                 $(this).find("span.span-editable").focus();*/
+
+            }
         });
 
         function _checkErrot($e){
@@ -883,6 +920,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 $this.parent().find("em.error-msg").remove();
             }
         };
+
 
         $(".table").on("change","input",function(e){
             _checkErrot($(e.target));

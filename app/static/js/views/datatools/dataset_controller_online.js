@@ -986,8 +986,6 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
         });
 
 
-
-
         $("#rpg-set-main-table-head thead").on("click","td",function(e){
             e.stopPropagation();
             var td_width=parseInt($(this).css("width"));
