@@ -80,6 +80,12 @@ var rpgSet_table=(function($,rpgSet_table){
 
         });
 
+        rpgSet_table.swipers={
+            rpgSet_table_head_swiper: rpgSet_table_head_swiper,
+            rpgSet_table_main_swiper:rpgSet_table_main_swiper
+
+        };
+
         //这里实验tab切换输入的情况
        /* $("#rpg-set-table-wrapper input").on("blur",function(e){
             //console.log("-----------blur-------------");
@@ -128,6 +134,9 @@ var rpgSet_table=(function($,rpgSet_table){
         rpgSet_table.table_init();
         $('#preloader').delay(350).fadeOut(function(){
             //start
+            //这里暂时先禁掉 table的 tab键
+            $(".table").find("input").attr("tabIndex","-1");
+            //$(".table").find("span.span-editable").attr("tabIndex","-1");
         });
     };
 
@@ -296,7 +305,23 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
 
                 }
             }
+        });
 
+        //这里禁止掉跨页面td的点击事件
+        $("#rpg-set-main-table tbody").on("click","td",function(e){
+            //e.stopPropagation();
+            var td_width=parseInt($(this).css("width"));
+            var td_offset=parseInt($(this).position().left);
+            var translate=rpgSet_table.swipers.rpgSet_table_main_swiper.translate;
+            var cont_width=rpgSet_table.swipers.rpgSet_table_main_swiper.width;
+
+            if(td_offset+td_width+translate>cont_width){
+                return false;
+            }else{
+               /* $(this).find("span.span-editable").addClass("focus");
+                $(this).find("span.span-editable").focus();*/
+
+            }
         });
 
 
