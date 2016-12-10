@@ -11,7 +11,7 @@
     <form name="feeForm">
     <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
-            <h3 class="col-xs-8">MALL物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
+            <h3 class="col-xs-8">MALL物业管理费标准<em class="em-unit">(单位:元/月/m&sup2)</em></h3>
         </div>
 
         <div class="amp-table-wrapper">
@@ -34,7 +34,15 @@
                         </td>
                     </tr>
                 </tbody><!--tbody-->
-
+            </table>
+            <hr>
+                <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
+                    <colgroup>
+                        <col width="12%">
+                        <col width="36%">
+                        <col width="36%">
+                        <col width="12%">
+                    </colgroup>
                 <tbody>
 
                 <tr ng-repeat="fee in fCtrl.mall.nonMainShop.feeStandard">
@@ -51,8 +59,9 @@
                                 <input type="text" placeholder="/" data-date="" value="" ng-model="fee.areaRangeEnd">
                                 <span class="number-format">{{fee.areaRangeEnd | number:2}}</span>
                             </div>
-                            <span class="td-range-addon">m&sup2</span>
+
                         </div>
+                        <span class="td-range-addon">m&sup2</span>
                     </td>
                     <td>
                         <label>标准</label>
@@ -76,7 +85,7 @@
 
     <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
-            <h3 class="col-xs-8">商业街 物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
+            <h3 class="col-xs-8">商业街 物业管理费标准<em class="em-unit">(单位:元/月/m&sup2)</em></h3>
         </div>
             <div class="amp-table-wrapper">
                 <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
@@ -102,8 +111,8 @@
                                     <input type="text" placeholder="/" data-date="" value="" ng-model="fee.areaRangeEnd">
                                     <span class="number-format">{{fee.areaRangeEnd | number:2}}</span>
                                 </div>
-                                <span class="td-range-addon">m&sup2</span>
                             </div>
+                            <span class="td-range-addon">m&sup2</span>
                         </td>
                         <td>
                             <label>标准</label>
@@ -130,9 +139,9 @@
             <h3 class="col-xs-8">物业费递增率</h3>
         </div>
         <div class="amp-table-wrapper-swiper" id="rent-update-table-wrapper">
-            <div class="ys-table-main" style="padding-left:160px;">
-                <div class="ys-table-static ys-table-static-left" style="width:160px;">
-                    <table class="table table-no-bordered amp-table table-hover" style="width:160px;">
+            <div class="ys-table-main" style="padding-left:90px;">
+                <div class="ys-table-static ys-table-static-left" style="width:90px;">
+                    <table class="table table-no-bordered amp-table table-hover" style="width:90px;">
                         <thead>
                         <tr><th class="text-left"></th></tr>
                         </thead>
@@ -147,7 +156,7 @@
                 <div class="swiper-container" style="width:100%;" id="rent-update-main-table">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <table class="table table-right-bordered amp-table table-hover"  style="width:1200px">
+                            <table class="table table-right-bordered amp-table table-hover"  style="width:{{(fCtrl.fee.updateRate[0].value.length+1)*182}}px;">
                                 <thead>
                                 <tr>
                                    <th ng-repeat="v in fCtrl.fee.updateRate[0].value"><span>{{v.year}}</span></th>

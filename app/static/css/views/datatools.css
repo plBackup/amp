@@ -479,3 +479,36 @@ tr>td span.number-format{display: block;width:100%;}
 .amp-proportion-select .td-input-wrapper{float:left;margin-left:30px;}
 .amp-proportion-select .td-input-wrapper label{display: block;float:left;margin-right:10px;margin-bottom:0;font-size:15px;color:#373c32;}
 .amp-proportion-select .td-input-wrapper .dropdown{float:left;width:160px;}
+
+
+/*manage-fee*/
+
+#manage-fee{}
+#manage-fee .amp-content-header{margin-bottom:40px;}
+#manage-fee .amp-block-pd{margin-top:20px;}
+
+#manage-fee .amp-block-title em.em-unit{display: inline-block;margin-left:26px;color:#8592a3;font-size: 13px;}
+
+#manage-fee .amp-table{}
+#manage-fee .amp-table label{float:left;margin-bottom:0;margin-right:12px;height:28px;line-height: 28px;color:#8592a3;font-size: 13px;}
+#manage-fee .amp-table div.td-input-wrapper{float:left;width:152px;height:28px;}
+
+#manage-fee .num-input span.number-format{height:28px;padding:3px 10px;}
+
+#manage-fee .amp-table .td-input-wrapper input{height:28px;padding:3px 10px;}
+#manage-fee .amp-table .td-range-input{float:left; width:152px;height:28px;}
+#manage-fee .amp-table .td-range-input>div.td-input-wrapper{width:68px;}
+#manage-fee .amp-table .td-range-input .td-range-divider{display: block;float:left;width:16px;height:28px;line-height: 28px;font-size:13px;color:#8592a3;text-align: center;}
+
+#manage-fee .amp-table td span.td-range-addon{display: block;float:left;height:28px;line-height:28px;color:#8592a3;margin-left:12px;}
+
+#manage-fee .amp-table>tbody>tr>th,#manage-fee .amp-table>tbody>tr>td,
+#manage-fee .amp-table>tfoot>tr>th, #manage-fee .amp-table>tfoot>tr>td{border-top:0;border-bottom:0;}
+#manage-fee .table>tbody+tbody{border-top:solid 1px #ddd;}
+
+#manage-fee #rent-update-main-table th,#manage-fee #rent-update-main-table td{width:182px;border-right:0;}
+#manage-fee #rent-update-main-table th{padding-bottom:0;vertical-align: middle;}
+#manage-fee hr{border-top:solid 1px #dae1e7;}
+
+#manage-fee .amp-table-wrapper-swiper .ys-table-static{border-right:0;}
+#manage-fee .amp-table-wrapper-swiper .ys-table-static .table{border-right:solid 1px #dfe5e9;}
