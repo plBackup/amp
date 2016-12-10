@@ -365,8 +365,8 @@ var manage_fee=(function($,mf){
 
             if(td_offset+td_width+translate>cont_width){
                 manage_fee.swipers.manage_fee_main_swiper.setWrapperTranslate(translate-160);
-
-                return false;
+                $(this).find(".td-input-wrapper").click();
+                //return false;
             }else{
                 /* $(this).find("span.span-editable").addClass("focus");
                  $(this).find("span.span-editable").focus();*/
@@ -1185,9 +1185,9 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             var translate=irr_plan.swipers.irr_plan_main_swiper.translate;
             var cont_width=irr_plan.swipers.irr_plan_main_swiper.width;
             if(td_offset+td_width+translate>cont_width){
-                irr_plan.swipers.irr_plan_main_swiper.setWrapperTranslate(translate-160);
-
-                return false;
+                irr_plan.swipers.irr_plan_main_swiper.setWrapperTranslate(translate-150);
+                $(this).find(".td-input-wrapper").click();
+                //return false;
             }else{
                 /* $(this).find("span.span-editable").addClass("focus");
                  $(this).find("span.span-editable").focus();*/
