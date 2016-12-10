@@ -31,7 +31,7 @@
 
                 <tbody>
 
-                <tr ng-repeat="fee in fCtrl.mall.unMainShop.feeStandard">
+                <tr ng-repeat="fee in fCtrl.mall.nonMainShop.feeStandard">
                     <th><span ng-if="$index==0">非主力店</span></th>
                     <td>
                         <label>面积</label>
@@ -101,8 +101,8 @@
                         </td>
                         <td>
                             <div class="td-opt" ng-if="$index==(fCtrl.unMainShop.feeStandard.length)">
-                                <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
-                                <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
+                                <button class="td-opt-add" ng-click="fCtrl.add('unMainShop')"><em class="amp-icon amp-icon-add"></em></button>
+                                <button class="td-opt-minus" ng-click="fCtrl.remove('unMainShop')"><em class="amp-icon amp-icon-minus"></em></button>
                             </div>
                         </td>
                     </tr>
@@ -121,12 +121,12 @@
                 <div class="ys-table-static ys-table-static-left" style="width:160px;">
                     <table class="table table-no-bordered amp-table table-hover" style="width:160px;">
                         <thead>
-                        <tr><th class="text-left">开业年份</th></tr>
+                        <tr><th class="text-left"></th></tr>
                         </thead>
                         <tbody>
-                        <tr><th class="text-left">主力店</th></tr>
-                        <tr><th class="text-left">次主力店</th></tr>
-                        <tr><th class="text-left">中小商铺</th></tr>
+                            <tr ng-repeat="item in fCtrl.fee.updateRate">
+                                <th class="text-left"><span>{{item.name}}</span></th>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -136,40 +136,22 @@
                         <div class="swiper-slide">
                             <table class="table table-right-bordered amp-table table-hover"  style="width:1200px">
                                 <thead>
-                                <tr>
-                                   <th ng-repeat="(year,value) in fCtrl.fee.updateRate[0].value"><span>{{year}}</span></th>
+                                <tr ng-repeat="item in fCtrl.fee.updateRate">
+                                   <th ng-repeat="v in item.value"><span>{{v.year}}</span></th>
                                     <th>
                                         <div class="td-opt">
-                                            <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
-                                            <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
+                                            <button class="td-opt-add" ng-click="fCtrl.fee.addYear();"><em class="amp-icon amp-icon-add"></em></button>
+                                            <button class="td-opt-remove" ng-click="fCtrl.fee.removeYear()"><em class="amp-icon amp-icon-remove"></em></button>
                                         </div>
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[0].value">
+                                <tr ng-repeat="item in fCtrl.fee.updateRate">
+                                    <td ng-repeat="v in item.value">
                                         <div class="td-input-wrapper num-input" >
-                                            <input type="number" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[1].value">
-                                        <div class="td-input-wrapper num-input" >
-                                            <input type="number" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[2].value">
-                                        <div class="td-input-wrapper num-input" >
-                                            <input type="number" placeholder="/" value="" ng-model="value">
-                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                            <input type="number" placeholder="/" value="" ng-model="v.value">
+                                            <span class="number-format">{{v.value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>
                                     <td></td>
@@ -179,7 +161,7 @@
                         </div><!--swiper-slide-->
                     </div><!--swiper-wrapper-->
                     <!-- Add Scroll Bar -->
-                    <div class="swiper-scrollbar swiper-scrollbar-b"></div>
+                    <div class="swiper-scrollbar swiper-scrollbar-a"></div>
                 </div><!--swiper container-->
             </div>
         </div>
@@ -188,7 +170,7 @@
     <div class="amp-block-pd bottom-block clearfix">
             <div class="btn-wrapper pull-right">
                 <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="fCtrl.setSave()"  style="float:right;margin-left:20px;">保存</a>
-                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-save" ng-click="fCtrl.setData()" style="float:right;">重置</a>
+                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-save" ng-click="fCtrl.setReset()" style="float:right;">重置</a>
             </div>
      </div>
     </form>

@@ -945,6 +945,78 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
 dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootScope,$scope){
     var self=this;
+
+    self.mall={
+        mainShop:{
+            feeStandard:0
+        },
+        nonMainShop:{
+            feeStandard:[
+                {
+                    areaRangeStart:0,
+                    areaRangeEnd:0,
+                    value:0
+                },
+            ]
+        }
+    };
+
+    self.street={
+        feeStandard:[
+            {
+                areaRangeStart:0,
+                areaRangeEnd:0,
+                value:0
+            },
+        ],
+    };
+
+    var curYear=(new Date()).getFullYear();
+    self.fee={};
+    self.fee.updateRate=[
+        {
+            name:"主力店",
+            value: [
+                { year: curYear,value:0},
+            ]
+        },
+        {
+            name:"非主力店",
+            value:[
+                { year: curYear,value:0},
+            ]
+        },
+        {
+            name:"商业街",
+            value:[
+                { year: curYear,value:0},
+            ]
+        }
+    ];
+
+    self.fee.addYear=function(){
+
+
+    };
+
+    self.fee.removeYear=function(){
+
+    };
+
+    self.add=function(type){
+
+    };
+    self.remove=function(type){
+
+    };
+
+    self.setSave=function(){
+
+    };
+    self.setReset=function(){
+
+    };
+
     console.log("data fee controller");
 
 
