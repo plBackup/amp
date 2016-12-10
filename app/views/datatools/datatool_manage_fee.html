@@ -1,0 +1,72 @@
+<div class="amp-content-panel" id="manage-fee">
+    <div class="amp-content-header clearfix">
+        <!-- Breadcrumb / Summary info-->
+        <ul class="header-nav-sub clearfix">
+            <li><a ui-sref="rpgindex" ui-sref-active="active" href="#/rpgindex" id="tri-0-1-0" class="header-subnav-item" >铺位信息</a></li>
+            <li><a ui-sref="rpgset" ui-sref-active="active" href="#/rpgset" id="tri-0-1-1" class="header-subnav-item">租金包设定</a></li>
+            <li><a ui-sref="managefee" ui-sref-active="active" href="#/managefee" id="tri-0-1-2" class="header-subnav-item">物业管理费设定</a></li>
+        </ul>
+    </div><!--amp-content-header-->
+    <div class="amp-block clearfix">
+        <div class="amp-block-title">
+            <h3 class="col-xs-8">MALL物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
+        </div>
+        <form name="manage-fee-form">
+        <div class="amp-table-wrapper">
+            <table class="table amp-table ampt-table-no-bordered">
+                <tbody>
+                    <tr>
+                        <th><span>主力店</span></th>
+                        <td>
+                            <label>标准</label>
+                            <div class="td-input-wrapper num-input padding-r-15" >
+                                <input type="text" placeholder="/" data-date="" value="" ng-model="fCtrl.irrData[16].values[1].value">
+                                <span class="number-format">{{fCtrl.irrData[16].values[1].value*100| number:2}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody><!--tbody-->
+
+                <tbody>
+
+                <tr ng-repeat="fee in fCtrl.unMainShop.feeStandard">
+                    <th><span ng-if="$index==0">非主力店</span></th>
+                    <td>
+                        <label>面积</label>
+                        <div class="td-range-input">
+                            <div class="td-input-wrapper num-input padding-r-15" >
+                                <input type="text" placeholder="/"  ng-model="fee.areaRangeStart">
+                                <span class="number-format">{{fee.areaRangeStart | number:2}}</span>
+                            </div>
+                            <span class="td-range-divider">~</span>
+                            <div class="td-input-wrapper num-input padding-r-15" >
+                                <input type="text" placeholder="/" data-date="" value="" ng-model="fee.areaRangeEnd">
+                                <span class="number-format">{{fee.areaRangeEnd | number:2}}</span>
+                            </div>
+                            <span class="td-range-addon">m&sup2</span>
+                        </div>
+                    </td>
+                    <td>
+                        <label>标准</label>
+                        <div class="td-input-wrapper num-input padding-r-15" >
+                            <input type="text" placeholder="/" ng-model="fee.value">
+                            <span class="number-format">{{fee.value | number:2}}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-opt" ng-if="$index==(fCtrl.unMainShop.feeStandard.length)">
+                            <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
+                            <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody><!--tbody-->
+
+            </table><!--amp table-->
+        </div>
+        </form>
+    </div><!--ys-block-->
+
+</div><!-- contentpanel -->
+
+

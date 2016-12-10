@@ -836,6 +836,13 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         });
     }]);
 
+dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootScope,$scope){
+    var self=this;
+    console.log("data fee controller");
+
+
+}]);
+
 dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData","$location","$timeout",
     function($rootScope, $scope,simData,simChartData,$location,$timeout) {
         var self=this;

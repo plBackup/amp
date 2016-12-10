@@ -156,6 +156,34 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             }
         }, //state
         {
+            name: 'managefee',
+            url: '/managefee',
+            views:{
+                'toolbar': {
+                    templateUrl: '../components/toolbar/blank_filter.html'
+                },
+                'content': {
+                    templateUrl: '../views/datatools/datatool_manage_fee.html',
+                    controller:'dataFeeController',
+                    controllerAs:"fCtrl"
+                },
+                "right":{
+                    templateUrl: '../views/blank_right.html'
+                }
+            },
+            controller:"page",
+            resolve: {
+                data: ['$q','$timeout', function($q,$timeout){
+                    var defer = $q.defer();
+                    $timeout(function(){
+                        defer.resolve();
+                        amp_main.loading_hide();
+                    }, 300);
+                    return defer.promise;
+                }]
+            }
+        }, //state
+        {
             name: 'rpgset',
             url: '/rpgset',
             views:{
@@ -831,11 +859,17 @@ ampApp.nav_list={
         headerBar:"#header-tabs-4",
         headerItem:"#nav-tabs-item-4-0"
     },
+    "managefee":{
+        sideNav:"#main-4",
+        headerBar:"#header-tabs-4",
+        headerItem:"#nav-tabs-item-4-0"
+    },
     "datasim":{
         sideNav:"#main-4",
         headerBar:"#header-tabs-4",
         headerItem:"#nav-tabs-item-4-1"
     },
+
     "irrplan":{
         sideNav:"#main-4",
         headerBar:"#header-tabs-4",
@@ -850,7 +884,8 @@ ampApp.nav_list={
         sideNav:"#main-4",
         headerBar:"#header-tabs-4",
         headerItem:"#nav-tabs-item-4-0"
-    }
+    },
+
 };
 
 //手动设置当前菜单的激活状态 navhash为当前route的state值 配置于ampApp.nav_list
