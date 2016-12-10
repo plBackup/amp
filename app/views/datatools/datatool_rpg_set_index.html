@@ -52,6 +52,78 @@
         </div>
 
     </div>
+
+    <div class="amp-block-pd">
+        <div class="amp-block-title">
+            <h3 class="col-xs-3">各楼层总租金</h3>
+        </div>
+        <div class="amp-table-wrapper-swiper" id="rpg-floor-table-wrapper">
+            <div class="ys-table-fixed-top" style="padding-left:100px;">
+                <div class="ys-table-static ys-table-static-left" style="width:100px;">
+                    <table class="table  amp-table table-hover table-header-fixed" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th>铺位号</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="swiper-container" style="width:100%;" id="rpg-floor-table-head">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <table class="table  amp-table table-hover table-header-fixed" style="width:2000px;" >
+                                <thead>
+                                <tr>
+                                    <th>GLA</th>
+                                    <th ng-repeat="(k,v) in sCtrl.rpgResultData.floors[0].yearly">
+                                        第{{$index+1}}年
+                                    </th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div><!--swiper-slide-->
+                    </div><!--swiper-wrapper-->
+                    <!-- Add Scroll Bar -->
+                    <!-- <div class="swiper-scrollbar"></div>-->
+                </div><!--swiper container-->
+            </div>
+            <div class="ys-table-main" style="padding-left:100px;">
+                <div class="ys-table-static ys-table-static-left" style="width:100px;">
+                    <table class="table  amp-table table-hover" style="width:100%;">
+                        <tbody>
+                        <tr  ng-repeat="floor in sCtrl.rpgResultData.floors" class="data-index data-index-{{$index}}">
+                            <th><span title="{{floor.floorIndex}}">{{floor.floorIndex}}</span></th>
+                            <th><span>合计</span></th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="swiper-container" style="width:100%;" id="rpg-floor-main-table">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <table class="table  amp-table table-hover"  style="width:2000px;">
+                                <tbody>
+                                <tr ng-repeat="floor in sCtrl.rpgResultData.floors" class="data-index data-index-{{$index}}">
+                                    <td><span>{{sCtrl.getAvg(floor)|number:2}}</span></td>
+                                    <td ng-repeat="(k,v) in floor.yearly">{{v|number:2}}</td>
+                                </tr>
+                                <tr>
+                                    <td><span>{{sCtrl.getColAvg("avg") | number:2}}</span></td>
+                                    <td ng-repeat="(k,v) in sCtrl.rpgResultData.floors[0].yearly">{{sCtrl.getColAvg($index) | number:2}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!--swiper-slide-->
+                    </div><!--swiper-wrapper-->
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar"></div>
+                </div><!--swiper container-->
+            </div>
+        </div>
+    </div><!--ys-block-->
+
 </div><!-- contentpanel -->
 <!--
 <script src="../static/js/views/datatools/rpg_index.js"></script>

@@ -8,7 +8,7 @@
         </ul>
     </div><!--amp-content-header-->
 
-    <form name="manage-fee-form">
+    <form name="feeForm">
     <div class="amp-block clearfix">
         <div class="amp-block-title">
             <h3 class="col-xs-8">MALL物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
@@ -185,6 +185,12 @@
         </div>
     </div><!--ys-block-->
 
+    <div class="amp-block-pd bottom-block clearfix">
+            <div class="btn-wrapper pull-right">
+                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="fCtrl.setSave()"  style="float:right;margin-left:20px;">保存</a>
+                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-save" ng-click="fCtrl.setData()" style="float:right;">重置</a>
+            </div>
+     </div>
     </form>
 </div><!-- contentpanel -->
 
