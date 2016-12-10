@@ -7,11 +7,13 @@
             <li><a ui-sref="managefee" ui-sref-active="active" href="#/managefee" id="tri-0-1-2" class="header-subnav-item">物业管理费设定</a></li>
         </ul>
     </div><!--amp-content-header-->
+
+    <form name="manage-fee-form">
     <div class="amp-block clearfix">
         <div class="amp-block-title">
             <h3 class="col-xs-8">MALL物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
         </div>
-        <form name="manage-fee-form">
+
         <div class="amp-table-wrapper">
             <table class="table amp-table ampt-table-no-bordered">
                 <tbody>
@@ -20,8 +22,8 @@
                         <td>
                             <label>标准</label>
                             <div class="td-input-wrapper num-input padding-r-15" >
-                                <input type="text" placeholder="/" data-date="" value="" ng-model="fCtrl.irrData[16].values[1].value">
-                                <span class="number-format">{{fCtrl.irrData[16].values[1].value*100| number:2}}</span>
+                                <input type="text" placeholder="/" data-date="" value="" ng-model="fCtrl.mall.mainShop.feeStandard.value">
+                                <span class="number-format">{{fCtrl.mall.mainShop.feeStandard.value| number:2}}</span>
                             </div>
                         </td>
                     </tr>
@@ -29,7 +31,7 @@
 
                 <tbody>
 
-                <tr ng-repeat="fee in fCtrl.unMainShop.feeStandard">
+                <tr ng-repeat="fee in fCtrl.mall.unMainShop.feeStandard">
                     <th><span ng-if="$index==0">非主力店</span></th>
                     <td>
                         <label>面积</label>
@@ -54,7 +56,7 @@
                         </div>
                     </td>
                     <td>
-                        <div class="td-opt" ng-if="$index==(fCtrl.unMainShop.feeStandard.length)">
+                        <div class="td-opt" ng-if="$index==(fCtrl.mall.unMainShop.feeStandard.length)">
                             <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
                             <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
                         </div>
@@ -64,9 +66,126 @@
 
             </table><!--amp table-->
         </div>
-        </form>
     </div><!--ys-block-->
 
+    <div class="amp-block clearfix">
+        <div class="amp-block-title">
+            <h3 class="col-xs-8">商业街 物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
+        </div>
+            <div class="amp-table-wrapper">
+                <table class="table amp-table ampt-table-no-bordered">
+                    <tbody>
+                    <tr ng-repeat="fee in fCtrl.street.feeStandard">
+                        <th><span ng-if="$index==0">非主力店</span></th>
+                        <td>
+                            <label>面积</label>
+                            <div class="td-range-input">
+                                <div class="td-input-wrapper num-input padding-r-15" >
+                                    <input type="text" placeholder="/"  ng-model="fee.areaRangeStart">
+                                    <span class="number-format">{{fee.areaRangeStart | number:2}}</span>
+                                </div>
+                                <span class="td-range-divider">~</span>
+                                <div class="td-input-wrapper num-input padding-r-15" >
+                                    <input type="text" placeholder="/" data-date="" value="" ng-model="fee.areaRangeEnd">
+                                    <span class="number-format">{{fee.areaRangeEnd | number:2}}</span>
+                                </div>
+                                <span class="td-range-addon">m&sup2</span>
+                            </div>
+                        </td>
+                        <td>
+                            <label>标准</label>
+                            <div class="td-input-wrapper num-input padding-r-15" >
+                                <input type="text" placeholder="/" ng-model="fee.value">
+                                <span class="number-format">{{fee.value | number:2}}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td-opt" ng-if="$index==(fCtrl.unMainShop.feeStandard.length)">
+                                <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
+                                <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody><!--tbody-->
+
+                </table><!--amp table-->
+            </div>
+    </div><!--ys-block-->
+
+    <div class="amp-block clearfix">
+        <div class="amp-block-title">
+            <h3 class="col-xs-8">物业费递增率</h3>
+        </div>
+        <div class="amp-table-wrapper-swiper" id="rent-update-table-wrapper">
+            <div class="ys-table-main" style="padding-left:160px;">
+                <div class="ys-table-static ys-table-static-left" style="width:160px;">
+                    <table class="table table-no-bordered amp-table table-hover" style="width:160px;">
+                        <thead>
+                        <tr><th class="text-left">开业年份</th></tr>
+                        </thead>
+                        <tbody>
+                        <tr><th class="text-left">主力店</th></tr>
+                        <tr><th class="text-left">次主力店</th></tr>
+                        <tr><th class="text-left">中小商铺</th></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="swiper-container" style="width:100%;" id="rent-update-main-table">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <table class="table table-right-bordered amp-table table-hover"  style="width:1200px">
+                                <thead>
+                                <tr>
+                                   <th ng-repeat="(year,value) in fCtrl.fee.updateRate[0].value"><span>{{year}}</span></th>
+                                    <th>
+                                        <div class="td-opt">
+                                            <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
+                                            <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
+                                        </div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[0].value">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="number" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[1].value">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="number" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td ng-repeat="(year,value) in fCtrl.fee.updateRate[2].value">
+                                        <div class="td-input-wrapper num-input" >
+                                            <input type="number" placeholder="/" value="" ng-model="value">
+                                            <span class="number-format">{{value|number:2}}<i class="unit-addon">%</i></span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!--swiper-slide-->
+                    </div><!--swiper-wrapper-->
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar swiper-scrollbar-b"></div>
+                </div><!--swiper container-->
+            </div>
+        </div>
+    </div><!--ys-block-->
+
+    </form>
 </div><!-- contentpanel -->
 
 
