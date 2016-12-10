@@ -35,7 +35,8 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #amp-projects-table .t-opt>span.not-allowed>a{display: inline-block;margin-right:5px;margin-left:5px;cursor:not-allowed;color:#dfe5e9;}
 #amp-projects-table tbody span.t-main,#amp-projects-table tbody span.t-sub{display: block; text-align: right;height:20px;line-height: 20px;}
 #amp-projects-table tbody span.t-main{font-size: 14px;color:#333;}
-#amp-projects-table tbody span.t-sub{font-size: 13px;color:#8992a3;}
+#amp-projects-table tbody span.t-sub{max-width:180px;font-size: 13px;color:#8992a3;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;}
+#amp-projects-table tbody span.t-sub.text-left{text-align:left;}
 
 #amp-projects-table tbody td.amp-pm-td{}
 #amp-projects-table tbody td.amp-pm-td>.amp-pm{position:relative;padding-left:60px;}
