@@ -346,7 +346,90 @@ var manage_fee=(function($,mf){
 
     return manage_fee;
 })(jQuery,manage_fee||{});
+var rpg_set=(function($,rs){
+    var rpg_set=rs;
+    var rpg_floor_main_table,rpg_floor_avg_main_table,rpg_form_main_table,rpg_form_avg_main_table;
 
+    rpg_set.swipers={};
+
+    rpg_set.swiper_init=function(){
+        rpg_floor_main_table = new Swiper('#rpg-floor-main-table', {
+            scrollbar: '.swiper-scrollbar-a',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false,
+            preventClicksPropagation:false
+        });
+        rpg_floor_avg_main_table = new Swiper('#rpg-floor-avg-main-table', {
+            scrollbar: '.swiper-scrollbar-b',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false,
+            preventClicksPropagation:false
+        });
+        rpg_form_main_table = new Swiper('#rpg-form-main-table', {
+            scrollbar: '.swiper-scrollbar-c',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false,
+            preventClicksPropagation:false
+        });
+        rpg_form_avg_main_table = new Swiper('#rpg-form-avg-main-table', {
+            scrollbar: '.swiper-scrollbar-d',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false,
+            preventClicksPropagation:false
+        });
+
+
+        rpg_set.swipers={
+            rpg_floor_main_table:rpg_floor_main_table,
+            rpg_floor_avg_main_table:rpg_floor_avg_main_table,
+            rpg_form_main_table:rpg_form_main_table,
+            rpg_form_avg_main_table:rpg_form_avg_main_table,
+        };
+    };
+
+        rpg_set.table_init=function() {
+            $(".ys-table-main").on("mouseenter", "tr", function (e) {
+                var index = $(this).index();
+                var parentTagName = $(this).parent().get(0).tagName;
+                $(this).closest(".ys-table-main").find(".amp-table >" + parentTagName).each(function (i, e) {
+                    $(this).find("tr").eq(index).addClass("hover");
+                });
+            });
+
+            $(".ys-table-main").on("mouseleave", "tr", function (e) {
+                var index = $(this).index();
+                var parentTagName = $(this).parent().get(0).tagName;
+                $(this).closest(".ys-table-main").find(".amp-table >" + parentTagName).each(function (i, e) {
+                    $(this).find("tr").eq(index).removeClass("hover");
+                });
+
+            });
+        }
+        rpg_set.destroy=function(){
+        $.each(rpg_set.swipers,function(k,v){
+            k.destroy(true,true);
+        })
+    };
+
+    rpg_set.init=function(){
+        rpg_set.table_init();
+        rpg_set.swiper_init();
+    };
+
+    return rpg_set;
+})(jQuery,rpg_set||{})
 var dataTool=angular.module("dataTool",[]);
 dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData","paginatorService","$timeout","$location","$filter",
     function($rootScope, $scope,dataIndexData,paginatorService,$timeout,$location,$filter) {
@@ -534,12 +617,111 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
 
     }]);
 
-dataTool.controller("dataSetController",['$rootScope', '$scope',"rpgSetData",
-    function($rootScope, $scope,rpgSetData) {
+dataTool.controller("dataSetController",['$rootScope', '$scope','$timeout',"rpgSetData",
+    function($rootScope, $scope,$timeout,rpgSetData) {
         var self=this;
         self.setData=rpgSetData[0].values;
 
-        amp_main.leftPanel_update();
+        self.rpgResultData={
+            floors:[
+                {
+                    floorIndex:"B1",
+                    yearly:[1,3,4,5],
+
+                },
+                {
+                    floorIndex:"F1",
+                    yearly:[2,5,6,8],
+
+                }
+            ],
+            floorsAvg:[
+                {
+                    floorIndex:"B1",
+                    yearly:[4,56,8,9],
+
+                },
+                {
+                    floorIndex:"F1",
+                    yearly:[4,5,89,4],
+
+                }
+            ],
+            form:[
+                {
+                    formName:"超市",
+                    yearly:[3,5,7,9],
+
+
+                },
+                {
+                    formName:"儿童",
+                    yearly:[9,6,9,4],
+
+                }
+            ],
+            formAvg:[
+                {
+                    formName:"超市",
+                    yearly:[4,6,89,34],
+
+                },
+                {
+                    formName:"儿童",
+                    yearly:[2,34,7,90],
+
+                }
+            ],
+        };
+
+        self.getAvg=function(data){
+            var sum=0;
+            var len=data.yearly.length;
+            if(len>=1){
+                $.each(data.yearly,function(i,e){
+                    sum+=e;
+                });
+                data.gla=sum/len;
+                return data.gla;
+            }else{
+                data.gla=0;
+                return 0;
+            }
+
+        };
+        self.getColAvg=function(index,name){
+            var sum=0;
+            var data=self.rpgResultData[name];
+
+            if(typeof data!=="undefined"&&data.length>=1){
+                if(index=="avg"){
+                    $.each(data,function(k,v){
+                        var picked=v.gla;
+                        sum+=picked;
+                    });
+                }else{
+                    $.each(data,function(k,v){
+                        var picked=v.yearly[index];
+                        sum+=picked;
+                    });
+                }
+
+            }
+            return sum;
+        };
+
+
+        $timeout(function(){
+            rpg_set.init();
+
+            amp_main.leftPanel_update();
+        },200)
+
+
+        $scope.$on("$destroy", function() {
+            rpg_set.destroy();
+        });
+
     }]);
 
 dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$timeout","$location",
