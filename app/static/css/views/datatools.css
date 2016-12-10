@@ -483,7 +483,7 @@ tr>td span.number-format{display: block;width:100%;}
 
 /*manage-fee*/
 
-#manage-fee{}
+#manage-fee{padding-bottom:80px;}
 #manage-fee .amp-content-header{margin-bottom:40px;}
 #manage-fee .amp-block-pd{margin-top:20px;}
 
@@ -512,3 +512,21 @@ tr>td span.number-format{display: block;width:100%;}
 
 #manage-fee .amp-table-wrapper-swiper .ys-table-static{border-right:0;}
 #manage-fee .amp-table-wrapper-swiper .ys-table-static .table{border-right:solid 1px #dfe5e9;}
+
+#manage-fee .td-opt button{display: inline-block;position:relative;top:2px;z-index:99;padding:0;width:24px;height:24px;border:0;background-color: transparent;border-radius:24px;cursor: pointer;}
+#manage-fee .td-opt button:hover{}
+#manage-fee .td-opt button:focus{outline:transparent;}
+#manage-fee .td-opt button>em{margin:0;left:50%;margin-left:-9px;top:50%;margin-top:-9px;cursor: pointer;}
+
+#manage-fee .td-opt button:hover>em.ys-icon-add{background-position:-130px -243px;}
+#manage-fee .td-opt button:hover>em.ys-icon-remove{background-position:-90px -198px;}
+
+
+
+
+
+
+
+
+
+
