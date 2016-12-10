@@ -38,7 +38,18 @@ angular.module('dataTool').service('dataSetResultService', ["$rootScope","$http"
     return service;
 
 }]);
+angular.module('dataTool').service('manageFeeService', ["$rootScope","$http",function($rootScope,$http) {
+    var service = {
+        getSetData: function () {
+            return $http.get('../data/'+'manageFee_data.json', {cache: true}).then(function (res) {
+                ////console.log(res);
+                return res.data;
+            });
+        },
+    };
+    return service;
 
+}]);
 angular.module('dataTool').service('irrPlanService', ["$rootScope","$http",function($rootScope,$http) {
 
     var service = {

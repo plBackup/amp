@@ -173,6 +173,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
             },
             controller:"page",
             resolve: {
+                manageFeeData: function(manageFeeService) {
+                    return manageFeeService.getSetData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

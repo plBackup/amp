@@ -1153,8 +1153,11 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
     }]);
 
 
-dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout',function($rootScope,$scope,$timeout){
+dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manageFeeData',function($rootScope,$scope,$timeout,manageFeeData){
     var self=this;
+    //这里自己写数据绑定
+    console.log(manageFeeData);
+
 
     self.mall={
         mainShop:{
@@ -1208,18 +1211,65 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout',functi
     ];
 
     self.fee.addYear=function(){
-
-
+        var lastYear=self.fee.updateRate[0].value[self.fee.updateRate[0].value.length-1].year;
+        $.each(self.fee.updateRate,function(i,e){
+            var pushData={year:lastYear+1,value:0};
+            e.value.push(pushData);
+        })
     };
 
     self.fee.removeYear=function(){
-
+        var dataSize=self.fee.updateRate[0].value.length;
+        if(dataSize>1){
+            $.each(self.fee.updateRate,function(i,e){
+                e.value.pop();
+            })
+        }else{
+            var curYear=(new Date()).getFullYear();
+            $.each(self.fee.updateRate,function(i,e){
+                var oriData={ year: curYear,value:0};
+                e.value[0]=oriData;
+            })
+        }
     };
 
     self.add=function(type){
-
+        if(type=="street"){
+            var data=self.street.feeStandard;
+        }else if(type=="nonMainShop"){
+            var data=self.mall[type].feeStandard;
+        }else{
+            return;
+        }
+        data.push( {
+            areaRangeStart:0,
+            areaRangeEnd:0,
+            value:0
+        });
     };
     self.remove=function(type){
+        if(type=="street"){
+            var data=self.street.feeStandard;
+        }else if(type=="nonMainShop"){
+            var data=self.mall[type].feeStandard;
+        }else{
+            return;
+        }
+
+        console.log(data);
+        if(data.length>1){
+           data.pop( {
+                areaRangeStart:0,
+                areaRangeEnd:0,
+                value:0
+            });
+        }else{
+            data[0]={
+                areaRangeStart:0,
+                areaRangeEnd:0,
+                value:0
+            }
+        }
 
     };
 
@@ -1229,8 +1279,6 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout',functi
     self.setReset=function(){
 
     };
-
-    console.log("data fee controller");
 
     function _checkErrot($e){
         var $this=$e;
