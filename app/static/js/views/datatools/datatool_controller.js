@@ -269,7 +269,83 @@ var amp_datePicker=(function($,amp_datePicker){
 
     })(jQuery,amp_datePicker||{});
 
+var manage_fee=(function($,mf){
+    var manage_fee=mf;
 
+    var manage_fee_main_swiper;
+
+    manage_fee.swipers={};
+
+    manage_fee.swiper_init=function(){
+        manage_fee_main_swiper = new Swiper('#rent-update-main-table', {
+            scrollbar: '.swiper-scrollbar',
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            //mousewheelControl: true,
+            freeMode: true,
+            scrollbarHide:false,
+            preventClicksPropagation:false
+        });
+
+        manage_fee.swipers={
+            manage_fee_main_swiper:manage_fee_main_swiper
+        };
+    };
+
+    manage_fee.table_init=function(){
+        $(".ys-table-main").on("mouseenter","tr",function(e){
+            var index=$(this).index();
+            var parentTagName=$(this).parent().get(0).tagName;
+            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                $(this).find("tr").eq(index).addClass("hover");
+            });
+        });
+
+        $(".ys-table-main").on("mouseleave","tr",function(e){
+            var index=$(this).index();
+            var parentTagName=$(this).parent().get(0).tagName;
+            $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+                $(this).find("tr").eq(index).removeClass("hover");
+            });
+
+        });
+
+        //页面事件
+        //这里暂时先禁掉 table的 tab键
+        $(".table").find("input").attr("tabIndex","-1");
+
+
+        $(".table").on("click",".td-input-wrapper",function(e){
+
+            $(".table td").removeClass("active");
+            $(this).closest("td").addClass("active");
+
+            $(this).find("input").focus();
+
+
+        });
+
+        $("#manage-fee").on("click",function(e){
+            if($(e.target).closest("div").hasClass("td-input-wrapper")||$(e.target).closest("div").hasClass("td-range-input")){
+                return
+            }else{
+                $(".table td").removeClass("active");
+            }
+        });
+
+    };
+
+    manage_fee.destroy=function(){
+        manage_fee_main_swiper.destroy(true,true);
+    };
+
+    manage_fee.init=function(){
+        manage_fee.swiper_init();
+        manage_fee.table_init();
+    };
+
+    return manage_fee;
+})(jQuery,manage_fee||{});
 
 var dataTool=angular.module("dataTool",[]);
 dataTool.controller("dataIndexController",['$rootScope', '$scope',"dataIndexData","paginatorService","$timeout","$location","$filter",
@@ -943,7 +1019,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
     }]);
 
 
-dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootScope,$scope){
+dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout',function($rootScope,$scope,$timeout){
     var self=this;
 
     self.mall={
@@ -1022,6 +1098,35 @@ dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootSco
 
     console.log("data fee controller");
 
+    function _checkErrot($e){
+        var $this=$e;
+        var errorInfo="请输入正确的数据格式";
+        if($this.hasClass("ng-invalid")){
+            if(($this).hasClass("ng-invalid-number")){
+                errorInfo="请输入有效数字";
+            }
+            $this.parent(".td-input-wrapper").append("<em class='error-msg'>"+errorInfo+"</em>");
+        }else{
+            $this.parent().find("em.error-msg").remove();
+        }
+    };
+
+
+    $(".table").on("change","input",function(e){
+        console.log("change------");
+        _checkErrot($(e.target));
+    });
+
+    $timeout(function(){
+        manage_fee.init();
+
+        amp_main.leftPanel_update();
+    },200)
+
+
+    $scope.$on("$destroy", function() {
+        manage_fee.destroy();
+    });
 
 }]);
 

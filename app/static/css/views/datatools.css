@@ -377,7 +377,7 @@ tr>td.active .num-input span.number-format{display: none;}
     margin-top: -4px;
     background-position: -170px -261px;
 }
-.td-input-wrapper em.error-msg, .input-wrapper em.error-msg{display: none;position: absolute;height:16px;top:-22px;z-index:999;right:0;margin:0;padding:0 5px; background-color:rgba(33,33,33,0.78);color:#fff;font-size:12px;line-height: 16px;}
+.td-input-wrapper em.error-msg, .input-wrapper em.error-msg{display: none;position: absolute;height:16px;min-width:98px;top:-22px;z-index:999;right:0;margin:0;padding:0 5px; background-color:rgba(33,33,33,0.78);color:#fff;font-size:12px;line-height: 16px;}
 .td-input-wrapper em.error-msg:before, .input-wrapper em.error-msg:before{position: absolute;top:15px;right:0;display: block;border:solid 10px transparent;border-width:6px 0 0 8px;border-top-color: rgba(33,33,33,0.78);content:" ";}
 .td-input-wrapper:hover em.error-msg, .input-wrapper:hover em.error-msg{display: block;}
 /*td status*/
@@ -446,7 +446,7 @@ tr>td span.number-format{display: block;width:100%;}
     background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
 
 #rent-update-table-wrapper  .table td input.ng-invalid~span.number-format:before{right:13px;}
-#rent-update-table-wrapper .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:13px;}
+#rent-update-table-wrapper .td-input-wrapper em.error-msg,#rent-update-table-wrapper .input-wrapper em.error-msg{top:1px;right:13px;}
 
 #rent-first-year-set .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:1px;}
 #rent-affect-table-wrapper .table td input.ng-invalid~span.number-format:before{right:13px;}
@@ -503,7 +503,7 @@ tr>td span.number-format{display: block;width:100%;}
 #manage-fee .amp-table td span.td-range-addon{display: block;float:left;height:28px;line-height:28px;color:#8592a3;margin-left:12px;}
 
 #manage-fee .amp-table>tbody>tr>th,#manage-fee .amp-table>tbody>tr>td,
-#manage-fee .amp-table>tfoot>tr>th, #manage-fee .amp-table>tfoot>tr>td{border-top:0;border-bottom:0;}
+#manage-fee .amp-table>tfoot>tr>th, #manage-fee .amp-table>tfoot>tr>td{border-top:0;border-bottom:0;overflow: visible;}
 #manage-fee .table>tbody+tbody{border-top:solid 1px #ddd;}
 
 #manage-fee #rent-update-main-table th,#manage-fee #rent-update-main-table td{width:182px;border-right:0;}
@@ -521,8 +521,15 @@ tr>td span.number-format{display: block;width:100%;}
 #manage-fee .td-opt button:hover>em.ys-icon-add{background-position:-130px -243px;}
 #manage-fee .td-opt button:hover>em.ys-icon-remove{background-position:-90px -198px;}
 
+#manage-fee  .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
+#manage-fee .table td input.ng-invalid{border:solid 2px #ff3030;}
+#manage-fee .table td input.ng-invalid~span.number-format{border:solid 2px #ff3030;}
+#manage-fee .table td input.ng-invalid~span.number-format:before{display: block;position: absolute;width:24px;height:24px;top:0;right:0;content:" ";
+    background-image: url(../../images/icon.png);background-repeat: no-repeat;background-position:-331px -198px;}
 
 
+#manage-fee  #rent-update-table-wrapper  .table td input.ng-invalid~span.number-format:before{right:0;}
+#manage-fee  #rent-update-table-wrapper .td-input-wrapper em.error-msg{top:-22px;right:0;}
 
 
 
