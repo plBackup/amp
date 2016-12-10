@@ -284,7 +284,7 @@ var manage_fee=(function($,mf){
             //mousewheelControl: true,
             freeMode: true,
             scrollbarHide:false,
-            preventClicksPropagation:false
+            preventClicksPropagation:false,
         });
 
         manage_fee.swipers={
@@ -293,6 +293,13 @@ var manage_fee=(function($,mf){
     };
 
     manage_fee.table_init=function(){
+        document.onkeydown = function(){
+            console.log(event.keyCode);
+            if(event.keyCode == 13||event.keyCode == 9) {
+                return false;
+            }
+        };
+
         $(".ys-table-main").on("mouseenter","tr",function(e){
             var index=$(this).index();
             var parentTagName=$(this).parent().get(0).tagName;
@@ -313,16 +320,58 @@ var manage_fee=(function($,mf){
         //页面事件
         //这里暂时先禁掉 table的 tab键
         $(".table").find("input").attr("tabIndex","-1");
-
+        //$(".table").find(".td-input-wrapper").attr("tabIndex","1");
 
         $(".table").on("click",".td-input-wrapper",function(e){
-
             $(".table td").removeClass("active");
             $(this).closest("td").addClass("active");
-
             $(this).find("input").focus();
 
+        });
 
+        //回车向下输入
+        $(".table").on("keydown",function(e){
+            console.log(e)
+            if(e.keyCode==13 && e.target.nodeName.toLowerCase()==="input"){
+                console.log("swiper----------");
+                var $curInput=$(e.target);
+                var trIndex= $curInput.closest("tr").index();
+                var tdIndex= $curInput.closest("td").index();
+                var th_len=parseInt($curInput.closest("tr").find("th").length);
+                console.log(trIndex+"--"+tdIndex);
+                 $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).find(".td-input-wrapper").trigger("click");
+
+            }
+            if(e.keyCode==9&& e.target.nodeName.toLowerCase()==="input"){
+                var $curInput=$(e.target);
+                var trIndex= $curInput.closest("tr").index();
+                var tdIndex= $curInput.closest("td").index();
+                var th_len=parseInt($curInput.closest("tr").find("th").length);
+                console.log(th_len);
+                console.log(trIndex+"--"+tdIndex);
+                console.log($curInput.closest("tbody").find("tr").eq(trIndex).find("td").eq(tdIndex-th_len).find(".td-input-wrapper"))
+                $curInput.closest("tbody").find("tr").eq(trIndex).find("td").eq(tdIndex-th_len+1).find(".td-input-wrapper").trigger("click");
+
+            }
+        });
+
+        //这里禁止掉跨页面td的点击事件
+        $("#rent-update-main-table tbody").on("click","td",function(e){
+            //e.stopPropagation();
+            var td_width=parseInt($(this).css("width"));
+            var td_offset=parseInt($(this).position().left);
+            var translate=manage_fee.swipers.manage_fee_main_swiper.translate;
+            var cont_width=manage_fee.swipers.manage_fee_main_swiper.width;
+
+            if(td_offset+td_width+translate>cont_width){
+                manage_fee.swipers.manage_fee_main_swiper.setWrapperTranslate(translate-160);
+
+                return false;
+            }else{
+                /* $(this).find("span.span-editable").addClass("focus");
+                 $(this).find("span.span-editable").focus();*/
+
+            }
         });
 
         $("#manage-fee").on("click",function(e){
@@ -665,7 +714,6 @@ dataTool.controller("dataSetController",['$rootScope', '$scope','$timeout',"rpgS
 
         $timeout(function(){
             rpg_set.init();
-
             amp_main.leftPanel_update();
         },200)
 
@@ -1215,7 +1263,12 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manag
         $.each(self.fee.updateRate,function(i,e){
             var pushData={year:lastYear+1,value:0};
             e.value.push(pushData);
-        })
+        });
+        console.log(manage_fee.swipers.manage_fee_main_swiper);
+        $timeout(function(){
+            manage_fee.swipers.manage_fee_main_swiper.update();
+        },200);
+
     };
 
     self.fee.removeYear=function(){
@@ -1231,6 +1284,9 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manag
                 e.value[0]=oriData;
             })
         }
+        $timeout(function(){
+            manage_fee.swipers.manage_fee_main_swiper.update();
+        },200);
     };
 
     self.add=function(type){
@@ -1297,6 +1353,7 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manag
     $(".table").on("change","input",function(e){
         console.log("change------");
         _checkErrot($(e.target));
+
     });
 
     $timeout(function(){

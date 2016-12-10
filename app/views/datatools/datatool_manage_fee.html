@@ -72,8 +72,9 @@
                     </td>
                     <td>
                         <div class="td-opt" ng-if="$index==(fCtrl.mall.nonMainShop.feeStandard.length-1)">
-                            <button class="td-opt-add" ng-click="fCtrl.add('nonMainShop')"><em class="ys-icon ys-icon-add"></em></button>
+                            <button class="td-opt-add" ng-click="fCtrl.add('nonMainShop')" ><em class="ys-icon ys-icon-add"></em></button>
                             <button class="td-opt-remove" ng-click="fCtrl.remove('nonMainShop')"><em class="ys-icon ys-icon-remove"></em></button>
+
                         </div>
                     </td>
                 </tr>
@@ -171,7 +172,7 @@
                                 <tbody>
                                 <tr ng-repeat="item in fCtrl.fee.updateRate">
                                     <td ng-repeat="v in item.value">
-                                        <div class="td-input-wrapper num-input" >
+                                        <div class="td-input-wrapper num-input" tabindex=122>
                                             <input type="number" placeholder="/" value="" ng-model="v.value">
                                             <span class="number-format">{{v.value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
@@ -191,8 +192,8 @@
 
     <div class="amp-block-pd bottom-block clearfix">
             <div class="btn-wrapper pull-right">
-                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="fCtrl.setSave()"  style="float:right;margin-left:20px;">保存</a>
-                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-save" ng-click="fCtrl.setReset()" style="float:right;">重置</a>
+                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn ys-tips" id="btn-create" ng-click="fCtrl.setSave()"  style="float:right;margin-left:20px;" tabindex="-1">保存</a>
+                <a ng-disabled="feeForm.$invalid" class="btn btn-default amp-btn amp-btn-reverse ys-tips" id="btn-save" ng-click="fCtrl.setReset()" style="float:right;" tabindex="-1>重置</a>
             </div>
      </div>
     </form>
