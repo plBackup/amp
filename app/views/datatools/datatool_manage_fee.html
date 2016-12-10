@@ -9,13 +9,19 @@
     </div><!--amp-content-header-->
 
     <form name="feeForm">
-    <div class="amp-block clearfix">
+    <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
             <h3 class="col-xs-8">MALL物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
         </div>
 
         <div class="amp-table-wrapper">
-            <table class="table amp-table ampt-table-no-bordered">
+            <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
+                <colgroup>
+                    <col width="12%">
+                    <col width="36%">
+                    <col width="36%">
+                    <col width="12%">
+                </colgroup>
                 <tbody>
                     <tr>
                         <th><span>主力店</span></th>
@@ -56,7 +62,7 @@
                         </div>
                     </td>
                     <td>
-                        <div class="td-opt" ng-if="$index==(fCtrl.mall.unMainShop.feeStandard.length)">
+                        <div class="td-opt" ng-if="$index==(fCtrl.mall.nonMainShop.feeStandard.length-1)">
                             <button class="td-opt-add"><em class="amp-icon amp-icon-add"></em></button>
                             <button class="td-opt-minus"><em class="amp-icon amp-icon-minus"></em></button>
                         </div>
@@ -68,15 +74,22 @@
         </div>
     </div><!--ys-block-->
 
-    <div class="amp-block clearfix">
+    <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
             <h3 class="col-xs-8">商业街 物业管理费标准<em>(单位:元/月/m&sup2)</em></h3>
         </div>
             <div class="amp-table-wrapper">
-                <table class="table amp-table ampt-table-no-bordered">
+                <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
+                    <colgroup>
+                        <col width="12%">
+                        <col width="36%">
+                        <col width="36%">
+                        <col width="12%">
+                    </colgroup>
+
                     <tbody>
                     <tr ng-repeat="fee in fCtrl.street.feeStandard">
-                        <th><span ng-if="$index==0">非主力店</span></th>
+                        <th><span ng-if="$index==0">商业街</span></th>
                         <td>
                             <label>面积</label>
                             <div class="td-range-input">
@@ -100,7 +113,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="td-opt" ng-if="$index==(fCtrl.unMainShop.feeStandard.length)">
+                            <div class="td-opt" ng-if="$index==(fCtrl.street.feeStandard.length-1)">
                                 <button class="td-opt-add" ng-click="fCtrl.add('unMainShop')"><em class="amp-icon amp-icon-add"></em></button>
                                 <button class="td-opt-minus" ng-click="fCtrl.remove('unMainShop')"><em class="amp-icon amp-icon-minus"></em></button>
                             </div>
@@ -112,7 +125,7 @@
             </div>
     </div><!--ys-block-->
 
-    <div class="amp-block clearfix">
+    <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
             <h3 class="col-xs-8">物业费递增率</h3>
         </div>
@@ -136,8 +149,8 @@
                         <div class="swiper-slide">
                             <table class="table table-right-bordered amp-table table-hover"  style="width:1200px">
                                 <thead>
-                                <tr ng-repeat="item in fCtrl.fee.updateRate">
-                                   <th ng-repeat="v in item.value"><span>{{v.year}}</span></th>
+                                <tr>
+                                   <th ng-repeat="v in fCtrl.fee.updateRate[0].value"><span>{{v.year}}</span></th>
                                     <th>
                                         <div class="td-opt">
                                             <button class="td-opt-add" ng-click="fCtrl.fee.addYear();"><em class="amp-icon amp-icon-add"></em></button>

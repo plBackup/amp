@@ -970,7 +970,8 @@ dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootSco
             },
         ],
     };
-
+    console.log(self.mall.nonMainShop.feeStandard.length);
+    console.log("---------------****-------------")
     var curYear=(new Date()).getFullYear();
     self.fee={};
     self.fee.updateRate=[
