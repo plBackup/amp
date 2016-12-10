@@ -948,7 +948,9 @@ dataTool.controller("dataFeeController",['$rootScope','$scope',function($rootSco
 
     self.mall={
         mainShop:{
-            feeStandard:0
+            feeStandard:{
+                value:0,
+            }
         },
         nonMainShop:{
             feeStandard:[
