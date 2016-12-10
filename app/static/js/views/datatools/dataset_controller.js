@@ -259,21 +259,39 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
             }
         };
 
-
+        document.onkeydown = function(){
+            console.log(event.keyCode);
+            if(event.keyCode == 13||event.keyCode == 9) {
+                return false;
+            }
+        };
         //页面事件
         $(".page-main").on("click",function(e){
            // e.stopPropagation();
-            $(".table td").removeClass("active");
+            if($(e.target).closest("div").hasClass("td-input-wrapper")||$(e.target).closest("div").hasClass("td-range-input")){
+                return
+            }else{
+                $(".table td").removeClass("active");
+            }
         });
 
-        $(".table").on("click","td",function(e){
+        /*$(".table").on("click","td",function(e){
             e.stopPropagation();
             $(".table td").removeClass("active");
             $(this).addClass("active");
             $(this).find("input").focus();
+        });*/
+
+        $(".table").on("click",".td-input-wrapper",function(e){
+
+            $(".table td").removeClass("active");
+
+            $(this).closest("td").addClass("active");
+            $(this).find("input").focus();
+
         });
         //回车向下输入
-        $(".table").on("keyup",function(e){
+        $(".table").on("keydown",function(e){
             console.log("e-------------");
             console.log(e.target);
             if(e.keyCode==13 && e.target.nodeName.toLowerCase()==="input"){
@@ -288,23 +306,34 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
                     console.log(rowSpan);
                     console.log(trIndex+"--"+tdIndex);
                     /*if()*/
-                    $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-1-th_len).trigger("click");
+                    $curInput.closest(".table").find("tr").eq(trIndex+1).find("td").eq(tdIndex-1-th_len).find(".td-input-wrapper").trigger("click");
 
                 }else{
                     console.log(rowSpan);
                     console.log(trIndex+"--"+tdIndex);
                     /*if()*/
                     if(parseInt($curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(0).attr("rowspan"))>1){
-                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len+1).trigger("click");
+                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len+1).find(".td-input-wrapper").trigger("click");
 
                     }else{
                         console.log("......")
                         console.log($curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len));
-                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).trigger("click");
+                        $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).find(".td-input-wrapper").trigger("click");
                     }
 
                 }
+            };
+            if(e.keyCode==9&& e.target.nodeName.toLowerCase()==="input"){
+                console.log("999")
+                var $curInput=$(e.target);
+                var trIndex= $curInput.closest("tr").index();
+                var tdIndex= $curInput.closest("td").index();
+                var th_len=parseInt($curInput.closest("tr").find("th").length);
+                console.log($(e.target).closest("td").next("td").find(".td-input-wrapper"))
+                $(e.target).closest("td").next("td").find(".td-input-wrapper").trigger("click");
+
             }
+
         });
 
         //这里禁止掉跨页面td的点击事件
@@ -314,14 +343,22 @@ dataSet.controller("dataSetController",['$rootScope', '$scope',"$location","rpgS
             var td_offset=parseInt($(this).position().left);
             var translate=rpgSet_table.swipers.rpgSet_table_main_swiper.translate;
             var cont_width=rpgSet_table.swipers.rpgSet_table_main_swiper.width;
-
             if(td_offset+td_width+translate>cont_width){
+                rpgSet_table.swipers.rpgSet_table_main_swiper.setWrapperTranslate(translate-160);
+
                 return false;
             }else{
-               /* $(this).find("span.span-editable").addClass("focus");
-                $(this).find("span.span-editable").focus();*/
+                /* $(this).find("span.span-editable").addClass("focus");
+                 $(this).find("span.span-editable").focus();*/
 
             }
+           /* if(td_offset+td_width+translate>cont_width){
+                return false;
+            }else{
+               /!* $(this).find("span.span-editable").addClass("focus");
+                $(this).find("span.span-editable").focus();*!/
+
+            }*/
         });
 
 

@@ -1141,29 +1141,66 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
          };*/
         //页面事件
         //这里暂时先禁掉 table的 tab键
+        document.onkeydown = function(){
+            console.log(event.keyCode);
+            if(event.keyCode == 13||event.keyCode == 9) {
+                return false;
+            }
+        };
         $(".table").find("input").attr("tabIndex","-1");
 
-
-        $(".table").on("click","td",function(){
-            $(".table td").removeClass("active");
-            $(this).addClass("active");
-            $(this).find("input").focus();
+        //页面事件
+        $("#irr-plan").on("click",function(e){
+            // e.stopPropagation();
+            if($(e.target).closest("div").hasClass("td-input-wrapper")||$(e.target).closest("div").hasClass("td-range-input")){
+                return
+            }else{
+                $(".table td").removeClass("active");
+            }
         });
 
+        $(".table").on("click",".td-input-wrapper",function(e){
+            $(".table td").removeClass("active");
+            $(this).closest("td").addClass("active");
+            $(this).find("input").focus();
+
+        });
+
+        $(".table").on("keydown",function(e){
+            if(e.keyCode==9&& e.target.nodeName.toLowerCase()==="input"){
+                console.log("999")
+                var $curInput=$(e.target);
+                var trIndex= $curInput.closest("tr").index();
+                var tdIndex= $curInput.closest("td").index();
+                var th_len=parseInt($curInput.closest("tr").find("th").length);
+                console.log($(e.target).closest("td").next("td").find(".td-input-wrapper"))
+                $(e.target).closest("td").next("td").find(".td-input-wrapper").trigger("click");
+
+            }
+        });
         $("#irr-plan-main-table tbody").on("click","td",function(e){
             //e.stopPropagation();
             var td_width=parseInt($(this).css("width"));
             var td_offset=parseInt($(this).position().left);
             var translate=irr_plan.swipers.irr_plan_main_swiper.translate;
             var cont_width=irr_plan.swipers.irr_plan_main_swiper.width;
-
             if(td_offset+td_width+translate>cont_width){
+                irr_plan.swipers.irr_plan_main_swiper.setWrapperTranslate(translate-160);
+
                 return false;
             }else{
-                /*$(this).find("span.span-editable").addClass("focus");
+                /* $(this).find("span.span-editable").addClass("focus");
                  $(this).find("span.span-editable").focus();*/
 
             }
+/*
+            if(td_offset+td_width+translate>cont_width){
+                return false;
+            }else{
+                /!*$(this).find("span.span-editable").addClass("focus");
+                 $(this).find("span.span-editable").focus();*!/
+
+            }*/
         });
 
         function _checkErrot($e){
