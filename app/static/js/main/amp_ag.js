@@ -204,6 +204,9 @@ ampApp.config(function($stateProvider,$urlRouterProvider) {
                 rpgSetData: function(dataSetService) {
                     return dataSetService.getSetData();
                 },
+                rpgresultData: function(dataSetResultService) {
+                    return dataSetResultService.getSetData();
+                },
                 data: ['$q','$timeout', function($q,$timeout){
                     var defer = $q.defer();
                     $timeout(function(){

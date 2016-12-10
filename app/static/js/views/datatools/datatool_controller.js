@@ -419,7 +419,8 @@ var rpg_set=(function($,rs){
         }
         rpg_set.destroy=function(){
         $.each(rpg_set.swipers,function(k,v){
-            k.destroy(true,true);
+
+            v.destroy(true,true);
         })
     };
 
@@ -617,62 +618,13 @@ dataTool.controller("dataRightController",['$rootScope', '$scope',
 
     }]);
 
-dataTool.controller("dataSetController",['$rootScope', '$scope','$timeout',"rpgSetData",
-    function($rootScope, $scope,$timeout,rpgSetData) {
+dataTool.controller("dataSetController",['$rootScope', '$scope','$timeout',"rpgSetData","rpgresultData",
+    function($rootScope, $scope,$timeout,rpgSetData,rpgresultData) {
         var self=this;
         self.setData=rpgSetData[0].values;
 
-        self.rpgResultData={
-            floors:[
-                {
-                    floorIndex:"B1",
-                    yearly:[1,3,4,5],
-
-                },
-                {
-                    floorIndex:"F1",
-                    yearly:[2,5,6,8],
-
-                }
-            ],
-            floorsAvg:[
-                {
-                    floorIndex:"B1",
-                    yearly:[4,56,8,9],
-
-                },
-                {
-                    floorIndex:"F1",
-                    yearly:[4,5,89,4],
-
-                }
-            ],
-            form:[
-                {
-                    formName:"超市",
-                    yearly:[3,5,7,9],
-
-
-                },
-                {
-                    formName:"儿童",
-                    yearly:[9,6,9,4],
-
-                }
-            ],
-            formAvg:[
-                {
-                    formName:"超市",
-                    yearly:[4,6,89,34],
-
-                },
-                {
-                    formName:"儿童",
-                    yearly:[2,34,7,90],
-
-                }
-            ],
-        };
+        self.rpgResultData=rpgresultData.rpgResultData;
+        console.log(rpgresultData);
 
         self.getAvg=function(data){
             var sum=0;
