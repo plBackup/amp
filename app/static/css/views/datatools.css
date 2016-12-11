@@ -532,8 +532,15 @@ tr>td span.number-format{display: block;width:100%;}
 #manage-fee  #rent-update-table-wrapper .td-input-wrapper em.error-msg{top:-22px;right:0;}
 
 
+#rgp-set-index .amp-table>tbody>tr>td.td-sum,#rgp-set-index .amp-table>tbody>tr>td.td-sum>span{color:#55bbe6;font-style:italic;}
 
+#rgp-set-index .amp-block-title em.em-unit {
+    display: inline-block;
+    margin-left: 26px;
+    color: #8592a3;
+    font-size: 13px;
+}
 
-
-
-
+#rgp-set-index .amp-table>tbody>tr>th,#rgp-set-index .amp-table>tbody>tr>td,#rgp-set-index .amp-table>tfoot>tr>th, .amp-table>tfoot>tr>td{
+    border-bottom:0;border-top:0;
+}

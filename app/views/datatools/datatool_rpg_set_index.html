@@ -55,7 +55,7 @@
 
     <div class="amp-block-pd">
         <div class="amp-block-title">
-            <h3 class="col-xs-3">各楼层总租金</h3>
+            <h3 class="col-xs-3">各楼层总租金<em class="em-unit">(单位:元/月/m²)</em></h3>
         </div>
         <div class="amp-table-wrapper-swiper" id="rpg-floor-table-wrapper">
 
@@ -114,7 +114,7 @@
 
     <div class="amp-block-pd">
         <div class="amp-block-title">
-            <h3 class="col-xs-3">各楼层平均租金</h3>
+            <h3 class="col-xs-3">各楼层平均租金<em class="em-unit">(单位:元/月/m²)</em></h3>
         </div>
         <div class="amp-table-wrapper-swiper" id="rpg-floor-avg-table-wrapper">
 
@@ -156,8 +156,8 @@
                                     <td ng-repeat="value in floor.yearly track by $index" class="text-right">{{value|number:2}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right"><span>{{sCtrl.getColAvg("avg","floorsAvg") | number:2}}</span></td>
-                                    <td ng-repeat="value in sCtrl.rpgResultData.floors[0].yearly track by $index" class="text-right">{{sCtrl.getColAvg($index,"floorsAvg") | number:2}}</td>
+                                    <td class="td-sum text-right"><span>{{sCtrl.getColAvg("avg","floorsAvg") | number:2}}</span></td>
+                                    <td ng-repeat="value in sCtrl.rpgResultData.floors[0].yearly track by $index" class="td-sum text-right">{{sCtrl.getColAvg($index,"floorsAvg") | number:2}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -172,7 +172,7 @@
 
     <div class="amp-block-pd">
         <div class="amp-block-title">
-            <h3 class="col-xs-3">各业态总租金</h3>
+            <h3 class="col-xs-3">各业态总租金<em class="em-unit">(单位:元/月/m²)</em></h3>
         </div>
         <div class="amp-table-wrapper-swiper" id="rpg-form-table-wrapper">
 
@@ -214,8 +214,8 @@
                                     <td ng-repeat="value in form.yearly track by $index" class="text-right">{{value|number:2}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right"><span>{{sCtrl.getColAvg("avg","form") | number:2}}</span></td>
-                                    <td ng-repeat="value in sCtrl.rpgResultData.form[0].yearly track by $index" class="text-right">{{sCtrl.getColAvg($index,"form") | number:2}}</td>
+                                    <td class="td-sum text-right"><span>{{sCtrl.getColAvg("avg","form") | number:2}}</span></td>
+                                    <td ng-repeat="value in sCtrl.rpgResultData.form[0].yearly track by $index" class="td-sum text-right">{{sCtrl.getColAvg($index,"form") | number:2}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -230,7 +230,7 @@
 
     <div class="amp-block-pd">
         <div class="amp-block-title">
-            <h3 class="col-xs-3">各业态平均租金</h3>
+            <h3 class="col-xs-3">各业态平均租金<em class="em-unit">(单位:元/月/m²)</em></h3>
         </div>
         <div class="amp-table-wrapper-swiper" id="rpg-form-avg-table-wrapper">
 
@@ -272,8 +272,8 @@
                                     <td ng-repeat="value in form.yearly track by $index" class="text-right">{{value|number:2}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right"><span>{{sCtrl.getColAvg("avg","formAvg") | number:2}}</span></td>
-                                    <td ng-repeat="value in sCtrl.rpgResultData.form[0].yearly track by $index" class="text-right">{{sCtrl.getColAvg($index,"formAvg") | number:2}}</td>
+                                    <td class="td-sum text-right"><span>{{sCtrl.getColAvg("avg","formAvg") | number:2}}</span></td>
+                                    <td ng-repeat="value in sCtrl.rpgResultData.form[0].yearly track by $index" class="td-sum text-right">{{sCtrl.getColAvg($index,"formAvg") | number:2}}</td>
                                 </tr>
                                 </tbody>
                             </table>
