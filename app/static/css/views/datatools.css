@@ -469,7 +469,7 @@ tr>td span.number-format{display: block;width:100%;}
 }
 
 #compressed-info{height: 32px;  line-height: 32px;font-size: 13px;}
-#compressed-info>input{height: 32px; line-height: 26px; border: 0; margin-left: 6px; border-radius: 2px;  padding-left: 8px;color:#333;}
+#compressed-info>input{height: 32px; line-height: 26px; border: 0; margin-left: 6px; border-radius: 2px;  padding-left: 8px;color:#333;width:98px;}
 
 
 /*rpgset update*/
