@@ -301,11 +301,15 @@ var manage_fee=(function($,mf){
         };
 
         $(".ys-table-main").on("mouseenter","tr",function(e){
+
             var index=$(this).index();
             var parentTagName=$(this).parent().get(0).tagName;
             $(this).closest(".ys-table-main").find(".amp-table >"+parentTagName).each(function(i,e){
+
                 $(this).find("tr").eq(index).addClass("hover");
+
             });
+
         });
 
         $(".ys-table-main").on("mouseleave","tr",function(e){
@@ -340,7 +344,6 @@ var manage_fee=(function($,mf){
                 var th_len=parseInt($curInput.closest("tr").find("th").length);
                 console.log(trIndex+"--"+tdIndex);
                  $curInput.closest("tbody").find("tr").eq(trIndex+1).find("td").eq(tdIndex-th_len).find(".td-input-wrapper").trigger("click");
-
             }
             if(e.keyCode==9&& e.target.nodeName.toLowerCase()==="input"){
                 var $curInput=$(e.target);
@@ -351,7 +354,6 @@ var manage_fee=(function($,mf){
                 console.log(trIndex+"--"+tdIndex);
                 console.log($curInput.closest("tbody").find("tr").eq(trIndex).find("td").eq(tdIndex-th_len).find(".td-input-wrapper"))
                 $curInput.closest("tbody").find("tr").eq(trIndex).find("td").eq(tdIndex-th_len+1).find(".td-input-wrapper").trigger("click");
-
             }
         });
 
@@ -449,7 +451,7 @@ var rpg_set=(function($,rs){
         };
     };
 
-        rpg_set.table_init=function() {
+        rpg_set.table_init=function(){
             $(".ys-table-main").on("mouseenter", "tr", function (e) {
                 var index = $(this).index();
                 var parentTagName = $(this).parent().get(0).tagName;
@@ -464,9 +466,9 @@ var rpg_set=(function($,rs){
                 $(this).closest(".ys-table-main").find(".amp-table >" + parentTagName).each(function (i, e) {
                     $(this).find("tr").eq(index).removeClass("hover");
                 });
-
             });
-        }
+        };
+
         rpg_set.destroy=function(){
         $.each(rpg_set.swipers,function(k,v){
 

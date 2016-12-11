@@ -448,7 +448,7 @@ tr>td span.number-format{display: block;width:100%;}
 #rent-update-table-wrapper  .table td input.ng-invalid~span.number-format:before{right:13px;}
 #rent-update-table-wrapper .td-input-wrapper em.error-msg,#rent-update-table-wrapper .input-wrapper em.error-msg{top:1px;right:13px;}
 
-#rent-first-year-set .td-input-wrapper em.error-msg, .input-wrapper em.error-msg{top:1px;right:1px;}
+#rent-first-year-set .td-input-wrapper em.error-msg, #rent-first-year-set .input-wrapper em.error-msg{top:1px;right:1px;}
 #rent-affect-table-wrapper .table td input.ng-invalid~span.number-format:before{right:13px;}
 #rent-affect-table-wrapper .td-input-wrapper em.error-msg{top:1px;right:13px;}
 #rent-affect-floors tr>td .td-input-wrapper>span.number-format{width:100%;}
