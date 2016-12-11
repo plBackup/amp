@@ -51,7 +51,7 @@ html,body{padding:0;min-width: 100%;min-height:650px;height:100vh;}
 #ys-amp-main .amp-create-project h3{height: 54px;line-height: 54px;font-size: 35px;color:#333;}
 #ys-amp-main .amp-create-project p{margin:0;line-height: 32px;color:#737e8c}
 
-#ys-amp-main .table-hover>tbody>tr:hover { background-color: #f3f4f8; }
+#ys-amp-main .table-hover>tbody>tr:hover { background-color: #f3f4f8; cursor:pointer;}
 
 #amp-projects-table .text-note{font-weight:bold;}
 
@@ -142,3 +142,4 @@ span.ys-icon-dropdown{display: block;
 }
 
 #ys-amp-create .input-group>input.ng-invalid{border-left:solid 2px #ff3030;}
+

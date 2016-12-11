@@ -27,12 +27,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="project in listCtrl.projects" data-link="amp_main_ag.html?projectid={{$index}}#/noi" ng-click='listCtrl.linkTo("amp_main_ag.html?projectid="+$index+"#/noi")'>
+                <tr ng-repeat="project in listCtrl.projects">
                     <th>
                         <h5 id={{$index}}>{{project.name}}</h5>
                         <span class="t-sub text-left">{{project.position}}</span>
                         <div class="t-opt">
-                            <span><a href="#/update/{{$index}}">修改信息</a></span>
+                            <span><a href="amp_main_ag.html?projectid={{$index}}#/noi">进入详情</a>|<a href="#/update/{{$index}}">修改信息</a></span>
                         </div>
                     </th>
                     <td>
@@ -59,9 +59,9 @@
                                 <h5 class="text-note">{{project.pm.name|default:"-"}}</h5>
                                 <span class="t-sub">{{project.pm.title|default:"-"}}</span>
                                 <span class="t-sub">团队人数<i>{{project.pm.teamNum}}</i></span>
-                                <!--<div class="t-opt">
+                                <div class="t-opt">
                                     <span class="not-allowed"><a href="#">联系他</a>|<a href="#">查看简历</a></span>
-                                </div>-->
+                                </div>
                             </div>
                         </div>
                     </td>

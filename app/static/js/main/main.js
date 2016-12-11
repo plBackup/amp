@@ -250,13 +250,17 @@ mainApp.controller('MainController', function($rootScope, $scope) {
 
 });
 
-mainApp.controller("pjListController",["$rootScope","$scope","projects",function($rootScope,$scope,projects){
+mainApp.controller("pjListController",["$rootScope","$scope","$window","projects",function($rootScope,$scope,$window,projects){
     var self=this;
     if(!$rootScope.projects){
         $rootScope.projects=projects;
     }
     self.projects=$rootScope.projects;
     $(".ys-tips").tooltip();
+
+    self.linkTo=function(link){
+        $window.location.href=link;
+    }
 }]);
 mainApp.controller("testCtrl",function($rootScope,$scope){
     $scope.name="txt";
