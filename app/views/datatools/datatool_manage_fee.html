@@ -173,7 +173,7 @@
                                 <tr ng-repeat="item in fCtrl.fee.updateRate">
                                     <td ng-repeat="v in item.value">
                                         <div class="td-input-wrapper num-input" tabindex=122>
-                                            <input type="number" placeholder="/" value="" ng-model="v.value">
+                                            <input type="number" placeholder="/" value="" ng-model="v.value" ng-paste="fCtrl.pasteEv($event,v)" >
                                             <span class="number-format">{{v.value|number:2}}<i class="unit-addon">%</i></span>
                                         </div>
                                     </td>

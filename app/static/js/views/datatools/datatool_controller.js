@@ -384,6 +384,7 @@ var manage_fee=(function($,mf){
 
     };
 
+
     manage_fee.destroy=function(){
         manage_fee_main_swiper.destroy(true,true);
     };
@@ -1392,6 +1393,34 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manag
         _checkErrot($(e.target));
 
     });
+
+    self.pasteEv=function($event,v){
+        console.log("-------------------")
+        console.log($event);
+        $event.preventDefault();
+        var pastedText = undefined;
+        if (window.clipboardData && window.clipboardData.getData) { // IE
+            pastedText = window.clipboardData.getData('Text');
+        } else {
+            pastedText = $event.originalEvent.clipboardData.getData('Text');//e.clipboardData.getData('text/plain');
+        }
+        console.log(pastedText);
+        pastedText=pastedText.replace(/,/g, "")
+        console.log(pastedText)
+        var pastedNum=parseFloat(pastedText)
+        $timeout(function(){
+            $scope.$apply(function(){
+                if(pastedNum!==NaN && typeof pastedNum ==="number"){
+                    v.value=pastedNum;
+                }else{
+                    //v.value=pastedText+" e";
+                }
+            });
+        });
+        return false;
+        //var data=$($event.target).val();
+        //console.log("data---"+data);
+    };
 
     $timeout(function(){
         manage_fee.init();
