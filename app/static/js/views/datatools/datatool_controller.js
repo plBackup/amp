@@ -1240,7 +1240,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         });
     }]);
 
-
 dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manageFeeData',function($rootScope,$scope,$timeout,manageFeeData){
     var self=this;
     //这里自己写数据绑定
@@ -1436,7 +1435,6 @@ dataTool.controller("dataFeeController",['$rootScope','$scope','$timeout','manag
     });
 
 }]);
-
 
 dataTool.controller("dataSimController",['$rootScope', '$scope',"simData","simChartData","$location","$timeout",
     function($rootScope, $scope,simData,simChartData,$location,$timeout) {
