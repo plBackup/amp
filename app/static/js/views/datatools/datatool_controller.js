@@ -1219,7 +1219,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             }
         };
 
-
         $(".table").on("change","input",function(e){
             _checkErrot($(e.target));
             $scope.$apply(
@@ -1228,8 +1227,6 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 }
             );
         });
-
-
 
         irr_plan.init();
         self.count();
