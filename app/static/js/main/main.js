@@ -258,7 +258,10 @@ mainApp.controller("pjListController",["$rootScope","$scope","$window","projects
     self.projects=$rootScope.projects;
     $(".ys-tips").tooltip();
 
-    self.linkTo=function(link){
+    self.linkTo=function($event,link){
+        if($event.target.nodeName.toLocaleLowerCase()=="a"){
+            return false;
+        }
         $window.location.href=link;
     }
 }]);

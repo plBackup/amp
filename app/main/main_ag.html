@@ -27,7 +27,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="project in listCtrl.projects" data-link="amp_main_ag.html?projectid={{$index}}#/noi" ng-click='listCtrl.linkTo("amp_main_ag.html?projectid="+$index+"#/noi")'>
+                <tr ng-repeat="project in listCtrl.projects" data-link="amp_main_ag.html?projectid={{$index}}#/noi" ng-click='listCtrl.linkTo($event,"amp_main_ag.html?projectid="+$index+"#/noi")'>
                     <th>
                         <h5 id={{$index}}>{{project.name}}</h5>
                         <span class="t-sub text-left">{{project.position}}</span>

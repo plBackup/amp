@@ -10,6 +10,8 @@ ampFilter.controller('monthFilterController', ['$rootScope', '$scope',"$timeout"
         /*    console.log("----------selected month----------------");
            console.log(self.curMonth);
             console.log(data);*/
+        console.log("...............");
+            console.log(data);
             $rootScope.$broadcast("noiMonthUpdate",data);
         };
 
