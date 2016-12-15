@@ -143,3 +143,15 @@ span.ys-icon-dropdown{display: block;
 
 #ys-amp-create .input-group>input.ng-invalid{border-left:solid 2px #ff3030;}
 
+.header-right{ position: absolute; top: 0; right:40px; margin-top: 0; padding-left: 22px; width: inherit; height: 44px; line-height: 44px; background-color: transparent;text-align:right; }
+
+.ys-figure{display: block;position: absolute;
+    top: 6px;left:0;width:32px;height:32px;border-radius:32px;background-image: url(../../images/main/figure.jpg);background-position: center center;background-repeat: no-repeat;background-size: contain;}
+
+#ys-user,#ys-logout{display:inline-block; position:relative;padding-left:20px;margin-left:20px;height:44px;line-height: 44px;color:#fff;text-decoration: none;font-size: 14px;cursor:pointer;}
+#ys-user:before,#ys-logout:before{display:block;position: absolute;width:14px;height:16px;top:50%;margin-top:-8px;left:0;background-image: url(../../images/icon.png);background-position:-40px -290px; background-repeat: no-repeat; content:" ";}
+#ys-logout:before{background-position:-88px -290px;}
+#ys-user:hover,#ys-logout:hover{color:#e64e4d;}
+#ys-user:hover:before{background-position:-64px -290px;}
+#ys-logout:hover:before{background-position:-111px -290px;}
+
