@@ -63,10 +63,14 @@
                     </div><!--col-xs-6-->
 
             </div>
-            <div class="amp-opt-block">
-                <button   ng-click="ctrl.saveCheck()"  type="submit" href="main.html" class="btn amp-btn amp-btn-lg amp-btn-save ys-tips"  id="btn-amp-create" data-toggle="tooltip" data-placement="top"  title="体验版数据为模拟数据，请勿引用">保存
-                    <em class="ys-amp-icon ys-icon-tips"style="margin-top: -11px;left: 50%;margin-left:145px;"></em>
-                </button>
+            <div class="amp-opt-block clearfix">
+                <div class="amp-btn-group col-xs-6 col-xs-offset-6">
+                    <button   ng-click="ctrl.cancel()"  type="submit" href="main.html" class="btn amp-btn amp-btn-lg amp-btn-save amp-btn-reverse"  id="btn-amp-cancel">取消
+                    </button>
+                    <button   ng-click="ctrl.saveCheck()"  type="submit" href="main.html" class="btn amp-btn amp-btn-lg amp-btn-save ys-tips"  id="btn-amp-create">保存
+                    </button>
+                </div>
+
                <!-- <em class="ys-amp-icon ys-icon-tips ys-tips" data-toggle="tooltip" data-placement="right" title="新建项目功能将于12月6日开通" style="margin-top: -11px;left: 50%;margin-left:145px;"></em>-->
             </div>
             </form>

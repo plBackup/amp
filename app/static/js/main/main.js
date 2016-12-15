@@ -314,6 +314,10 @@ mainApp.controller("pjCreateController",["$rootScope","$scope","$location",funct
         return menu==model;
     };
 
+    self.cancel=function(){
+        $location.path("/main");
+    };
+
     self.submit=function(){
         $rootScope.projects.push(self.project);
         $location.path("/main");
@@ -350,6 +354,10 @@ mainApp.controller("pjUpdateController",["$rootScope","$scope","$location","pid"
 
     self.isActive=function(menu,model){
         return menu==model;
+    };
+
+    self.cancel=function(){
+        $location.path("/main");
     };
 
     self.submit=function(){
