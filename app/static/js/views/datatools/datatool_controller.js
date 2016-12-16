@@ -1229,7 +1229,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
         });
 
         self.pasteEv=function($event,v){
-            console.log("-------------------")
+            console.log("-------------------");
             console.log($event);
             $event.preventDefault();
             var pastedText = undefined;
