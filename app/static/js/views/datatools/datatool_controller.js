@@ -1228,6 +1228,34 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             );
         });
 
+        self.pasteEv=function($event,v){
+            console.log("-------------------")
+            console.log($event);
+            $event.preventDefault();
+            var pastedText = undefined;
+            if (window.clipboardData && window.clipboardData.getData) { // IE
+                pastedText = window.clipboardData.getData('Text');
+            } else {
+                pastedText = $event.originalEvent.clipboardData.getData('Text');//e.clipboardData.getData('text/plain');
+            }
+            console.log(pastedText);
+            pastedText=pastedText.replace(/,/g, "")
+            console.log(pastedText)
+            var pastedNum=parseFloat(pastedText)
+            $timeout(function(){
+                $scope.$apply(function(){
+                    if(pastedNum!==NaN && typeof pastedNum ==="number"){
+                        v.value=pastedNum;
+                    }else{
+                        //v.value=pastedText+" e";
+                    }
+                });
+            });
+            return false;
+            //var data=$($event.target).val();
+            //console.log("data---"+data);
+        };
+
         irr_plan.init();
         self.count();
         amp_main.leftPanel_update();

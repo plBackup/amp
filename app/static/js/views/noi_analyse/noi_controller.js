@@ -16,6 +16,8 @@ noi.controller('noiController', ['$rootScope', '$scope',"noiAllData",
 
         self.noiData=noiAllData.noi[0].values;
         self.incomeData=noiAllData.income;
+        console.log("income data");
+        console.log(self.incomeData);
         self.feeData=noiAllData.fee;
         self.arrearageData=noiAllData.arrearage;
         self.chartData=noiAllData.chart;
