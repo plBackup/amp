@@ -824,8 +824,8 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
                 alert("请输入正确的退出年");
                 self.irrData[31].values[1].value=10;
             }else{
-                if(parseInt(self.irrData[31].values[1].value)>10 || parseInt(self.irrData[31].values[1].value)<=1){
-                    alert("请输入2-10年为退出年");
+                if(parseInt(self.irrData[31].values[1].value)>20 || parseInt(self.irrData[31].values[1].value)<=1){
+                    alert("请输入2-20年为退出年");
                     self.irrData[31].values[1].value=10;
                 }
             }
@@ -1070,11 +1070,19 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
             });
 
             //贷款利息
+            var loanYear=self.irrData[42].values[1].value;
             var loanRate=self.irrData[49].values[1].value;
             var loan=self.irrData[45].values[1].value;
 
+            console.log("loanYear----------");
+            console.log(loanYear);
             $.each(countData.loanRate,function(i,e){
-                e.value=loanRate*loan;
+                if((i+1)<=loanYear){
+                    e.value=loanRate*loan;
+                }else{
+                    e.value=0;
+                }
+
             });
 
             //无杠杆现金流
