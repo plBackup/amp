@@ -83,19 +83,19 @@ a:hover, a:focus, a:active{color:#2da8cc;outline: 0;}
         background-color:#5ab46e;font-size:15px;position: relative;z-index:99;}
 .amp-btn:hover, .amp-btn:focus, .amp-btn:active,.amp-btn:active:focus, .amp-btn:active:hover{background-color: #55a865;color:#fff;}
 
-.amp-btn.amp-btn-reverse{background-color:#fff;color:#59b46f;border:0;}
+.amp-btn.amp-btn-reverse{background-color:#4b5368;color:#59b46f;border:solid 1px #59b46f;}
 .amp-btn-lg{width:252px;min-width: 120px;}
 .amp-btn-lg:hover, .amp-btn-lg:focus, .amp-btn-lg:active,.amp-btn-lg:active:focus, .amp-btn-lg:active:hover{background-color:#5ab46e;color:#fff;}
 
 .amp-btn-lg.amp-btn-reverse:hover, .amp-btn-lg.amp-btn-reverse:focus, .amp-btn-lg.amp-btn-reverse:active,
-.amp-btn-lg.amp-btn-reverse:active:focus, .amp-btn-lg.amp-btn-reverse:active:hover{background-color:#f3f4f8;color:#59b46f;}
+.amp-btn-lg.amp-btn-reverse:active:focus, .amp-btn-lg.amp-btn-reverse:active:hover{background-color: #424a5d;color:#59b46f;}
 
 .amp-btn-lg:before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: 0; background: #55a865;border-radius:3px;
     -webkit-transform: scale(0); transform: scale(0); -webkit-transition-property: transform; transition-property: transform;
     -webkit-transition-duration: 0.3s; transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-out;  transition-timing-function: ease-out;
 }
-.amp-btn-lg.amp-btn-reverse:before{background:#f3f4f8;}
+.amp-btn-lg.amp-btn-reverse:before{background:#424a5d;}
 
 .amp-btn-lg:hover:before/*.amp-btn:focus:before, .amp-btn:active:before*/ {
     -webkit-transform: scale(1);
