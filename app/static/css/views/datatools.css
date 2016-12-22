@@ -1,5 +1,6 @@
 /*#rent-package*/
 #rent-package{}
+#rent-package .amp-table>tbody>tr>th,#rent-package .amp-table>tbody>tr>td,#rent-package .amp-table>tfoot>tr>th,#rent-package .amp-table>tfoot>tr>td{height:34px;line-height: inherit;padding:0 15px;}
 #rent-package .amp-table{}
 #rent-package .amp-table>thead>tr>th{text-align: left;}
 #rent-package .amp-table>tbody>tr:hover{cursor: pointer;}
@@ -486,7 +487,7 @@ tr>td span.number-format{display: block;width:100%;}
 #manage-fee{padding-bottom:80px;}
 #manage-fee .amp-content-header{margin-bottom:40px;}
 #manage-fee .amp-block-pd{margin-top:20px;}
-
+#manage-fee .amp-block-pd.bottom-block{background-color:#f2f5f7;border:0;}
 #manage-fee .amp-block-title em.em-unit{display: inline-block;margin-left:26px;color:#8592a3;font-size: 13px;}
 
 #manage-fee .amp-table{}
@@ -504,22 +505,29 @@ tr>td span.number-format{display: block;width:100%;}
 
 #manage-fee .amp-table>tbody>tr>th,#manage-fee .amp-table>tbody>tr>td,
 #manage-fee .amp-table>tfoot>tr>th, #manage-fee .amp-table>tfoot>tr>td{border-top:0;border-bottom:0;overflow: visible;}
+
+#manage-fee .amp-table>tbody>tr>th,#manage-fee .amp-table>tfoot>tr>th{padding-left:0;}
 #manage-fee .table>tbody+tbody{border-top:solid 1px #ddd;}
 
 #manage-fee #rent-update-main-table th,#manage-fee #rent-update-main-table td{width:182px;border-right:0;}
-#manage-fee #rent-update-main-table th{padding-bottom:0;vertical-align: middle;}
-#manage-fee hr{border-top:solid 1px #dae1e7;}
+#manage-fee #rent-update-main-table th{height:29px;vertical-align: middle;}
+#manage-fee #rent-update-main-table tr>td{padding-top:12px;padding-bottom:0;padding-right:10px;}
+#manage-fee #rent-update-table-wrapper tbody>tr>th{padding-top:12px;padding-bottom:0;vertical-align: middle;}
+
+
+#manage-fee hr{border-top:solid 1px #dae1e7;margin-top:13px;margin-bottom:13px;}
 
 #manage-fee .amp-table-wrapper-swiper .ys-table-static{border-right:0;}
 #manage-fee .amp-table-wrapper-swiper .ys-table-static .table{border-right:solid 1px #dfe5e9;}
 
-#manage-fee .td-opt button{display: inline-block;position:relative;top:2px;z-index:99;padding:0;width:24px;height:24px;border:0;background-color: transparent;border-radius:24px;cursor: pointer;}
+#manage-fee .td-opt button{display: inline-block;position:relative;float:left;z-index:99;padding:0;width:24px;height:24px;border:0;margin-left:10px;background-color: transparent;border-radius:24px;cursor: pointer;}
 #manage-fee .td-opt button:hover{}
 #manage-fee .td-opt button:focus{outline:transparent;}
-#manage-fee .td-opt button>em{margin:0;left:50%;margin-left:-9px;top:50%;margin-top:-9px;cursor: pointer;}
+#manage-fee .td-opt button>em{margin:0;left:50%;margin-left:-10.5px;top:50%;margin-top:-10.5px;cursor: pointer;}
 
 #manage-fee .td-opt button:hover>em.ys-icon-add{background-position:-130px -243px;}
 #manage-fee .td-opt button:hover>em.ys-icon-remove{background-position:-90px -198px;}
+
 
 #manage-fee  .table td.active input:focus{ outline:solid 3px #8ec1f6;outline-offset: -2px;}
 #manage-fee .table td input.ng-invalid{border:solid 2px #ff3030;}
@@ -544,3 +552,4 @@ tr>td span.number-format{display: block;width:100%;}
 #rgp-set-index .amp-table>tbody>tr>th,#rgp-set-index .amp-table>tbody>tr>td,#rgp-set-index .amp-table>tfoot>tr>th, .amp-table>tfoot>tr>td{
     border-bottom:0;border-top:0;
 }
+#manage-fee  .amp-table-wrapper .table{margin-bottom:0;}

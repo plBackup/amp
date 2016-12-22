@@ -1189,6 +1189,7 @@ dataTool.controller("irrPlanController",['$rootScope', '$scope',"irrPlanData","$
 
             }
         });
+
         $("#irr-plan-main-table tbody").on("click","td",function(e){
             //e.stopPropagation();
             var td_width=parseInt($(this).css("width"));

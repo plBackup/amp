@@ -14,7 +14,7 @@
             <h3 class="col-xs-8">MALL物业管理费标准<em class="em-unit">(单位:元/月/m&sup2)</em></h3>
         </div>
 
-        <div class="amp-table-wrapper">
+        <div class="amp-table-wrapper" style="margin-bottom:17px;">
             <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
                 <colgroup>
                     <col width="12%">
@@ -35,13 +35,13 @@
                     </tr>
                 </tbody><!--tbody-->
             </table>
-           <!-- <hr>-->
+            <hr>
                 <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
                     <colgroup>
                         <col width="12%">
                         <col width="36%">
-                        <col width="32%">
-                        <col width="16%">
+                        <col width="30%">
+                        <col width="18%">
                     </colgroup>
                 <tbody>
 
@@ -65,16 +65,15 @@
                     </td>
                     <td>
                         <label>标准</label>
-                        <div class="td-input-wrapper num-input padding-r-15" >
+                        <div class="td-input-wrapper num-input padding-r-15"  style="padding-right:0;">
                             <input type="number" placeholder="/" ng-model="fee.value">
                             <span class="number-format">{{fee.value | number:2}}</span>
                         </div>
                     </td>
-                    <td>
-                        <div class="td-opt" ng-if="$index==(fCtrl.mall.nonMainShop.feeStandard.length-1)">
+                    <td style="padding-left:0;">
+                        <div class="td-opt clearfix" ng-if="$index==(fCtrl.mall.nonMainShop.feeStandard.length-1)">
                             <button class="td-opt-add" ng-click="fCtrl.add('nonMainShop')" ><em class="ys-icon ys-icon-add"></em></button>
                             <button class="td-opt-remove" ng-click="fCtrl.remove('nonMainShop')"><em class="ys-icon ys-icon-remove"></em></button>
-
                         </div>
                     </td>
                 </tr>
@@ -86,15 +85,15 @@
 
     <div class="amp-block-pd clearfix">
         <div class="amp-block-title">
-            <h3 class="col-xs-8">商业街 物业管理费标准<em class="em-unit">(单位:元/月/m&sup2)</em></h3>
+            <h3 class="col-xs-8">商业街物业管理费标准<em class="em-unit">(单位:元/月/m&sup2)</em></h3>
         </div>
-            <div class="amp-table-wrapper">
+            <div class="amp-table-wrapper" style="margin-bottom:17px;">
                 <table class="table amp-table ampt-table-no-bordered" style="width:720px;">
                     <colgroup>
                         <col width="12%">
                         <col width="36%">
-                        <col width="32%">
-                        <col width="16%">
+                        <col width="30%">
+                        <col width="18%">
                     </colgroup>
 
                     <tbody>
@@ -115,15 +114,15 @@
                             </div>
                             <span class="td-range-addon">m&sup2</span>
                         </td>
-                        <td>
+                        <td style="padding-right:0;">
                             <label>标准</label>
-                            <div class="td-input-wrapper num-input padding-r-15" >
+                            <div class="td-input-wrapper num-input padding-r-15">
                                 <input type="number" placeholder="/" ng-model="fee.value">
                                 <span class="number-format">{{fee.value | number:2}}</span>
                             </div>
                         </td>
-                        <td>
-                            <div class="td-opt" ng-if="$index==(fCtrl.street.feeStandard.length-1)">
+                        <td style="padding-left:0;">
+                            <div class="td-opt clearfix" ng-if="$index==(fCtrl.street.feeStandard.length-1)" >
                                 <button class="td-opt-add" ng-click="fCtrl.add('street')"><em class="ys-icon ys-icon-add"></em></button>
                                 <button class="td-opt-remove" ng-click="fCtrl.remove('street')"><em class="ys-icon ys-icon-remove"></em></button>
                             </div>
@@ -162,7 +161,7 @@
                                 <tr>
                                    <th ng-repeat="v in fCtrl.fee.updateRate[0].value"><span>{{v.year}}</span></th>
                                     <th>
-                                        <div class="td-opt">
+                                        <div class="td-opt clearfix">
                                             <button class="td-opt-add" ng-click="fCtrl.fee.addYear();"><em class="ys-icon ys-icon-add"></em></button>
                                             <button class="td-opt-remove" ng-click="fCtrl.fee.removeYear()"><em class="ys-icon ys-icon-remove"></em></button>
                                         </div>
