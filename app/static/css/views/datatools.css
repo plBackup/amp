@@ -306,7 +306,8 @@
 #rgp-set #rent-first-year-set tr>td .td-input-wrapper span.number-format{padding: 6px 10px;  width: 100%;height:38px;color:#3a4153;
     line-height: 26px;border:0;background-color: #fff;}
 #rent-update-main-table tr>td{position: relative}
-#rgp-set #rent-update-main-table tr>td .td-input-wrapper{position: absolute;width:177px;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
+#rgp-set #rent-update-main-table tr>td .td-input-wrapper{/*position: absolute;width:177px;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;*/
+    width:177px;height:28px;padding-left:0;padding-right:13px;}
 #rgp-set #rent-update-main-table tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;}
 #rgp-set #rent-update-main-table tr>td .td-input-wrapper>span.number-format{display:block;height: 28px;width:100%;color:#3a4153;text-align: left;
     border: solid 1px #dfe5e9;
@@ -315,9 +316,10 @@
 #rgp-set #rent-update-main-table tr>td.active .td-input-wrapper>span.number-format{display: none;}
 
 #rent-affect-table-wrapper tr>td{position: relative}
-#rent-affect-table-wrapper tr>td .td-input-wrapper{position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;}
+#rent-affect-table-wrapper tr>td .td-input-wrapper{/*position: absolute;height:28px;top:50%;margin-top:-14px;left:13px;padding-left:0;padding-right:13px;*/
+    height:28px;padding-left:0;padding-right:13px;}
 #rent-affect-table-wrapper tr>td .td-input-wrapper>input{height:28px;border:solid 1px #dfe5e9;background-color:#fff;padding:3px 8px;width:96px;}
-#rent-affect-table-wrapper #rent-affect-floors tr>td .td-input-wrapper{left:inherit;right:0px;width:120px;text-align: right;}
+#rent-affect-table-wrapper #rent-affect-floors tr>td .td-input-wrapper{left:inherit;right:0px;width:120px;text-align: right;float:right;padding-right:0;}
 #rent-affect-table-wrapper tr>td .td-input-wrapper>span.number-format{ height: 28px;width:96px;padding: 3px 8px;text-align: left;color:#3a4153;
     border: solid 1px #dfe5e9;
     background-color: #fff;}
@@ -453,6 +455,7 @@ tr>td span.number-format{display: block;width:100%;}
 #rent-affect-table-wrapper .table td input.ng-invalid~span.number-format:before{right:13px;}
 #rent-affect-table-wrapper .td-input-wrapper em.error-msg{top:1px;right:13px;}
 #rent-affect-floors tr>td .td-input-wrapper>span.number-format{width:100%;}
+#rent-affect-floors tr>td .td-input-wrapper>span.number-format.text-right{text-align: right;}
 #rent-affect-floors .td-input-wrapper em.error-msg{top:1px;right:14px;}
 
 #rpg-set-table-wrapper .td-input-wrapper em.error-msg,#rpg-set .td-input-wrapper em.error-msg{
@@ -474,7 +477,7 @@ tr>td span.number-format{display: block;width:100%;}
 
 
 /*rpgset update*/
-.amp-proportion-select{height:34px;line-height: 34px;}
+.amp-proportion-select{height:34px;line-height: 34px;margin-bottom:4px;}
 #rgp-set #rent-affect-table-wrapper .amp-proportion-select .amp-sub-title{float:left;height:36px;line-height: 34px;}
 
 .amp-proportion-select .td-input-wrapper{float:left;margin-left:30px;}
