@@ -4,7 +4,7 @@
 var menu_list={
     amp_menu:[
         {
-            name:"存量分析",
+            name:"综合分析",
             index:"main-0",
             icon:"ys-icon-asset",
             links:"noi",
@@ -23,7 +23,7 @@ var menu_list={
             ]
         },
         {
-            name:"投资分析",
+            name:"回报模型",
             index:"main-1",
             icon:"ys-icon-finacial",
             links:"simulation_calculation_main",
@@ -41,7 +41,7 @@ var menu_list={
             ]
         },
         {
-            name:"管理分析",
+            name:"经营分析",
             index:"main-2",
             icon:"ys-icon-risk",
             links:"contract_main",
@@ -80,7 +80,7 @@ var menu_list={
             ]
         },
         {
-            name:"风控分析",
+            name:"风控工具",
             index:"main-3",
             icon:"ys-icon-tool",
             links:"blank",
@@ -107,7 +107,7 @@ var menu_list={
             ]
         },
         {
-            name:"数据工具",
+            name:"管理工具",
             index:"main-4",
             icon:"ys-icon-data",
             links:"rpgindex",
@@ -116,7 +116,15 @@ var menu_list={
             re_locate:true,//点击一级目录直接跳转
             sub_menu:[
                 {
-                    name:"租金包",
+                    name:"投资测算",
+                    index:"sub-4",
+                    links:"irrplan",
+                    target:"#page-frame",
+                    re_locate:true//点击一级目录直接跳转
+
+                },
+                {
+                    name:"租金包管理",
                     index:"sub-4",
                     links:"rpgindex",
                     target:"#page-frame",
@@ -130,14 +138,7 @@ var menu_list={
                     re_locate:true//点击一级目录直接跳转
 
                 },
-                {
-                    name:"回报计划",
-                    index:"sub-4",
-                    links:"irrplan",
-                    target:"#page-frame",
-                    re_locate:true//点击一级目录直接跳转
 
-                }
             ]
         }
     ]
